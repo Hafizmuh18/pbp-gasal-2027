@@ -46,21 +46,21 @@ sama disampaikan di kedua sesi). Tutorial dikerjakan & dinilai di sesi lab
 hari Rabu (rilis dan deadline di hari yang sama); Tugas Individu rilis
 hari Rabu dan deadline Rabu minggu berikutnya.
 
-| Minggu | Kelas (Senin & Rabu) | Materi | Tutorial (rilis & deadline) | Tugas Individu — Rilis | Tugas Individu — Deadline |
-|:---:|---|---|---|---|---|
-| 1 | Senin 24 & Rabu 26 Agustus 2026 | [Materi 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Rabu 26 Ags, 12.00–22.00 | [Tugas 1 (Esai)](assignments/individual/assignment-1.qmd) — Rabu 26 Ags | Rabu 2 September 2026 |
-| 2 | Senin 31 Ags & Rabu 2 September 2026 | [Materi 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Rabu 2 Sep, 12.00–22.00 | [Tugas 2](assignments/individual/assignment-2.qmd) — Rabu 2 Sep | Rabu 9 September 2026 |
-| 3 | Senin 7 & Rabu 9 September 2026 | [Materi 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Rabu 9 Sep, 12.00–22.00 | [Tugas 3](assignments/individual/assignment-3.qmd) — Rabu 9 Sep | Rabu 16 September 2026 |
-| 4 | Senin 14 & Rabu 16 September 2026 | [Materi 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Rabu 16 Sep, 12.00–22.00 | [Tugas 4](assignments/individual/assignment-4.qmd) — Rabu 16 Sep | Rabu 23 September 2026 |
-| 5 | Senin 21 & Rabu 23 September 2026 | [Materi 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Rabu 23 Sep, 12.00–22.00 | [Tugas 5](assignments/individual/assignment-5.qmd) — Rabu 23 Sep | Rabu 30 September 2026 |
-| 6 | Senin 28 & Rabu 30 September 2026 | [Materi 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Rabu 30 Sep, 12.00–22.00 | [Tugas 6](assignments/individual/assignment-6.qmd) — Rabu 30 Sep | Rabu 7 Oktober 2026 |
-| 7–9 | — | Sesi lab dipakai kerja kelompok PTS; **UTS Kamis 15 Oktober 2026** (13.00–16.30 WIB) | — | — | — |
-| 10 | Senin 26 & Rabu 28 Oktober 2026 | [Materi 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Rabu 28 Okt, 12.00–22.00 | [Tugas 7](assignments/individual/assignment-7.qmd) — Rabu 28 Okt | Rabu 4 November 2026 |
-| 11 | Senin 2 & Rabu 4 November 2026 | [Materi 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Rabu 4 Nov, 12.00–22.00 | [Tugas 8](assignments/individual/assignment-8.qmd) — Rabu 4 Nov | Rabu 11 November 2026 |
-| 12 | Senin 9 & Rabu 11 November 2026 | [Materi 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Rabu 11 Nov, 12.00–22.00 | [Tugas 9](assignments/individual/assignment-9.qmd) — Rabu 11 Nov | Rabu 18 November 2026 |
-| 13 | Rabu 18 November 2026 (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Rabu 18 Nov (*) | — | — |
+| Minggu | Kelas | Materi | Tutorial (rilis & deadline) | Tugas Individu |
+|:---:|---|---|---|---|
+| 1 | 24 & 26 Ags | [Materi 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Rabu 26 Ags, 12.00–22.00 | [Tugas 1 (Esai)](assignments/individual/assignment-1.qmd) — Rilis Rabu 26 Ags → Deadline Rabu 2 Sep |
+| 2 | 31 Ags & 2 Sep | [Materi 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Rabu 2 Sep, 12.00–22.00 | [Tugas 2](assignments/individual/assignment-2.qmd) — Rilis Rabu 2 Sep → Deadline Rabu 9 Sep |
+| 3 | 7 & 9 Sep | [Materi 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Rabu 9 Sep, 12.00–22.00 | [Tugas 3](assignments/individual/assignment-3.qmd) — Rilis Rabu 9 Sep → Deadline Rabu 16 Sep |
+| 4 | 14 & 16 Sep | [Materi 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Rabu 16 Sep, 12.00–22.00 | [Tugas 4](assignments/individual/assignment-4.qmd) — Rilis Rabu 16 Sep → Deadline Rabu 23 Sep |
+| 5 | 21 & 23 Sep | [Materi 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Rabu 23 Sep, 12.00–22.00 | [Tugas 5](assignments/individual/assignment-5.qmd) — Rilis Rabu 23 Sep → Deadline Rabu 30 Sep |
+| 6 | 28 & 30 Sep | [Materi 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Rabu 30 Sep, 12.00–22.00 | [Tugas 6](assignments/individual/assignment-6.qmd) — Rilis Rabu 30 Sep → Deadline Rabu 7 Okt |
+| 7–9 | — | Sesi lab dipakai kerja kelompok PTS; **UTS Kamis 15 Oktober 2026** (13.00–16.30 WIB) | — | — |
+| 10 | 26 & 28 Okt | [Materi 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Rabu 28 Okt, 12.00–22.00 | [Tugas 7](assignments/individual/assignment-7.qmd) — Rilis Rabu 28 Okt → Deadline Rabu 4 Nov |
+| 11 | 2 & 4 Nov | [Materi 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Rabu 4 Nov, 12.00–22.00 | [Tugas 8](assignments/individual/assignment-8.qmd) — Rilis Rabu 4 Nov → Deadline Rabu 11 Nov |
+| 12 | 9 & 11 Nov | [Materi 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Rabu 11 Nov, 12.00–22.00 | [Tugas 9](assignments/individual/assignment-9.qmd) — Rilis Rabu 11 Nov → Deadline Rabu 18 Nov |
+| 13 | Rabu 18 Nov (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Rabu 18 Nov (*) | — |
 
-: {tbl-colwidths="[6,16,22,20,18,18]"}
+: {tbl-colwidths="[8,13,31,26,22]"}
 
 ### Tugas Kelompok & Ujian
 
@@ -99,21 +99,21 @@ during the Wednesday lab session (release and deadline on the same day);
 Individual Assignments are released Wednesday and due the following
 Wednesday.
 
-| Week | Class (Mon & Wed) | Material | Tutorial (release & deadline) | Individual Assignment — Release | Individual Assignment — Deadline |
-|:---:|---|---|---|---|---|
-| 1 | Mon 24 & Wed 26 August 2026 | [Material 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Wed 26 Aug, 12:00–22:00 | [Assignment 1 (Essay)](assignments/individual/assignment-1.qmd) — Wed 26 Aug | Wed 2 September 2026 |
-| 2 | Mon 31 Aug & Wed 2 September 2026 | [Material 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Wed 2 Sep, 12:00–22:00 | [Assignment 2](assignments/individual/assignment-2.qmd) — Wed 2 Sep | Wed 9 September 2026 |
-| 3 | Mon 7 & Wed 9 September 2026 | [Material 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Wed 9 Sep, 12:00–22:00 | [Assignment 3](assignments/individual/assignment-3.qmd) — Wed 9 Sep | Wed 16 September 2026 |
-| 4 | Mon 14 & Wed 16 September 2026 | [Material 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Wed 16 Sep, 12:00–22:00 | [Assignment 4](assignments/individual/assignment-4.qmd) — Wed 16 Sep | Wed 23 September 2026 |
-| 5 | Mon 21 & Wed 23 September 2026 | [Material 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Wed 23 Sep, 12:00–22:00 | [Assignment 5](assignments/individual/assignment-5.qmd) — Wed 23 Sep | Wed 30 September 2026 |
-| 6 | Mon 28 & Wed 30 September 2026 | [Material 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Wed 30 Sep, 12:00–22:00 | [Assignment 6](assignments/individual/assignment-6.qmd) — Wed 30 Sep | Wed 7 October 2026 |
-| 7–9 | — | Lab sessions used for midterm group project work; **Midterm Exam Thursday 15 October 2026** (13:00–16:30 WIB) | — | — | — |
-| 10 | Mon 26 & Wed 28 October 2026 | [Material 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Wed 28 Oct, 12:00–22:00 | [Assignment 7](assignments/individual/assignment-7.qmd) — Wed 28 Oct | Wed 4 November 2026 |
-| 11 | Mon 2 & Wed 4 November 2026 | [Material 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Wed 4 Nov, 12:00–22:00 | [Assignment 8](assignments/individual/assignment-8.qmd) — Wed 4 Nov | Wed 11 November 2026 |
-| 12 | Mon 9 & Wed 11 November 2026 | [Material 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Wed 11 Nov, 12:00–22:00 | [Assignment 9](assignments/individual/assignment-9.qmd) — Wed 11 Nov | Wed 18 November 2026 |
-| 13 | Wed 18 November 2026 (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Wed 18 Nov (*) | — | — |
+| Week | Class | Material | Tutorial (release & deadline) | Individual Assignment |
+|:---:|---|---|---|---|
+| 1 | 24 & 26 Aug | [Material 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Wed 26 Aug, 12:00–22:00 | [Assignment 1 (Essay)](assignments/individual/assignment-1.qmd) — Release Wed 26 Aug → Deadline Wed 2 Sep |
+| 2 | 31 Aug & 2 Sep | [Material 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Wed 2 Sep, 12:00–22:00 | [Assignment 2](assignments/individual/assignment-2.qmd) — Release Wed 2 Sep → Deadline Wed 9 Sep |
+| 3 | 7 & 9 Sep | [Material 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Wed 9 Sep, 12:00–22:00 | [Assignment 3](assignments/individual/assignment-3.qmd) — Release Wed 9 Sep → Deadline Wed 16 Sep |
+| 4 | 14 & 16 Sep | [Material 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Wed 16 Sep, 12:00–22:00 | [Assignment 4](assignments/individual/assignment-4.qmd) — Release Wed 16 Sep → Deadline Wed 23 Sep |
+| 5 | 21 & 23 Sep | [Material 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Wed 23 Sep, 12:00–22:00 | [Assignment 5](assignments/individual/assignment-5.qmd) — Release Wed 23 Sep → Deadline Wed 30 Sep |
+| 6 | 28 & 30 Sep | [Material 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Wed 30 Sep, 12:00–22:00 | [Assignment 6](assignments/individual/assignment-6.qmd) — Release Wed 30 Sep → Deadline Wed 7 Oct |
+| 7–9 | — | Lab sessions used for midterm group project work; **Midterm Exam Thursday 15 October 2026** (13:00–16:30 WIB) | — | — |
+| 10 | 26 & 28 Oct | [Material 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Wed 28 Oct, 12:00–22:00 | [Assignment 7](assignments/individual/assignment-7.qmd) — Release Wed 28 Oct → Deadline Wed 4 Nov |
+| 11 | 2 & 4 Nov | [Material 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Wed 4 Nov, 12:00–22:00 | [Assignment 8](assignments/individual/assignment-8.qmd) — Release Wed 4 Nov → Deadline Wed 11 Nov |
+| 12 | 9 & 11 Nov | [Material 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Wed 11 Nov, 12:00–22:00 | [Assignment 9](assignments/individual/assignment-9.qmd) — Release Wed 11 Nov → Deadline Wed 18 Nov |
+| 13 | Wed 18 Nov (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Wed 18 Nov (*) | — |
 
-: {tbl-colwidths="[6,16,22,20,18,18]"}
+: {tbl-colwidths="[8,13,31,26,22]"}
 
 ### Group Assignments & Exams
 

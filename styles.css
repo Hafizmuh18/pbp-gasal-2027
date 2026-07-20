@@ -195,9 +195,55 @@ table {
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   width: 100%;
+  font-size: 0.95rem;
 }
 table, td, th {
   white-space: normal;
+}
+td, th {
+  padding: 0.65rem 0.85rem;
+  vertical-align: top;
+}
+/* Center the leading week/number column when the table marks it :---:
+   and keep its (short) header/content on one line — table-layout:auto
+   otherwise wraps a header like "Minggu" into 2 lines even with a
+   tbl-colwidths hint, since auto layout treats that as a minimum, not
+   a hard cap. */
+table th:first-child, table td:first-child {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  white-space: nowrap;
+}
+/* Zebra striping + row hover so a long, data-dense weekly schedule is
+   easier to scan row-by-row instead of everything blending together. */
+table tbody tr:nth-child(even) {
+  background-color: rgba(44, 95, 138, 0.035);
+}
+table tbody tr:hover {
+  background-color: var(--pbp-blue-light);
+}
+/* Data-dense tables (5+ columns) become unreadable on narrow screens —
+   text squeezes to one letter per line trying to fit every column into
+   ~300px. Instead let the table scroll sideways as a whole, with each
+   column kept wide enough to still wrap into readable multi-word lines. */
+@media (max-width: 700px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  table td, table th {
+    min-width: 130px;
+  }
+  table th:first-child, table td:first-child {
+    min-width: 60px;
+  }
+}
+.quarto-dark table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+.quarto-dark table tbody tr:hover {
+  background-color: #1c242c;
 }
 /* Allow horizontal scroll as a last-resort fallback on very narrow screens,
    while text inside cells still wraps first (see rule above). */
