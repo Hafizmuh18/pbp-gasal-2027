@@ -3,6 +3,9 @@ project:
   output-dir: _site
   resources:
     - pdfjs/
+  render:
+    - "*"
+    - "!ROADMAP.md"
 
 profile:
   default: id
