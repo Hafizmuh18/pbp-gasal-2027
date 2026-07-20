@@ -1,0 +1,76 @@
+lang: id
+
+website:
+  title: "PBP Gasal 2026/2027"
+  navbar:
+    background: dark
+    left:
+      - text: "Jadwal"
+        href: index.qmd
+      - text: "Materi"
+        href: materi/index.qmd
+      - text: "Tutorial"
+        href: tutorial/index.qmd
+      - text: "Tugas"
+        href: assignments/index.qmd
+    right:
+      - text: "Penghargaan"
+        href: awards.qmd
+      - text: "🇬🇧 English"
+        href: en/index.html
+      - icon: github
+        href: https://github.com/Hafizmuh18/pbp-gasal-2027
+        aria-label: GitHub
+
+  sidebar:
+    - id: materi
+      title: "Materi"
+      style: docked
+      contents:
+        - materi/index.qmd
+        - materi/materi-01.qmd
+        - materi/materi-02.qmd
+        - materi/materi-03.qmd
+        - materi/materi-04.qmd
+    - id: tutorial
+      title: "Tutorial"
+      style: docked
+      contents:
+        - tutorial/index.qmd
+        - tutorial/tutorial-0.qmd
+        - tutorial/tutorial-1.qmd
+        - tutorial/tutorial-2.qmd
+        - tutorial/tutorial-3.qmd
+        - tutorial/tutorial-4.qmd
+        - tutorial/tutorial-5.qmd
+        - tutorial/tutorial-6.qmd
+        - tutorial/tutorial-7.qmd
+        - tutorial/tutorial-8.qmd
+        - tutorial/tutorial-9.qmd
+    - id: assignments
+      title: "Tugas"
+      style: docked
+      contents:
+        - assignments/index.qmd
+        - section: "Tugas Individu"
+          contents:
+            - assignments/individual/assignment-1.qmd
+            - assignments/individual/assignment-2.qmd
+            - assignments/individual/assignment-3.qmd
+            - assignments/individual/assignment-4.qmd
+            - assignments/individual/assignment-5.qmd
+            - assignments/individual/assignment-6.qmd
+            - assignments/individual/assignment-7.qmd
+            - assignments/individual/assignment-8.qmd
+            - assignments/individual/assignment-9.qmd
+        - section: "Tugas Kelompok"
+          contents:
+            - assignments/group/midterm.qmd
+            - assignments/group/midterm-guide.qmd
+            - assignments/group/finalterm.qmd
+
+  page-footer:
+    left: "Copyright © PBP Fasilkom UI."
+    right:
+      - icon: github
+        href: https://github.com/Hafizmuh18/pbp-gasal-2027

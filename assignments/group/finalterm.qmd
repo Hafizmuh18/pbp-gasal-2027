@@ -1,0 +1,160 @@
+---
+title: "Proyek Akhir Semester"
+format:
+  html: default
+  typst: default
+  docx: default
+  revealjs:
+    output-file: finalterm-slide.html
+    scrollable: true
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+  - format: revealjs
+    text: Slide
+    icon: easel
+---
+
+```{=html}
+<div class="pbp-banner">
+  <img src="../../img/burhan/burhan_group_project.png" alt="Maskot Proyek Kelompok">
+  <div class="pbp-banner-text">
+    <div class="pbp-banner-title">Proyek Akhir Semester</div>
+    <p class="pbp-banner-sub">Dikerjakan berkelompok — kolaborasi lewat satu repositori Git.</p>
+  </div>
+</div>
+```
+
+**Membuat Aplikasi _Mobile_ menggunakan _Framework_ Flutter (Berkelompok)**
+
+
+**Tanggal Rilis : 17 November 2025, 12.00 WIB**
+
+***
+
+## Tujuan Pembelajaran Khusus
+
+1. Mengimplementasikan aplikasi _mobile_ sederhana dengan _framework_ Flutter
+2. Menerapkan _widget_ untuk _layout_ dan input, _event handling_, dan pemanggilan asinkronus ke _web service_
+3. Melakukan _deploy_ aplikasi pada platform Bitrise
+
+## Aturan Umum Tugas Kelompok
+
+1. Satu kelompok cukup membuat satu repositori GitHub yang digunakan oleh seluruh anggota kelompok untuk bekerja sama. Kumpulkan tautan repositori GitHub ke Scele.
+
+::: {.callout-note}
+
+**Notes** 
+Bagi kalian yang sudah menggunakan organization pada tugas sebelumnya, kalian tinggal menambahkan repository baru di organization tersebut. 
+
+**Pastikan repository yang website Django berbeda dengan repository flutter / aplikasi**.
+
+:::
+
+2. Repositori GitHub memuat `README.md` yang berisi:
+    - Daftar nama anggota kelompok
+    - Tautan APK (Tidak harus ada pada saat Tahap I. Tautan APK dapat ditambahkan secara menyusul ke `README.md` setelah selesai mengerjakan Tahap II.) 
+    - Deskripsi aplikasi (nama dan fungsi aplikasi)
+    - Daftar modul yang diimplementasikan beserta pembagian kerja per anggota
+    - Peran atau aktor pengguna aplikasi 
+    - **Penjelasan alur pengintegrasian data di aplikasi dengan aplikasi web (PWS) yang sudah dibuat saat Proyek Tengah Semester berbasis _web service_.**
+    - Link Design Figma
+
+3. *Deployment* aplikasi:
+    - Unggah APK sebagai Release di GitHub kelompok dan *platform* Bitrise. 
+    - **Gunakan logo aplikasi kelompok Anda sendiri**
+
+## Aturan Khusus per Anggota Kelompok (Implementasi Sebuah Modul)
+
+1. Menerapkan _widget_ untuk _layout_ dan input (Material/Cupertino, sesuai integrasi kelompok masing-masing) 
+2. Menerapkan _event handling_
+3. Menerapkan **pemanggilan asinkronus** ke _web service_ Django (aplikasi web yang sudah dibuat saat Proyek Tengah Semester)
+4. Pengolahan data *response* JSON dari _web service_ Django dan menampilkan hasilnya di aplikasi _mobile_
+
+::: {.callout-important}
+
+Pastikan kalian juga melihat komponen penilaian di [BRP](https://docs.google.com/document/d/1ymxsq-t7aNcrsCgwFLrFkbUWVb5f4rZh/edit) untuk acuan apa saja yang akan dinilai secara individu dan kelompok.
+
+:::
+
+## Tahapan Tugas Akhir Kelompok
+
+<table>
+    <tr>
+        <th>Tahapan dan <em>deliverables</em></th>
+        <th>Tenggat Waktu dan Keterangan</th>
+    </tr>
+    <tr>
+        <td>
+            <b>Tahap I (20%)</b>
+            <ul>
+                <li>Pembuatan GitHub kelompok</li>
+                <li>Pembuatan <em>codebase</em> kelompok</li>
+                <li>README.md pada GitHub yang berisi:</li>
+                <ol>
+                    <li>Daftar nama anggota kelompok</li>
+                    <li>Deskripsi aplikasi (nama dan fungsi aplikasi)</li>
+                    <li>Daftar modul yang diimplementasikan beserta pembagian kerja per anggota</li>
+                    <li>Peran atau aktor pengguna aplikasi</li>
+                    <li>Alur pengintegrasian dengan <em>web service</em> untuk terhubung dengan aplikasi web yang sudah dibuat saat Proyek Tengah Semester</li>
+                    <li>Link Figma : (untuk isi nya kosongkan saja dulu jika belum ada) </li>
+                </ol>
+            </ul>
+        </td>
+        <td>
+            <p><b>Tenggat Waktu: Senin, 24 November 2025, pukul 23.59 WIB</b></p>
+            <p><b>Kumpulkan ke SCELE: Tautan repositori GitHub</b> yang berisi <em>codebase</em> aplikasi Flutter lengkap beserta README.md</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Tahap II (80%)</b>
+            <p><b>(Pastikan semua modul sudah terimplementasi dengan baik)</b></p>
+            <ul>
+                <li>Setiap individu menyelesaikan penerapan <em>widget</em> pada modul masing-masing</li>
+                <li>Modul yang dibuat oleh setiap anggota kelompok sudah terintegrasi dalam satu kesatuan aplikasi</li>
+                <li>Fungsionalitas sesuai dengan rancangan desain</li>
+                <li>Pengolahan data JSON yang menjadi respons dari web service Django dan menampilkan hasilnya di aplikasi mobile</li>
+                <li>Menambahkan tautan APK ke README.md</li>
+            </ul>
+            <p><b>BONUS: Membuat video promosi aplikasi dan website kelompok (cukup dalam 1 video)</b></p>
+        </td>
+        <td>
+            <p><b>Tenggat Waktu: Minggu, 21 Desember 2025, pukul 23.59 WIB</b></p>
+            <p><b>CATATAN:</b> Terdapat toleransi keterlambatan 30 menit. APK yang dinilai adalah APK versi terakhir yang dirilis paling lambat 30 menit setelah tenggat waktu. APK yang dirilis setelah deadline tidak akan dinilai.</p>
+            <p><b>Presentasi dan Demo Tugas ke Dosen</b></p>
+            <b>Submisi:</b>
+            <ul>
+                <li>APK <em>release</em> di <em>platform Bitrise</em></li>
+                <li><b>(Apabila mengerjakan)</b> Tautan video promosi ditambahkan ke README.md</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+::: {.callout-tip}
+
+**Additional Notes** : 
+Tim asdos sangat menyarankan adanya sinkronisasi baik dari tema dan warna aplikasi maupun yang lainnya antara website dan aplikasi. Tutorial penggunaan Bitrise sudah dicantumkan di lab 9. 
+
+Saat demo berlangsung kalian akan membuka PWS kalian beserta aplikasi kalian yang dimana data website kalian akan dites sudah terintegrasi atau belum dengan aplikasi yang kalian buat di tugas ini.
+
+**Demo akan dilakukan bersama asdos dan dosen jadi semangat dalam memberikan yang terbaik ya!**
+
+:::
+
+::: {.callout-note}
+
+**TIPS**
+Video promosi sebaiknya berupa 1 video yang mencakup promosi web dan sekaligus mobile app karena video tersebut akan ditampilkan di website PBP jika kalian menjadi salah satu awardee di salah satu kategori. 
+
+:::
+
+::: {.callout-important}
+
+**Tentang extend deadline** : Tim Dosen dan Tim Asdos telah sepakat untuk tidak mengadakan extend deadline TK PAS, jadi silakan diatur manajemen waktu dalam team. Permohonan extend deadline TK PAS akan kami tolak karena **informasi ini sudah diberitahukan sejak TK PAS dirilis**.
+
+:::

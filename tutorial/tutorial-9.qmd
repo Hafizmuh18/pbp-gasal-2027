@@ -1,0 +1,699 @@
+---
+title: "Tutorial 9"
+format:
+  html: default
+  typst: default
+  docx: default
+  revealjs:
+    output-file: tutorial-9-slide.html
+    scrollable: true
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+  - format: revealjs
+    text: Slide
+    icon: easel
+---
+
+
+Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2025/2026
+
+***
+
+## Tujuan Pembelajaran
+
+Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
+
+- Memahami konsep _continuous integration_ dan _continuous deployment_.
+- Memahami konsep dan penggunaan _GitHub Actions_ dan _GitHub Release_.
+- Memahami konsep dan penggunaan _Bitrise_.
+- Menerapkan _continuous integration_ dan _continuous deployment_ pada aplikasi Flutter menggunakan _GitHub Actions_ dan _Bitrise_.
+
+
+## Pengenalan CI/CD
+![Linear App Dashboard Image](../img/7809428dca86.png)
+**CI/CD (*Continuous Integration dan Continuous Deployment*)** adalah konsep penting dalam pengembangan perangkat lunak yang berfokus pada otomatisasi proses pengujian dan rilis kode menggunakan alat seperti GitHub Actions.
+
+**Continuous Integration (CI)** memastikan setiap perubahan kode yang dikirim ke repositori langsung diuji secara otomatis. Tujuannya agar kesalahan dapat terdeteksi lebih awal dan tidak mengganggu fungsi yang sudah ada.
+
+**Continuous Deployment (CD)** melanjutkan proses CI dengan mengotomatisasi rilis kode yang sudah lolos pengujian ke lingkungan produksi atau pengujian, tanpa perlu dilakukan secara manual. Hal ini membuat pengembangan lebih cepat dan responsif terhadap perubahan kebutuhan.
+
+Dengan GitHub Actions, setiap kali ada perubahan pada repositori, sistem dapat otomatis menjalankan alur kerja CI untuk pengujian dan CD untuk rilis ke server. Secara keseluruhan, CI/CD membantu menjaga kualitas aplikasi, mempercepat waktu rilis, dan meningkatkan efisiensi dalam pengembangan perangkat lunak.
+
+## Pengenalan GitHub Actions
+
+GitHub Actions adalah fitur GitHub yang memungkinkan otomatisasi proses pengembangan perangkat lunak melalui alur kerja (workflow). Dengan fitur ini, tugas seperti pengujian (testing), pembangunan (building), dan perilisan (releasing) dapat dijalankan otomatis setiap kali ada perubahan pada repositori.
+
+Contohnya, ketika ada kode baru dikirim ke GitHub, GitHub Actions dapat langsung menjalankan tes, membangun aplikasi, dan menyimpan hasilnya sebagai artifact.
+
+Setiap workflow diatur melalui file konfigurasi YAML di folder `.github/workflows/`, yang berisi instruksi langkah demi langkah untuk GitHub Actions.
+
+::: {.callout-note}
+
+Penting untuk dicatat bahwa GitHub Actions memanfaatkan file konfigurasi khusus (biasanya dengan nama `.github/workflows/nama-file.yml`) pada repositori. File ini berisi deskripsi langkah-langkah yang harus dijalankan oleh GitHub Actions.
+
+:::
+
+Dengan demikian, GitHub Actions membantu tim pengembang bekerja lebih efisien, karena banyak proses rutin dapat diotomatisasi, memungkinkan mereka fokus pada pengembangan fitur dan peningkatan kualitas kode.
+
+Berikut adalah contoh _workflow_ sederhana yang dapat kita gunakan untuk membangun aplikasi Android:
+
+```yaml
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release
+          path: app/build/outputs/apk/release/app-release.apk
+```
+Berikut adalah contoh tampilan halaman GitHub Actions yang menampilkan history workflow yang berjalan:
+![image](../img/t9-1.png)
+
+
+## Pengenalan GitHub Release
+
+GitHub Release adalah fitur GitHub yang memungkinkan developer untuk mempublikasikan versi rilis (_release_) dari proyek mereka. Setiap _release_ dapat mencakup:
+
+- **Versi aplikasi** (misalnya v1.0.0, v2.1.3)
+- **Catatan rilis** (_release notes_) yang menjelaskan perubahan atau fitur baru
+- **File binari** seperti APK, executable, atau file lainnya yang siap digunakan
+
+GitHub Release sangat berguna untuk:
+- Mendistribusikan aplikasi yang sudah _build_ kepada pengguna
+- Melacak versi-versi rilis dari aplikasi
+- Menyediakan dokumentasi untuk setiap versi
+- Memudahkan pengguna mengunduh aplikasi tanpa perlu build sendiri
+
+Berikut adalah contoh tampilan halaman GitHub Release:
+
+![image](../img/t9-2.png)
+
+
+### Contoh Workflow dengan GitHub Release
+
+Berikut contoh workflow yang membangun APK Android dan otomatis membuat GitHub Release:
+
+```yaml
+name: Build and Release Android APK
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "app/build/outputs/apk/release/*.apk"
+          body: "New release"
+          name: "Release v1.0.0"
+          token: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Dengan workflow di atas, setiap kali ada push ke branch `main`, GitHub Actions akan:
+1. Build APK dari kode terbaru
+2. Membuat GitHub Release otomatis
+3. Upload APK ke Release agar bisa diunduh oleh pengguna
+
+Hasil akhirnya, pengguna dapat langsung mengunduh APK dari halaman Releases tanpa perlu build sendiri.
+## Pengenalan Bitrise
+![Gambar Bitrise](../img/4cdf6daa96fc.png)
+
+Bitrise merupakan layanan _cloud_ yang menyediakan berbagai macam fitur untuk memudahkan proses _build_, _test_, _release_, dan _monitoring_ aplikasi. Layanan ini dapat digunakan untuk berbagai macam platform, seperti Android, iOS, React Native, Flutter, dan lain-lain. Pada tutorial ini, kita akan menggunakan layanan ini untuk melakukan _build_ dan _release_ aplikasi Flutter secara otomatis. Bitrise juga dikonfigurasi khusus dalam mobile application development.
+
+## Tutorial: Pengaturan CI/CD untuk Build Aplikasi Flutter pada GitHub Actions
+
+Pada tutorial ini, kamu akan men-_deploy_ aplikasi Flutter yang telah kamu buat pada tutorial-tutorial sebelumnya ke GitHub Release menggunakan GitHub Actions.
+
+### 1. Membuat Workflow GitHub Actions
+
+Jika belum ada, buatlah folder `.github/workflows` pada _root folder_ aplikasimu.
+
+Buatlah file baru `release.yml` pada folder `.github/workflows`:
+
+```yaml
+# This is a basic workflow to help you get started with Actions
+name: Release
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push events but only for the main branch
+  push:
+    branches: [main]
+
+# Permissions needed for creating releases
+permissions:
+  contents: write
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "Build and Release APK"
+  releases:
+    name: Build and Release APK
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Get version from pubspec.yaml
+        id: version
+        run: echo "::set-output name=version::$(grep "version:" pubspec.yaml | cut -c10-)"
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "zulu"
+          java-version: "17"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - name: Get packages
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --split-per-abi
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(TZ='Asia/Jakarta' date +'%A %d-%m-%Y %T WIB')"
+
+      - name: Generate unique tag
+        id: tag
+        run: echo "::set-output name=tag::v${{ steps.version.outputs.version }}-$(date +'%Y%m%d%H%M%S')"
+
+      - name: Release APK
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: false
+          artifacts: "build/app/outputs/flutter-apk/*.apk"
+          body: "Published at ${{ steps.date.outputs.date }}"
+          name: "v${{ steps.version.outputs.version }} - ${{ steps.date.outputs.date }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.tag.outputs.tag }}
+```
+
+::: {.callout-note}
+
+Sesuaikan branch `main` dengan branch utama di repository flutter kamu.
+
+:::
+
+### 2. Test Workflow
+
+Simpan file workflow dan _push_ ke repositori kamu. Cek apakah aplikasi berhasil dibuat dan dirilis oleh GitHub Actions secara otomatis. Selanjutnya kamu bisa cek progress workflow kamu di tab *Actions* pada repository kamu.
+
+![image](../img/t9-3.png)
+
+Jika workflow kalian berhasil, kalian akan mendapatkan **ceklis hijau**, jika gagal maka kalian akan mendapatkan **tanda silang berwarna merah**. Untuk mengecek lognya kalian dapat menekan workflow tersebut.
+
+![image](../img/t9-4.png)
+
+
+Jika workflow berhasil, kamu dapat melihat hasilnya di **GitHub Releases**. Buka halaman repository kamu, lalu klik tab **Releases** di sidebar kanan atau akses melalui URL `https://github.com/username-kamu/repository-kamu/releases`.
+
+![image](../img/t9-5.png)
+
+
+::: {.callout-note}
+
+Perhatikan bahwa APK yang dihasilkan saat ini memiliki tipe unsigned (belum ditandatangani). Ini normal karena kita belum melakukan proses signing pada aplikasi Flutter. Signing akan dikonfigurasi di tahap berikutnya.
+
+:::
+
+
+
+## Tutorial: Pengaturan CI/CD untuk Build Aplikasi Flutter pada Bitrise
+
+Pada tutorial ini, kamu akan men-_deploy_ aplikasi Flutter yang telah kamu buat pada tutorial-tutorial sebelumnya ke Bitrise. 
+
+1. Buatlah akun [Bitrise](https://app.bitrise.io/users/sign_up) menggunakan akun GitHub kamu (Klik tombol **Configure GitHub access**).
+    ![image](../img/t9-6.png)
+
+2. Setelah berhasil membuat akun, tuliskan username Bitrise yang kamu inginkan dan klik **Continue**. Lalu pada Onboarding Page, klik **Start with Bitrise CI** → **New CI project**.
+    ![image](../img/t9-7.png)
+    ![image](../img/t9-8.png)
+
+3. Pada section **Project Access**, pilih **private project** dan klik **Next**. Kemudian pilih repository Flutter kamu dan klik **Next** lagi.
+    ![image](../img/t9-9.png)
+    ![image](../img/t9-10.png)
+
+4. Pilih *Copy a generated SSH key to your Git provider manually*, lalu copy SSH public key yang ditampilkan.
+    ![image](../img/t9-11.png)
+
+5. Buka [SSH and GPG keys](https://github.com/settings/keys) di GitHub settings, klik **New SSH key**, pilih tipe **Authentication Key**, paste SSH key tadi, lalu klik **Add SSH Key**.
+    ![image](../img/t9-12.png)
+    ![image](../img/t9-13.png)
+
+6. Pilih branch utama untuk build aplikasi mobile kamu, lalu pada bagian **Default configuration**, pilih **Manual setup** dan konfigurasikan:
+    - **Project type**: Flutter
+    - **Project location**: `.` (titik, artinya root folder)
+    - **Platform**: Android
+    - **Build stack**: Xcode 16.4
+    - **Build machine**: Sesuai kebutuhan
+
+    ![image](../img/t9-14.png)
+    ![image](../img/t9-15.png)
+
+7. Pilih ikon aplikasi kamu, lalu aktifkan webhook Bitrise agar setiap push/merge code otomatis trigger build. Klik **Save** untuk menyimpan konfigurasi.
+    ![image](../img/t9-16.png)
+    ![image](../img/t9-17.png)
+
+8. Setelah tersimpan, kamu akan diarahkan ke project build page. Klik button **Workflows** untuk mengatur CI/CD pipeline.
+    ![image](../img/t9-18.png)
+
+9. Pilih salah satu workflow yang sudah ada atau buat baru. Pastikan step-step berikut ada pada workflow tersebut:
+    - **Activate SSH key (RSA private key)** - untuk akses repository
+    - **Git Clone Repository** - untuk clone source code
+    - **Flutter Install** - untuk setup Flutter SDK
+    - **Flutter Analyze** - untuk static code analysis
+    - **Flutter Build** - untuk build APK/app bundle
+    - **Deploy to Bitrise.io** - untuk menyimpan build artifacts
+
+    Hasil konfigurasi workflow akan terlihat seperti ini:
+    ![image](../img/t9-19.png)
+
+    > **Penting:** Pada step **Flutter Install**, pastikan mengisi **Flutter SDK version** dengan versi terbaru (contoh: `3.35.7`) agar Dart SDK sesuai dengan requirement di `pubspec.yaml` kamu. Jika kosong, Bitrise akan pakai Flutter versi lama yang bisa menyebabkan error "SDK version solving failed".
+    > ![image](../img/t9-20.png)
+
+10. Buka tab **Triggers** untuk mengatur automation:
+    - Klik **Add Trigger** → pilih **Push**
+    - Set **branch** sesuai branch utama repo kamu (contoh: `main` atau `master`)
+    - Pilih **workflow** yang kamu konfigurasikan sebelumnya.
+    - Klik **Save Changes**
+
+    ![image](../img/t9-21.png)
+    ![image](../img/t9-22.png)
+
+::: {.callout-warning}
+
+Pastikan tidak ada trigger yang duplikat (misalnya trigger branch main di lebih dari satu workflow). Duplikasi trigger dapat menyebabkan build berjalan ganda dan menghabiskan resource pada akun Bitrise free tier kamu.
+
+:::
+
+Sekarang coba kamu trigger push pada branch utama di repository GitHubmu. seharusnya sekarang Bitrise akan otomatis melakukan build aplikasi Fluttermu dan hasilnya dapat kamu lihat di tab artifact seperti ini.
+![image](../img/t9-23.png)
+
+Sampai sini, kamu telah melakukan pengaturan CI/CD pada Bitrise. Selanjutnya, kamu akan melakukan pengaturan skrip dan pengesahan (_sign_) pada proyek aplikasi Flutter.
+
+
+## Tutorial: Pembuatan Keystore untuk Pengesahan Aplikasi Flutter
+
+Untuk publikasi aplikasi yang aman pada Bitrise dan GitHub , aplikasi Flutter harus ditandatangani atau disahkan menggunakan _key_ agar aplikasi yang dirilis dijamin keabsahannya.
+
+1. **Membuat Keystore**
+
+    Buka Terminal (Mac/Linux) atau Command Prompt (Windows), lalu masuk ke root directory project Flutter kamu:
+
+    ```bash
+    cd path/to/your/flutter/project
+    ```
+
+    Jalankan perintah berikut untuk membuat keystore:
+
+    **Untuk Mac OS / Linux:**
+    ```bash
+    keytool -genkey -v -keystore release-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias release
+    ```
+
+    **Untuk Windows:**
+    ```bash
+    keytool -genkey -v -keystore release-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias release
+    ```
+
+    **Penting:**
+    - Berikan _password_ yang aman dan **simpan password tersebut** (jangan sampai lupa!)
+    - Isilah informasi yang dibutuhkan (nama, organisasi, dll) hingga proses selesai
+    - File `release-keystore.jks` akan dibuat di root directory project kamu
+
+::: {.callout-note}
+
+Apabila Terminal atau Command Prompt tidak mengenali perintah `keytool`, silakan mengikuti panduan tambahan pada bagian _Note_ di [laman web resmi Flutter bagian _Create an upload keystore_](https://docs.flutter.dev/deployment/android#create-an-upload-keystore) untuk memasukkan perintah `keytool` ke dalam _environment path_.
+
+:::
+
+2. **Konfigurasi `.gitignore`**
+
+    Tambahkan baris berikut pada file `.gitignore` di root folder proyek agar _keystore_ **tidak ter-push** ke repository Git:
+
+    ```gitignore
+    # Remember to never publicly share your keystore.
+    # See https://flutter.dev/docs/deployment/android#reference-the-keystore-from-the-app
+    *.keystore
+    *.jks
+    ```
+
+::: {.callout-note}
+
+Keystore adalah file rahasia seperti password, oleh sebabnya jangan pernah di-commit ke Git.
+
+:::
+
+
+Sampai sini, kamu sudah melakukan pengaturan dasar untuk pengesahan aplikasi. Selanjutnya, kamu akan melakukan modifikasi CI/CD (GitHub Actions atau Bitrise) untuk melakukan pengesahan secara otomatis setiap kali aplikasi dibuild.
+
+## Tutorial: Modifikasi CI/CD GitHub Actions untuk Sign Aplikasi Flutter
+
+Setelah membuat keystore, kamu perlu memodifikasi workflow GitHub Actions agar APK yang dihasilkan ter-sign (ditandatangani) secara otomatis.
+
+1. **Generate Base64 String dari Keystore**
+
+    Hasilkan sebuah _base64 string_ sebagai representasi dari _keystore file_ yang akan kita simpan sebagai _environment variable_ nantinya.
+
+::: {.callout-note}
+
+**Untuk pengguna Mac OS atau Linux**
+1. Jalankan perintah `openssl base64 -in release-keystore.jks` pada Terminal di _root folder_ untuk menghasilkan _base64 string_.
+2. Simpan _string_ yang dihasilkan untuk sementara waktu. Bisa disimpan di notepad sementara terlebih dahulu.
+
+:::
+
+::: {.callout-note}
+
+**Untuk pengguna Windows**
+1. Buka _root folder_ proyek pada File Explorer.
+2. Kemudian klik kanan, lalu klik `Show more options`, setelah itu klik `Git Bash here`.
+
+![Contoh Gitbash](../img/t9-24.png)
+
+3. Sebuah terminal Git Bash akan terbuka.
+4. Pada terminal tersebut, jalankan perintah `openssl base64 -in release-keystore.jks`. Perintah tersebut akan menghasilkan _base64 string_.
+5. Simpan _string_ yang dihasilkan untuk sementara waktu.
+
+:::
+
+2. **Tambahkan Repository Secrets**
+
+    Tambahkan _repository secrets_ baru pada repositori GitHub:
+
+    - `KEY_JKS` berisi `base64` _string_ dari _keystore file_ yang telah kamu buat sebelumnya
+    - `KEY_PASSWORD` berisi kata sandi yang kamu gunakan saat kamu membuat _keystore file_
+
+    Pada akhirnya, halaman _repository secrets_ kamu akan terlihat seperti ini:
+
+    ![image](../img/t9-25.png)
+
+
+3. **Update Workflow File**
+
+    Edit file `.github/workflows/release.yml` dan tambahkan step untuk generate keystore dan sign APK:
+
+    ```yaml
+    # This is a basic workflow to help you get started with Actions
+    name: Release
+    # Controls when the workflow will run
+    on:
+      # Triggers the workflow on push events but only for the main branch
+      push:
+        branches: [main]
+    # Permissions needed for creating releases
+    permissions:
+      contents: write
+    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    jobs:
+      # This workflow contains a single job called "Build and Release APK"
+      releases:
+        name: Build and Release APK
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout the code
+            uses: actions/checkout@v4
+          - name: Get version from pubspec.yaml
+            id: version
+            run: echo "::set-output name=version::$(grep "version:" pubspec.yaml | cut -c10-)"
+          - name: Setup Java
+            uses: actions/setup-java@v3
+            with:
+              distribution: "zulu"
+              java-version: "17"
+          - name: Setup Flutter
+            uses: subosito/flutter-action@v2
+            with:
+              channel: "stable"
+          - name: Get packages
+            run: flutter pub get
+          - name: Build APK
+            run: flutter build apk --split-per-abi
+          - name: Decode Keystore
+            run: echo "${{ secrets.KEY_JKS }}" | base64 -d > release-keystore.jks
+          - name: Sign APKs
+            run: |
+              for apk in build/app/outputs/flutter-apk/*.apk; do
+                echo "Signing $apk..."
+                jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 \
+                  -keystore release-keystore.jks \
+                  -storepass "${{ secrets.KEY_PASSWORD }}" \
+                  -keypass "${{ secrets.KEY_PASSWORD }}" \
+                  "$apk" release
+              done
+          - name: Cleanup Keystore
+            if: always()
+            run: rm -f release-keystore.jks
+          - name: Get current date
+            id: date
+            run: echo "::set-output name=date::$(TZ='Asia/Jakarta' date +'%A %d-%m-%Y %T WIB')"
+          - name: Generate unique tag
+            id: tag
+            run: echo "::set-output name=tag::v${{ steps.version.outputs.version }}-$(date +'%Y%m%d%H%M%S')"
+          - name: Release APK
+            uses: ncipollo/release-action@v1
+            with:
+              allowUpdates: false
+              artifacts: "build/app/outputs/flutter-apk/*.apk"
+              body: "Published at ${{ steps.date.outputs.date }}"
+              name: "v${{ steps.version.outputs.version }} - ${{ steps.date.outputs.date }}"
+              token: ${{ secrets.GITHUB_TOKEN }}
+              tag: ${{ steps.tag.outputs.tag }}
+    ```
+
+4. **Test Workflow**
+
+    Simpan file workflow dan _push_ ke repositori kamu. Cek apakah aplikasi berhasil dibuat dan dirilis oleh GitHub Actions.
+
+## Tutorial: Modifikasi Workflow Bitrise untuk Sign APK
+
+Pada bagian ini, kita akan menambahkan step untuk menandatangani (sign) APK setelah step build APK pada workflow Bitrise. Proses signing APK diperlukan agar aplikasi dapat didistribusikan ke Play Store atau diinstal pada perangkat Android.
+
+1. **Konfigurasi Keystore di Bitrise**
+
+    Langkah pertama adalah mengunggah dan mengkonfigurasi file keystore Anda di Bitrise:
+
+    * Buka **Project Settings** pada project Bitrise kamu
+    * Klik section **Code Signing** di menu sebelah kiri
+    * Pilih tab **Android** 
+    * Klik tombol **Add Keystore File**
+
+    ![Tambah Keystore File](../img/t9-26.png)
+
+    Setelah modal keystore file terbuka, lakukan konfigurasi berikut:
+
+    - **Upload file keystore**: Pilih file `.jks` atau `.keystore` yang sudah kamu buat sebelumnya
+    - **Keystore password**: Masukkan password yang kamu gunakan saat membuat keystore
+    - **Private key password**: Masukkan password untuk private key (biasanya sama dengan keystore password)
+    - **Key alias**: Masukkan alias key, misalnya `release` atau alias yang kamu tentukan saat membuat keystore
+
+    ![Konfigurasi Keystore](../img/t9-27.png)
+
+    Setelah semua informasi diisi dengan benar, detail keystore kamu akan ditampilkan. Klik tombol **Add Keystore** untuk menyimpan konfigurasi.
+
+    ![Konfirmasi Keystore](../img/t9-28.png)
+
+2. **Tambahkan Step Android Sign pada Workflow Bitrise**
+
+    Setelah keystore dikonfigurasi, langkah selanjutnya adalah menambahkan step untuk signing APK:
+
+    * Buka halaman **Workflows** pada project Bitrise kamu
+    * Pilih workflow yang ingin kamu modifikasi (biasanya workflow `deploy`)
+    * Cari step **Android Sign** di daftar available steps
+    * Drag and drop step tersebut setelah step build APK (Flutter Build)
+
+    Untuk konfigurasi step Android Sign, kamu dapat menggunakan nilai default.
+
+    ![Android Sign Step](../img/t9-29.png)
+
+3. *Update Deploy Step untuk Mereferensikan Signed APK*
+
+    Agar APK yang ter-sign dapat didistribusikan sebagai artifact, kamu perlu mengupdate step deploy:
+
+    * Cari step **Deploy to Bitrise.io** pada workflow kamu
+    * Pada input **Deploy directory or file path**  di bagian **Build Artifact Deployment**, isikan dengan environment variable `$BITRISE_SIGNED_APK_PATH`
+    * Variable ini secara otomatis diisi oleh step Android Sign dengan path APK yang sudah ter-sign
+
+    ![Deploy Step Configuration](../img/t9-30.png)
+
+## Tutorial: Verifikasi Aplikasi Telah Di-sign
+
+Setelah melakukan konfigurasi signing pada Bitrise, kamu perlu memverifikasi bahwa APK yang dihasilkan sudah benar-benar ter-sign dengan keystore yang kamu gunakan.
+
+1. **Download APK yang Sudah Di-sign**
+
+    Download APK yang sudah di-sign dari GitHub Release dan Bitrise.
+
+2. **Verifikasi Certificate dengan Sisik.eu**
+
+    * Buka halaman [sisik.eu/cert](https://sisik.eu/cert)
+    * Upload file APK yang sudah kamu download
+    * Tunggu proses analisis selesai
+
+3. **Periksa Hasil Verifikasi**
+
+    Setelah APK berhasil dianalisis, kamu akan melihat informasi signing certificate seperti pada gambar berikut:
+
+    ![Hasil Verifikasi Certificate](../img/t9-31.png)
+
+    Pastikan informasi berikut sesuai dengan keystore yang kamu buat:
+
+    - **Issuer**: Nama dan informasi yang kamu input saat membuat keystore (CN, O, L, ST, C)
+    - **Validity**: Tanggal "Not After" masih jauh di masa depan (biasanya 25-30 tahun)
+
+Jika informasi sudah sesuai, berarti APK kamu sudah berhasil di-sign dengan benar dan siap untuk didistribusikan.
+
+## Tutorial: Menambahkan Tautan Aplikasi dan Badge Deployment Bitrise ke README
+
+Setelah aplikasi berhasil di-build dan di-sign, kamu dapat menambahkan badge status build Bitrise dan tautan download APK ke file README repository kamu. Ini memudahkan orang lain untuk melihat status build terkini dan mengunduh aplikasi langsung.
+
+1. **Dapatkan Link Download APK dari Bitrise**
+
+* Buka halaman build terakhir yang berhasil di Bitrise
+* Klik tab **Artifacts** untuk melihat file APK yang dihasilkan
+* Klik pada file **app-release.apk** atau file APK yang sudah di-sign
+
+    ![image](../img/t9-32.png)
+
+
+* Pada bagian **Public install page**, aktifkan toggle untuk mengaktifkan akses publik
+* Klik **Get link** untuk membuka modal **Get link to public install page**
+* Copy URL yang ditampilkan pada modal tersebut
+
+![image](../img/t9-33.png)
+
+
+URL public install page memiliki format seperti ini:
+```
+https://app.bitrise.io/app/YOUR_APP_ID/installable-artifacts/YOUR_ARTIFACT_ID/public-install-page/YOUR_PAGE_ID
+```
+
+**Catatan**: Setiap artifact APK memiliki public install page URL yang unik. URL ini berbeda untuk setiap build baru, jadi kamu perlu update README setiap kali ada release baru.
+
+2. **Dapatkan Badge Status Build Bitrise**
+
+* Buka **Project Settings** di Bitrise
+* Klik menu **Builds** di sidebar kiri
+* Scroll ke bawah hingga menemukan section **Build status badge**
+* Klik tombol **Get code**
+
+![image](../img/t9-34.png)
+
+
+Pada modal yang muncul:
+
+![image](../img/t9-35.png)
+
+
+   - **Branch (optional)**: Pilih branch yang ingin ditampilkan status build-nya (misalnya `main`)
+   - **Format**: Pilih **Markdown**
+   - **Embed**: Copy code Markdown yang tersedia
+
+Code yang kamu copy akan berbentuk seperti ini:
+```markdown
+[![Build Status](https://app.bitrise.io/app/YOUR_APP_ID/status.svg?token=YOUR_TOKEN&branch=main)](https://app.bitrise.io/app/YOUR_APP_ID)
+```
+
+Badge ini adalah image SVG yang menampilkan status build (passing/failing) dengan link ke halaman app Bitrise kamu.
+
+3. **Update README dengan Badge dan Link Download**
+
+Buka file `README.md` di repository kamu dan tambahkan informasi berikut:
+
+```markdown
+# Nama Aplikasi Kamu
+
+[![Build Status](https://app.bitrise.io/app/YOUR_APP_ID/status.svg?token=YOUR_TOKEN&branch=main)](https://app.bitrise.io/app/YOUR_APP_ID)
+
+## Download
+Download aplikasi versi terbaru: [Download APK](https://app.bitrise.io/app/YOUR_APP_ID/installable-artifacts/YOUR_ARTIFACT_ID/public-install-page/YOUR_PAGE_ID)
+```
+
+**Keterangan:**
+- Ganti code badge dengan yang sudah kamu copy dari step 2
+- Ganti URL download APK dengan URL public install page dari step 1
+- Badge akan otomatis update setiap ada build baru di branch yang kamu pilih
+
+4. **Commit dan Push Perubahan**
+
+Setelah mengupdate README, commit dan push perubahan ke repository:
+
+```bash
+git add README.md
+git commit -m "Add Bitrise build badge and APK download link"
+git push origin main
+```
+
+Sekarang siapapun yang mengunjungi repository kamu dapat melihat status build terbaru dan mengunduh APK dari public install page.
+
+
+
+## Akhir Kata
+
+Selamat! Kamu telah berhasil men-_deploy_ aplikasi Flutter ke **Bitrise**. Dengan ini, kita resmi menuntaskan **Tutorial PBP Semester Ganjil 2025/2026**! Terima kasih kepada seluruh mahasiswa atas kerja keras, dedikasi, dan partisipasinya selama mengikuti mata kuliah ini.  
+
+Sepanjang semester, kita telah mempelajari konsep dan praktik pengembangan aplikasi web dan _mobile_ menggunakan **Django** dan **Flutter**, memahami arsitektur, fitur, serta alat bantu dalam membangun aplikasi yang tangguh dan responsif di berbagai platform.  
+
+Tim pengajar berharap seluruh proses lab dan tugas membantu kalian memahami potensi serta tantangan dalam pengembangan aplikasi multiplatform, sekaligus membekali keterampilan yang bermanfaat untuk karier di dunia pengembangan perangkat lunak.  
+
+Pembelajaran tentu tidak berhenti di sini. Dunia teknologi terus berkembang, jadi tetaplah belajar, beradaptasi, dan berinovasi. Terus eksplorasi dan kembangkan kemampuan kalian, masa depan cerah menanti di dunia pengembangan perangkat lunak. **Semoga sukses Pacilians 2025!**
+
+## Kontributor
+
+- Marla Marlena [NDF]
+- Isa Citra Buana [ISA]
+- Regina Meilani Aruan [GIN]

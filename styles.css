@@ -1,0 +1,379 @@
+/* ===== PBP Design System ===== */
+:root {
+  --pbp-blue: #2c5f8a;
+  --pbp-blue-dark: #1d4260;
+  --pbp-blue-light: #eaf3fb;
+  --pbp-orange: #f0993e;
+  --pbp-radius: 12px;
+}
+
+html, body {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Wrap long text everywhere instead of overflowing horizontally */
+p, li, td, th, h1, h2, h3, h4, .pbp-banner-sub, .pbp-card, a, code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Browsers default ALL <code> to white-space:pre (no wrapping), even when
+   a fence failed to render as a proper <pre> block and left bare <code>
+   text sitting directly in a paragraph/list item (has happened with
+   heavily-indented fences nested in list items) — force it to wrap like
+   normal text in that case. */
+code {
+  white-space: normal;
+}
+/* Properly fenced ```code blocks``` keep their own horizontal scroll
+   (via Quarto's .sourceCode wrapper) so code formatting/indentation isn't
+   mangled by wrapping. */
+pre, pre.sourceCode {
+  overflow-x: auto;
+  max-width: 100%;
+}
+pre code {
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: pre;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+.navbar-brand { font-weight: 700; }
+.navbar .navbar-nav .nav-link {
+  margin: 0 0.15rem;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.navbar .navbar-nav > li,
+.navbar .quarto-navbar-tools {
+  display: flex;
+  align-items: center;
+}
+.navbar .quarto-navbar-tools {
+  gap: 0.35rem;
+}
+
+/* Headings */
+#title-block-header h1.title {
+  color: var(--pbp-blue-dark);
+  font-weight: 800;
+}
+/* Pages with a bilingual .pbp-banner already show their own title/subtitle;
+   the auto title-block above it is Indonesian-only frontmatter and would
+   duplicate/clash with the translated banner on the EN profile. */
+body:has(.pbp-banner) #title-block-header {
+  display: none;
+}
+h2 {
+  color: var(--pbp-blue-dark);
+  border-bottom: 3px solid var(--pbp-orange);
+  padding-bottom: 0.35rem;
+  display: inline-block;
+}
+
+/* ===== Banners (hero / section headers with mascot) ===== */
+.pbp-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  background: linear-gradient(135deg, var(--pbp-blue-light) 0%, #ffffff 100%);
+  border: 1px solid #dbe8f4;
+  border-radius: var(--pbp-radius);
+  padding: 1.25rem 1.75rem;
+  margin: 0.5rem 0 1.75rem 0;
+  flex-wrap: wrap;
+}
+.pbp-banner img {
+  max-width: 150px;
+  width: 100%;
+  flex-shrink: 0;
+}
+.pbp-banner .pbp-banner-text {
+  min-width: 0;
+  flex: 1;
+}
+.pbp-banner .pbp-banner-text h1,
+.pbp-banner .pbp-banner-text p {
+  margin: 0;
+}
+.pbp-banner .pbp-banner-text .pbp-banner-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--pbp-blue-dark);
+  margin-bottom: 0.25rem;
+}
+.pbp-banner .pbp-banner-text .pbp-banner-sub {
+  color: #4a5a68;
+}
+.pbp-banner.pbp-banner-lg img { max-width: 220px; }
+.pbp-banner.pbp-banner-lg .pbp-banner-title { font-size: 2rem; }
+
+@media (max-width: 700px) {
+  .pbp-banner { flex-direction: column; text-align: center; padding: 1.25rem; }
+  .pbp-banner img { max-width: 130px; }
+  .pbp-banner.pbp-banner-lg img { max-width: 160px; }
+  .pbp-banner.pbp-banner-lg .pbp-banner-title { font-size: 1.6rem; }
+}
+
+/* ===== Cards (used for grid listings) ===== */
+.pbp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.pbp-card {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--pbp-radius);
+  padding: 1.1rem 1.25rem;
+  background: #fff;
+  color: #1b1b1b;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.pbp-card:hover {
+  box-shadow: 0 8px 20px rgba(44, 95, 138, 0.15);
+  transform: translateY(-3px);
+}
+.pbp-card .pbp-card-status { font-size: 0.85rem; }
+
+/* ===== Tables ===== */
+.table thead, table thead {
+  background: var(--pbp-blue);
+}
+.table thead th, table thead th {
+  color: #fff !important;
+  border-color: var(--pbp-blue) !important;
+}
+table {
+  border-radius: var(--pbp-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+table, td, th {
+  white-space: normal;
+}
+/* Allow horizontal scroll as a last-resort fallback on very narrow screens,
+   while text inside cells still wraps first (see rule above). */
+.table-responsive, .quarto-scrollable {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: var(--pbp-blue);
+  border-color: var(--pbp-blue);
+}
+.btn-primary:hover {
+  background-color: var(--pbp-orange);
+  border-color: var(--pbp-orange);
+}
+.btn-outline-secondary:hover {
+  background-color: var(--pbp-blue-light);
+  border-color: var(--pbp-blue);
+  color: var(--pbp-blue-dark);
+}
+
+/* ===== Right margin sidebar (TOC "Di halaman ini" + "Format Lain") =====
+   Force it to stay pinned to its own side (never centered), show
+   "Format Lain" above the page TOC, make text a bit bigger, and let it
+   scroll internally when there are many sections instead of overflowing
+   past the viewport.
+   Note: "Format Lain" (.quarto-alternate-formats) is nested INSIDE
+   nav#TOC as a sibling of the h2/ul, not inside #quarto-margin-sidebar
+   directly — the flex/order rules must target #TOC's direct children. */
+#quarto-margin-sidebar {
+  text-align: left;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+/* On wide monitors, Quarto's page grid uses flexible "5fr" gutters on
+   BOTH sides that grow equally as the viewport widens, so the whole
+   grid (including this margin sidebar) stays centered with growing
+   empty space on both edges instead of hugging the screen. Past a
+   width where that slack becomes noticeable, detach this panel from
+   the grid and pin it to the real right edge of the browser instead. */
+@media (min-width: 1650px) {
+  #quarto-margin-sidebar {
+    position: fixed !important;
+    top: 100px !important;
+    right: 2rem;
+    width: 280px;
+    max-height: calc(100vh - 130px) !important;
+  }
+}
+#quarto-margin-sidebar nav#TOC {
+  display: flex;
+  flex-direction: column;
+}
+#quarto-margin-sidebar nav#TOC > .quarto-alternate-formats {
+  order: 1;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dbe8f4;
+}
+#quarto-margin-sidebar nav#TOC > #toc-title {
+  order: 2;
+}
+#quarto-margin-sidebar nav#TOC > ul {
+  order: 3;
+}
+#quarto-margin-sidebar #toc-title,
+#quarto-margin-sidebar .quarto-alternate-formats h2 {
+  font-size: 1.05rem;
+  color: var(--pbp-blue-dark);
+  font-weight: 800;
+}
+#quarto-margin-sidebar nav#TOC ul,
+#quarto-margin-sidebar .quarto-alternate-formats ul {
+  font-size: 1rem;
+}
+#quarto-margin-sidebar nav#TOC .nav-link {
+  padding: 0.3rem 0;
+  line-height: 1.35;
+}
+#quarto-margin-sidebar .quarto-alternate-formats a {
+  padding: 0.3rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.quarto-dark #quarto-margin-sidebar .quarto-alternate-formats {
+  border-bottom-color: #2c3e4f;
+}
+.quarto-dark #quarto-margin-sidebar #toc-title,
+.quarto-dark #quarto-margin-sidebar .quarto-alternate-formats h2 {
+  color: #8ec3f0;
+}
+
+/* ===== Callouts / iframes ===== */
+.callout {
+  border-radius: var(--pbp-radius);
+}
+iframe {
+  border-radius: var(--pbp-radius);
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  iframe { height: 500px !important; }
+}
+
+/* ===== Footer ===== */
+.nav-footer {
+  border-top: 3px solid var(--pbp-orange);
+}
+
+/* ===== Dark mode overrides (Quarto uses body.quarto-dark, NOT [data-bs-theme]) ===== */
+.quarto-dark #title-block-header h1.title,
+.quarto-dark h2,
+.quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-title {
+  color: #8ec3f0;
+}
+.quarto-dark .pbp-banner {
+  background: linear-gradient(135deg, #1e2f3d 0%, #12181f 100%);
+  border-color: #2c3e4f;
+}
+.quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-sub {
+  color: #b6c2cc;
+}
+.quarto-dark .pbp-card {
+  background: #1c242c;
+  border-color: #313d47;
+  color: #e6e6e6 !important;
+}
+.quarto-dark .pbp-card a,
+.quarto-dark .pbp-card .pbp-card-status {
+  color: #e6e6e6;
+}
+.quarto-dark .pbp-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.quarto-dark table {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+.quarto-dark .table thead, .quarto-dark table thead {
+  background: #163049;
+}
+
+/* ===== Custom dark/light mode toggle (mascot switch image) ===== */
+.quarto-color-scheme-toggle {
+  display: inline-block !important;
+  width: 84px;
+  height: 42px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("img/burhan/burhan_light_toggle.png");
+  transition: transform 0.15s ease;
+}
+.quarto-color-scheme-toggle:hover {
+  transform: scale(1.06);
+}
+.quarto-color-scheme-toggle.alternate {
+  background-image: url("img/burhan/burhan_dark_toggle.png");
+}
+.quarto-color-scheme-toggle i.bi {
+  display: none;
+}
+@media (max-width: 700px) {
+  .quarto-color-scheme-toggle { width: 64px; height: 32px; }
+}
+
+/* ===== Language toggle (pill button, next to dark/light toggle) ===== */
+.navbar .pbp-lang-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.navbar .pbp-lang-toggle:hover {
+  background-color: var(--pbp-orange);
+  border-color: var(--pbp-orange);
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .navbar .pbp-lang-toggle { padding: 0.25rem 0.65rem !important; font-size: 0.8rem; }
+}
+
+/* ===== Sidebar polish (Materi / Tutorial / Tugas) ===== */
+.sidebar-item .sidebar-item-container {
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+.sidebar-item .sidebar-item-container:hover {
+  background-color: var(--pbp-blue-light);
+}
+.sidebar-item-container:has(.sidebar-link.active) {
+  border-left: 3px solid var(--pbp-orange);
+}
+.sidebar-link.active,
+.sidebar-link.active .menu-text {
+  color: var(--pbp-blue-dark) !important;
+  font-weight: 700;
+}
+.quarto-dark .sidebar-item .sidebar-item-container:hover {
+  background-color: #1c242c;
+}
+.quarto-dark .sidebar-link.active,
+.quarto-dark .sidebar-link.active .menu-text {
+  color: #8ec3f0 !important;
+}

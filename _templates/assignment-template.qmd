@@ -1,0 +1,83 @@
+---
+title: "Tugas N"
+format:
+  html: default
+  typst: default
+  docx: default
+  revealjs:
+    output-file: assignment-N-slide.html
+    scrollable: true
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+  - format: revealjs
+    text: Slide
+    icon: easel
+---
+
+<!--
+  TEMPLATE TUGAS — cara pakai:
+  1. Copy berkas ini ke assignments/individual/assignment-N.qmd (atau
+     assignments/group/ untuk tugas kelompok), ganti N dengan nomor tugas.
+  2. Ganti "Tugas N" di atas dan output-file revealjs sesuai nomor.
+  3. Isi tiap blok {.content-visible when-profile="id"} dan ="en" dengan versi
+     Bahasa Indonesia dan Inggris — JANGAN hapus salah satu blok.
+  4. Daftarkan file baru di sidebar contents: _quarto.yml DAN _quarto-en.yml.
+-->
+
+::: {.content-visible when-profile="id"}
+
+Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2026/2027
+
+***
+
+## Deskripsi Tugas
+
+<Jelaskan deskripsi dan poin-poin tugas di sini.>
+
+1. <Poin 1>
+2. <Poin 2>
+
+## Pengumpulan
+
+Tugas dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<format nama berkas>`.
+
+## Tenggat Waktu Pengerjaan
+
+<Tenggat waktu pengerjaan tugas.>
+
+## Rubrik Penilaian
+
+<Tabel atau daftar rubrik penilaian.>
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+Platform-Based Programming (CSGE602022) — organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+***
+
+## Assignment Description
+
+<Describe the assignment and its requirements here.>
+
+1. <Point 1>
+2. <Point 2>
+
+## Submission
+
+The assignment is submitted in <file format> with the file naming convention `<file naming convention>`.
+
+## Deadline
+
+<Assignment deadline.>
+
+## Grading Rubric
+
+<Grading rubric table or list.>
+
+:::

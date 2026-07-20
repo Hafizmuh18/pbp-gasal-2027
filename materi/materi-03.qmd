@@ -1,0 +1,9 @@
+---
+title: "Materi 03: MTV Django Architecture and Testing"
+---
+
+[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-03-mtv-django-architecture.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-03-mtv-django-architecture.pdf){.btn .btn-outline-secondary download="Materi-03-MTV-Django-Architecture.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-03-mtv-django-architecture.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```

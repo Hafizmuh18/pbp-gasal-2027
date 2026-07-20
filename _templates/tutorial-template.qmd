@@ -1,0 +1,110 @@
+---
+title: "Tutorial N"
+format:
+  html: default
+  typst: default
+  docx: default
+  revealjs:
+    output-file: tutorial-N-slide.html
+    scrollable: true
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+  - format: revealjs
+    text: Slide
+    icon: easel
+---
+
+<!--
+  TEMPLATE TUTORIAL — cara pakai:
+  1. Copy folder/berkas ini ke tutorial/tutorial-N.qmd (ganti N dengan nomor minggu).
+  2. Ganti "Tutorial N" di atas dan output-file revealjs sesuai nomor.
+  3. Isi tiap blok {.content-visible when-profile="id"} dan ="en" dengan versi
+     Bahasa Indonesia dan Inggris — JANGAN hapus salah satu blok, keduanya wajib ada
+     supaya switch bahasa di navbar berfungsi.
+  4. Daftarkan file baru di sidebar contents: _quarto.yml DAN _quarto-en.yml.
+  5. Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
+-->
+
+[📊 Lihat Slide / View Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
+
+Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2026/2027
+
+_Terakhir diperbarui: <TANGGAL>_
+
+***
+
+::: {.content-visible when-profile="id"}
+
+### Tujuan Pembelajaran
+
+Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
+
+- <Tulis tujuan pembelajaran 1>
+- <Tulis tujuan pembelajaran 2>
+
+## <Judul Section 1>
+
+<Isi materi/instruksi tutorial di sini.>
+
+::: {.callout-note}
+<Catatan tambahan, tips, atau peringatan.>
+:::
+
+### Langkah 1: <Nama Langkah>
+
+1. <Langkah pertama>
+2. <Langkah kedua>
+
+```bash
+<contoh perintah terminal>
+```
+
+## Referensi Tambahan
+
+- [<Judul referensi>](<url>)
+
+## Kontributor
+
+- <Nama Penulis>
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+### Learning Objectives
+
+After completing this tutorial, students are expected to be able to:
+
+- <Write learning objective 1>
+- <Write learning objective 2>
+
+## <Section 1 Title>
+
+<Write the tutorial content/instructions here.>
+
+::: {.callout-note}
+<Additional notes, tips, or warnings.>
+:::
+
+### Step 1: <Step Name>
+
+1. <First step>
+2. <Second step>
+
+```bash
+<example terminal command>
+```
+
+## Additional References
+
+- [<Reference title>](<url>)
+
+## Contributors
+
+- <Author Name>
+
+:::

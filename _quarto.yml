@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - pdfjs/
+
+profile:
+  default: id
+
+website:
+  site-url: https://hafizmuh18.github.io/pbp-gasal-2027/
+  favicon: img/logo.png
+
+from: markdown-citations
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    include-after-body: lang-toggle-include.html

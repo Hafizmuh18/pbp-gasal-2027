@@ -1,0 +1,70 @@
+---
+title: "Tutorial/Tugas N: <Judul>"
+subtitle: "Pemrograman Berbasis Platform — Gasal 2026/2027"
+format:
+  revealjs:
+    scrollable: true
+---
+
+<!--
+  TEMPLATE SLIDE — cara pakai:
+  1. Copy berkas ini ke slides/tutorial-N.qmd atau slides/assignment-N.qmd.
+  2. PENTING: jangan taruh {.content-visible when-profile="..."} sebagai
+     ATRIBUT pada heading (mis. "## Judul {.content-visible ...}") — itu
+     TIDAK BEKERJA, Quarto hanya memfilter fenced Div (:::), bukan atribut
+     heading. Pola yang benar dan terbukti jalan: bungkus SELURUH rangkaian
+     slide (semua # dan ## sekaligus) satu bahasa penuh dalam satu blok
+     ::: {.content-visible when-profile="id"} ... :::, lalu susul dengan
+     blok penuh ="en" berikutnya — persis seperti contoh nyata di
+     slides/tutorial-0.qmd.
+  3. JANGAN interleave per-slide (satu slide id, satu slide en, berselang-
+     seling) — selalu satu bahasa penuh dulu, baru bahasa kedua penuh.
+-->
+
+::: {.content-visible when-profile="id"}
+
+## <Judul Slide 1>
+
+- <Poin 1>
+- <Poin 2>
+
+# <Judul Section>
+
+## <Judul Slide 2>
+
+- <Poin 1>
+
+```bash
+<contoh perintah>
+```
+
+## Referensi & Penutup
+
+- Dokumentasi lengkap: lihat halaman terkait
+- Pertanyaan? Tanyakan ke asisten dosen di sesi lab
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+## <Slide 1 Title>
+
+- <Point 1>
+- <Point 2>
+
+# <Section Title>
+
+## <Slide 2 Title>
+
+- <Point 1>
+
+```bash
+<example command>
+```
+
+## References & Closing
+
+- Full documentation: see the related page
+- Questions? Ask a teaching assistant during the lab session
+
+:::

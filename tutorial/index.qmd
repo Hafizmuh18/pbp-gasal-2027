@@ -1,0 +1,36 @@
+---
+title: "Informasi"
+---
+
+```{=html}
+<div class="pbp-banner">
+  <img src="../img/burhan/burhan_tutorial.png" alt="Maskot Tutorial">
+  <div class="pbp-banner-text">
+```
+
+::: {.content-visible when-profile="id"}
+<div class="pbp-banner-title">Tutorial Mingguan</div>
+<p class="pbp-banner-sub">Latihan hands-on tiap minggu di sesi lab.</p>
+:::
+::: {.content-visible when-profile="en"}
+<div class="pbp-banner-title">Weekly Tutorials</div>
+<p class="pbp-banner-sub">Hands-on practice every week during the lab session.</p>
+:::
+
+```{=html}
+  </div>
+</div>
+```
+
+::: {.content-visible when-profile="id"}
+1. Tutorial rilis setiap minggu pada hari Rabu.
+2. Tenggat waktu pengerjaan adalah di akhir jam sesi lab.
+3. Mahasiswa dapat bertanya kepada asisten dosen selama jam sesi lab.
+4. Perhatikan rubrik penilaian yang tersedia di setiap slot submisi tutorial untuk mendapatkan nilai sempurna.
+:::
+::: {.content-visible when-profile="en"}
+1. Tutorials are released every week on Wednesday.
+2. The submission deadline is at the end of the lab session.
+3. Students may ask teaching assistants questions during the lab session.
+4. Check the grading rubric available in each tutorial submission slot to get a perfect score.
+:::

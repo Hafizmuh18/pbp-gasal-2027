@@ -1,0 +1,38 @@
+---
+title: "Informasi"
+---
+
+```{=html}
+<div class="pbp-banner">
+  <img src="../img/burhan/burhan_assignment.png" alt="Maskot Tugas">
+  <div class="pbp-banner-text">
+```
+
+::: {.content-visible when-profile="id"}
+<div class="pbp-banner-title">Tugas Individu</div>
+<p class="pbp-banner-sub">Latihan pendalaman materi setiap minggu, dikerjakan sendiri.</p>
+:::
+::: {.content-visible when-profile="en"}
+<div class="pbp-banner-title">Individual Assignments</div>
+<p class="pbp-banner-sub">Weekly deep-practice exercises, done individually.</p>
+:::
+
+```{=html}
+  </div>
+</div>
+```
+
+::: {.content-visible when-profile="id"}
+1. Tugas individu rilis setiap minggu setelah pengerjaan tutorial.
+2. Tenggat waktu pengerjaan tugas adalah pada hari Rabu jam 12.00 siang di minggu setelah minggu rilis tutorial (minggu depan).
+3. Perhatikan rubrik penilaian yang tersedia di setiap slot submisi tugas untuk mendapatkan nilai sempurna.
+4. Apabila terdapat kesulitan, mahasiswa dapat bertanya kepada asisten dosen melalui media komunikasi yang sudah ditentukan.
+5. Jangan lupa untuk mendemonstrasikan hasil pengerjaan tugas kepada asisten dosen.
+:::
+::: {.content-visible when-profile="en"}
+1. Individual assignments are released every week after completing the tutorial.
+2. The assignment deadline is Wednesday at 12:00 PM, the week after the tutorial release week (the following week).
+3. Check the grading rubric available in each assignment submission slot to get a perfect score.
+4. If you run into difficulties, students may ask teaching assistants questions through the designated communication channel.
+5. Don't forget to demonstrate your completed assignment to a teaching assistant.
+:::

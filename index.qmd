@@ -1,0 +1,129 @@
+---
+title: "Pemrograman Berbasis Platform"
+subtitle: "Semester Gasal 2026/2027 — Fakultas Ilmu Komputer, Universitas Indonesia"
+---
+
+```{=html}
+<div class="pbp-banner pbp-banner-lg">
+  <img src="img/burhan/burhan_study.png" alt="Maskot PBP">
+  <div class="pbp-banner-text">
+```
+
+::: {.content-visible when-profile="id"}
+<div class="pbp-banner-title">Selamat datang di PBP!</div>
+<p class="pbp-banner-sub">Pemrograman Berbasis Platform (CSGE602022) — Fakultas Ilmu Komputer, Universitas Indonesia</p>
+:::
+
+::: {.content-visible when-profile="en"}
+<div class="pbp-banner-title">Welcome to PBP!</div>
+<p class="pbp-banner-sub">Platform-Based Programming (CSGE602022) — Faculty of Computer Science, Universitas Indonesia</p>
+:::
+
+```{=html}
+  </div>
+</div>
+```
+
+::: {.content-visible when-profile="id"}
+- Lihat materi tutorial mingguan di menu **Tutorial**.
+- Lihat rincian tugas individu dan kelompok di menu **Tugas**.
+- Lihat aplikasi terbaik semester ini di menu **Penghargaan**.
+
+## Jadwal Semester
+
+::: {.callout-note}
+Tanggal di bawah adalah **estimasi**, dihitung dari tanggal riil Moodle/SCELE
+PBP Ganjil 2025/2026 yang digeser tepat 52 minggu (sehingga hari Senin/Rabu
+tetap konsisten). Akan diperbarui begitu kalender akademik & jadwal Moodle
+resmi Gasal 2026/2027 terbit. Baris bertanda (*) adalah perkiraan tambahan
+karena tidak ada data eksplisit di sumber Moodle tahun lalu.
+:::
+
+### Materi, Tutorial & Tugas Individu Mingguan
+
+Kelas tatap muka berlangsung **Senin & Rabu** setiap minggu (materi yang
+sama disampaikan di kedua sesi). Tutorial dikerjakan & dinilai di sesi lab
+hari Rabu (rilis dan deadline di hari yang sama); Tugas Individu rilis
+hari Rabu dan deadline Rabu minggu berikutnya.
+
+| Minggu | Kelas (Senin & Rabu) | Materi | Tutorial (rilis & deadline) | Tugas Individu — Rilis | Tugas Individu — Deadline |
+|:---:|---|---|---|---|---|
+| 1 | Senin 24 & Rabu 26 Agustus 2026 | [Materi 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Rabu 26 Ags, 12.00–22.00 | [Tugas 1 (Esai)](assignments/individual/assignment-1.qmd) — Rabu 26 Ags | Rabu 2 September 2026 |
+| 2 | Senin 31 Ags & Rabu 2 September 2026 | [Materi 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Rabu 2 Sep, 12.00–22.00 | [Tugas 2](assignments/individual/assignment-2.qmd) — Rabu 2 Sep | Rabu 9 September 2026 |
+| 3 | Senin 7 & Rabu 9 September 2026 | [Materi 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Rabu 9 Sep, 12.00–22.00 | [Tugas 3](assignments/individual/assignment-3.qmd) — Rabu 9 Sep | Rabu 16 September 2026 |
+| 4 | Senin 14 & Rabu 16 September 2026 | [Materi 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Rabu 16 Sep, 12.00–22.00 | [Tugas 4](assignments/individual/assignment-4.qmd) — Rabu 16 Sep | Rabu 23 September 2026 |
+| 5 | Senin 21 & Rabu 23 September 2026 | [Materi 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Rabu 23 Sep, 12.00–22.00 | [Tugas 5](assignments/individual/assignment-5.qmd) — Rabu 23 Sep | Rabu 30 September 2026 |
+| 6 | Senin 28 & Rabu 30 September 2026 | [Materi 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Rabu 30 Sep, 12.00–22.00 | [Tugas 6](assignments/individual/assignment-6.qmd) — Rabu 30 Sep | Rabu 7 Oktober 2026 |
+| 7–9 | — | Sesi lab dipakai kerja kelompok PTS; **UTS Kamis 15 Oktober 2026** (13.00–16.30 WIB) | — | — | — |
+| 10 | Senin 26 & Rabu 28 Oktober 2026 | [Materi 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Rabu 28 Okt, 12.00–22.00 | [Tugas 7](assignments/individual/assignment-7.qmd) — Rabu 28 Okt | Rabu 4 November 2026 |
+| 11 | Senin 2 & Rabu 4 November 2026 | [Materi 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Rabu 4 Nov, 12.00–22.00 | [Tugas 8](assignments/individual/assignment-8.qmd) — Rabu 4 Nov | Rabu 11 November 2026 |
+| 12 | Senin 9 & Rabu 11 November 2026 | [Materi 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Rabu 11 Nov, 12.00–22.00 | [Tugas 9](assignments/individual/assignment-9.qmd) — Rabu 11 Nov | Rabu 18 November 2026 |
+| 13 | Rabu 18 November 2026 (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Rabu 18 Nov (*) | — | — |
+
+: {tbl-colwidths="[6,16,22,20,18,18]"}
+
+### Tugas Kelompok & Ujian
+
+| Kegiatan | Rilis | Deadline |
+|---|---|---|
+| **Proyek Tengah Semester** — [pengumpulan tautan repositori & penilaian kelompok](assignments/group/midterm.qmd) | Rabu, 23 September 2026 | Rabu, 7 Oktober 2026, 23.59 WIB |
+| Proyek Tengah Semester — peer assessment | Rabu, 23 September 2026 | Minggu, 25 Oktober 2026, 23.59 WIB |
+| **Ujian Tengah Semester (UTS)** | — | Kamis, 15 Oktober 2026, 13.00–16.30 WIB |
+| UTS Susulan | — | Jumat, 20 November 2026, 09.10–11.40 WIB |
+| **Proyek Akhir Semester** — [pengumpulan tautan repositori & penilaian kelompok](assignments/group/finalterm.qmd) | Senin, 16 November 2026 | Senin, 23 November 2026, 23.59 WIB |
+| Proyek Akhir Semester — peer assessment | Senin, 16 November 2026 | Minggu, 20 Desember 2026, 23.59 WIB |
+| **Ujian Akhir Semester (UAS)** — Sesi 1 & 2 | — | Senin, 14 Desember 2026, 12.45–15.00 & 15.15–17.50 WIB |
+:::
+
+::: {.content-visible when-profile="en"}
+- See weekly tutorial materials in the **Tutorial** menu.
+- See individual and group assignment details in the **Assignments** menu.
+- See this semester's best applications in the **Awards** menu.
+
+## Semester Schedule
+
+::: {.callout-note}
+Dates below are **estimates**, calculated from the real Moodle/SCELE dates
+of PBP Odd Semester 2025/2026 shifted by exactly 52 weeks (so Monday/
+Wednesday stay consistent). Will be updated once the official 2026/2027
+academic calendar and Moodle schedule are published. Rows marked (*) are
+additional estimates, as no explicit data existed in last year's Moodle
+source for them.
+:::
+
+### Weekly Materials, Tutorials & Individual Assignments
+
+In-person classes run **Monday & Wednesday** every week (the same
+material is delivered in both sessions). Tutorials are done & graded
+during the Wednesday lab session (release and deadline on the same day);
+Individual Assignments are released Wednesday and due the following
+Wednesday.
+
+| Week | Class (Mon & Wed) | Material | Tutorial (release & deadline) | Individual Assignment — Release | Individual Assignment — Deadline |
+|:---:|---|---|---|---|---|
+| 1 | Mon 24 & Wed 26 August 2026 | [Material 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Wed 26 Aug, 12:00–22:00 | [Assignment 1 (Essay)](assignments/individual/assignment-1.qmd) — Wed 26 Aug | Wed 2 September 2026 |
+| 2 | Mon 31 Aug & Wed 2 September 2026 | [Material 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Wed 2 Sep, 12:00–22:00 | [Assignment 2](assignments/individual/assignment-2.qmd) — Wed 2 Sep | Wed 9 September 2026 |
+| 3 | Mon 7 & Wed 9 September 2026 | [Material 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Wed 9 Sep, 12:00–22:00 | [Assignment 3](assignments/individual/assignment-3.qmd) — Wed 9 Sep | Wed 16 September 2026 |
+| 4 | Mon 14 & Wed 16 September 2026 | [Material 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Wed 16 Sep, 12:00–22:00 | [Assignment 4](assignments/individual/assignment-4.qmd) — Wed 16 Sep | Wed 23 September 2026 |
+| 5 | Mon 21 & Wed 23 September 2026 | [Material 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Wed 23 Sep, 12:00–22:00 | [Assignment 5](assignments/individual/assignment-5.qmd) — Wed 23 Sep | Wed 30 September 2026 |
+| 6 | Mon 28 & Wed 30 September 2026 | [Material 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Wed 30 Sep, 12:00–22:00 | [Assignment 6](assignments/individual/assignment-6.qmd) — Wed 30 Sep | Wed 7 October 2026 |
+| 7–9 | — | Lab sessions used for midterm group project work; **Midterm Exam Thursday 15 October 2026** (13:00–16:30 WIB) | — | — | — |
+| 10 | Mon 26 & Wed 28 October 2026 | [Material 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Wed 28 Oct, 12:00–22:00 | [Assignment 7](assignments/individual/assignment-7.qmd) — Wed 28 Oct | Wed 4 November 2026 |
+| 11 | Mon 2 & Wed 4 November 2026 | [Material 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Wed 4 Nov, 12:00–22:00 | [Assignment 8](assignments/individual/assignment-8.qmd) — Wed 4 Nov | Wed 11 November 2026 |
+| 12 | Mon 9 & Wed 11 November 2026 | [Material 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Wed 11 Nov, 12:00–22:00 | [Assignment 9](assignments/individual/assignment-9.qmd) — Wed 11 Nov | Wed 18 November 2026 |
+| 13 | Wed 18 November 2026 (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Wed 18 Nov (*) | — | — |
+
+: {tbl-colwidths="[6,16,22,20,18,18]"}
+
+### Group Assignments & Exams
+
+| Activity | Release | Deadline |
+|---|---|---|
+| **Midterm Group Project** — [repository link & group assessment submission](assignments/group/midterm.qmd) | Wed, 23 September 2026 | Wed, 7 October 2026, 23:59 WIB |
+| Midterm Group Project — peer assessment | Wed, 23 September 2026 | Sun, 25 October 2026, 23:59 WIB |
+| **Midterm Exam** | — | Thu, 15 October 2026, 13:00–16:30 WIB |
+| Makeup Midterm Exam | — | Fri, 20 November 2026, 09:10–11:40 WIB |
+| **Final Group Project** — [repository link & group assessment submission](assignments/group/finalterm.qmd) | Mon, 16 November 2026 | Mon, 23 November 2026, 23:59 WIB |
+| Final Group Project — peer assessment | Mon, 16 November 2026 | Sun, 20 December 2026, 23:59 WIB |
+| **Final Exam** — Session 1 & 2 | — | Mon, 14 December 2026, 12:45–15:00 & 15:15–17:50 WIB |
+:::
