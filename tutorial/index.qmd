@@ -23,14 +23,14 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
-1. Tutorial rilis setiap minggu pada hari Rabu.
-2. Tenggat waktu pengerjaan adalah di akhir jam sesi lab.
+1. Tutorial dirilis satu per satu setiap minggu, dikerjakan di sesi lab hari Rabu (Sesi 2).
+2. Tutorial **tidak wajib** dikerjakan dan tidak dinilai langsung — namun **beberapa tutorial menjadi prasyarat** sebelum Tugas/milestone tertentu bisa dinilai. Perhatikan catatan prasyarat di setiap halaman Tugas.
 3. Mahasiswa dapat bertanya kepada asisten dosen selama jam sesi lab.
-4. Perhatikan rubrik penilaian yang tersedia di setiap slot submisi tutorial untuk mendapatkan nilai sempurna.
+4. Sangat disarankan tetap mengerjakan tiap tutorial — pola yang dipelajari di tutorial langsung dipakai ulang di proyek individu kamu sendiri (lihat menu Tugas).
 :::
 ::: {.content-visible when-profile="en"}
-1. Tutorials are released every week on Wednesday.
-2. The submission deadline is at the end of the lab session.
+1. Tutorials are released one at a time each week, worked on during the Wednesday (Session 2) lab session.
+2. Tutorials are **not mandatory** and are not graded directly — however **some tutorials are a prerequisite** before a specific Tugas/milestone can be graded. Check the prerequisite note on each Tugas page.
 3. Students may ask teaching assistants questions during the lab session.
-4. Check the grading rubric available in each tutorial submission slot to get a perfect score.
+4. Doing each tutorial is still strongly recommended — the pattern you learn there gets reused directly in your own individual project (see the Assignments menu).
 :::

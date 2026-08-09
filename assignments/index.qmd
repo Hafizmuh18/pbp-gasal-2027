@@ -10,11 +10,11 @@ title: "Informasi"
 
 ::: {.content-visible when-profile="id"}
 <div class="pbp-banner-title">Tugas Individu</div>
-<p class="pbp-banner-sub">Latihan pendalaman materi setiap minggu, dikerjakan sendiri.</p>
+<p class="pbp-banner-sub">Kuis mingguan & proyek individu berkelanjutan, dikerjakan sendiri.</p>
 :::
 ::: {.content-visible when-profile="en"}
 <div class="pbp-banner-title">Individual Assignments</div>
-<p class="pbp-banner-sub">Weekly deep-practice exercises, done individually.</p>
+<p class="pbp-banner-sub">Weekly quizzes & an ongoing individual project, done individually.</p>
 :::
 
 ```{=html}
@@ -23,16 +23,14 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
-1. Tugas individu rilis setiap minggu setelah pengerjaan tutorial.
-2. Tenggat waktu pengerjaan tugas adalah pada hari Rabu jam 12.00 siang di minggu setelah minggu rilis tutorial (minggu depan).
-3. Perhatikan rubrik penilaian yang tersedia di setiap slot submisi tugas untuk mendapatkan nilai sempurna.
+1. Penilaian individu terdiri dari **Kuis** (lewat Moodle, lihat halaman Jadwal untuk tanggalnya) dan **Proyek Individu** (dikerjakan berkelanjutan sepanjang semester, dinilai per milestone).
+2. Milestone proyek individu akan muncul di menu ini satu per satu, seiring tutorial minggu terkait selesai dipublish.
+3. Beberapa milestone punya **prasyarat tutorial** — perhatikan catatan prasyarat di setiap halaman milestone sebelum submit.
 4. Apabila terdapat kesulitan, mahasiswa dapat bertanya kepada asisten dosen melalui media komunikasi yang sudah ditentukan.
-5. Jangan lupa untuk mendemonstrasikan hasil pengerjaan tugas kepada asisten dosen.
 :::
 ::: {.content-visible when-profile="en"}
-1. Individual assignments are released every week after completing the tutorial.
-2. The assignment deadline is Wednesday at 12:00 PM, the week after the tutorial release week (the following week).
-3. Check the grading rubric available in each assignment submission slot to get a perfect score.
+1. Individual assessment consists of **Quizzes** (via Moodle, see the Schedule page for dates) and an **Individual Project** (worked on continuously throughout the semester, graded per milestone).
+2. Individual project milestones will appear in this menu one at a time, as each related tutorial week is published.
+3. Some milestones have a **tutorial prerequisite** — check the prerequisite note on each milestone page before submitting.
 4. If you run into difficulties, students may ask teaching assistants questions through the designated communication channel.
-5. Don't forget to demonstrate your completed assignment to a teaching assistant.
 :::

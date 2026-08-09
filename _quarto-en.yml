@@ -40,32 +40,11 @@ website:
       style: docked
       contents:
         - tutorial/index.qmd
-        - tutorial/tutorial-0.qmd
-        - tutorial/tutorial-1.qmd
-        - tutorial/tutorial-2.qmd
-        - tutorial/tutorial-3.qmd
-        - tutorial/tutorial-4.qmd
-        - tutorial/tutorial-5.qmd
-        - tutorial/tutorial-6.qmd
-        - tutorial/tutorial-7.qmd
-        - tutorial/tutorial-8.qmd
-        - tutorial/tutorial-9.qmd
     - id: assignments
       title: "Assignments"
       style: docked
       contents:
         - assignments/index.qmd
-        - section: "Individual Assignments"
-          contents:
-            - assignments/individual/assignment-1.qmd
-            - assignments/individual/assignment-2.qmd
-            - assignments/individual/assignment-3.qmd
-            - assignments/individual/assignment-4.qmd
-            - assignments/individual/assignment-5.qmd
-            - assignments/individual/assignment-6.qmd
-            - assignments/individual/assignment-7.qmd
-            - assignments/individual/assignment-8.qmd
-            - assignments/individual/assignment-9.qmd
         - section: "Group Assignments"
           contents:
             - assignments/group/midterm.qmd
