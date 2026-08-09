@@ -32,47 +32,45 @@ subtitle: "Semester Gasal 2026/2027 — Fakultas Ilmu Komputer, Universitas Indo
 ## Jadwal Semester
 
 ::: {.callout-note}
-Tanggal di bawah adalah **estimasi**, dihitung dari tanggal riil Moodle/SCELE
-PBP Ganjil 2025/2026 yang digeser tepat 52 minggu (sehingga hari Senin/Rabu
-tetap konsisten). Akan diperbarui begitu kalender akademik & jadwal Moodle
-resmi Gasal 2026/2027 terbit. Baris bertanda (*) adalah perkiraan tambahan
-karena tidak ada data eksplisit di sumber Moodle tahun lalu.
+Jadwal di bawah adalah jadwal resmi Semester Gasal 2026/2027. Tautan ke
+halaman Materi/Tutorial/Tugas akan ditambahkan begitu konten masing-masing
+minggu selesai ditulis ulang menyesuaikan topik & urutan baru ini.
 :::
 
-### Materi, Tutorial & Tugas Individu Mingguan
+### Topik, Tutorial & Assignment Mingguan
 
-Kelas tatap muka berlangsung **Senin & Rabu** setiap minggu (materi yang
-sama disampaikan di kedua sesi). Tutorial dikerjakan & dinilai di sesi lab
-hari Rabu (rilis dan deadline di hari yang sama); Tugas Individu rilis
-hari Rabu dan deadline Rabu minggu berikutnya.
+Kelas tatap muka berlangsung **Senin (Sesi 1) & Rabu (Sesi 2)** setiap
+minggu. Tidak ada lagi Tugas Individu mingguan — penilaian individu berupa
+**Kuis** di minggu tertentu dan beberapa **Tutorial Asynchronous**
+(dikerjakan mandiri, tanpa sesi lab).
 
-| Minggu | Kelas | Materi | Tutorial (rilis & deadline) | Tugas Individu |
+| Minggu | Kelas | Sesi 1 (Senin) | Sesi 2 (Rabu) | Assignment |
 |:---:|---|---|---|---|
-| 1 | 24 & 26 Ags | [Materi 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Rabu 26 Ags, 12.00–22.00 | [Tugas 1 (Esai)](assignments/individual/assignment-1.qmd) — Rilis Rabu 26 Ags → Deadline Rabu 2 Sep |
-| 2 | 31 Ags & 2 Sep | [Materi 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Rabu 2 Sep, 12.00–22.00 | [Tugas 2](assignments/individual/assignment-2.qmd) — Rilis Rabu 2 Sep → Deadline Rabu 9 Sep |
-| 3 | 7 & 9 Sep | [Materi 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Rabu 9 Sep, 12.00–22.00 | [Tugas 3](assignments/individual/assignment-3.qmd) — Rilis Rabu 9 Sep → Deadline Rabu 16 Sep |
-| 4 | 14 & 16 Sep | [Materi 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Rabu 16 Sep, 12.00–22.00 | [Tugas 4](assignments/individual/assignment-4.qmd) — Rilis Rabu 16 Sep → Deadline Rabu 23 Sep |
-| 5 | 21 & 23 Sep | [Materi 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Rabu 23 Sep, 12.00–22.00 | [Tugas 5](assignments/individual/assignment-5.qmd) — Rilis Rabu 23 Sep → Deadline Rabu 30 Sep |
-| 6 | 28 & 30 Sep | [Materi 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Rabu 30 Sep, 12.00–22.00 | [Tugas 6](assignments/individual/assignment-6.qmd) — Rilis Rabu 30 Sep → Deadline Rabu 7 Okt |
-| 7–9 | — | Sesi lab dipakai kerja kelompok PTS; **UTS Kamis 15 Oktober 2026** (13.00–16.30 WIB) | — | — |
-| 10 | 26 & 28 Okt | [Materi 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Rabu 28 Okt, 12.00–22.00 | [Tugas 7](assignments/individual/assignment-7.qmd) — Rilis Rabu 28 Okt → Deadline Rabu 4 Nov |
-| 11 | 2 & 4 Nov | [Materi 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Rabu 4 Nov, 12.00–22.00 | [Tugas 8](assignments/individual/assignment-8.qmd) — Rilis Rabu 4 Nov → Deadline Rabu 11 Nov |
-| 12 | 9 & 11 Nov | [Materi 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Rabu 11 Nov, 12.00–22.00 | [Tugas 9](assignments/individual/assignment-9.qmd) — Rilis Rabu 11 Nov → Deadline Rabu 18 Nov |
-| 13 | Rabu 18 Nov (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Rabu 18 Nov (*) | — |
+| 1 | 24 & 26 Ags | **Topik 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topik 02:** AI-Assisted Platform-Based Programming | Tutorial Asynchronous: Setup Git Repository, Django Initial Project |
+| 2 | 31 Ags & 2 Sep | **Topik 03:** Web Design Using HTML5 dan CSS3 | **Tutorial 01:** Setup Git Repository, Django Initial Project, HTML5 dan CSS3 | — |
+| 3 | 7 & 9 Sep | **Topik 04:** MTV Django Architecture | **Tutorial 02:** Aplikasi Django dan Model-View-Template (MVT) | — |
+| 4 | 14 & 16 Sep | **Topik 05:** Data Delivery | **Tutorial 03:** Form dan Data Delivery | — |
+| 5 | 21 & 23 Sep | **Topik 06:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Autentikasi, Session, Cookies | Kuis 1 |
+| 6 | 28 & 30 Sep | **Topik 07:** Web Interactivity + Server-Sent Event | **Tutorial 05:** JavaScript dan AJAX | — |
+| 7 | 5 & 7 Okt | **Topik 08:** More on Web Development (Cache Control, HTMX) | **Tutorial 06:** HTMX, Pengayaan DevTools (Inspect, Lighthouse) | Kuis 2 |
+| 8 | 12 & 14 Okt | **UTS** | — | — |
+| 9 | 19 & 21 Okt | Proyek Tengah Semester | Proyek Tengah Semester | Offline Demo dengan Asdos |
+| 10 | 26 & 28 Okt | **Topik 09:** Django REST Framework | **Tutorial 07:** DRF | — |
+| 11 | 2 & 4 Nov | **Topik 10:** Intro to Dart Programming & Flutter | **Tutorial 08:** Pengantar Flutter | Tutorial Asynchronous: Flutter Deployment dengan GitHub Actions dan Bitrise |
+| 12 | 9 & 11 Nov | **Topik 11:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | — |
+| 13 | 16 & 18 Nov | **Topik 12:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | Kuis 3 |
+| 14 | 23 & 25 Nov | Proyek Akhir Semester | Proyek Akhir Semester | — |
+| 15 | 30 Nov & 2 Des | Proyek Akhir Semester | Proyek Akhir Semester | Offline Demo dengan Asdos |
+| 16 | 7 & 9 Des | **UAS** | — | — |
 
-: {tbl-colwidths="[8,13,31,26,22]"}
+: {tbl-colwidths="[7,13,28,28,24]"}
 
-### Tugas Kelompok & Ujian
-
-| Kegiatan | Rilis | Deadline |
-|---|---|---|
-| **Proyek Tengah Semester** — [pengumpulan tautan repositori & penilaian kelompok](assignments/group/midterm.qmd) | Rabu, 23 September 2026 | Rabu, 7 Oktober 2026, 23.59 WIB |
-| Proyek Tengah Semester — peer assessment | Rabu, 23 September 2026 | Minggu, 25 Oktober 2026, 23.59 WIB |
-| **Ujian Tengah Semester (UTS)** | — | Kamis, 15 Oktober 2026, 13.00–16.30 WIB |
-| UTS Susulan | — | Jumat, 20 November 2026, 09.10–11.40 WIB |
-| **Proyek Akhir Semester** — [pengumpulan tautan repositori & penilaian kelompok](assignments/group/finalterm.qmd) | Senin, 16 November 2026 | Senin, 23 November 2026, 23.59 WIB |
-| Proyek Akhir Semester — peer assessment | Senin, 16 November 2026 | Minggu, 20 Desember 2026, 23.59 WIB |
-| **Ujian Akhir Semester (UAS)** — Sesi 1 & 2 | — | Senin, 14 Desember 2026, 12.45–15.00 & 15.15–17.50 WIB |
+::: {.callout-note}
+Rincian deadline Proyek Tengah/Akhir Semester (peer assessment, jadwal
+offline demo, dsb.) menyusul setelah jadwal resminya terbit — sementara
+lihat [halaman Proyek Tengah Semester](assignments/group/midterm.qmd) dan
+[Proyek Akhir Semester](assignments/group/finalterm.qmd) di menu Tugas.
+:::
 :::
 
 ::: {.content-visible when-profile="en"}
@@ -83,47 +81,44 @@ hari Rabu dan deadline Rabu minggu berikutnya.
 ## Semester Schedule
 
 ::: {.callout-note}
-Dates below are **estimates**, calculated from the real Moodle/SCELE dates
-of PBP Odd Semester 2025/2026 shifted by exactly 52 weeks (so Monday/
-Wednesday stay consistent). Will be updated once the official 2026/2027
-academic calendar and Moodle schedule are published. Rows marked (*) are
-additional estimates, as no explicit data existed in last year's Moodle
-source for them.
+The schedule below is the official Odd Semester 2026/2027 schedule. Links
+to the Materials/Tutorial/Assignment pages will be added once each week's
+content has been rewritten to match this new topic order.
 :::
 
-### Weekly Materials, Tutorials & Individual Assignments
+### Weekly Topics, Tutorials & Assignments
 
-In-person classes run **Monday & Wednesday** every week (the same
-material is delivered in both sessions). Tutorials are done & graded
-during the Wednesday lab session (release and deadline on the same day);
-Individual Assignments are released Wednesday and due the following
-Wednesday.
+In-person classes run **Monday (Session 1) & Wednesday (Session 2)** every
+week. There are no more weekly Individual Assignments — individual
+assessment is via **Quizzes** on certain weeks and a couple of
+**Asynchronous Tutorials** (done independently, no lab session).
 
-| Week | Class | Material | Tutorial (release & deadline) | Individual Assignment |
+| Week | Class | Session 1 (Mon) | Session 2 (Wed) | Assignment |
 |:---:|---|---|---|---|
-| 1 | 24 & 26 Aug | [Material 01](materi/materi-01.qmd) & [02](materi/materi-02.qmd): Intro to PBP & Internet/Web Framework | [Tutorial 0](tutorial/tutorial-0.qmd) — Wed 26 Aug, 12:00–22:00 | [Assignment 1 (Essay)](assignments/individual/assignment-1.qmd) — Release Wed 26 Aug → Deadline Wed 2 Sep |
-| 2 | 31 Aug & 2 Sep | [Material 03: MTV Django Architecture and Testing](materi/materi-03.qmd) | [Tutorial 1](tutorial/tutorial-1.qmd) — Wed 2 Sep, 12:00–22:00 | [Assignment 2](assignments/individual/assignment-2.qmd) — Release Wed 2 Sep → Deadline Wed 9 Sep |
-| 3 | 7 & 9 Sep | [Material 04: Data Delivery](materi/materi-04.qmd) | [Tutorial 2](tutorial/tutorial-2.qmd) — Wed 9 Sep, 12:00–22:00 | [Assignment 3](assignments/individual/assignment-3.qmd) — Release Wed 9 Sep → Deadline Wed 16 Sep |
-| 4 | 14 & 16 Sep | [Material 05: Form, Authentication, Session, and Cookie](materi/index.qmd) | [Tutorial 3](tutorial/tutorial-3.qmd) — Wed 16 Sep, 12:00–22:00 | [Assignment 4](assignments/individual/assignment-4.qmd) — Release Wed 16 Sep → Deadline Wed 23 Sep |
-| 5 | 21 & 23 Sep | [Material 06: Web Design Using HTML5 and CSS3](materi/index.qmd) | [Tutorial 4](tutorial/tutorial-4.qmd) — Wed 23 Sep, 12:00–22:00 | [Assignment 5](assignments/individual/assignment-5.qmd) — Release Wed 23 Sep → Deadline Wed 30 Sep |
-| 6 | 28 & 30 Sep | [Material 07: Web Interactivity](materi/index.qmd) | [Tutorial 5](tutorial/tutorial-5.qmd) — Wed 30 Sep, 12:00–22:00 | [Assignment 6](assignments/individual/assignment-6.qmd) — Release Wed 30 Sep → Deadline Wed 7 Oct |
-| 7–9 | — | Lab sessions used for midterm group project work; **Midterm Exam Thursday 15 October 2026** (13:00–16:30 WIB) | — | — |
-| 10 | 26 & 28 Oct | [Material 08: Intro to Dart Programming and Flutter Framework](materi/index.qmd) | [Tutorial 6](tutorial/tutorial-6.qmd) — Wed 28 Oct, 12:00–22:00 | [Assignment 7](assignments/individual/assignment-7.qmd) — Release Wed 28 Oct → Deadline Wed 4 Nov |
-| 11 | 2 & 4 Nov | [Material 09: Layouts & Forms](materi/index.qmd) | [Tutorial 7](tutorial/tutorial-7.qmd) — Wed 4 Nov, 12:00–22:00 | [Assignment 8](assignments/individual/assignment-8.qmd) — Release Wed 4 Nov → Deadline Wed 11 Nov |
-| 12 | 9 & 11 Nov | [Material 10: Navigation, Networking and Integration](materi/index.qmd) | [Tutorial 8](tutorial/tutorial-8.qmd) — Wed 11 Nov, 12:00–22:00 | [Assignment 9](assignments/individual/assignment-9.qmd) — Release Wed 11 Nov → Deadline Wed 18 Nov |
-| 13 | Wed 18 Nov (*) | Review & CI/CD | [Tutorial 9](tutorial/tutorial-9.qmd) — Wed 18 Nov (*) | — |
+| 1 | 24 & 26 Aug | **Topic 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topic 02:** AI-Assisted Platform-Based Programming | Asynchronous Tutorial: Set Up Git Repository, Django Initial Project |
+| 2 | 31 Aug & 2 Sep | **Topic 03:** Web Design Using HTML5 and CSS3 | **Tutorial 01:** Set Up Git Repository, Django Initial Project, HTML5 and CSS3 | — |
+| 3 | 7 & 9 Sep | **Topic 04:** MTV Django Architecture | **Tutorial 02:** Django Application and Model-View-Template (MVT) | — |
+| 4 | 14 & 16 Sep | **Topic 05:** Data Delivery | **Tutorial 03:** Forms and Data Delivery | — |
+| 5 | 21 & 23 Sep | **Topic 06:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Sessions, Cookies | Quiz 1 |
+| 6 | 28 & 30 Sep | **Topic 07:** Web Interactivity + Server-Sent Events | **Tutorial 05:** JavaScript and AJAX | — |
+| 7 | 5 & 7 Oct | **Topic 08:** More on Web Development (Cache Control, HTMX) | **Tutorial 06:** HTMX, DevTools Deep-Dive (Inspect, Lighthouse) | Quiz 2 |
+| 8 | 12 & 14 Oct | **Midterm Exam** | — | — |
+| 9 | 19 & 21 Oct | Midterm Group Project | Midterm Group Project | Offline Demo with TAs |
+| 10 | 26 & 28 Oct | **Topic 09:** Django REST Framework | **Tutorial 07:** DRF | — |
+| 11 | 2 & 4 Nov | **Topic 10:** Intro to Dart Programming & Flutter | **Tutorial 08:** Introduction to Flutter | Asynchronous Tutorial: Flutter Deployment with GitHub Actions and Bitrise |
+| 12 | 9 & 11 Nov | **Topic 11:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | — |
+| 13 | 16 & 18 Nov | **Topic 12:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | Quiz 3 |
+| 14 | 23 & 25 Nov | Final Group Project | Final Group Project | — |
+| 15 | 30 Nov & 2 Dec | Final Group Project | Final Group Project | Offline Demo with TAs |
+| 16 | 7 & 9 Dec | **Final Exam** | — | — |
 
-: {tbl-colwidths="[8,13,31,26,22]"}
+: {tbl-colwidths="[7,13,28,28,24]"}
 
-### Group Assignments & Exams
-
-| Activity | Release | Deadline |
-|---|---|---|
-| **Midterm Group Project** — [repository link & group assessment submission](assignments/group/midterm.qmd) | Wed, 23 September 2026 | Wed, 7 October 2026, 23:59 WIB |
-| Midterm Group Project — peer assessment | Wed, 23 September 2026 | Sun, 25 October 2026, 23:59 WIB |
-| **Midterm Exam** | — | Thu, 15 October 2026, 13:00–16:30 WIB |
-| Makeup Midterm Exam | — | Fri, 20 November 2026, 09:10–11:40 WIB |
-| **Final Group Project** — [repository link & group assessment submission](assignments/group/finalterm.qmd) | Mon, 16 November 2026 | Mon, 23 November 2026, 23:59 WIB |
-| Final Group Project — peer assessment | Mon, 16 November 2026 | Sun, 20 December 2026, 23:59 WIB |
-| **Final Exam** — Session 1 & 2 | — | Mon, 14 December 2026, 12:45–15:00 & 15:15–17:50 WIB |
+::: {.callout-note}
+Details on Midterm/Final Group Project deadlines (peer assessment,
+offline demo scheduling, etc.) will follow once the official schedule is
+published — for now see the [Midterm Group Project](assignments/group/midterm.qmd)
+and [Final Group Project](assignments/group/finalterm.qmd) pages under the
+Assignments menu.
+:::
 :::
