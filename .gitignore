@@ -1,5 +1,7 @@
-# Internal dev notes — never push to the public repo
-/_DEV-NOTES.md
+# Internal dev/development-only files — local only, never push to the
+# public repo. Convention: prefix with "_DEV-" or put in a "_dev/" folder.
+_DEV-*
+_dev/
 
 # Django
 *.log
