@@ -1,3 +1,6 @@
+# Internal dev notes — never push to the public repo
+/_DEV-NOTES.md
+
 # Django
 *.log
 *.pot
