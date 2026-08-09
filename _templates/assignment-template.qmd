@@ -1,5 +1,5 @@
 ---
-title: "Tugas N"
+title: "Proyek Individu — Milestone N: <Judul Milestone>"
 format:
   html: default
   typst: default
@@ -19,10 +19,25 @@ format-links:
 ---
 
 <!--
-  TEMPLATE TUGAS — cara pakai:
-  1. Copy berkas ini ke assignments/individual/assignment-N.qmd (atau
-     assignments/group/ untuk tugas kelompok), ganti N dengan nomor tugas.
-  2. Ganti "Tugas N" di atas dan output-file revealjs sesuai nomor.
+  TEMPLATE MILESTONE PROYEK INDIVIDU — cara pakai:
+
+  Catatan penting soal perubahan format tugas tahun ini: TIDAK ADA lagi
+  Tugas Individu mingguan (rilis Rabu, deadline Rabu minggu depan) seperti
+  tahun sebelumnya. Penilaian individu sekarang:
+  - Kuis 1/2/3 — dikerjakan lewat Moodle, TIDAK butuh halaman di situs ini.
+  - 2x Tutorial Asynchronous — pakai _templates/tutorial-template.qmd biasa
+    (bukan template ini), cukup tandai di judul "(Asynchronous)".
+  - 1 Proyek Individu (mis. website portofolio) yang dikerjakan berkelanjutan
+    sepanjang semester — TEMPLATE INI dipakai untuk tiap milestone/checkpoint
+    proyek itu (copy ulang untuk setiap milestone, ganti nomor & judulnya).
+  Tugas kelompok (PTS/PAS) punya halaman sendiri di assignments/group/,
+  TIDAK memakai template ini.
+
+  1. Copy berkas ini ke assignments/individual/milestone-N.qmd, ganti N.
+  2. Isi "Target Milestone Ini" dengan merujuk EKSPLISIT ke tutorial minggu
+     terkait (mis. "pakai pola MVT dari Tutorial 02 untuk daftar proyek
+     kamu") — ini yang membuat mahasiswa paham tugas mereka mengikuti pola
+     yang sama dengan tutorial, cuma temanya beda.
   3. Isi tiap blok {.content-visible when-profile="id"} dan ="en" dengan versi
      Bahasa Indonesia dan Inggris — JANGAN hapus salah satu blok.
   4. Daftarkan file baru di sidebar contents: _quarto.yml DAN _quarto-en.yml.
@@ -30,24 +45,33 @@ format-links:
 
 ::: {.content-visible when-profile="id"}
 
-Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2026/2027
+Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
 ***
 
-## Deskripsi Tugas
+## Tentang Proyek
 
-<Jelaskan deskripsi dan poin-poin tugas di sini.>
+<Deskripsi singkat proyek individu secara keseluruhan — mis. "website
+portofolio pribadi" — cukup diisi sekali lalu disalin apa adanya ke setiap
+milestone berikutnya supaya konteksnya selalu ada.>
 
-1. <Poin 1>
-2. <Poin 2>
+## Target Milestone Ini
+
+<Jelaskan bagian proyek yang harus ditambahkan/diselesaikan pada milestone
+ini, dan rujuk eksplisit ke tutorial minggu terkait yang mengajarkan pola
+yang sama.>
+
+1. <Poin target 1 — mis. "Buat halaman daftar & detail proyek kamu,
+   mengikuti pola Model-View-Template dari [Tutorial 02](../../tutorial/tutorial-2.qmd)">
+2. <Poin target 2>
 
 ## Pengumpulan
 
-Tugas dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<format nama berkas>`.
+Milestone dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<format nama berkas>`.
 
 ## Tenggat Waktu Pengerjaan
 
-<Tenggat waktu pengerjaan tugas.>
+<Tenggat waktu milestone ini.>
 
 ## Rubrik Penilaian
 
@@ -61,20 +85,29 @@ Platform-Based Programming (CSGE602022) — organized by the Faculty of Computer
 
 ***
 
-## Assignment Description
+## About the Project
 
-<Describe the assignment and its requirements here.>
+<Short description of the overall individual project — e.g. "personal
+portfolio website" — fill this in once and copy it verbatim into every
+following milestone so the context is always there.>
 
-1. <Point 1>
-2. <Point 2>
+## This Milestone's Target
+
+<Explain which part of the project needs to be added/completed for this
+milestone, and explicitly reference the related tutorial week that taught
+the same pattern.>
+
+1. <Target point 1 — e.g. "Build your project list & detail pages,
+   following the Model-View-Template pattern from [Tutorial 02](../../tutorial/tutorial-2.qmd)">
+2. <Target point 2>
 
 ## Submission
 
-The assignment is submitted in <file format> with the file naming convention `<file naming convention>`.
+The milestone is submitted in <file format> with the file naming convention `<file naming convention>`.
 
 ## Deadline
 
-<Assignment deadline.>
+<This milestone's deadline.>
 
 ## Grading Rubric
 

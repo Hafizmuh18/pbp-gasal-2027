@@ -3,24 +3,56 @@
 Folder ini (prefix `_`) **tidak ikut di-render** oleh Quarto — aman untuk
 menyimpan berkas contoh/template di sini secara permanen.
 
+## Model kelas Gasal 2026/2027 (penting dibaca dulu)
+
+Format kelas tahun ini beda dari tahun sebelumnya — semua template di sini
+sudah disesuaikan, tapi kalau kamu bingung liat halaman lama (tahun lalu)
+sebagai acuan, jangan, isinya masih pola lama. Model yang berlaku sekarang:
+
+- Tiap minggu ada **Sesi 1 (Senin)** = kuliah/Topik, dan **Sesi 2 (Rabu)** =
+  Tutorial hands-on. Lihat jadwal lengkap di homepage.
+- **Tutorial dibangun berkelanjutan** di atas SATU aplikasi tema yang sama
+  sepanjang semester (bukan latihan berdiri sendiri per minggu) — Tutorial
+  02 melanjutkan proyek dari Tutorial 01, dst.
+- **Tidak ada lagi Tugas Individu mingguan.** Penilaian individu sekarang:
+  - **Kuis 1/2/3** — lewat Moodle langsung, tidak butuh halaman di situs ini.
+  - **2x Tutorial Asynchronous** — pakai `tutorial-template.qmd` seperti
+    biasa (bukan `assignment-template.qmd`), tandai "(Asynchronous)" di judul.
+  - **1 Proyek Individu** (mis. website portofolio) yang dikerjakan
+    berkelanjutan sepanjang semester, dinilai per milestone/checkpoint —
+    pakai `assignment-template.qmd` (sekarang bentuknya milestone brief,
+    bukan tugas mingguan berdiri sendiri).
+- **Tugas kelompok (PTS/PAS)** punya halaman sendiri di `assignments/group/`
+  (lihat `midterm.qmd`/`finalterm.qmd` yang sudah ada), **tidak** memakai
+  `assignment-template.qmd`.
+- Setiap Tutorial **wajib** ada section "Menghubungkan ke Proyek Kamu" yang
+  menjelaskan eksplisit bagian mana dari proyek individu mahasiswa bisa
+  memakai pola yang sama dengan yang baru dikerjakan di tutorial itu — ini
+  intinya supaya mahasiswa paham tugas mereka mengikuti pola yang sama
+  dengan tutorial, cuma tema/domainnya beda.
+
 ## Isi
 
-- `tutorial-template.qmd` — kerangka tutorial mingguan, multi-format
-  (HTML/PDF via Typst/DOCX/Slide revealjs), bilingual (ID/EN).
-- `assignment-template.qmd` — kerangka tugas individu/kelompok, multi-format,
-  bilingual.
+- `tutorial-template.qmd` — kerangka Tutorial mingguan (Sesi 2), multi-format
+  (HTML/PDF via Typst/DOCX/Slide revealjs), bilingual (ID/EN), dengan
+  section recap ("Yang Sudah Kita Bangun") dan section jembatan ke proyek
+  individu ("Menghubungkan ke Proyek Kamu").
+- `assignment-template.qmd` — kerangka milestone Proyek Individu, multi-format,
+  bilingual. **Bukan** untuk tugas kelompok (pakai halaman sendiri di
+  `assignments/group/`) atau Kuis (lewat Moodle).
 - `slide-template.qmd` — kerangka revealjs standalone (dipakai lewat tombol
   "Lihat Slide"), bilingual per-slide.
 
 ## Cara membuat konten baru
 
 1. **Copy** template yang sesuai ke lokasi target:
-   - Tutorial → `tutorial/tutorial-N.qmd`
-   - Tugas individu → `assignments/individual/assignment-N.qmd`
-   - Tugas kelompok → `assignments/group/<nama>.qmd`
-   - Slide pendamping → `slides/tutorial-N.qmd` atau `slides/assignment-N.qmd`
-2. **Ganti** placeholder (`Tutorial N`, `output-file`, dst.) dengan nomor/judul
-   yang sesuai.
+   - Tutorial mingguan → `tutorial/tutorial-N.qmd`
+   - Milestone proyek individu → `assignments/individual/milestone-N.qmd`
+   - Tugas kelompok → `assignments/group/<nama>.qmd` (contoh sudah ada,
+     tidak perlu template ini)
+   - Slide pendamping → `slides/tutorial-N.qmd` atau `slides/milestone-N.qmd`
+2. **Ganti** placeholder (judul, `output-file`, dst.) dengan nomor/judul
+   yang sesuai, mengikuti urutan Topik/Tutorial di jadwal homepage.
 3. **Isi kedua versi bahasa.** Setiap section dibungkus dua kali:
    ```qmd
    ::: {.content-visible when-profile="id"}

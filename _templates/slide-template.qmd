@@ -1,5 +1,5 @@
 ---
-title: "Tutorial/Tugas N: <Judul>"
+title: "Tutorial N: <Judul Topik> / Milestone N: <Judul Milestone>"
 subtitle: "Pemrograman Berbasis Platform — Gasal 2026/2027"
 format:
   revealjs:
