@@ -1,0 +1,117 @@
+---
+title: "Individual Assignment 1: Static Web with HTML5 and CSS3"
+format:
+  html: default
+  typst: default
+  docx: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+---
+
+::: {.content-visible when-profile="id"}
+
+# Individual Assignment 1: Static Web with HTML5 and CSS3 {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** MUH - Hafiz
+
+***
+
+## Tentang Proyek
+
+Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
+
+## Target Tugas Ini
+
+Lanjutkan halaman "About Me" yang sudah kamu buat di [Tutorial 01](../../tutorial/tutorial-1.qmd). Tambahkan **satu atau lebih section baru** ke halaman yang sama, masih murni dengan HTML5 dan CSS3 (belum ada database/MVT - itu bagian Tutorial 02).
+
+Kamu **bebas memilih** section apa yang mau ditambahkan, selama relevan untuk sebuah portofolio pribadi. Beberapa contoh inspirasi:
+
+- **Skills** - daftar kemampuan/teknologi yang kamu kuasai.
+- **Experience** - pengalaman organisasi, magang, atau kepanitiaan.
+- **Education** - riwayat pendidikan.
+- **Projects** - proyek-proyek yang pernah kamu kerjakan.
+
+Karena tugas ini sifatnya lebih bebas dibanding Tutorial, kamu dipersilakan membuat tampilan CSS yang lebih kompleks dari contoh di Tutorial 01 - tambahkan animasi, layout grid yang lebih rumit, atau elemen visual lain sesuai kreativitasmu, selama tetap rapi dan responsif.
+
+Checklist minimal untuk tugas ini:
+
+- [ ] Section "About Me" dari Tutorial 01 sudah terisi dengan data kamu sendiri (nama, NPM, foto, bio - bukan lagi data contoh).
+- [ ] Minimal satu section baru ditambahkan ke halaman yang sama.
+- [ ] Section baru tersebut punya isi yang nyata (bukan `lorem ipsum` atau placeholder kosong).
+- [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
+- [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
+
+## Pengumpulan
+
+Tugas dikumpulkan dalam bentuk tautan repositori Git (branch/commit yang menunjukkan hasil akhir tugas ini) melalui slot submisi yang disediakan di SCELE.
+
+## Tenggat Waktu Pengerjaan
+
+Individual Assignment 1 rilis **31 Agustus 2026** dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB**.
+
+## Rubrik Penilaian
+
+1. Kelengkapan section "About Me" sesuai Tutorial 01, dengan data pribadi asli (30 poin)
+2. Kualitas dan kelengkapan section tambahan yang dipilih (40 poin)
+3. Kerapian dan konsistensi styling CSS, termasuk tampilan di layar sempit (20 poin)
+4. Struktur HTML semantik yang benar (10 poin)
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+# Individual Assignment 1: Static Web with HTML5 and CSS3 {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** MUH - Hafiz
+
+***
+
+## About the Project
+
+This course's Individual Project is a **personal portfolio website**, done individually. Individual Assignments are released weekly following that week's Tutorial topic, and each one continues directly from the code you wrote in that same week's Tutorial.
+
+## This Assignment's Target
+
+Continue the "About Me" page you built in [Tutorial 01](../../tutorial/tutorial-1.qmd). Add **one or more new sections** to that same page, still using plain HTML5 and CSS3 (no database/MVT yet - that's covered in Tutorial 02).
+
+You're **free to choose** what section(s) to add, as long as they're relevant to a personal portfolio. Some ideas for inspiration:
+
+- **Skills** - a list of skills/technologies you're proficient in.
+- **Experience** - organizational experience, internships, or committee work.
+- **Education** - your educational background.
+- **Projects** - projects you've worked on.
+
+Since this assignment is more open-ended than the Tutorial, you're encouraged to build a more complex CSS design than the Tutorial 01 example - add animations, more elaborate grid layouts, or other visual elements as you like, as long as it stays clean and responsive.
+
+Minimum checklist for this assignment:
+
+- [ ] The "About Me" section from Tutorial 01 is filled in with your own data (name, NPM, photo, bio - no longer sample data).
+- [ ] At least one new section has been added to the same page.
+- [ ] That new section has real content (not `lorem ipsum` or an empty placeholder).
+- [ ] The page still looks clean at both desktop and mobile widths.
+- [ ] The project runs successfully with `python manage.py runserver` without errors.
+
+## Submission
+
+Submit this assignment as a Git repository link (the branch/commit showing this assignment's final result) through the submission slot provided on SCELE.
+
+## Deadline
+
+Individual Assignment 1 is released **August 31, 2026** and due no later than **September 7, 2026, 12:00 WIB**.
+
+## Grading Rubric
+
+1. Completeness of the "About Me" section per Tutorial 01, with real personal data (30 points)
+2. Quality and completeness of the chosen additional section(s) (40 points)
+3. Neatness and consistency of the CSS styling, including on narrow screens (20 points)
+4. Correct semantic HTML structure (10 points)
+
+:::

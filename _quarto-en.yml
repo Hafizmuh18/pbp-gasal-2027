@@ -45,6 +45,10 @@ website:
       contents:
         - text: "Information"
           href: assignments/index.qmd
+        - section: "Individual Project"
+          contents:
+            - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"
+              href: assignments/individual/tugas-1.qmd
         - section: "Group Assignments"
           contents:
             - text: "Midterm Group Project"

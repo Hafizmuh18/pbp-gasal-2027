@@ -42,6 +42,10 @@ website:
       contents:
         - text: "Informasi"
           href: assignments/index.qmd
+        - section: "Proyek Individu"
+          contents:
+            - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"
+              href: assignments/individual/tugas-1.qmd
         - section: "Tugas Kelompok"
           contents:
             - text: "Proyek Tengah Semester"
