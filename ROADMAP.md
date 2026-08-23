@@ -329,3 +329,32 @@ sekaligus (default `id`) - untuk cek versi `en` saat development, render
 manual seperti di atas lalu buka `_site/en/index.html` lewat static file
 server (`python3 -m http.server --directory _site`), bukan lewat
 `quarto preview`.
+
+## Model Branch Mingguan (mulai 2026-08-16)
+
+Sejak konten Tutorial/Tugas mulai ditulis satu minggu satu per satu,
+repo ini memakai **branch berurutan per minggu**, mirip pola yang sudah
+dipakai di proyek referensi `personal-portofolio/`:
+
+```
+main → tutorial-0 → tutorial-1 → tugas-1 → tutorial-2 → tugas-2 → ...
+```
+
+- `main` = kerangka situs SEBELUM ada konten Tutorial/Tugas mingguan
+  (navbar, sidebar dasar, template, perbaikan infra/tema) - **belum
+  di-publish ke situs live** kalau belum siap.
+- `tutorial-N` = cabang dari `tutorial-(N-1)` (bukan dari `tugas`
+  manapun), menambahkan `tutorial/tutorial-N.qmd` + gambar + entri
+  sidebar-nya saja.
+- `tugas-N` = cabang dari `tutorial-N` (bukan dari `tugas-(N-1)`),
+  menambahkan `assignments/individual/tugas-N.qmd` + entri sidebar-nya.
+
+**Status saat ini (2026-08-16):** branch `main`, `tutorial-0`,
+`tutorial-1`, `tugas-1` sudah ada secara lokal, **belum di-push ke
+remote**. `main` sengaja TIDAK memuat konten Tutorial 0/01/Individual
+Assignment 1 dulu - itu semua ada di branch masing-masing sebagai
+staging, supaya publish ke situs live (`git push` ke `main`, yang otomatis
+men-trigger `deploy.yml`) bisa dikontrol manual kapan waktunya, bukan
+otomatis begitu kode selesai ditulis. Kapan `main` di-update/di-merge
+untuk publish sungguhan adalah keputusan terpisah, tanyakan dulu sebelum
+push/merge ke `main` atau ke remote.
