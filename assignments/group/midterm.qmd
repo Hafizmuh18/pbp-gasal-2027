@@ -23,7 +23,7 @@ format-links:
   <img src="../../img/burhan/burhan_group_project.png" alt="Maskot Proyek Kelompok">
   <div class="pbp-banner-text">
     <div class="pbp-banner-title">Proyek Tengah Semester</div>
-    <p class="pbp-banner-sub">Dikerjakan berkelompok — kolaborasi lewat satu repositori Git.</p>
+    <p class="pbp-banner-sub">Dikerjakan berkelompok - kolaborasi lewat satu repositori Git.</p>
   </div>
 </div>
 ```

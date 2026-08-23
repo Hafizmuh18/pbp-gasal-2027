@@ -19,34 +19,61 @@ format-links:
 ---
 
 <!--
-  TEMPLATE TUTORIAL — cara pakai:
+  TEMPLATE TUTORIAL - cara pakai:
   1. Copy berkas ini ke tutorial/tutorial-N.qmd (ganti N dengan nomor minggu,
      mengikuti urutan "Tutorial 01".."Tutorial 10" di jadwal homepage).
   2. Ganti "Tutorial N: <Judul Topik>" & output-file revealjs sesuai nomor.
   3. Tutorial dibangun BERKELANJUTAN di atas 1 aplikasi tema yang sama
      sepanjang semester (bukan latihan berdiri sendiri per minggu seperti
-     dulu) — isi section "Yang Sudah Kita Bangun" merujuk balik ke tutorial
+     dulu) - isi section "Yang Sudah Kita Bangun" merujuk balik ke tutorial
      minggu sebelumnya (kosongkan/hapus section ini khusus di Tutorial 01).
-  4. JANGAN skip section "Menghubungkan ke Proyek Kamu" — ini bagian
+  4. JANGAN skip section "Menghubungkan ke Proyek Kamu" - ini bagian
      terpenting: jelaskan eksplisit bagian mana dari proyek pribadi
      mahasiswa (mis. website portofolio) yang bisa memakai pola yang sama
      dengan yang baru dikerjakan di tutorial ini.
   5. Isi tiap blok {.content-visible when-profile="id"} dan ="en" dengan versi
-     Bahasa Indonesia dan Inggris — JANGAN hapus salah satu blok, keduanya wajib ada
+     Bahasa Indonesia dan Inggris - JANGAN hapus salah satu blok, keduanya wajib ada
      supaya switch bahasa di navbar berfungsi.
-  6. Daftarkan file baru di sidebar contents: _quarto.yml DAN _quarto-en.yml.
-  7. Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
+  6. PENTING - jangan taruh APAPUN yang tampil ke pembaca (link slide, baris
+     "Pemrograman Berbasis Platform...", tanggal update, dst.) DI LUAR kedua
+     blok content-visible. Apapun di luar blok tampil sama persis di kedua
+     bahasa dan tidak ikut translate - ini penyebab paling umum halaman
+     "kelihatan belum di-translate" walau isinya sudah bilingual.
+  7. Judul frontmatter (`title:` di atas) TIDAK bisa berbeda per profile -
+     Quarto selalu pakai satu judul yang sama untuk tab browser & sidebar.
+     Supaya judul di HALAMAN tetap bilingual, tulis heading `#` manual
+     dengan atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa
+     (lihat contoh di bawah) - CSS di `styles.css` otomatis menyembunyikan
+     judul frontmatter kalau `.pbp-page-title` ada di halaman.
+  8. Daftarkan file baru di sidebar `contents:` DI KEDUA `_quarto-id.yml`
+     dan `_quarto-en.yml`, DAN beri `text:` eksplisit per bahasa (jangan
+     biarkan Quarto menurunkan label sidebar dari frontmatter title - itu
+     juga tidak ikut translate). Contoh:
+     ```yaml
+     - text: "Tutorial 01: Setup Git Repository, ..."   # di _quarto-id.yml
+       href: tutorial/tutorial-1.qmd
+     - text: "Tutorial 01: Set Up Git Repository, ..."  # di _quarto-en.yml
+       href: tutorial/tutorial-1.qmd
+     ```
+  9. Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
+  10. SEBELUM SELESAI: render dua profile (`quarto render` lalu
+      `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
+      berdampingan, dan pastikan TIDAK ADA teks yang identik/belum
+      ter-translate di keduanya (judul, sidebar, isi). Ini wajib jadi
+      langkah regresi terakhir tiap kali bikin tutorial/tugas baru.
 -->
 
-[📊 Lihat Slide / View Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
+::: {.content-visible when-profile="id"}
 
-Pemrograman Berbasis Platform (CSGE602022) — diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+[📊 Lihat Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
 
-_Terakhir diperbarui: <TANGGAL>_
+# Tutorial N: <Judul Topik> {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** <Nama Penulis>
 
 ***
-
-::: {.content-visible when-profile="id"}
 
 ### Tujuan Pembelajaran
 
@@ -56,12 +83,12 @@ Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 - <Tulis tujuan pembelajaran 2>
 
 ::: {.callout-tip}
-**Yang Sudah Kita Bangun Sejauh Ini** — <ringkas 1-2 kalimat progres aplikasi
+**Yang Sudah Kita Bangun Sejauh Ini** - <ringkas 1-2 kalimat progres aplikasi
 tema dari tutorial-tutorial sebelumnya. Hapus/kosongkan callout ini khusus
 di Tutorial 01.>
 :::
 
-## <Judul Section 1 — biasanya nama konsep dari Topik Sesi 1>
+## <Judul Section 1 - biasanya nama konsep dari Topik Sesi 1>
 
 <Isi materi/instruksi tutorial di sini.>
 
@@ -79,7 +106,7 @@ di Tutorial 01.>
 ```
 
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** — <jelaskan eksplisit: bagian mana dari
+**Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
 proyek pribadi mahasiswa (mis. website portofolio) yang bisa memakai pola
 yang sama dengan yang baru dikerjakan di langkah-langkah di atas. Ini yang
 membantu mahasiswa paham "ngerjain tugas itu ternyata mirip tutorial, cuma
@@ -90,13 +117,19 @@ temanya beda".>
 
 - [<Judul referensi>](<url>)
 
-## Kontributor
-
-- <Nama Penulis>
-
 :::
 
 ::: {.content-visible when-profile="en"}
+
+[📊 View Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
+
+# Tutorial N: <Topic Title> {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** <Author Name>
+
+***
 
 ### Learning Objectives
 
@@ -106,11 +139,11 @@ After completing this tutorial, students are expected to be able to:
 - <Write learning objective 2>
 
 ::: {.callout-tip}
-**What We've Built So Far** — <1-2 sentence recap of the running theme
+**What We've Built So Far** - <1-2 sentence recap of the running theme
 app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
 :::
 
-## <Section 1 Title — usually the concept name from the Session 1 topic>
+## <Section 1 Title - usually the concept name from the Session 1 topic>
 
 <Write the tutorial content/instructions here.>
 
@@ -128,7 +161,7 @@ app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
 ```
 
 ::: {.callout-important}
-**Connecting to Your Project** — <explicitly explain which part of the
+**Connecting to Your Project** - <explicitly explain which part of the
 student's own individual project (e.g. portfolio website) can reuse the
 same pattern just practiced in the steps above. This is what helps
 students see that "doing the assignment is like the tutorial, just with a
@@ -138,9 +171,5 @@ different theme".>
 ## Additional References
 
 - [<Reference title>](<url>)
-
-## Contributors
-
-- <Author Name>
 
 :::

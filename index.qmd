@@ -1,6 +1,6 @@
 ---
 title: "Pemrograman Berbasis Platform"
-subtitle: "Semester Gasal 2026/2027 — Fakultas Ilmu Komputer, Universitas Indonesia"
+subtitle: "Semester Gasal 2026/2027 - Fakultas Ilmu Komputer, Universitas Indonesia"
 ---
 
 ```{=html}
@@ -11,12 +11,12 @@ subtitle: "Semester Gasal 2026/2027 — Fakultas Ilmu Komputer, Universitas Indo
 
 ::: {.content-visible when-profile="id"}
 <div class="pbp-banner-title">Selamat datang di PBP!</div>
-<p class="pbp-banner-sub">Pemrograman Berbasis Platform (CSGE602022) — Fakultas Ilmu Komputer, Universitas Indonesia</p>
+<p class="pbp-banner-sub">Pemrograman Berbasis Platform (CSGE602022) - Fakultas Ilmu Komputer, Universitas Indonesia</p>
 :::
 
 ::: {.content-visible when-profile="en"}
 <div class="pbp-banner-title">Welcome to PBP!</div>
-<p class="pbp-banner-sub">Platform-Based Programming (CSGE602022) — Faculty of Computer Science, Universitas Indonesia</p>
+<p class="pbp-banner-sub">Platform-Based Programming (CSGE602022) - Faculty of Computer Science, Universitas Indonesia</p>
 :::
 
 ```{=html}
@@ -39,37 +39,36 @@ minggu selesai ditulis ulang menyesuaikan topik & urutan baru ini.
 
 ### Topik, Tutorial & Assignment Mingguan
 
-Kelas tatap muka berlangsung **Senin (Sesi 1) & Rabu (Sesi 2)** setiap
-minggu. Tidak ada lagi Tugas Individu mingguan — penilaian individu berupa
-**Kuis** di minggu tertentu dan beberapa **Tutorial Asynchronous**
-(dikerjakan mandiri, tanpa sesi lab).
+Kelas tatap muka berlangsung setiap minggu: **Senin** kelas materi, **Rabu**
+sesi lab tutorial. Ada **Individual Assignment mingguan** (mengikuti topik
+Tutorial minggu itu, rilis dan deadline seminggu kemudian) dan **Programming
+Quiz** di beberapa minggu.
 
-| Minggu | Kelas | Sesi 1 (Senin) | Sesi 2 (Rabu) | Assignment |
+| Minggu | Tanggal | Senin | Rabu | Aktivitas / Assignment |
 |:---:|---|---|---|---|
-| 1 | 24 & 26 Ags | **Topik 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topik 02:** AI-Assisted Platform-Based Programming | Tutorial Asynchronous: Setup Git Repository, Django Initial Project |
-| 2 | 31 Ags & 2 Sep | **Topik 03:** Web Design Using HTML5 dan CSS3 | **Tutorial 01:** Setup Git Repository, Django Initial Project, HTML5 dan CSS3 | — |
-| 3 | 7 & 9 Sep | **Topik 04:** MTV Django Architecture | **Tutorial 02:** Aplikasi Django dan Model-View-Template (MVT) | — |
-| 4 | 14 & 16 Sep | **Topik 05:** Data Delivery | **Tutorial 03:** Form dan Data Delivery | — |
-| 5 | 21 & 23 Sep | **Topik 06:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Autentikasi, Session, Cookies | Kuis 1 |
-| 6 | 28 & 30 Sep | **Topik 07:** Web Interactivity + Server-Sent Event | **Tutorial 05:** JavaScript dan AJAX | — |
-| 7 | 5 & 7 Okt | **Topik 08:** More on Web Development (Cache Control, HTMX) | **Tutorial 06:** HTMX, Pengayaan DevTools (Inspect, Lighthouse) | Kuis 2 |
-| 8 | 12 & 14 Okt | **UTS** | — | — |
-| 9 | 19 & 21 Okt | Proyek Tengah Semester | Proyek Tengah Semester | Offline Demo dengan Asdos |
-| 10 | 26 & 28 Okt | **Topik 09:** Django REST Framework | **Tutorial 07:** DRF | — |
-| 11 | 2 & 4 Nov | **Topik 10:** Intro to Dart Programming & Flutter | **Tutorial 08:** Pengantar Flutter | Tutorial Asynchronous: Flutter Deployment dengan GitHub Actions dan Bitrise |
-| 12 | 9 & 11 Nov | **Topik 11:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | — |
-| 13 | 16 & 18 Nov | **Topik 12:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | Kuis 3 |
-| 14 | 23 & 25 Nov | Proyek Akhir Semester | Proyek Akhir Semester | — |
-| 15 | 30 Nov & 2 Des | Proyek Akhir Semester | Proyek Akhir Semester | Offline Demo dengan Asdos |
-| 16 | 7 & 9 Des | **UAS** | — | — |
+| 1 | 24-28 Ags | **Topik 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topik 01 (lanjutan)** + AI Literacy | **Tutorial 0:** Setup Git Repository, Django Installation |
+| 2 | 31 Ags - 4 Sep | **Topik 02:** Web Design Using HTML5 dan CSS3 | **Tutorial 01:** Django Initial Project, HTML5 dan CSS3 | **Individual Assignment 1:** Static Web with HTML5 and CSS3<br>Rilis 31 Ags, deadline 7 Sep 12.00 WIB |
+| 3 | 7-11 Sep | **Topik 03:** MTV Django Architecture | **Tutorial 02:** Model-View-Template (MVT) Django Implementation | **Individual Assignment 2:** MVT Django Implementation<br>Rilis 7 Sep, deadline 14 Sep 12.00 WIB<br>Mid-Term Project Guideline rilis 11 Sep |
+| 4 | 14-18 Sep | **Topik 04:** Data Delivery | **Tutorial 03:** Form dan Data Delivery | **Individual Assignment 3:** Form & Data Delivery<br>Rilis 14 Sep, deadline 21 Sep 12.00 WIB<br>Mid-Term Project Checkpoint 1 (Project Ideas, Project Initiation): 16 Sep |
+| 5 | 21-25 Sep | **Topik 05:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Session and Cookies Implementation<br>Programming Quiz 1 | **Individual Assignment 4:** Authentication, Session and Cookies Implementation<br>Rilis 21 Sep, deadline 28 Sep 12.00 WIB |
+| 6 | 28 Sep - 2 Okt | **Topik 06:** Web Interactivity | **Tutorial 05:** Web Interactivity with JavaScript | **Individual Assignment 5:** Web Interactivity with JavaScript<br>Rilis 28 Sep, deadline 2 Okt 12.00 WIB<br>Mid-Term Project Checkpoint 2 (Design System, 1st Deployment) |
+| 7 | 5-9 Okt | **Topik 07:** More on Web Development | **Tutorial 06:** HTMX and Browser Development Tools<br>Programming Quiz 2 | Mid-Term Project |
+| 8 | 12-16 Okt | **UTS** | - | - |
+| 9 | 19-23 Okt | Mid-Term Project | Mid-Term Project | Deadline akhir Mid-Term Project: 23 Okt |
+| 10 | 26-30 Okt | **Topik 08:** Django REST Framework | **Tutorial 07:** Django REST Framework Implementation | **Individual Assignment 6:** Django REST Framework Implementation<br>Rilis 26 Okt, deadline 2 Nov 12.00 WIB<br>Final Project Guideline rilis 28 Okt |
+| 11 | 2-6 Nov | **Topik 09:** Introduction to Dart Programming & Flutter | **Tutorial 08:** Basic Flutter | **Individual Assignment 7:** Basic Flutter<br>Rilis 2 Nov, deadline 9 Nov 12.00 WIB |
+| 12 | 9-13 Nov | **Topik 10:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | **Individual Assignment 8:** Flutter Navigation, Layouts, Forms, and Input Elements<br>Rilis 9 Nov, deadline 16 Nov 12.00 WIB<br>Final Project Checkpoint 1 (Mobile App Scoping, Project API) |
+| 13 | 16-20 Nov | **Topik 11:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | **Individual Assignment 9:** Flutter Networking, Authentication, and Integration<br>Rilis 16 Nov, deadline 23 Nov 12.00 WIB |
+| 14 | 23-27 Nov | Final Project | Programming Quiz 3 | Final Project |
+| 15 | 30 Nov - 4 Des | Final Project | Final Project | Deadline akhir Final Project: 2 Des |
+| 16 | 7-9 Des | **UAS** | - | - |
 
-: {tbl-colwidths="[7,13,28,28,24]"}
+: {tbl-colwidths="[7,10,25,25,33]"}
 
 ::: {.callout-note}
-Rincian deadline Proyek Tengah/Akhir Semester (peer assessment, jadwal
-offline demo, dsb.) menyusul setelah jadwal resminya terbit — sementara
-lihat [halaman Proyek Tengah Semester](assignments/group/midterm.qmd) dan
-[Proyek Akhir Semester](assignments/group/finalterm.qmd) di menu Tugas.
+Rincian lengkap tiap Individual Assignment, Mid-Term Project, dan Final
+Project (rubrik, format pengumpulan, dst.) ada di halaman masing-masing
+pada menu **Tugas**.
 :::
 :::
 
@@ -88,37 +87,35 @@ content has been rewritten to match this new topic order.
 
 ### Weekly Topics, Tutorials & Assignments
 
-In-person classes run **Monday (Session 1) & Wednesday (Session 2)** every
-week. There are no more weekly Individual Assignments — individual
-assessment is via **Quizzes** on certain weeks and a couple of
-**Asynchronous Tutorials** (done independently, no lab session).
+In-person classes run every week: **Monday** is the lecture, **Wednesday**
+is the tutorial lab session. There's a **weekly Individual Assignment**
+(following that week's Tutorial topic, released and due a week later) and
+a **Programming Quiz** on some weeks.
 
-| Week | Class | Session 1 (Mon) | Session 2 (Wed) | Assignment |
+| Week | Dates | Monday | Wednesday | Activity / Assignment |
 |:---:|---|---|---|---|
-| 1 | 24 & 26 Aug | **Topic 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topic 02:** AI-Assisted Platform-Based Programming | Asynchronous Tutorial: Set Up Git Repository, Django Initial Project |
-| 2 | 31 Aug & 2 Sep | **Topic 03:** Web Design Using HTML5 and CSS3 | **Tutorial 01:** Set Up Git Repository, Django Initial Project, HTML5 and CSS3 | — |
-| 3 | 7 & 9 Sep | **Topic 04:** MTV Django Architecture | **Tutorial 02:** Django Application and Model-View-Template (MVT) | — |
-| 4 | 14 & 16 Sep | **Topic 05:** Data Delivery | **Tutorial 03:** Forms and Data Delivery | — |
-| 5 | 21 & 23 Sep | **Topic 06:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Sessions, Cookies | Quiz 1 |
-| 6 | 28 & 30 Sep | **Topic 07:** Web Interactivity + Server-Sent Events | **Tutorial 05:** JavaScript and AJAX | — |
-| 7 | 5 & 7 Oct | **Topic 08:** More on Web Development (Cache Control, HTMX) | **Tutorial 06:** HTMX, DevTools Deep-Dive (Inspect, Lighthouse) | Quiz 2 |
-| 8 | 12 & 14 Oct | **Midterm Exam** | — | — |
-| 9 | 19 & 21 Oct | Midterm Group Project | Midterm Group Project | Offline Demo with TAs |
-| 10 | 26 & 28 Oct | **Topic 09:** Django REST Framework | **Tutorial 07:** DRF | — |
-| 11 | 2 & 4 Nov | **Topic 10:** Intro to Dart Programming & Flutter | **Tutorial 08:** Introduction to Flutter | Asynchronous Tutorial: Flutter Deployment with GitHub Actions and Bitrise |
-| 12 | 9 & 11 Nov | **Topic 11:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | — |
-| 13 | 16 & 18 Nov | **Topic 12:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | Quiz 3 |
-| 14 | 23 & 25 Nov | Final Group Project | Final Group Project | — |
-| 15 | 30 Nov & 2 Dec | Final Group Project | Final Group Project | Offline Demo with TAs |
-| 16 | 7 & 9 Dec | **Final Exam** | — | — |
+| 1 | Aug 24-28 | **Topic 01:** Introduction to Platform-Based Programming, Internet & Framework | **Topic 01 (cont.)** + AI Literacy | **Tutorial 0:** Set Up Git Repository, Django Installation |
+| 2 | Aug 31 - Sep 4 | **Topic 02:** Web Design Using HTML5 and CSS3 | **Tutorial 01:** Django Initial Project, HTML5 and CSS3 | **Individual Assignment 1:** Static Web with HTML5 and CSS3<br>Released Aug 31, due Sep 7, 12:00 WIB |
+| 3 | Sep 7-11 | **Topic 03:** MTV Django Architecture | **Tutorial 02:** Model-View-Template (MVT) Django Implementation | **Individual Assignment 2:** MVT Django Implementation<br>Released Sep 7, due Sep 14, 12:00 WIB<br>Mid-Term Project Guideline released Sep 11 |
+| 4 | Sep 14-18 | **Topic 04:** Data Delivery | **Tutorial 03:** Forms and Data Delivery | **Individual Assignment 3:** Form & Data Delivery<br>Released Sep 14, due Sep 21, 12:00 WIB<br>Mid-Term Project Checkpoint 1 (Project Ideas, Project Initiation): Sep 16 |
+| 5 | Sep 21-25 | **Topic 05:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Session and Cookies Implementation<br>Programming Quiz 1 | **Individual Assignment 4:** Authentication, Session and Cookies Implementation<br>Released Sep 21, due Sep 28, 12:00 WIB |
+| 6 | Sep 28 - Oct 2 | **Topic 06:** Web Interactivity | **Tutorial 05:** Web Interactivity with JavaScript | **Individual Assignment 5:** Web Interactivity with JavaScript<br>Released Sep 28, due Oct 2, 12:00 WIB<br>Mid-Term Project Checkpoint 2 (Design System, 1st Deployment) |
+| 7 | Oct 5-9 | **Topic 07:** More on Web Development | **Tutorial 06:** HTMX and Browser Development Tools<br>Programming Quiz 2 | Mid-Term Project |
+| 8 | Oct 12-16 | **Midterm Exam** | - | - |
+| 9 | Oct 19-23 | Mid-Term Project | Mid-Term Project | Mid-Term Project final deadline: Oct 23 |
+| 10 | Oct 26-30 | **Topic 08:** Django REST Framework | **Tutorial 07:** Django REST Framework Implementation | **Individual Assignment 6:** Django REST Framework Implementation<br>Released Oct 26, due Nov 2, 12:00 WIB<br>Final Project Guideline released Oct 28 |
+| 11 | Nov 2-6 | **Topic 09:** Introduction to Dart Programming & Flutter | **Tutorial 08:** Basic Flutter | **Individual Assignment 7:** Basic Flutter<br>Released Nov 2, due Nov 9, 12:00 WIB |
+| 12 | Nov 9-13 | **Topic 10:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | **Individual Assignment 8:** Flutter Navigation, Layouts, Forms, and Input Elements<br>Released Nov 9, due Nov 16, 12:00 WIB<br>Final Project Checkpoint 1 (Mobile App Scoping, Project API) |
+| 13 | Nov 16-20 | **Topic 11:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | **Individual Assignment 9:** Flutter Networking, Authentication, and Integration<br>Released Nov 16, due Nov 23, 12:00 WIB |
+| 14 | Nov 23-27 | Final Project | Programming Quiz 3 | Final Project |
+| 15 | Nov 30 - Dec 4 | Final Project | Final Project | Final Project final deadline: Dec 2 |
+| 16 | Dec 7-9 | **Final Exam** | - | - |
 
-: {tbl-colwidths="[7,13,28,28,24]"}
+: {tbl-colwidths="[7,10,25,25,33]"}
 
 ::: {.callout-note}
-Details on Midterm/Final Group Project deadlines (peer assessment,
-offline demo scheduling, etc.) will follow once the official schedule is
-published — for now see the [Midterm Group Project](assignments/group/midterm.qmd)
-and [Final Group Project](assignments/group/finalterm.qmd) pages under the
-Assignments menu.
+Full details for each Individual Assignment, Mid-Term Project, and Final
+Project (rubric, submission format, etc.) are on their own pages under
+the **Assignments** menu.
 :::
 :::

@@ -27,26 +27,36 @@ website:
       title: "Materi"
       style: docked
       contents:
-        - materi/index.qmd
-        - materi/materi-01.qmd
-        - materi/materi-02.qmd
-        - materi/materi-03.qmd
-        - materi/materi-04.qmd
+        - text: "Informasi"
+          href: materi/index.qmd
+        - text: "Materi 01: Introduction to Platform-Based Programming"
+          href: materi/materi-01.qmd
+        - text: "Materi 02: Introduction to the Internet and Web Framework"
+          href: materi/materi-02.qmd
+        - text: "Materi 03: MTV Django Architecture and Testing"
+          href: materi/materi-03.qmd
+        - text: "Materi 04: Data Delivery"
+          href: materi/materi-04.qmd
     - id: tutorial
       title: "Tutorial"
       style: docked
       contents:
-        - tutorial/index.qmd
+        - text: "Informasi"
+          href: tutorial/index.qmd
     - id: assignments
       title: "Tugas"
       style: docked
       contents:
-        - assignments/index.qmd
+        - text: "Informasi"
+          href: assignments/index.qmd
         - section: "Tugas Kelompok"
           contents:
-            - assignments/group/midterm.qmd
-            - assignments/group/midterm-guide.qmd
-            - assignments/group/finalterm.qmd
+            - text: "Proyek Tengah Semester"
+              href: assignments/group/midterm.qmd
+            - text: "Panduan Tugas Kelompok"
+              href: assignments/group/midterm-guide.qmd
+            - text: "Proyek Akhir Semester"
+              href: assignments/group/finalterm.qmd
 
   page-footer:
     left: "Copyright © PBP Fasilkom UI."

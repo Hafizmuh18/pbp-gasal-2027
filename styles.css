@@ -23,7 +23,7 @@ p, li, td, th, h1, h2, h3, h4, .pbp-banner-sub, .pbp-card, a, code {
 /* Browsers default ALL <code> to white-space:pre (no wrapping), even when
    a fence failed to render as a proper <pre> block and left bare <code>
    text sitting directly in a paragraph/list item (has happened with
-   heavily-indented fences nested in list items) — force it to wrap like
+   heavily-indented fences nested in list items) - force it to wrap like
    normal text in that case. */
 code {
   white-space: normal;
@@ -39,6 +39,17 @@ pre code {
   overflow-wrap: normal;
   word-break: normal;
   white-space: pre;
+}
+/* Fenced code blocks with no language tag (```) don't get wrapped in
+   Quarto's div.sourceCode, so they never get its box/background - only
+   language-tagged fences (```bash, ```python, etc.) do. Replicate the
+   same box directly on bare <pre> so every code block looks consistent
+   regardless of whether a language was specified. */
+pre:not(.sourceCode) {
+  background-color: rgba(233, 236, 239, 0.65);
+  border: 1px solid rgba(233, 236, 239, 0.65);
+  border-radius: 0.25rem;
+  padding: 0.4em 0.6em;
 }
 
 /* Navbar */
@@ -64,7 +75,7 @@ pre code {
 }
 /* Highlight whichever top-level nav item matches the current section.
    Note: the navbar element does NOT actually carry a "navbar-dark" class
-   in this theme (verified — it's just "navbar navbar-expand-lg"), so a
+   in this theme (verified - it's just "navbar navbar-expand-lg"), so a
    ".navbar-dark ..." selector silently never matches; target ".navbar"
    directly instead. */
 .navbar .navbar-nav .nav-link.active {
@@ -104,10 +115,13 @@ pre code {
   color: var(--pbp-blue-dark);
   font-weight: 800;
 }
-/* Pages with a bilingual .pbp-banner already show their own title/subtitle;
-   the auto title-block above it is Indonesian-only frontmatter and would
-   duplicate/clash with the translated banner on the EN profile. */
-body:has(.pbp-banner) #title-block-header {
+/* Pages with a bilingual .pbp-banner, or a manual .pbp-page-title heading
+   inside a .content-visible block, already show their own translated
+   title. The auto title-block above it is driven by frontmatter `title:`,
+   which Quarto cannot vary per language profile - hide it everywhere a
+   page supplies its own bilingual heading instead, so it never shows
+   stale Indonesian-only text on the EN profile. */
+body:has(.pbp-banner, .pbp-page-title) #title-block-header {
   display: none;
 }
 h2 {
@@ -205,7 +219,7 @@ td, th {
   vertical-align: top;
 }
 /* Center the leading week/number column when the table marks it :---:
-   and keep its (short) header/content on one line — table-layout:auto
+   and keep its (short) header/content on one line - table-layout:auto
    otherwise wraps a header like "Minggu" into 2 lines even with a
    tbl-colwidths hint, since auto layout treats that as a minimum, not
    a hard cap. */
@@ -223,7 +237,7 @@ table tbody tr:nth-child(even) {
 table tbody tr:hover {
   background-color: var(--pbp-blue-light);
 }
-/* Data-dense tables (5+ columns) become unreadable on narrow screens —
+/* Data-dense tables (5+ columns) become unreadable on narrow screens -
    text squeezes to one letter per line trying to fit every column into
    ~300px. Instead let the table scroll sideways as a whole, with each
    column kept wide enough to still wrap into readable multi-word lines. */
@@ -274,7 +288,7 @@ table tbody tr:hover {
    past the viewport.
    Note: "Format Lain" (.quarto-alternate-formats) is nested INSIDE
    nav#TOC as a sibling of the h2/ul, not inside #quarto-margin-sidebar
-   directly — the flex/order rules must target #TOC's direct children. */
+   directly - the flex/order rules must target #TOC's direct children. */
 #quarto-margin-sidebar {
   text-align: left;
   overflow-y: auto;
@@ -342,7 +356,7 @@ table tbody tr:hover {
   background-color: var(--pbp-blue-light);
 }
 /* Clearly-visible "you are here" marker for the active section, matching
-   the left sidebar's style — was just a faint color change before. */
+   the left sidebar's style - was just a faint color change before. */
 #quarto-margin-sidebar nav#TOC .nav-link.active {
   background-color: var(--pbp-blue-light);
   border-left-color: var(--pbp-orange);
@@ -470,7 +484,7 @@ iframe {
 }
 
 /* ===== Sidebar polish (Materi / Tutorial / Tugas) ===== */
-/* More breathing room between items — was 0 padding / ~7px margin, felt
+/* More breathing room between items - was 0 padding / ~7px margin, felt
    cramped and made it hard to tell which item you're currently on. */
 .sidebar-item {
   margin: 0.15rem 0 !important;

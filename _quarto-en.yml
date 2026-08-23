@@ -30,26 +30,36 @@ website:
       title: "Materials"
       style: docked
       contents:
-        - materi/index.qmd
-        - materi/materi-01.qmd
-        - materi/materi-02.qmd
-        - materi/materi-03.qmd
-        - materi/materi-04.qmd
+        - text: "Information"
+          href: materi/index.qmd
+        - text: "Material 01: Introduction to Platform-Based Programming"
+          href: materi/materi-01.qmd
+        - text: "Material 02: Introduction to the Internet and Web Framework"
+          href: materi/materi-02.qmd
+        - text: "Material 03: MTV Django Architecture and Testing"
+          href: materi/materi-03.qmd
+        - text: "Material 04: Data Delivery"
+          href: materi/materi-04.qmd
     - id: tutorial
       title: "Tutorial"
       style: docked
       contents:
-        - tutorial/index.qmd
+        - text: "Information"
+          href: tutorial/index.qmd
     - id: assignments
       title: "Assignments"
       style: docked
       contents:
-        - assignments/index.qmd
+        - text: "Information"
+          href: assignments/index.qmd
         - section: "Group Assignments"
           contents:
-            - assignments/group/midterm.qmd
-            - assignments/group/midterm-guide.qmd
-            - assignments/group/finalterm.qmd
+            - text: "Midterm Group Project"
+              href: assignments/group/midterm.qmd
+            - text: "Group Assignment Guide"
+              href: assignments/group/midterm-guide.qmd
+            - text: "Final Group Project"
+              href: assignments/group/finalterm.qmd
 
   page-footer:
     left: "Copyright © PBP Fasilkom UI."

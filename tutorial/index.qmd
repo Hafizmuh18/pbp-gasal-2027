@@ -23,14 +23,14 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
-1. Tutorial dirilis satu per satu setiap minggu, dikerjakan di sesi lab hari Rabu (Sesi 2).
-2. Tutorial **tidak wajib** dikerjakan dan tidak dinilai langsung — namun **beberapa tutorial menjadi prasyarat** sebelum Tugas/milestone tertentu bisa dinilai. Perhatikan catatan prasyarat di setiap halaman Tugas.
+1. Setiap minggu, Senin adalah kelas materi dan Rabu adalah sesi lab tutorial.
+2. Tutorial **tidak wajib** dikerjakan dan tidak dinilai langsung - tapi setiap minggu ada **Individual Assignment** dengan topik yang sama, jadi mengerjakan tutorialnya akan sangat membantu.
 3. Mahasiswa dapat bertanya kepada asisten dosen selama jam sesi lab.
-4. Sangat disarankan tetap mengerjakan tiap tutorial — pola yang dipelajari di tutorial langsung dipakai ulang di proyek individu kamu sendiri (lihat menu Tugas).
+4. Sangat disarankan tetap mengerjakan tiap tutorial - pola yang dipelajari di tutorial langsung dipakai ulang di Individual Assignment minggu yang sama (lihat menu Tugas).
 :::
 ::: {.content-visible when-profile="en"}
-1. Tutorials are released one at a time each week, worked on during the Wednesday (Session 2) lab session.
-2. Tutorials are **not mandatory** and are not graded directly — however **some tutorials are a prerequisite** before a specific Tugas/milestone can be graded. Check the prerequisite note on each Tugas page.
+1. Every week, Monday is the lecture and Wednesday is the tutorial lab session.
+2. Tutorials are **not mandatory** and are not graded directly - but every week has an **Individual Assignment** on the same topic, so doing the tutorial helps a lot.
 3. Students may ask teaching assistants questions during the lab session.
-4. Doing each tutorial is still strongly recommended — the pattern you learn there gets reused directly in your own individual project (see the Assignments menu).
+4. Doing each tutorial is still strongly recommended - the pattern you learn there gets reused directly in that same week's Individual Assignment (see the Assignments menu).
 :::
