@@ -38,6 +38,8 @@ website:
       contents:
         - text: "Information"
           href: tutorial/index.qmd
+        - text: "Tutorial 0: Set Up Git Repository, Django Installation"
+          href: tutorial/tutorial-0.qmd
     - id: assignments
       title: "Assignments"
       style: docked

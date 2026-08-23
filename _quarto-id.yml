@@ -35,6 +35,8 @@ website:
       contents:
         - text: "Informasi"
           href: tutorial/index.qmd
+        - text: "Tutorial 0: Setup Git Repository, Django Installation"
+          href: tutorial/tutorial-0.qmd
     - id: assignments
       title: "Tugas"
       style: docked
