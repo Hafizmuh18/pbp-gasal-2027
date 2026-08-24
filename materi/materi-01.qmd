@@ -1,9 +1,0 @@
----
-title: "Materi 01: Introduction to Platform-Based Programming"
----
-
-[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-01-introduction-to-platform-based-programming.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01-introduction-to-platform-based-programming.pdf){.btn .btn-outline-secondary download="Materi-01-Introduction-to-Platform-Based-Programming.pdf" role="button"}
-
-```{=html}
-<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01-introduction-to-platform-based-programming.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
-```

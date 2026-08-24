@@ -23,14 +23,14 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
-1. Setiap minggu, Senin adalah kelas materi dan Rabu adalah sesi lab tutorial.
-2. Tutorial **tidak wajib** dikerjakan dan tidak dinilai langsung - tapi setiap minggu ada **Individual Assignment** dengan topik yang sama, jadi mengerjakan tutorialnya akan sangat membantu.
+1. Setiap minggu, Senin adalah kelas materi dan Rabu adalah sesi lab tutorial. Tutorial harus diselesaikan pada sesi lab yang dijadwalkan.
+2. Tutorial **tidak dinilai** secara langsung, tapi menjadi **prasyarat** untuk Individual Assignment minggu yang sama - pola yang dipelajari di tutorial langsung dipakai ulang di sana.
 3. Mahasiswa dapat bertanya kepada asisten dosen selama jam sesi lab.
-4. Sangat disarankan tetap mengerjakan tiap tutorial - pola yang dipelajari di tutorial langsung dipakai ulang di Individual Assignment minggu yang sama (lihat menu Tugas).
+4. Individual Assignment dirilis Senin, dengan tenggat waktu Senin minggu berikutnya (lihat menu Tugas).
 :::
 ::: {.content-visible when-profile="en"}
-1. Every week, Monday is the lecture and Wednesday is the tutorial lab session.
-2. Tutorials are **not mandatory** and are not graded directly - but every week has an **Individual Assignment** on the same topic, so doing the tutorial helps a lot.
+1. Every week, Monday is the lecture and Wednesday is the tutorial lab session. Tutorials must be completed during the scheduled lab session.
+2. Tutorials are **not graded** directly, but serve as a **prerequisite** for that same week's Individual Assignment - the pattern you learn there gets reused directly in it.
 3. Students may ask teaching assistants questions during the lab session.
-4. Doing each tutorial is still strongly recommended - the pattern you learn there gets reused directly in that same week's Individual Assignment (see the Assignments menu).
+4. Individual Assignments are released on Monday, with a deadline the following Monday (see the Assignments menu).
 :::

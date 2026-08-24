@@ -1,9 +1,0 @@
----
-title: "Materi 04: Data Delivery"
----
-
-[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-04-data-delivery.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-04-data-delivery.pdf){.btn .btn-outline-secondary download="Materi-04-Data-Delivery.pdf" role="button"}
-
-```{=html}
-<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-04-data-delivery.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
-```

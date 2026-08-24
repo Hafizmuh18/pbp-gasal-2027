@@ -1,9 +1,0 @@
----
-title: "Materi 02: Introduction to the Internet and Web Framework"
----
-
-[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-02-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-02-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-outline-secondary download="Materi-02-Introduction-to-the-Internet-and-Web-Framework.pdf" role="button"}
-
-```{=html}
-<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-02-introduction-to-the-internet-and-web-framework.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
-```

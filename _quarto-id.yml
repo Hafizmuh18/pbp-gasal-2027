@@ -14,8 +14,6 @@ website:
       - text: "Tugas"
         href: assignments/index.qmd
     right:
-      - text: "Penghargaan"
-        href: awards.qmd
       - text: "🇬🇧 English"
         href: en/index.html
       - icon: github
@@ -29,14 +27,6 @@ website:
       contents:
         - text: "Informasi"
           href: materi/index.qmd
-        - text: "Materi 01: Introduction to Platform-Based Programming"
-          href: materi/materi-01.qmd
-        - text: "Materi 02: Introduction to the Internet and Web Framework"
-          href: materi/materi-02.qmd
-        - text: "Materi 03: MTV Django Architecture and Testing"
-          href: materi/materi-03.qmd
-        - text: "Materi 04: Data Delivery"
-          href: materi/materi-04.qmd
     - id: tutorial
       title: "Tutorial"
       style: docked

@@ -25,44 +25,48 @@ title: "Materi Perkuliahan"
 ::: {.content-visible when-profile="id"}
 ```{=html}
 <div class="pbp-grid">
-  <a href="materi-01.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>01</strong> - Introduction to Platform-Based Programming<br>
-    <span class="pbp-card-status">✅ Tersedia</span>
-  </a>
-  <a href="materi-02.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>02</strong> - Introduction to the Internet and Web Framework<br>
-    <span class="pbp-card-status">✅ Tersedia</span>
-  </a>
-  <a href="materi-03.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>03</strong> - MTV Django Architecture and Testing<br>
-    <span class="pbp-card-status">✅ Tersedia</span>
-  </a>
-  <a href="materi-04.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>02</strong> - Web Design Using HTML5 dan CSS3<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>03</strong> - MTV Django Architecture<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
     <strong>04</strong> - Data Delivery<br>
-    <span class="pbp-card-status">✅ Tersedia</span>
-  </a>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>05</strong> - Form, Authentication, Session, and Cookie<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>06</strong> - Web Design Using HTML5 and CSS3<br>
+    <strong>06</strong> - Web Interactivity<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>07</strong> - Web Interactivity<br>
+    <strong>07</strong> - More on Web Development<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>08</strong> - Intro to Dart Programming and Flutter Framework<br>
+    <strong>08</strong> - Django REST Framework<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>09</strong> - Layouts & Forms<br>
+    <strong>09</strong> - Introduction to Dart Programming & Flutter<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>10</strong> - Navigation, Networking and Integration<br>
+    <strong>10</strong> - Layouts & Forms<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>11</strong> - Navigation, Networking and Integration<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
   </div>
 </div>
@@ -72,44 +76,48 @@ title: "Materi Perkuliahan"
 ::: {.content-visible when-profile="en"}
 ```{=html}
 <div class="pbp-grid">
-  <a href="materi-01.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>01</strong> - Introduction to Platform-Based Programming<br>
-    <span class="pbp-card-status">✅ Available</span>
-  </a>
-  <a href="materi-02.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>02</strong> - Introduction to the Internet and Web Framework<br>
-    <span class="pbp-card-status">✅ Available</span>
-  </a>
-  <a href="materi-03.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
-    <strong>03</strong> - MTV Django Architecture and Testing<br>
-    <span class="pbp-card-status">✅ Available</span>
-  </a>
-  <a href="materi-04.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>02</strong> - Web Design Using HTML5 and CSS3<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>03</strong> - MTV Django Architecture<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
     <strong>04</strong> - Data Delivery<br>
-    <span class="pbp-card-status">✅ Available</span>
-  </a>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>05</strong> - Form, Authentication, Session, and Cookie<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>06</strong> - Web Design Using HTML5 and CSS3<br>
+    <strong>06</strong> - Web Interactivity<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>07</strong> - Web Interactivity<br>
+    <strong>07</strong> - More on Web Development<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>08</strong> - Intro to Dart Programming and Flutter Framework<br>
+    <strong>08</strong> - Django REST Framework<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>09</strong> - Layouts & Forms<br>
+    <strong>09</strong> - Introduction to Dart Programming & Flutter<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
   <div class="pbp-card" style="opacity:0.55;">
-    <strong>10</strong> - Navigation, Networking and Integration<br>
+    <strong>10</strong> - Layouts & Forms<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>11</strong> - Navigation, Networking and Integration<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
   </div>
 </div>

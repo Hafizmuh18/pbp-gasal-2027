@@ -27,7 +27,6 @@ subtitle: "Semester Gasal 2026/2027 - Fakultas Ilmu Komputer, Universitas Indone
 ::: {.content-visible when-profile="id"}
 - Lihat materi tutorial mingguan di menu **Tutorial**.
 - Lihat rincian tugas individu dan kelompok di menu **Tugas**.
-- Lihat aplikasi terbaik semester ini di menu **Penghargaan**.
 
 ## Jadwal Semester
 
@@ -75,7 +74,6 @@ pada menu **Tugas**.
 ::: {.content-visible when-profile="en"}
 - See weekly tutorial materials in the **Tutorial** menu.
 - See individual and group assignment details in the **Assignments** menu.
-- See this semester's best applications in the **Awards** menu.
 
 ## Semester Schedule
 
