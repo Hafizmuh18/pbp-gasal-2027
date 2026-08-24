@@ -25,10 +25,10 @@ title: "Materi Perkuliahan"
 ::: {.content-visible when-profile="id"}
 ```{=html}
 <div class="pbp-grid">
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="materi-01.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
-    <span class="pbp-card-status">⏳ Belum diunggah</span>
-  </div>
+    <span class="pbp-card-status">✅ Tersedia</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>02</strong> - Web Design Using HTML5 dan CSS3<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
@@ -76,10 +76,10 @@ title: "Materi Perkuliahan"
 ::: {.content-visible when-profile="en"}
 ```{=html}
 <div class="pbp-grid">
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="materi-01.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
-    <span class="pbp-card-status">⏳ Not yet uploaded</span>
-  </div>
+    <span class="pbp-card-status">✅ Available</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>02</strong> - Web Design Using HTML5 and CSS3<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>

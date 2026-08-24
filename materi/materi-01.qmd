@@ -1,0 +1,47 @@
+---
+title: "Materi 01"
+---
+
+::: {.content-visible when-profile="id"}
+
+# Materi 01: Pengantar Pemrograman Berbasis Platform, Internet & Framework {.pbp-page-title}
+
+## 01a - Pengantar Pemrograman Berbasis Platform
+
+[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-01a-introduction-to-platform-based-programming.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01a-introduction-to-platform-based-programming.pdf){.btn .btn-outline-secondary download="Materi-01a-Introduction-to-Platform-Based-Programming.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01a-introduction-to-platform-based-programming.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+## 01b - Pengantar Internet dan Web Framework
+
+[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-outline-secondary download="Materi-01b-Introduction-to-the-Internet-and-Web-Framework.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+# Material 01: Introduction to Platform-Based Programming, Internet & Framework {.pbp-page-title}
+
+## 01a - Introduction to Platform-Based Programming
+
+[📖 Read / Present](../pdfjs/web/viewer.html?file=../../slides/materi-01a-introduction-to-platform-based-programming.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01a-introduction-to-platform-based-programming.pdf){.btn .btn-outline-secondary download="Materi-01a-Introduction-to-Platform-Based-Programming.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01a-introduction-to-platform-based-programming.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+## 01b - Introduction to the Internet and Web Framework
+
+[📖 Read / Present](../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf){.btn .btn-outline-secondary download="Materi-01b-Introduction-to-the-Internet-and-Web-Framework.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+:::

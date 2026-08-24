@@ -30,6 +30,8 @@ website:
       contents:
         - text: "Information"
           href: materi/index.qmd
+        - text: "Material 01"
+          href: materi/materi-01.qmd
     - id: tutorial
       title: "Tutorial"
       style: docked
