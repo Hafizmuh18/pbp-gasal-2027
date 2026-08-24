@@ -34,3 +34,93 @@ title: "Informasi"
 3. Some Individual Assignments reference back to that same week's Tutorial - do the tutorial first so the pattern is clear, even though the tutorial itself isn't mandatory or directly graded.
 4. If you run into difficulties, students may ask teaching assistants questions through the designated communication channel.
 :::
+
+::: {.content-visible when-profile="id"}
+## Daftar Individual Assignment
+
+```{=html}
+<div class="pbp-grid">
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>1</strong> - Static Web with HTML5 and CSS3<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>2</strong> - MVT Django Implementation<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>3</strong> - Form & Data Delivery<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>4</strong> - Authentication, Session and Cookies Implementation<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>5</strong> - Web Interactivity with JavaScript<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>6</strong> - Django REST Framework Implementation<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>7</strong> - Basic Flutter<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>8</strong> - Flutter Navigation, Layouts, Forms, and Input Elements<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>9</strong> - Flutter Networking, Authentication, and Integration<br>
+    <span class="pbp-card-status">⏳ Belum diunggah</span>
+  </div>
+</div>
+```
+:::
+
+::: {.content-visible when-profile="en"}
+## Individual Assignment List
+
+```{=html}
+<div class="pbp-grid">
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>1</strong> - Static Web with HTML5 and CSS3<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>2</strong> - MVT Django Implementation<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>3</strong> - Form & Data Delivery<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>4</strong> - Authentication, Session and Cookies Implementation<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>5</strong> - Web Interactivity with JavaScript<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>6</strong> - Django REST Framework Implementation<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>7</strong> - Basic Flutter<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>8</strong> - Flutter Navigation, Layouts, Forms, and Input Elements<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+  <div class="pbp-card" style="opacity:0.55;">
+    <strong>9</strong> - Flutter Networking, Authentication, and Integration<br>
+    <span class="pbp-card-status">⏳ Not yet uploaded</span>
+  </div>
+</div>
+```
+:::
