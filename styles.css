@@ -209,14 +209,32 @@ table {
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   width: 100%;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  border-collapse: separate;
 }
 table, td, th {
   white-space: normal;
 }
 td, th {
-  padding: 0.65rem 0.85rem;
+  padding: 1rem 1.15rem;
   vertical-align: top;
+  line-height: 1.55;
+}
+/* Multi-line cell content (e.g. "Assignment name<br>Released.../due...")
+   otherwise reads as one squeezed paragraph - give each <br>-separated
+   line its own breathing room instead of a bare line break. */
+td br {
+  display: block;
+  content: "";
+  margin-top: 0.5rem;
+}
+/* Divider between weeks so rows read as distinct units, not a blur -
+   zebra striping alone was too subtle once cells got taller. */
+table tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+.quarto-dark table tbody tr:not(:last-child) {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 /* Center the leading week/number column when the table marks it :---:
    and keep its (short) header/content on one line - table-layout:auto
