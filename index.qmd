@@ -30,12 +30,6 @@ subtitle: "Semester Gasal 2026/2027 - Fakultas Ilmu Komputer, Universitas Indone
 
 ## Jadwal Semester
 
-::: {.callout-note}
-Jadwal di bawah adalah jadwal resmi Semester Gasal 2026/2027. Tautan ke
-halaman Materi/Tutorial/Tugas akan ditambahkan begitu konten masing-masing
-minggu selesai ditulis ulang menyesuaikan topik & urutan baru ini.
-:::
-
 ### Topik, Tutorial & Assignment Mingguan
 
 Kelas tatap muka berlangsung setiap minggu: **Senin** kelas materi, **Rabu**
@@ -99,12 +93,6 @@ pada menu **Tugas**.
 - See individual and group assignment details in the **Assignments** menu.
 
 ## Semester Schedule
-
-::: {.callout-note}
-The schedule below is the official Odd Semester 2026/2027 schedule. Links
-to the Materials/Tutorial/Assignment pages will be added once each week's
-content has been rewritten to match this new topic order.
-:::
 
 ### Weekly Topics, Tutorials & Assignments
 
