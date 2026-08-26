@@ -22,6 +22,14 @@ title: "Materi 01"
 <iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
 ```
 
+## 01c - AI Literacy
+
+[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-01c-ai-literacy.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01c-ai-literacy.pdf){.btn .btn-outline-secondary download="Materi-01c-AI-Literacy.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01c-ai-literacy.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
 :::
 
 ::: {.content-visible when-profile="en"}
@@ -42,6 +50,14 @@ title: "Materi 01"
 
 ```{=html}
 <iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01b-introduction-to-the-internet-and-web-framework.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+## 01c - AI Literacy
+
+[📖 Read / Present](../pdfjs/web/viewer.html?file=../../slides/materi-01c-ai-literacy.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-01c-ai-literacy.pdf){.btn .btn-outline-secondary download="Materi-01c-AI-Literacy.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-01c-ai-literacy.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
 ```
 
 :::
