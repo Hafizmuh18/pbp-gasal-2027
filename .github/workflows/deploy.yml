@@ -1,55 +1,27 @@
-name: Deploy Quarto site to GitHub Pages
+name: Deploy to VM
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Clean previous build
+        run: rm -rf _site
 
-      - name: Install Typst (PDF engine)
-        run: |
-          TYPST_VERSION=$(curl -s https://api.github.com/repos/typst/typst/releases/latest | grep -Po '"tag_name": "\K[^"]*')
-          curl -fsSL "https://github.com/typst/typst/releases/download/${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" -o typst.tar.xz
-          tar -xJf typst.tar.xz
-          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/typst
-          typst --version
-
-      - name: Render site (id profile, default)
+      - name: Render (id profile)
         run: quarto render
 
-      - name: Render site (en profile)
+      - name: Render (en profile)
         run: quarto render --profile en --no-clean
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+      - name: Remove stray nested build artifact
+        run: rm -rf _site/en/_site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Sync to webroot
+        run: rsync -a --delete _site/ /var/www/pbp/
