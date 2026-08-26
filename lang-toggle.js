@@ -31,3 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   link.setAttribute("href", target);
 });
+
+// Quarto's frontmatter `title:` can't vary per language profile, so a page
+// using the .pbp-banner/.pbp-page-title pattern (which replaces the VISIBLE
+// heading per language already) still leaves the browser tab/<title> tag
+// showing the original-language frontmatter text. Override it from whichever
+// translated heading is actually on the page.
+document.addEventListener("DOMContentLoaded", function () {
+  var headingEl = document.querySelector(".pbp-banner-title, h1.pbp-page-title");
+  if (!headingEl) return;
+  var correctTitle = headingEl.textContent.trim();
+  var parts = document.title.split(" – ");
+  var suffix = parts.length > 1 ? parts.slice(1).join(" – ") : null;
+  document.title = suffix ? correctTitle + " – " + suffix : correctTitle;
+});
