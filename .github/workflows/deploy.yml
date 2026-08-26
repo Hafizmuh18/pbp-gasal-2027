@@ -25,3 +25,4 @@ jobs:
 
       - name: Sync to webroot
         run: rsync -a --delete _site/ /var/www/pbp/
+
