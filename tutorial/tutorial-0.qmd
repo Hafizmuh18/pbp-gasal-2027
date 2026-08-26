@@ -164,7 +164,7 @@ git config --list
 
 ![Contoh output git config --list](../img/tutorial-0/git-config-list.png)
 
-## Menyiapkan Repository myportfolio
+## Menyiapkan Repository myportofolio
 
 **Repositori** adalah tempat penyimpanan untuk proyek perangkat lunak, yang mencakup semua revisi dan perubahan yang telah dilakukan pada kode. Untuk mengeksekusi perintah-perintah Git, kamu bisa melakukannya pada repositori di GitHub, platform kolaboratif untuk mengelola proyek menggunakan Git.
 
@@ -173,7 +173,7 @@ git config --list
 1. Buat folder proyek baru dan masuk ke dalamnya.
 
    ```bash
-   mkdir myportfolio && cd myportfolio
+   mkdir myportofolio && cd myportofolio
    ```
 
 2. Inisiasi repositori Git.
@@ -218,14 +218,14 @@ Kebiasaan baik menulis pesan *commit*: jelaskan singkat apa yang kamu lakukan, b
    git branch -M main
    ```
 
-2. Buka [GitHub](https://github.com), klik tombol **+** di pojok kanan atas lalu pilih **New repository**. Isi `Repository name` dengan `myportfolio`, pilih visibilitas **Public**, biarkan opsi lain (README, .gitignore, license) tetap kosong/default, lalu klik **Create repository**.
+2. Buka [GitHub](https://github.com), klik tombol **+** di pojok kanan atas lalu pilih **New repository**. Isi `Repository name` dengan `myportofolio`, pilih visibilitas **Public**, biarkan opsi lain (README, .gitignore, license) tetap kosong/default, lalu klik **Create repository**.
 
    ![Halaman pembuatan repositori baru di GitHub](../img/tutorial-0/github-create-repo.png)
 
 3. Hubungkan repositori lokal ke repositori GitHub yang baru dibuat dengan perintah `git remote add <NAMA_REMOTE> <URL_REPO>`.
 
    ```bash
-   git remote add origin https://github.com/<username>/myportfolio.git
+   git remote add origin https://github.com/<username>/myportofolio.git
    ```
 
    `<NAMA_REMOTE>` adalah nama yang akan kamu gunakan untuk mereferensikan repositori remote tersebut - secara konvensi, nama **origin** dipakai untuk repositori utama/primer. `<URL_REPO>` adalah URL HTTPS repositori yang kamu dapat dari halaman GitHub setelah repositorinya dibuat.
@@ -248,13 +248,13 @@ Kebiasaan baik menulis pesan *commit*: jelaskan singkat apa yang kamu lakukan, b
 
 5. *Refresh* halaman repositorimu di GitHub - `README.md` seharusnya sudah terlihat.
 
-![Repositori myportfolio di GitHub setelah push pertama](../img/tutorial-0/github-repo-created.png)
+![Repositori myportofolio di GitHub setelah push pertama](../img/tutorial-0/github-repo-created.png)
 
 ### Langkah 3: Melakukan Cloning terhadap Suatu Repositori
 
 ***Cloning* repositori** adalah proses menduplikasi seluruh konten dari repositori yang ada di GitHub ke komputer lokal, supaya bisa dilihat, diedit, dan dijalankan secara *offline*.
 
-1. Buka halaman repositori `myportfolio` yang sudah kamu buat di [GitHub](https://github.com).
+1. Buka halaman repositori `myportofolio` yang sudah kamu buat di [GitHub](https://github.com).
 2. Klik tombol **Code** di pojok kanan atas halaman repositori, lalu pilih opsi HTTPS untuk salin URL *clone*-nya.
 3. Buka terminal di direktori yang **berbeda** dari tempat repositori lokalmu sebelumnya, lalu jalankan:
 
@@ -304,7 +304,7 @@ Pada tahap ini kamu akan mempelajari penggunaan *branch* di Git. Penggunaan *bra
 
 ### Langkah 1: Virtual Environment
 
-Di dalam folder `myportfolio`, buat *virtual environment*.
+Di dalam folder `myportofolio`, buat *virtual environment*.
 
 **Windows:**
 ```bash
@@ -354,14 +354,14 @@ Install semua *dependencies* tersebut:
 pip install -r requirements.txt
 ```
 
-Lalu buat proyek Django bernama `myportfolio`:
+Lalu buat proyek Django bernama `myportofolio`:
 
 ```bash
-django-admin startproject myportfolio .
+django-admin startproject myportofolio .
 ```
 
 ::: {.callout-important}
-Pastikan karakter `.` tertulis di akhir perintah - ini membuat Django meletakkan `manage.py` langsung di folder `myportfolio`, bukan di dalam subfolder baru.
+Pastikan karakter `.` tertulis di akhir perintah - ini membuat Django meletakkan `manage.py` langsung di folder `myportofolio`, bukan di dalam subfolder baru.
 :::
 
 ### Langkah 3: Konfigurasi Environment Variables
@@ -602,7 +602,7 @@ git push origin main
 ```
 
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - repositori `myportfolio` yang baru kamu buat ini **adalah** website portofolio pribadimu untuk sepanjang semester, bukan latihan sekali pakai. Struktur, riwayat commit, dan branch yang kamu buat di sini akan terus berkembang di tutorial-tutorial berikutnya.
+**Menghubungkan ke Proyek Kamu** - repositori `myportofolio` yang baru kamu buat ini **adalah** website portofolio pribadimu untuk sepanjang semester, bukan latihan sekali pakai. Struktur, riwayat commit, dan branch yang kamu buat di sini akan terus berkembang di tutorial-tutorial berikutnya.
 :::
 
 ## Akhir Kata
@@ -770,7 +770,7 @@ git config --list
 
 ![Example output of git config --list](../img/tutorial-0/git-config-list.png)
 
-## Setting Up the myportfolio Repository
+## Setting Up the myportofolio Repository
 
 A **repository** is a storage location for a software project, holding every revision and change ever made to the code. To run Git commands, you can do so against a repository on GitHub, the collaborative platform for managing projects with Git.
 
@@ -779,7 +779,7 @@ A **repository** is a storage location for a software project, holding every rev
 1. Create a new project folder and enter it.
 
    ```bash
-   mkdir myportfolio && cd myportfolio
+   mkdir myportofolio && cd myportofolio
    ```
 
 2. Initialize the Git repository.
@@ -824,14 +824,14 @@ Good commit message habit: briefly explain what you did, usually in English (e.g
    git branch -M main
    ```
 
-2. Open [GitHub](https://github.com), click the **+** button in the top right corner and choose **New repository**. Fill in `Repository name` with `myportfolio`, choose **Public** visibility, leave the other options (README, .gitignore, license) empty/default, then click **Create repository**.
+2. Open [GitHub](https://github.com), click the **+** button in the top right corner and choose **New repository**. Fill in `Repository name` with `myportofolio`, choose **Public** visibility, leave the other options (README, .gitignore, license) empty/default, then click **Create repository**.
 
    ![The new repository page on GitHub](../img/tutorial-0/github-create-repo.png)
 
 3. Connect your local repository to the new GitHub repository using `git remote add <REMOTE_NAME> <REPO_URL>`.
 
    ```bash
-   git remote add origin https://github.com/<username>/myportfolio.git
+   git remote add origin https://github.com/<username>/myportofolio.git
    ```
 
    `<REMOTE_NAME>` is the name you'll use to refer to that remote repository - by convention, **origin** is used for the main/primary repository. `<REPO_URL>` is the HTTPS URL of the repository, which you get from the GitHub page after the repository is created.
@@ -854,13 +854,13 @@ Good commit message habit: briefly explain what you did, usually in English (e.g
 
 5. Refresh your repository page on GitHub - `README.md` should now be visible.
 
-![The myportfolio repository on GitHub after the first push](../img/tutorial-0/github-repo-created.png)
+![The myportofolio repository on GitHub after the first push](../img/tutorial-0/github-repo-created.png)
 
 ### Step 3: Cloning a Repository
 
 **Cloning** a repository duplicates its entire contents from GitHub onto your local computer, so you can view, edit, and run it *offline*.
 
-1. Open your `myportfolio` repository page on [GitHub](https://github.com).
+1. Open your `myportofolio` repository page on [GitHub](https://github.com).
 2. Click the **Code** button in the top right of the repository page, then choose the HTTPS option to copy the *clone* URL.
 3. Open a terminal in a **different** directory from your existing local repository, then run:
 
@@ -910,7 +910,7 @@ A **conflict** happens when changes on one branch collide with changes on anothe
 
 ### Step 1: Virtual Environment
 
-Inside the `myportfolio` folder, create a *virtual environment*.
+Inside the `myportofolio` folder, create a *virtual environment*.
 
 **Windows:**
 ```bash
@@ -960,14 +960,14 @@ Install all of them:
 pip install -r requirements.txt
 ```
 
-Then create the Django project named `myportfolio`:
+Then create the Django project named `myportofolio`:
 
 ```bash
-django-admin startproject myportfolio .
+django-admin startproject myportofolio .
 ```
 
 ::: {.callout-important}
-Make sure the `.` character is at the end of the command - this makes Django place `manage.py` directly in the `myportfolio` folder instead of inside a new subfolder.
+Make sure the `.` character is at the end of the command - this makes Django place `manage.py` directly in the `myportofolio` folder instead of inside a new subfolder.
 :::
 
 ### Step 3: Configure Environment Variables
@@ -1208,7 +1208,7 @@ git push origin main
 ```
 
 ::: {.callout-important}
-**Connecting to Your Project** - the `myportfolio` repository you just created **is** your personal portfolio website for the whole semester, not a one-off exercise. The structure, commit history, and branches you build here will keep growing in the following tutorials.
+**Connecting to Your Project** - the `myportofolio` repository you just created **is** your personal portfolio website for the whole semester, not a one-off exercise. The structure, commit history, and branches you build here will keep growing in the following tutorials.
 :::
 
 ## Closing Notes
