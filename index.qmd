@@ -69,6 +69,29 @@ Rincian lengkap tiap Individual Assignment, Mid-Term Project, dan Final
 Project (rubrik, format pengumpulan, dst.) ada di halaman masing-masing
 pada menu **Tugas**.
 :::
+
+## Kriteria Penilaian
+
+| Komponen | Frekuensi | Tipe | Bobot |
+|---|:---:|---|---:|
+| Tutorial | 9 | AI Allowed | 0% |
+| Individual Assignment | 9 | AI Allowed | 8% |
+| Project Assignment - Web | 1 | AI Allowed | 10% (7% Individu + 3% Kelompok) |
+| Project Assignment - Mobile | 1 | AI Allowed | 10% (7% Individu + 3% Kelompok) |
+| Programming Quiz | 3 | Secured | 15% |
+| UTS | 1 | Secured | 30% |
+| UAS | 1 | Secured | 25% |
+| Partisipasi | - | - | 2% |
+
+: {tbl-colwidths="[34,14,20,32]"}
+
+## Kontrak Kelas
+
+1. Berpartisipasi aktif, mengerjakan tugas dengan usaha terbaik, bertanggung jawab penuh, dan mematuhi seluruh aturan yang berlaku.
+2. Kumpulkan semua tugas tepat waktu. **Tidak ada perpanjangan deadline** yang akan diberikan dengan alasan apa pun, karena linimasa sudah ditetapkan sejak awal.
+3. Segala bentuk plagiarisme yang terbukti akan ditindak tegas sesuai peraturan fakultas.
+4. Gunakan AI dan sumber eksternal secara bertanggung jawab. Kamu wajib mengakui dan mencantumkan secara eksplisit seluruh sumber yang digunakan dalam tugasmu.
+5. Banding atau sanggahan nilai hanya diterima dalam waktu 3x24 jam setelah nilai diumumkan. Setelah periode tersebut, seluruh nilai bersifat final.
 :::
 
 ::: {.content-visible when-profile="en"}
@@ -116,4 +139,27 @@ Full details for each Individual Assignment, Mid-Term Project, and Final
 Project (rubric, submission format, etc.) are on their own pages under
 the **Assignments** menu.
 :::
+
+## Assessment Criteria
+
+| Component | Frequent | Type | Weight |
+|---|:---:|---|---:|
+| Tutorial | 9 | AI Allowed | 0% |
+| Individual Assignment | 9 | AI Allowed | 8% |
+| Project Assignment - Web | 1 | AI Allowed | 10% (7% Ind + 3% Grp) |
+| Project Assignment - Mobile | 1 | AI Allowed | 10% (7% Ind + 3% Grp) |
+| Programming Quiz | 3 | Secured | 15% |
+| Midterm Exam | 1 | Secured | 30% |
+| Final Exam | 1 | Secured | 25% |
+| Participation | - | - | 2% |
+
+: {tbl-colwidths="[34,14,20,32]"}
+
+## Class Contract
+
+1. Participate actively, complete assignments with your best effort, take full responsibility, and comply with all applicable rules.
+2. Submit all assignments on time. **No deadline extensions** will be granted for any reason, as the timeline is set from day one.
+3. Any proven plagiarism will be strictly sanctioned according to faculty regulations.
+4. Use AI and external resources responsibly. You must explicitly acknowledge and disclose all sources used in your assignments.
+5. Grade appeals or disputes are only accepted within 3x24 hours after grades are published. After this period, all grades are final.
 :::
