@@ -16,9 +16,6 @@ website:
     right:
       - text: "🇬🇧 English"
         href: en/index.html
-      - icon: github
-        href: https://github.com/Hafizmuh18/pbp-gasal-2027
-        aria-label: GitHub
 
   sidebar:
     - id: materi

@@ -19,9 +19,6 @@ website:
     right:
       - text: "🇮🇩 Indonesia"
         href: ../index.html
-      - icon: github
-        href: https://github.com/Hafizmuh18/pbp-gasal-2027
-        aria-label: GitHub
 
   sidebar:
     - id: materi
