@@ -22,6 +22,11 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 ***
 
+::: {.callout-important}
+### Tutorial 01 adalah Prasyarat Wajib
+Individual Assignment 1 **hanya dinilai apabila Tutorial 01 sudah diselesaikan** paling lambat **Rabu, 2 September 2026**. Kalau Tutorial 01 belum dikerjakan, Individual Assignment 1 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+:::
+
 ## Tentang Proyek
 
 Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
@@ -46,11 +51,6 @@ Checklist minimal untuk tugas ini:
 - [ ] Section baru tersebut punya isi yang nyata (bukan `lorem ipsum` atau placeholder kosong).
 - [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
 - [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
-
-::: {.callout-important}
-### Tutorial 01 adalah Prasyarat Wajib
-Individual Assignment 1 **hanya dinilai apabila Tutorial 01 sudah diselesaikan** pada sesi lab-nya (**Rabu, 2 September 2026**). Kalau Tutorial 01 belum dikerjakan, Individual Assignment 1 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
-:::
 
 ## Pengumpulan
 
@@ -79,6 +79,11 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 
 ***
 
+::: {.callout-important}
+### Tutorial 01 Is a Mandatory Prerequisite
+Individual Assignment 1 **is only graded if Tutorial 01 has been completed** by **Wednesday, September 2, 2026** at the latest. If Tutorial 01 hasn't been done, Individual Assignment 1 **will not be graded**, even if submitted through SCELE.
+:::
+
 ## About the Project
 
 This course's Individual Project is a **personal portfolio website**, done individually. Individual Assignments are released weekly following that week's Tutorial topic, and each one continues directly from the code you wrote in that same week's Tutorial.
@@ -103,11 +108,6 @@ Minimum checklist for this assignment:
 - [ ] That new section has real content (not `lorem ipsum` or an empty placeholder).
 - [ ] The page still looks clean at both desktop and mobile widths.
 - [ ] The project runs successfully with `python manage.py runserver` without errors.
-
-::: {.callout-important}
-### Tutorial 01 Is a Mandatory Prerequisite
-Individual Assignment 1 **is only graded if Tutorial 01 has been completed** during its lab session (**Wednesday, September 2, 2026**). If Tutorial 01 hasn't been done, Individual Assignment 1 **will not be graded**, even if submitted through SCELE.
-:::
 
 ## Submission
 

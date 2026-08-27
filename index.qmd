@@ -40,7 +40,7 @@ Quiz** di beberapa minggu.
 | Minggu | Tanggal | Senin | Rabu | Aktivitas / Assignment |
 |:---:|---|---|---|---|
 | 1 | 24-28 Ags | [**Topik 01:**](materi/materi-01.qmd) Introduction to Platform-Based Programming, Internet & Framework | [**Topik 01 (lanjutan)**](materi/materi-01.qmd) + AI Literacy | [**Tutorial 0:**](tutorial/tutorial-0.qmd) Setup Git Repository, Django Installation |
-| 2 | 31 Ags - 4 Sep | **Topik 02:** Web Design Using HTML5 dan CSS3 | [**Tutorial 01:**](tutorial/tutorial-1.qmd) Django Initial Project, HTML5 dan CSS3 | **Individual Assignment 1:** Static Web with HTML5 and CSS3<br>Rilis 31 Ags, deadline 7 Sep 12.00 WIB |
+| 2 | 31 Ags - 4 Sep | **Topik 02:** Web Design Using HTML5 dan CSS3 | [**Tutorial 01:**](tutorial/tutorial-1.qmd) Django Initial Project, HTML5 dan CSS3 | [**Individual Assignment 1:**](assignments/individual/tugas-1.qmd) Static Web with HTML5 and CSS3<br>Rilis 31 Ags, deadline 7 Sep 12.00 WIB |
 | 3 | 7-11 Sep | **Topik 03:** MTV Django Architecture | **Tutorial 02:** Model-View-Template (MVT) Django Implementation | **Individual Assignment 2:** MVT Django Implementation<br>Rilis 7 Sep, deadline 14 Sep 12.00 WIB<br>Mid-Term Project Guideline rilis 11 Sep |
 | 4 | 14-18 Sep | **Topik 04:** Data Delivery | **Tutorial 03:** Form dan Data Delivery | **Individual Assignment 3:** Form & Data Delivery<br>Rilis 14 Sep, deadline 21 Sep 12.00 WIB<br>Mid-Term Project Checkpoint 1 (Project Ideas, Project Initiation): 16 Sep |
 | 5 | 21-25 Sep | **Topik 05:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Session and Cookies Implementation<br>Programming Quiz 1 | **Individual Assignment 4:** Authentication, Session and Cookies Implementation<br>Rilis 21 Sep, deadline 28 Sep 12.00 WIB |
@@ -104,7 +104,7 @@ a **Programming Quiz** on some weeks.
 | Week | Dates | Monday | Wednesday | Activity / Assignment |
 |:---:|---|---|---|---|
 | 1 | Aug 24-28 | [**Topic 01:**](materi/materi-01.qmd) Introduction to Platform-Based Programming, Internet & Framework | [**Topic 01 (cont.)**](materi/materi-01.qmd) + AI Literacy | [**Tutorial 0:**](tutorial/tutorial-0.qmd) Set Up Git Repository, Django Installation |
-| 2 | Aug 31 - Sep 4 | **Topic 02:** Web Design Using HTML5 and CSS3 | [**Tutorial 01:**](tutorial/tutorial-1.qmd) Django Initial Project, HTML5 and CSS3 | **Individual Assignment 1:** Static Web with HTML5 and CSS3<br>Released Aug 31, due Sep 7, 12:00 WIB |
+| 2 | Aug 31 - Sep 4 | **Topic 02:** Web Design Using HTML5 and CSS3 | [**Tutorial 01:**](tutorial/tutorial-1.qmd) Django Initial Project, HTML5 and CSS3 | [**Individual Assignment 1:**](assignments/individual/tugas-1.qmd) Static Web with HTML5 and CSS3<br>Released Aug 31, due Sep 7, 12:00 WIB |
 | 3 | Sep 7-11 | **Topic 03:** MTV Django Architecture | **Tutorial 02:** Model-View-Template (MVT) Django Implementation | **Individual Assignment 2:** MVT Django Implementation<br>Released Sep 7, due Sep 14, 12:00 WIB<br>Mid-Term Project Guideline released Sep 11 |
 | 4 | Sep 14-18 | **Topic 04:** Data Delivery | **Tutorial 03:** Forms and Data Delivery | **Individual Assignment 3:** Form & Data Delivery<br>Released Sep 14, due Sep 21, 12:00 WIB<br>Mid-Term Project Checkpoint 1 (Project Ideas, Project Initiation): Sep 16 |
 | 5 | Sep 21-25 | **Topic 05:** Form, Authentication, Session, and Cookie | **Tutorial 04:** Authentication, Session and Cookies Implementation<br>Programming Quiz 1 | **Individual Assignment 4:** Authentication, Session and Cookies Implementation<br>Released Sep 21, due Sep 28, 12:00 WIB |
