@@ -47,13 +47,18 @@ Checklist minimal untuk tugas ini:
 - [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
 - [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
 
+::: {.callout-important}
+### Tutorial 01 adalah Prasyarat Wajib
+Individual Assignment 1 **hanya dinilai apabila Tutorial 01 sudah diselesaikan** pada sesi lab-nya (**Rabu, 2 September 2026**). Kalau Tutorial 01 belum dikerjakan, Individual Assignment 1 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+:::
+
 ## Pengumpulan
 
 Tugas dikumpulkan dalam bentuk tautan repositori Git (branch/commit yang menunjukkan hasil akhir tugas ini) melalui slot submisi yang disediakan di SCELE.
 
 ## Tenggat Waktu Pengerjaan
 
-Individual Assignment 1 rilis **31 Agustus 2026** dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB**.
+Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
 
 ## Rubrik Penilaian
 
@@ -99,13 +104,18 @@ Minimum checklist for this assignment:
 - [ ] The page still looks clean at both desktop and mobile widths.
 - [ ] The project runs successfully with `python manage.py runserver` without errors.
 
+::: {.callout-important}
+### Tutorial 01 Is a Mandatory Prerequisite
+Individual Assignment 1 **is only graded if Tutorial 01 has been completed** during its lab session (**Wednesday, September 2, 2026**). If Tutorial 01 hasn't been done, Individual Assignment 1 **will not be graded**, even if submitted through SCELE.
+:::
+
 ## Submission
 
 Submit this assignment as a Git repository link (the branch/commit showing this assignment's final result) through the submission slot provided on SCELE.
 
 ## Deadline
 
-Individual Assignment 1 is released **August 31, 2026** and due no later than **September 7, 2026, 12:00 WIB**.
+Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 12:00 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
 
 ## Grading Rubric
 
