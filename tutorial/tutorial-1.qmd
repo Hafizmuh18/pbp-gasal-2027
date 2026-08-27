@@ -28,6 +28,10 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 ***
 
+::: {.callout-warning}
+**Tutorial ini adalah prasyarat wajib untuk [Individual Assignment 1](../assignments/individual/tugas-1.qmd)** - kalau belum diselesaikan, Individual Assignment 1 tidak akan dinilai. Deadline Tutorial 01 adalah **Rabu, 2 September 2026**; deadline Individual Assignment 1 adalah **Senin, 7 September 2026**. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
+:::
+
 ### Tujuan Pembelajaran
 
 Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
@@ -590,6 +594,10 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 **Contributor:** MUH - Hafiz
 
 ***
+
+::: {.callout-warning}
+**This Tutorial is a mandatory prerequisite for [Individual Assignment 1](../assignments/individual/tugas-1.qmd)** - if it hasn't been completed, Individual Assignment 1 won't be graded. Tutorial 01's deadline is **Wednesday, September 2, 2026**; Individual Assignment 1's deadline is **Monday, September 7, 2026**. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
+:::
 
 ### Learning Objectives
 
