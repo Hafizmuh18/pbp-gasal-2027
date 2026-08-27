@@ -460,7 +460,7 @@ Pastikan juga tampilannya tidak rusak di layar sempit - coba perkecil lebar brow
 
 Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adalah men-*deploy*-nya supaya bisa diakses lewat internet, memakai **PWS (Pacil Web Service)** - platform *hosting* milik Fakultas Ilmu Komputer UI.
 
-1. Akses halaman PWS pada <https://pbp.cs.ui.ac.id>. Kamu akan diarahkan ke halaman *login* with SSO.
+1. Akses halaman PWS pada <https://pws.cs.ui.ac.id>. Kamu akan diarahkan ke halaman *login* with SSO.
 2. Login dengan akun SSO UI kamu.
 3. Apabila proses *login* berhasil, kamu akan diarahkan ke *home page* dari PWS.
 
@@ -493,7 +493,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
 7. Pada `settings.py` di proyek Django kamu, tambahkan URL *deployment* PWS ke `ALLOWED_HOSTS`.
 
    ::: {.callout-note}
-   URL *deployment* PWS memiliki format `<username-sso>-<nama-proyek>.pbp.cs.ui.ac.id`. Kalau username SSO kamu ada karakter titik (`.`), ganti jadi *hyphen* (`-`). Contoh: kalau username SSO kamu `burhan.25` dan nama proyek `myportfolio`, URL *deployment*-nya `burhan-25-myportfolio.pbp.cs.ui.ac.id`.
+   URL *deployment* PWS memiliki format `<username-sso>-<nama-proyek>.pws.cs.ui.ac.id`. Kalau username SSO kamu ada karakter titik (`.`), ganti jadi *hyphen* (`-`). Contoh: kalau username SSO kamu `burhan.25` dan nama proyek `myportfolio`, URL *deployment*-nya `burhan-25-myportfolio.pws.cs.ui.ac.id`.
    :::
 
    ```python
@@ -1023,7 +1023,7 @@ Also make sure it doesn't break on narrow screens - try shrinking your browser w
 
 Your "About Me" page now works locally. The last step is *deploying* it so it's reachable over the internet, using **PWS (Pacil Web Service)** - the Faculty of Computer Science UI's hosting platform.
 
-1. Go to <https://pbp.cs.ui.ac.id>. You'll be redirected to the *login* with SSO page.
+1. Go to <https://pws.cs.ui.ac.id>. You'll be redirected to the *login* with SSO page.
 2. Log in with your UI SSO account.
 3. Once *login* succeeds, you'll land on the PWS *home page*.
 
@@ -1056,7 +1056,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
 7. In your Django project's `settings.py`, add the PWS *deployment* URL to `ALLOWED_HOSTS`.
 
    ::: {.callout-note}
-   The PWS *deployment* URL follows the format `<sso-username>-<project-name>.pbp.cs.ui.ac.id`. If your SSO username has a dot (`.`) in it, replace it with a *hyphen* (`-`). Example: if your SSO username is `burhan.25` and your project name is `myportfolio`, your *deployment* URL is `burhan-25-myportfolio.pbp.cs.ui.ac.id`.
+   The PWS *deployment* URL follows the format `<sso-username>-<project-name>.pws.cs.ui.ac.id`. If your SSO username has a dot (`.`) in it, replace it with a *hyphen* (`-`). Example: if your SSO username is `burhan.25` and your project name is `myportfolio`, your *deployment* URL is `burhan-25-myportfolio.pws.cs.ui.ac.id`.
    :::
 
    ```python
