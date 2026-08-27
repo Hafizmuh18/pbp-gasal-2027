@@ -1,5 +1,5 @@
 ---
-title: "Proyek Individu - Tugas N: <Judul Tugas>"
+title: "Individual Assignment N: <Judul Tugas>"
 format:
   html: default
   typst: default
@@ -60,7 +60,7 @@ format-links:
 
 ::: {.content-visible when-profile="id"}
 
-# Proyek Individu - Tugas N: <Judul Tugas> {.pbp-page-title}
+# Individual Assignment N: <Judul Tugas> {.pbp-page-title}
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
@@ -84,13 +84,18 @@ yang sama.>
    mengikuti pola Model-View-Template dari [Tutorial 02](../../tutorial/tutorial-2.qmd)">
 2. <Poin target 2>
 
+::: {.callout-important}
+### Tutorial N adalah Prasyarat Wajib
+Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** pada sesi lab-nya (<hari/tanggal Rabu sesi lab minggu ini>). Kalau Tutorial N belum dikerjakan, Individual Assignment N **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+:::
+
 ## Pengumpulan
 
 Tugas dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<format nama berkas>`.
 
 ## Tenggat Waktu Pengerjaan
 
-<Tenggat waktu tugas ini.>
+<Tenggat waktu tugas ini - jangan lupa sebutkan bahwa deadline ini lebih lama dari deadline Tutorial N (lihat [halaman Jadwal](../../index.qmd#jadwal-semester) untuk tanggal lengkap).>
 
 ## Rubrik Penilaian
 
@@ -100,7 +105,7 @@ Tugas dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<fo
 
 ::: {.content-visible when-profile="en"}
 
-# Individual Project - Tugas N: <Assignment Title> {.pbp-page-title}
+# Individual Assignment N: <Assignment Title> {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
@@ -124,13 +129,18 @@ the same pattern.>
    following the Model-View-Template pattern from [Tutorial 02](../../tutorial/tutorial-2.qmd)">
 2. <Target point 2>
 
+::: {.callout-important}
+### Tutorial N Is a Mandatory Prerequisite
+Individual Assignment N **is only graded if Tutorial N has been completed** during its lab session (<this week's Wednesday lab session date>). If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
+:::
+
 ## Submission
 
 The assignment is submitted in <file format> with the file naming convention `<file naming convention>`.
 
 ## Deadline
 
-<This assignment's deadline.>
+<This assignment's deadline - note that it's later than Tutorial N's own deadline (see the [Schedule page](../../index.qmd#semester-schedule) for exact dates).>
 
 ## Grading Rubric
 

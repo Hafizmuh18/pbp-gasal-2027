@@ -23,15 +23,23 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
+::: {.callout-warning}
+**Individual Assignment hanya dinilai kalau Tutorial minggu yang sama sudah diselesaikan** - kalau belum, Individual Assignment tersebut tidak akan dinilai meskipun sudah dikumpulkan. Deadline Tutorial adalah hari Rabu sesi lab; deadline Individual Assignment adalah Senin minggu berikutnya. Lihat tanggal lengkap tiap minggu di [halaman Jadwal](../index.qmd#jadwal-semester).
+:::
+
 1. Penilaian individu terdiri dari **Individual Assignment mingguan** (rilis dan deadline seminggu kemudian, mengikuti topik Tutorial minggu itu) dan **Programming Quiz** (via SCELE, lihat halaman Jadwal untuk tanggalnya).
 2. Individual Assignment akan muncul di menu ini satu per satu, seiring tutorial minggu terkait selesai dipublish.
-3. Beberapa Individual Assignment merujuk balik ke Tutorial minggu yang sama - kerjakan tutorialnya dulu supaya polanya jelas, walau tutorial sendiri tidak wajib/tidak dinilai langsung.
+3. Setiap Individual Assignment mensyaratkan Tutorial minggu yang sama sudah diselesaikan - kerjakan tutorialnya dulu, karena tanpa itu Individual Assignment-nya tidak dinilai.
 4. Apabila terdapat kesulitan, mahasiswa dapat bertanya kepada asisten dosen melalui media komunikasi yang sudah ditentukan.
 :::
 ::: {.content-visible when-profile="en"}
+::: {.callout-warning}
+**An Individual Assignment is only graded if that same week's Tutorial has been completed** - if it hasn't, the Individual Assignment won't be graded even if submitted. A Tutorial's deadline is its Wednesday lab session; its Individual Assignment's deadline is the following Monday. See exact dates for every week on the [Schedule page](../index.qmd#semester-schedule).
+:::
+
 1. Individual assessment consists of a **weekly Individual Assignment** (released and due a week later, following that week's Tutorial topic) and a **Programming Quiz** (via SCELE, see the Schedule page for dates).
 2. Individual Assignments will appear in this menu one at a time, as each related tutorial week is published.
-3. Some Individual Assignments reference back to that same week's Tutorial - do the tutorial first so the pattern is clear, even though the tutorial itself isn't mandatory or directly graded.
+3. Every Individual Assignment requires that same week's Tutorial to be completed first - do the tutorial first, since without it the Individual Assignment won't be graded.
 4. If you run into difficulties, students may ask teaching assistants questions through the designated communication channel.
 :::
 

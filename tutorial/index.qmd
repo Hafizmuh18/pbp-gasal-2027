@@ -23,14 +23,22 @@ title: "Informasi"
 ```
 
 ::: {.content-visible when-profile="id"}
-1. Setiap minggu, Senin adalah kelas materi dan Rabu adalah sesi lab tutorial. Tutorial harus diselesaikan pada sesi lab yang dijadwalkan.
-2. Tutorial **tidak dinilai** secara langsung, tapi menjadi **prasyarat** untuk Individual Assignment minggu yang sama - pola yang dipelajari di tutorial langsung dipakai ulang di sana.
+::: {.callout-warning}
+**Tutorial adalah prasyarat wajib untuk Individual Assignment minggu yang sama** - kalau belum dikerjakan, Individual Assignment tidak akan dinilai. Deadline Tutorial adalah hari Rabu sesi lab; deadline Individual Assignment adalah Senin minggu berikutnya. Lihat tanggal lengkap tiap minggu di [halaman Jadwal](../index.qmd#jadwal-semester).
+:::
+
+1. Setiap minggu, Senin adalah kelas materi dan Rabu adalah sesi lab tutorial. Tutorial harus diselesaikan pada sesi lab yang dijadwalkan (deadline-nya adalah hari Rabu itu sendiri).
+2. Tutorial **tidak dinilai** secara langsung, tapi menjadi **prasyarat wajib** untuk Individual Assignment minggu yang sama - kalau Tutorial minggu itu belum diselesaikan, Individual Assignment yang bersangkutan **tidak akan dinilai**, meskipun sudah dikumpulkan.
 3. Mahasiswa dapat bertanya kepada asisten dosen selama jam sesi lab.
-4. Individual Assignment dirilis Senin, dengan tenggat waktu Senin minggu berikutnya (lihat menu Tugas).
+4. Individual Assignment dirilis Senin (minggu yang sama dengan Tutorial-nya), dengan tenggat waktu Senin minggu **berikutnya** - jadi lebih lama dari deadline Tutorial-nya sendiri (lihat menu Tugas).
 :::
 ::: {.content-visible when-profile="en"}
-1. Every week, Monday is the lecture and Wednesday is the tutorial lab session. Tutorials must be completed during the scheduled lab session.
-2. Tutorials are **not graded** directly, but serve as a **prerequisite** for that same week's Individual Assignment - the pattern you learn there gets reused directly in it.
+::: {.callout-warning}
+**A Tutorial is a mandatory prerequisite for that same week's Individual Assignment** - if it hasn't been completed, the Individual Assignment won't be graded. A Tutorial's deadline is its Wednesday lab session; its Individual Assignment's deadline is the following Monday. See exact dates for every week on the [Schedule page](../index.qmd#semester-schedule).
+:::
+
+1. Every week, Monday is the lecture and Wednesday is the tutorial lab session. Tutorials must be completed during the scheduled lab session (its deadline is that same Wednesday).
+2. Tutorials are **not graded** directly, but are a **mandatory prerequisite** for that same week's Individual Assignment - if that week's Tutorial hasn't been completed, the corresponding Individual Assignment **will not be graded**, even if submitted.
 3. Students may ask teaching assistants questions during the lab session.
-4. Individual Assignments are released on Monday, with a deadline the following Monday (see the Assignments menu).
+4. Individual Assignments are released on Monday (the same week as their Tutorial), with a deadline the **following** Monday - later than the Tutorial's own deadline (see the Assignments menu).
 :::
