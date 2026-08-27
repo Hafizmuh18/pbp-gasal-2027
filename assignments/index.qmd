@@ -24,7 +24,7 @@ title: "Informasi"
 
 ::: {.content-visible when-profile="id"}
 ::: {.callout-warning}
-**Individual Assignment hanya dinilai kalau Tutorial minggu yang sama sudah diselesaikan** - kalau belum, Individual Assignment tersebut tidak akan dinilai meskipun sudah dikumpulkan. Deadline Tutorial adalah hari Rabu sesi lab; deadline Individual Assignment adalah Senin minggu berikutnya. Lihat tanggal lengkap tiap minggu di [halaman Jadwal](../index.qmd#jadwal-semester).
+**Individual Assignment hanya dinilai kalau Tutorial minggu yang sama sudah diselesaikan** - kalau belum, Individual Assignment tersebut tidak akan dinilai meskipun sudah dikumpulkan. Deadline Tutorial adalah hari Rabu itu sendiri (tidak harus selesai persis saat sesi lab); deadline Individual Assignment adalah Senin minggu berikutnya. Lihat tanggal lengkap tiap minggu di [halaman Jadwal](../index.qmd#jadwal-semester).
 :::
 
 1. Penilaian individu terdiri dari **Individual Assignment mingguan** (rilis dan deadline seminggu kemudian, mengikuti topik Tutorial minggu itu) dan **Programming Quiz** (via SCELE, lihat halaman Jadwal untuk tanggalnya).
@@ -34,7 +34,7 @@ title: "Informasi"
 :::
 ::: {.content-visible when-profile="en"}
 ::: {.callout-warning}
-**An Individual Assignment is only graded if that same week's Tutorial has been completed** - if it hasn't, the Individual Assignment won't be graded even if submitted. A Tutorial's deadline is its Wednesday lab session; its Individual Assignment's deadline is the following Monday. See exact dates for every week on the [Schedule page](../index.qmd#semester-schedule).
+**An Individual Assignment is only graded if that same week's Tutorial has been completed** - if it hasn't, the Individual Assignment won't be graded even if submitted. A Tutorial's deadline is that same Wednesday (not necessarily finished exactly during the lab session); its Individual Assignment's deadline is the following Monday. See exact dates for every week on the [Schedule page](../index.qmd#semester-schedule).
 :::
 
 1. Individual assessment consists of a **weekly Individual Assignment** (released and due a week later, following that week's Tutorial topic) and a **Programming Quiz** (via SCELE, see the Schedule page for dates).

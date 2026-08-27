@@ -83,7 +83,7 @@ Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 - <Tulis tujuan pembelajaran 2>
 
 ::: {.callout-warning}
-**Tutorial ini adalah prasyarat wajib untuk [Individual Assignment N](<link ke assignments/individual/tugas-N.qmd>)** - kalau belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial ini adalah <hari/tanggal Rabu sesi lab minggu ini>; deadline Individual Assignment N adalah <hari/tanggal Senin minggu berikutnya>. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
+**Tutorial ini adalah prasyarat wajib untuk [Individual Assignment N](<link ke assignments/individual/tugas-N.qmd>)** - kalau belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial ini adalah <hari/tanggal Rabu minggu ini>; deadline Individual Assignment N adalah <hari/tanggal Senin minggu berikutnya>. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
 :::
 
 ::: {.callout-tip}
@@ -143,7 +143,7 @@ After completing this tutorial, students are expected to be able to:
 - <Write learning objective 2>
 
 ::: {.callout-warning}
-**This Tutorial is a mandatory prerequisite for [Individual Assignment N](<link to assignments/individual/tugas-N.qmd>)** - if it hasn't been completed, that Individual Assignment won't be graded. This Tutorial's deadline is <this week's Wednesday lab session date>; Individual Assignment N's deadline is <the following Monday's date>. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
+**This Tutorial is a mandatory prerequisite for [Individual Assignment N](<link to assignments/individual/tugas-N.qmd>)** - if it hasn't been completed, that Individual Assignment won't be graded. This Tutorial's deadline is <this week's Wednesday date>; Individual Assignment N's deadline is <the following Monday's date>. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
 :::
 
 ::: {.callout-tip}

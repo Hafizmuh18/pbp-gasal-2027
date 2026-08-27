@@ -86,7 +86,7 @@ yang sama.>
 
 ::: {.callout-important}
 ### Tutorial N adalah Prasyarat Wajib
-Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** pada sesi lab-nya (<hari/tanggal Rabu sesi lab minggu ini>). Kalau Tutorial N belum dikerjakan, Individual Assignment N **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** paling lambat <hari/tanggal Rabu minggu ini>. Kalau Tutorial N belum dikerjakan, Individual Assignment N **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
 :::
 
 ## Pengumpulan
@@ -131,7 +131,7 @@ the same pattern.>
 
 ::: {.callout-important}
 ### Tutorial N Is a Mandatory Prerequisite
-Individual Assignment N **is only graded if Tutorial N has been completed** during its lab session (<this week's Wednesday lab session date>). If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
+Individual Assignment N **is only graded if Tutorial N has been completed** by <this week's Wednesday date> at the latest. If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
 :::
 
 ## Submission
