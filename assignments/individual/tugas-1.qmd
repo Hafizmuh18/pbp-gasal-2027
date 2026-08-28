@@ -44,6 +44,10 @@ Kamu **bebas memilih** section apa yang mau ditambahkan, selama relevan untuk se
 
 Karena tugas ini sifatnya lebih bebas dibanding Tutorial, kamu dipersilakan membuat tampilan CSS yang lebih kompleks dari contoh di Tutorial 01 - tambahkan animasi, layout grid yang lebih rumit, atau elemen visual lain sesuai kreativitasmu, selama tetap rapi dan responsif.
 
+::: {.callout-tip}
+Desain visual (warna, font, tata letak, dsb.) di contoh Tutorial 01 hanyalah salah satu referensi. Kamu bebas mengubah desain **seluruh** halaman "About Me", bukan cuma section barunya, asal tetap murni HTML5 dan CSS3, terstruktur rapi, dan checklist di bawah tetap terpenuhi.
+:::
+
 Checklist minimal untuk tugas ini:
 
 - [ ] Section "About Me" dari Tutorial 01 sudah terisi dengan data kamu sendiri (nama, NPM, foto, bio - bukan lagi data contoh).
@@ -100,6 +104,10 @@ You're **free to choose** what section(s) to add, as long as they're relevant to
 - **Projects** - projects you've worked on.
 
 Since this assignment is more open-ended than the Tutorial, you're encouraged to build a more complex CSS design than the Tutorial 01 example - add animations, more elaborate grid layouts, or other visual elements as you like, as long as it stays clean and responsive.
+
+::: {.callout-tip}
+The visual design (colors, fonts, layout, etc.) in the Tutorial 01 example is just one reference. You're free to change the design of the **whole** "About Me" page, not just the new section, as long as it's still plain HTML5 and CSS3, well-structured, and the checklist below is still met.
+:::
 
 Minimum checklist for this assignment:
 
