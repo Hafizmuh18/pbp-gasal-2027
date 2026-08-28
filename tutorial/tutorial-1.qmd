@@ -34,7 +34,7 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 ### Tujuan Pembelajaran
 
-Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
+Di ujung tutorial ini, kamu bakal bisa:
 
 - Memahami struktur folder sebuah proyek Django dan fungsi tiap bagiannya.
 - Menghubungkan sebuah *view* Django ke sebuah *template* HTML statis.
@@ -47,7 +47,7 @@ Tutorial ini adalah **Tutorial 01**, lanjutan langsung dari [Tutorial 0](tutoria
 Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, maskot mata kuliah PBP. Setiap kali ada bagian yang berisi data pribadi Burhan (nama, NPM, bio, foto), akan ada catatan eksplisit yang bilang "ganti ini dengan data kamu sendiri" - jangan sampai kelewat.
 
 ::: {.callout-tip}
-**Yang Sudah Kita Bangun Sejauh Ini** - di [Tutorial 0](tutorial-0.qmd) kamu sudah menyiapkan Git repository, virtual environment `env`, menginstall Django, dan menjalankan `startproject` (sudah sampai tahap melihat halaman selamat datang Django). Tutorial ini melanjutkan dari situ: mengganti halaman bawaan itu dengan halaman "About Me" pertamamu.
+Kalau kamu masih ingat, di [Tutorial 0](tutorial-0.qmd) kita berhenti persis setelah lihat halaman selamat datang Django - Git repository jalan, `env` aktif, Django terinstall, `startproject` udah dijalankan. Sekarang kita ganti halaman default itu dengan halaman "About Me" pertamamu.
 :::
 
 Struktur folder proyekmu saat ini (hasil akhir Tutorial 0):
@@ -133,7 +133,7 @@ myportfolio/
 ```
 
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - `startproject` dan wiring views/urls/templates/static di atas adalah fondasi yang akan dipakai ULANG persis sama di setiap tutorial berikutnya. Proyek `myportfolio` yang kamu buat di sini **adalah** website portofolio pribadimu - bukan latihan terpisah yang nanti dibuang.
+Ingat baik-baik langkah wiring views/urls/templates/static di atas - polanya persis sama yang bakal kamu pakai ulang di SETIAP tutorial berikutnya. Dan `myportfolio` ini bukan proyek latihan yang dibuang setelah tutorial selesai - ini website portofolio pribadimu yang beneran, terus berkembang sepanjang semester.
 :::
 
 ## Struktur Halaman dengan HTML5
@@ -169,7 +169,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
                         <span class="badge">NPM 2206000000</span>
                         <span class="badge">S1 Ilmu Komputer &middot; Universitas Indonesia</span>
                     </div>
-                    <p class="bio">Computer Science student at Universitas Indonesia with a passion for teaching and building practical software projects.</p>
+                    <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
                     <div class="social-links">
                         <a href="https://github.com/" class="social-link">GitHub</a>
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
@@ -457,7 +457,7 @@ Pastikan juga tampilannya tidak rusak di layar sempit - coba perkecil lebar brow
 ![Hasil akhir Tutorial 01 di tampilan mobile](../img/tutorial-1/hasil-akhir-mobile.png){width=40%}
 
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - halaman yang baru kamu buat ini **adalah** halaman utama portofolio pribadimu, bukan contoh latihan terpisah. Ganti seluruh data contoh milik Burhan (nama, NPM, foto, bio, link sosial) dengan data kamu sendiri sesuai tabel di atas. Struktur HTML dan CSS yang sama ini akan terus kamu kembangkan di tutorial-tutorial berikutnya, dan jadi titik awal untuk **Individual Assignment 1** minggu ini.
+Sebelum lanjut: halaman yang barusan kamu bikin itu bukan contoh latihan, ini halaman utama portofolio pribadimu yang sebenarnya. Ganti semua data contoh Burhan (nama, NPM, foto, bio, link sosial) pakai punya kamu sendiri sesuai tabel di atas - struktur HTML/CSS yang sama ini yang bakal terus kamu kembangkan, dan jadi titik awal untuk **Individual Assignment 1** minggu ini.
 :::
 
 ## Pembuatan Akun dan Deployment melalui PWS (Pacil Web Service)
@@ -601,7 +601,7 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 
 ### Learning Objectives
 
-After completing this tutorial, students are expected to be able to:
+By the end of this tutorial, you'll be able to:
 
 - Understand a Django project's folder structure and what each part does.
 - Connect a Django *view* to a static HTML *template*.
@@ -614,7 +614,7 @@ This is **Tutorial 01**, continuing directly from [Tutorial 0](tutorial-0.qmd) -
 Throughout this tutorial, the running example is **Burhan**'s portfolio, the PBP course mascot. Every time a section contains Burhan's personal data (name, NPM, bio, photo), there will be an explicit note telling you to "replace this with your own data" - don't skip it.
 
 ::: {.callout-tip}
-**What We've Built So Far** - in [Tutorial 0](tutorial-0.qmd) you set up a Git repository, an `env` virtual environment, installed Django, and ran `startproject` (getting as far as seeing Django's welcome page). This tutorial continues from there: replacing that default page with your first "About Me" page.
+Quick recap - in [Tutorial 0](tutorial-0.qmd) we left off right after Django's welcome page: Git repository set up, `env` running, Django installed, `startproject` already done. Now we swap that default page out for your first "About Me" page.
 :::
 
 Your project's folder structure right now (the end result of Tutorial 0):
@@ -700,7 +700,7 @@ myportfolio/
 ```
 
 ::: {.callout-important}
-**Connecting to Your Project** - `startproject` and wiring views/urls/templates/static above are the foundation you'll reuse exactly the same way in every following tutorial. The `myportfolio` project you just created **is** your personal portfolio website - not a separate exercise you'll throw away later.
+Hold onto that wiring pattern (views/urls/templates/static) - you'll reuse it exactly the same way in every tutorial from here on. And `myportfolio` isn't a throwaway exercise - it's your actual personal portfolio website, growing with you all semester.
 :::
 
 ## Page Structure with HTML5
@@ -736,7 +736,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
                         <span class="badge">NPM 2206000000</span>
                         <span class="badge">S1 Ilmu Komputer &middot; Universitas Indonesia</span>
                     </div>
-                    <p class="bio">Computer Science student at Universitas Indonesia with a passion for teaching and building practical software projects.</p>
+                    <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
                     <div class="social-links">
                         <a href="https://github.com/" class="social-link">GitHub</a>
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
@@ -1024,7 +1024,7 @@ Also make sure it doesn't break on narrow screens - try shrinking your browser w
 ![Tutorial 01 final result on mobile](../img/tutorial-1/hasil-akhir-mobile.png){width=40%}
 
 ::: {.callout-important}
-**Connecting to Your Project** - the page you just built **is** your personal portfolio's main page, not a separate practice exercise. Replace all of Burhan's sample data (name, NPM, photo, bio, social links) with your own, following the table above. This same HTML and CSS structure will keep growing in the following tutorials, and it's your starting point for this week's **Individual Assignment 1**.
+Before moving on: the page you just built isn't a practice exercise, it's your actual portfolio's main page. Swap out all of Burhan's sample data (name, NPM, photo, bio, social links) for your own, following the table above - this same HTML/CSS structure is what you'll keep building on, and it's your starting point for this week's **Individual Assignment 1**.
 :::
 
 ## Creating an Account and Deploying via PWS (Pacil Web Service)
