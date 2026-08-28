@@ -147,12 +147,15 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burhan - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
-            <span class="brand">Burhan.</span>
+            <span class="brand">BH</span>
             <nav>
                 <a href="#profile">Profile</a>
             </nav>
@@ -160,21 +163,31 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
     </header>
 
     <main>
-        <section class="profile" id="profile">
-            <div class="container profile-grid">
-                <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
-                <div class="profile-info">
+        <section class="hero" id="profile">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
-                    <div class="meta-badges">
-                        <span class="badge">NPM 2206000000</span>
-                        <span class="badge">S1 Ilmu Komputer &middot; Universitas Indonesia</span>
-                    </div>
                     <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
+                    <dl class="meta-list">
+                        <div class="meta-row">
+                            <dt>NPM</dt>
+                            <dd>2206000000</dd>
+                        </div>
+                        <div class="meta-row">
+                            <dt>Program</dt>
+                            <dd>S1 Ilmu Komputer</dd>
+                        </div>
+                    </dl>
                     <div class="social-links">
                         <a href="https://github.com/" class="social-link">GitHub</a>
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
                         <a href="mailto:burhan@example.com" class="social-link">Email</a>
                     </div>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-block"></div>
+                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
                 </div>
             </div>
         </section>
@@ -195,22 +208,23 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
 | Bagian | Contoh punya Burhan | Ganti dengan |
 |---|---|---|
 | `<title>` | `Burhan - Portfolio` | `<Nama Kamu> - Portfolio` |
-| `.brand` (header) | `Burhan.` | Inisial atau nama panggilanmu |
-| `src` avatar | `/static/img/burhan.png` | nama berkas foto kamu sendiri di `static/img/` |
-| `alt` avatar | `Photo of Burhan` | `Photo of <Nama Kamu>` |
+| `.brand` (header) | `BH` | Inisial namamu |
+| `.hero-kicker` | `Computer Science · Universitas Indonesia` | Program studi & universitasmu |
 | `<h1>` | `Burhan` | Nama lengkap kamu |
-| Badge NPM | `NPM 2206000000` | NPM asli kamu |
-| Badge pendidikan | `S1 Ilmu Komputer · Universitas Indonesia` | Program studi & universitasmu |
 | `.bio` | bio contoh Burhan | 2-3 kalimat tentang dirimu sendiri |
+| Baris NPM (`.meta-list`) | `2206000000` | NPM asli kamu |
+| Baris Program (`.meta-list`) | `S1 Ilmu Komputer` | Program studimu |
 | Link GitHub/LinkedIn | `https://github.com/`, `https://linkedin.com/` | tautan profil kamu yang sebenarnya |
 | Email | `burhan@example.com` | email kamu |
+| `src` avatar | `/static/img/burhan.png` | nama berkas foto kamu sendiri di `static/img/` |
+| `alt` avatar | `Photo of Burhan` | `Photo of <Nama Kamu>` |
 | Footer | `Burhan - 2206000000` | `<Nama Kamu> - <NPM Kamu>` |
 
 Jangan lupa taruh foto kamu sendiri (format `.jpg` atau `.png`) di folder `static/img/`.
 :::
 
 ::: {.callout-note}
-Perhatikan elemen semantik HTML5 yang dipakai: `<header>` untuk kop halaman, `<nav>` untuk navigasi, `<main>` untuk konten utama, `<section>` untuk satu bagian konten yang berdiri sendiri, dan `<footer>` untuk kaki halaman. Elemen-elemen ini tidak mengubah tampilan secara otomatis, tapi memberi *makna* pada struktur halamanmu - lebih baik untuk aksesibilitas (mis. pembaca layar tahu mana bagian navigasi vs. konten utama) dan SEO dibanding menumpuk `<div>` di mana-mana. Atribut `alt` pada `<img>` juga penting untuk aksesibilitas - selalu isi dengan deskripsi gambar, jangan dikosongkan.
+Perhatikan elemen semantik HTML5 yang dipakai: `<header>` untuk kop halaman, `<nav>` untuk navigasi, `<main>` untuk konten utama, `<section>` untuk satu bagian konten yang berdiri sendiri, dan `<footer>` untuk kaki halaman. Elemen-elemen ini tidak mengubah tampilan secara otomatis, tapi memberi *makna* pada struktur halamanmu - lebih baik untuk aksesibilitas (mis. pembaca layar tahu mana bagian navigasi vs. konten utama) dan SEO dibanding menumpuk `<div>` di mana-mana. `<dl>`/`<dt>`/`<dd>` (dipakai untuk NPM dan Program di atas) khusus untuk pasangan label-nilai seperti ini - lebih tepat secara semantik dibanding sekadar `<div>` atau `<span>` biasa. Atribut `alt` pada `<img>` juga penting untuk aksesibilitas - selalu isi dengan deskripsi gambar, jangan dikosongkan.
 :::
 
 Struktur folder kamu sekarang:
@@ -234,19 +248,24 @@ Buat berkas `static/css/style.css`. Kita bangun bertahap per bagian supaya lebih
 }
 
 :root {
-    --accent: #2c5f8a;
-    --accent-dark: #1d4260;
-    --accent-light: #eaf1f6;
-    --border-color: #ddd;
-    --text-muted: #666;
-    --radius: 10px;
+    --ink: #1c1917;
+    --paper: #faf6f0;
+    --accent: #d95d39;
+    --accent-dark: #a8442a;
+    --line: #e3d9c9;
+    --text-muted: #6b6459;
+    --radius: 4px;
 }
 
 body {
     font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #222;
-    background-color: #fafafa;
+    color: var(--ink);
+    background-color: var(--paper);
     line-height: 1.6;
+}
+
+h1, .brand {
+    font-family: "Space Grotesk", -apple-system, sans-serif;
 }
 
 .container {
@@ -258,7 +277,9 @@ body {
 
 `* { margin: 0; padding: 0; box-sizing: border-box; }` adalah *reset* dasar - browser punya `margin`/`padding` bawaan yang beda-beda untuk tiap elemen, jadi kita nolkan dulu supaya kita yang mengatur semuanya dari nol. `box-sizing: border-box` membuat `padding` dan `border` dihitung *di dalam* lebar elemen (bukan menambah lebar), lebih intuitif saat mengatur layout.
 
-CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kamu mengganti satu warna aksen di satu tempat (`:root`) dan otomatis berlaku di seluruh halaman lewat `var(--accent)`. Kalau nanti kamu mau ganti warna tema portofoliomu, cukup ubah nilai di `:root`, tidak perlu cari-cari satu per satu di seluruh berkas.
+CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kamu mengganti satu warna aksen di satu tempat (`:root`) dan otomatis berlaku di seluruh halaman lewat `var(--accent)`. Kalau nanti kamu mau ganti warna tema portofoliomu, cukup ubah nilai di `:root`, tidak perlu cari-cari satu per satu di seluruh berkas. Contoh di atas pakai palet warm cream (`--paper`) dan terracotta (`--accent`) - sengaja bukan biru korporat standar, supaya terlihat lebih personal dan bukan template generik.
+
+`h1, .brand { font-family: "Space Grotesk", ... }` mengganti *hanya* judul dan logo ke *Space Grotesk*, sebuah *display font* dari Google Fonts (link-nya ditambahkan di `<head>` pada bagian HTML) - teks body tetap pakai *system font* untuk keterbacaan. Kombinasi *display font* yang berbeda dari *body font* ini yang bikin tipografi halaman terasa lebih dirancang, bukan cuma huruf bawaan browser di semua tempat.
 
 `.container` dipakai berulang di banyak section untuk membatasi lebar maksimum konten (`max-width: 960px`) dan menengahkannya (`margin: 0 auto`), supaya teks tidak melebar penuh mengikuti layar lebar.
 
@@ -266,25 +287,27 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 
 ```css
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--line);
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
 }
 
 .brand {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--accent-dark);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .site-header nav {
@@ -293,7 +316,7 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 }
 
 .site-header nav a {
-    color: #222;
+    color: var(--ink);
     text-decoration: none;
     font-size: 0.95rem;
 }
@@ -301,86 +324,117 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 
 `display: flex` membuat elemen `.brand` dan `<nav>` di dalamnya sejajar secara horizontal secara otomatis. `justify-content: space-between` mendorong keduanya ke ujung kiri dan kanan, `align-items: center` menengahkan secara vertikal. `gap: 2rem` memberi jarak antar link navigasi tanpa perlu `margin` manual di tiap link.
 
-`position: sticky; top: 0;` membuat header tetap menempel di atas layar walau halaman di-scroll ke bawah - `z-index: 10` memastikan header ini tetap di lapisan paling atas, tidak tertutup elemen lain. `backdrop-filter: blur(6px)` mengaburkan konten yang ada *di belakang* header saat konten itu ter-scroll melewatinya, memberi efek kaca buram yang sering dipakai di header modern.
+`.brand` di sini bukan lagi teks polos, tapi lingkaran kecil berisi inisial - `border-radius: 50%` pada elemen kotak (lebar = tinggi = `2.2rem`) membuatnya jadi lingkaran sempurna, lalu `display: flex` + `align-items`/`justify-content: center` menengahkan teks inisial di dalamnya secara horizontal DAN vertikal sekaligus. Pola "logo bulat berisi inisial" ini jauh lebih ringan dibanding logo gambar, tapi tetap terasa seperti identitas visual yang sengaja dirancang.
 
-### Section Profile dengan CSS Grid
+### Section Hero dengan CSS Grid
 
 ```css
-.profile {
-    background: linear-gradient(135deg, var(--accent-light) 0%, #fdfdfd 60%);
-    padding: 4rem 0;
+.hero {
+    padding: 4.5rem 0 5rem;
 }
 
-.profile-grid {
+.hero-grid {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1.3fr 1fr;
     align-items: center;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
-.avatar {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 0 6px #fff, 0 8px 24px rgba(44, 95, 138, 0.25);
-}
-
-.profile-info h1 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin-bottom: 0.4rem;
-}
-
-.meta-badges {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.badge {
-    display: inline-block;
+.hero-kicker {
     font-size: 0.85rem;
-    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--accent-dark);
-    background-color: #fff;
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    padding: 0.2rem 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
-.profile-info .bio {
-    color: var(--text-muted);
-    max-width: 560px;
+.hero-text h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.95;
     margin-bottom: 1.25rem;
+}
+
+.hero-text .bio {
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 1.5rem;
+}
+
+.meta-list {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-row dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+}
+
+.meta-row dd {
+    font-weight: 600;
 }
 
 .social-links {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
 .social-link {
     display: inline-block;
     font-size: 0.85rem;
+    font-weight: 600;
     text-decoration: none;
-    color: var(--accent-dark);
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    padding: 0.4rem 1.1rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    color: var(--paper);
+    background-color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.5rem 1.1rem;
+    transition: background-color 0.2s ease;
 }
 
 .social-link:hover {
     background-color: var(--accent);
-    color: #fff;
+}
+
+.hero-photo {
+    position: relative;
+}
+
+.photo-block {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: var(--radius);
+    z-index: 0;
+}
+
+.avatar {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 3px solid var(--ink);
 }
 ```
 
-`linear-gradient(135deg, ...)` membuat latar belakang berwarna gradasi (transisi dari satu warna ke warna lain), lebih hidup dibanding warna polos - `135deg` adalah sudut arah gradasinya.
+`grid-template-columns: 1.3fr 1fr` membuat kolom teks sedikit lebih lebar dibanding kolom foto (1.3 bagian berbanding 1 bagian) - layout asimetris seperti ini terasa lebih dirancang dibanding kolom yang sama rata atau selebar-konten-saja. `clamp(3rem, 7vw, 5rem)` pada `.hero-text h1` membuat judul sangat besar dan otomatis menyesuaikan lebar layar (nilai tengah `7vw`), dibatasi minimum `3rem` dan maksimum `5rem` - tipografi besar seperti ini yang bikin halaman terasa punya *statement*, bukan sekadar judul kecil di pojok.
 
-`grid-template-columns: auto 1fr` membuat kolom pertama (foto) selebar kontennya saja, sisanya (informasi profil) mengambil seluruh ruang yang tersisa (`1fr` = satu bagian sisa ruang). `object-fit: cover` memastikan foto tetap terlihat proporsional dan terpotong rapi walau ukuran aslinya tidak persegi - tanpa ini, foto bisa gepeng/melar. `clamp(1.8rem, 3vw, 2.4rem)` membuat ukuran judul otomatis menyesuaikan lebar layar (nilai tengah `3vw` = 3% lebar viewport) tapi dibatasi minimum `1.8rem` dan maksimum `2.4rem`, tanpa perlu media query tambahan khusus untuk ukuran teks.
+Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong yang diposisikan `absolute` sedikit *offset* (bergeser `1.25rem` ke kanan-bawah) dari foto aslinya, dengan warna solid `var(--accent)` sebagai latar. `.avatar` diposisikan `relative` dengan `z-index: 1` (di atas `.photo-block` yang `z-index: 0`) sehingga terlihat seperti foto punya "bayangan" berwarna solid di belakangnya - efek *layered* ini yang menggantikan `box-shadow` sederhana dan terasa lebih personal/craft dibanding foto bulat polos.
+
+`aspect-ratio: 1 / 1` pada `.avatar` memaksa foto selalu persegi berapapun ukuran aslinya (mirip `object-fit: cover` yang sudah dipakai untuk memastikan foto tidak gepeng/melar), tanpa perlu tahu tinggi pastinya di CSS.
+
+`.meta-list` memakai `display: flex` sederhana untuk menjajarkan pasangan NPM/Program secara horizontal - lebih ringkas dibanding badge berbentuk pil yang butuh border dan border-radius terpisah untuk tiap potongan info.
 
 `transition: background-color 0.2s ease` pada `.social-link` membuat perubahan warna saat *hover* terjadi secara halus (0.2 detik), bukan berubah instan.
 
@@ -392,27 +446,27 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
     padding: 1.5rem;
     color: var(--text-muted);
     font-size: 0.85rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--line);
 }
 
 @media (max-width: 600px) {
-    .profile-grid {
+    .hero-grid {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
-    .profile-info .bio {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-photo {
+        max-width: 220px;
+        margin-bottom: 1rem;
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 ```
 
-`@media (max-width: 600px)` adalah *media query* - aturan CSS di dalamnya HANYA berlaku kalau lebar layar 600px atau kurang (misalnya HP). Di sini kita ubah grid dua kolom (`auto 1fr`) menjadi satu kolom (`1fr` saja) supaya foto ada di atas dan teks di bawah, lalu menengahkan semuanya (`text-align: center`) - ini yang disebut *responsive design*, tampilan yang menyesuaikan diri ke berbagai ukuran layar.
+`@media (max-width: 600px)` adalah *media query* - aturan CSS di dalamnya HANYA berlaku kalau lebar layar 600px atau kurang (misalnya HP). Di sini kita ubah grid dua kolom (`1.3fr 1fr`) menjadi satu kolom (`1fr` saja) supaya foto ada di atas dan teks di bawah - berbeda dari pendekatan umum yang menengahkan semuanya (`text-align: center`), di sini teks tetap rata kiri (`text-align: left`) supaya paragraf bio tetap nyaman dibaca, dan `.hero-photo` dibatasi lebarnya (`max-width: 220px`) supaya foto besarnya tidak berubah jadi berlebihan di layar sempit. Ini yang disebut *responsive design*, tampilan yang menyesuaikan diri ke berbagai ukuran layar.
 
 Struktur folder kamu sekarang (lengkap sampai akhir Tutorial 01):
 
@@ -714,12 +768,15 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burhan - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
-            <span class="brand">Burhan.</span>
+            <span class="brand">BH</span>
             <nav>
                 <a href="#profile">Profile</a>
             </nav>
@@ -727,21 +784,31 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
     </header>
 
     <main>
-        <section class="profile" id="profile">
-            <div class="container profile-grid">
-                <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
-                <div class="profile-info">
+        <section class="hero" id="profile">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
-                    <div class="meta-badges">
-                        <span class="badge">NPM 2206000000</span>
-                        <span class="badge">S1 Ilmu Komputer &middot; Universitas Indonesia</span>
-                    </div>
                     <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
+                    <dl class="meta-list">
+                        <div class="meta-row">
+                            <dt>NPM</dt>
+                            <dd>2206000000</dd>
+                        </div>
+                        <div class="meta-row">
+                            <dt>Program</dt>
+                            <dd>S1 Ilmu Komputer</dd>
+                        </div>
+                    </dl>
                     <div class="social-links">
                         <a href="https://github.com/" class="social-link">GitHub</a>
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
                         <a href="mailto:burhan@example.com" class="social-link">Email</a>
                     </div>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-block"></div>
+                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
                 </div>
             </div>
         </section>
@@ -762,22 +829,23 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
 | Part | Burhan's example | Replace with |
 |---|---|---|
 | `<title>` | `Burhan - Portfolio` | `<Your Name> - Portfolio` |
-| `.brand` (header) | `Burhan.` | Your initials or nickname |
-| avatar `src` | `/static/img/burhan.png` | your own photo's filename under `static/img/` |
-| avatar `alt` | `Photo of Burhan` | `Photo of <Your Name>` |
+| `.brand` (header) | `BH` | Your initials |
+| `.hero-kicker` | `Computer Science · Universitas Indonesia` | Your major & university |
 | `<h1>` | `Burhan` | Your full name |
-| NPM badge | `NPM 2206000000` | Your real NPM |
-| Education badge | `S1 Ilmu Komputer · Universitas Indonesia` | Your major & university |
 | `.bio` | Burhan's sample bio | 2-3 sentences about yourself |
+| NPM row (`.meta-list`) | `2206000000` | Your real NPM |
+| Program row (`.meta-list`) | `S1 Ilmu Komputer` | Your major |
 | GitHub/LinkedIn links | `https://github.com/`, `https://linkedin.com/` | your actual profile links |
 | Email | `burhan@example.com` | your email |
+| avatar `src` | `/static/img/burhan.png` | your own photo's filename under `static/img/` |
+| avatar `alt` | `Photo of Burhan` | `Photo of <Your Name>` |
 | Footer | `Burhan - 2206000000` | `<Your Name> - <Your NPM>` |
 
 Don't forget to put your own photo (`.jpg` or `.png`) inside `static/img/`.
 :::
 
 ::: {.callout-note}
-Notice the semantic HTML5 elements used: `<header>` for the page banner, `<nav>` for navigation, `<main>` for the main content, `<section>` for a standalone chunk of content, and `<footer>` for the page footer. These elements don't change appearance automatically, but they give *meaning* to your page structure - better for accessibility (e.g. screen readers know which part is navigation vs. main content) and SEO than stacking `<div>`s everywhere. The `alt` attribute on `<img>` also matters for accessibility - always fill it with a real description, never leave it empty.
+Notice the semantic HTML5 elements used: `<header>` for the page banner, `<nav>` for navigation, `<main>` for the main content, `<section>` for a standalone chunk of content, and `<footer>` for the page footer. These elements don't change appearance automatically, but they give *meaning* to your page structure - better for accessibility (e.g. screen readers know which part is navigation vs. main content) and SEO than stacking `<div>`s everywhere. `<dl>`/`<dt>`/`<dd>` (used for NPM and Program above) are specifically for label-value pairs like this - more semantically correct than a plain `<div>` or `<span>`. The `alt` attribute on `<img>` also matters for accessibility - always fill it with a real description, never leave it empty.
 :::
 
 Your folder structure so far:
@@ -801,19 +869,24 @@ Create `static/css/style.css`. We'll build it up section by section to make it e
 }
 
 :root {
-    --accent: #2c5f8a;
-    --accent-dark: #1d4260;
-    --accent-light: #eaf1f6;
-    --border-color: #ddd;
-    --text-muted: #666;
-    --radius: 10px;
+    --ink: #1c1917;
+    --paper: #faf6f0;
+    --accent: #d95d39;
+    --accent-dark: #a8442a;
+    --line: #e3d9c9;
+    --text-muted: #6b6459;
+    --radius: 4px;
 }
 
 body {
     font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #222;
-    background-color: #fafafa;
+    color: var(--ink);
+    background-color: var(--paper);
     line-height: 1.6;
+}
+
+h1, .brand {
+    font-family: "Space Grotesk", -apple-system, sans-serif;
 }
 
 .container {
@@ -825,7 +898,9 @@ body {
 
 `* { margin: 0; padding: 0; box-sizing: border-box; }` is a basic *reset* - browsers have different default `margin`/`padding` values for different elements, so we zero them out first and control everything ourselves. `box-sizing: border-box` makes `padding` and `border` count *inside* an element's width (instead of adding to it), which is much more intuitive when laying things out.
 
-CSS *custom properties* (variables written as `--variable-name`) let you change one accent color in a single place (`:root`) and have it apply everywhere via `var(--accent)`. If you later want to change your portfolio's theme color, you only need to update it in `:root` instead of hunting through the whole file.
+CSS *custom properties* (variables written as `--variable-name`) let you change one accent color in a single place (`:root`) and have it apply everywhere via `var(--accent)`. If you later want to change your portfolio's theme color, you only need to update it in `:root` instead of hunting through the whole file. This example uses a warm cream palette (`--paper`) with terracotta (`--accent`) - deliberately not the standard corporate blue, so it feels more personal instead of a generic template.
+
+`h1, .brand { font-family: "Space Grotesk", ... }` swaps *only* the heading and logo to *Space Grotesk*, a display font from Google Fonts (its `<link>` was added in the HTML `<head>`) - body text stays on the system font for readability. This contrast between a display font and the body font is what makes the typography feel deliberately designed instead of just the browser's default font everywhere.
 
 `.container` is reused across sections to cap the maximum content width (`max-width: 960px`) and center it (`margin: 0 auto`), so text doesn't stretch edge-to-edge on wide screens.
 
@@ -833,25 +908,27 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 
 ```css
 .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--line);
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
 }
 
 .brand {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: var(--accent-dark);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .site-header nav {
@@ -860,7 +937,7 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 }
 
 .site-header nav a {
-    color: #222;
+    color: var(--ink);
     text-decoration: none;
     font-size: 0.95rem;
 }
@@ -868,86 +945,117 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 
 `display: flex` automatically lines up `.brand` and the `<nav>` inside it horizontally. `justify-content: space-between` pushes them to opposite ends, `align-items: center` vertically centers them. `gap: 2rem` spaces out the nav links without needing manual `margin` on each one.
 
-`position: sticky; top: 0;` keeps the header stuck to the top of the screen even as the page scrolls - `z-index: 10` makes sure it stays on the topmost layer, not covered by other elements. `backdrop-filter: blur(6px)` blurs whatever content scrolls *behind* the header, giving it a frosted-glass effect commonly seen in modern headers.
+`.brand` here isn't plain text anymore, it's a small circle containing initials - `border-radius: 50%` on a square box (width = height = `2.2rem`) turns it into a perfect circle, then `display: flex` + `align-items`/`justify-content: center` centers the initials both horizontally AND vertically at once. This "round logo with initials" pattern is much lighter than an image-based logo, but still reads as a deliberately designed visual identity.
 
-### Profile Section with CSS Grid
+### Hero Section with CSS Grid
 
 ```css
-.profile {
-    background: linear-gradient(135deg, var(--accent-light) 0%, #fdfdfd 60%);
-    padding: 4rem 0;
+.hero {
+    padding: 4.5rem 0 5rem;
 }
 
-.profile-grid {
+.hero-grid {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1.3fr 1fr;
     align-items: center;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
-.avatar {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 0 6px #fff, 0 8px 24px rgba(44, 95, 138, 0.25);
-}
-
-.profile-info h1 {
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin-bottom: 0.4rem;
-}
-
-.meta-badges {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.badge {
-    display: inline-block;
+.hero-kicker {
     font-size: 0.85rem;
-    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--accent-dark);
-    background-color: #fff;
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    padding: 0.2rem 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
 }
 
-.profile-info .bio {
-    color: var(--text-muted);
-    max-width: 560px;
+.hero-text h1 {
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.95;
     margin-bottom: 1.25rem;
+}
+
+.hero-text .bio {
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 1.5rem;
+}
+
+.meta-list {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-row dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.15rem;
+}
+
+.meta-row dd {
+    font-weight: 600;
 }
 
 .social-links {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
 }
 
 .social-link {
     display: inline-block;
     font-size: 0.85rem;
+    font-weight: 600;
     text-decoration: none;
-    color: var(--accent-dark);
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    padding: 0.4rem 1.1rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    color: var(--paper);
+    background-color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.5rem 1.1rem;
+    transition: background-color 0.2s ease;
 }
 
 .social-link:hover {
     background-color: var(--accent);
-    color: #fff;
+}
+
+.hero-photo {
+    position: relative;
+}
+
+.photo-block {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    border-radius: var(--radius);
+    z-index: 0;
+}
+
+.avatar {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 3px solid var(--ink);
 }
 ```
 
-`linear-gradient(135deg, ...)` creates a gradient background (a smooth transition from one color to another), which feels livelier than a flat color - `135deg` is the angle the gradient flows at.
+`grid-template-columns: 1.3fr 1fr` makes the text column slightly wider than the photo column (1.3 shares vs. 1 share) - an asymmetric layout like this feels more deliberately designed than evenly-split or content-width-only columns. `clamp(3rem, 7vw, 5rem)` on `.hero-text h1` makes the heading very large and automatically scales with screen width (the middle value `7vw`), bounded between a minimum of `3rem` and a maximum of `5rem` - big typography like this is what gives a page a *statement*, rather than just a small title tucked in a corner.
 
-`grid-template-columns: auto 1fr` makes the first column (the photo) as wide as its content, while the rest of the space goes to the profile info (`1fr` = one share of the remaining space). `object-fit: cover` keeps the photo looking proportional and neatly cropped even if the original isn't square - without it, the photo could look stretched. `clamp(1.8rem, 3vw, 2.4rem)` makes the heading size automatically scale with screen width (the middle value `3vw` = 3% of viewport width) while staying between a minimum of `1.8rem` and a maximum of `2.4rem`, without needing an extra media query just for text size.
+The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` positioned `absolute`, offset slightly (shifted `1.25rem` down-right) from the actual photo, filled with the solid `var(--accent)` color. `.avatar` is positioned `relative` with `z-index: 1` (above `.photo-block`'s `z-index: 0`), so the photo looks like it has a solid-colored "shadow" behind it - this layered effect replaces a plain `box-shadow` and feels more personal/crafted than a plain round photo.
+
+`aspect-ratio: 1 / 1` on `.avatar` forces the photo to always be square regardless of its original dimensions (similar to how `object-fit: cover` is already used to keep the photo from looking stretched), without needing to know its exact height in CSS.
+
+`.meta-list` uses a simple `display: flex` to lay the NPM/Program pair out horizontally - more compact than pill-shaped badges, which need separate borders and border-radius for each piece of info.
 
 `transition: background-color 0.2s ease` on `.social-link` makes the color change on hover happen smoothly (0.2 seconds) instead of instantly.
 
@@ -959,27 +1067,27 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
     padding: 1.5rem;
     color: var(--text-muted);
     font-size: 0.85rem;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--line);
 }
 
 @media (max-width: 600px) {
-    .profile-grid {
+    .hero-grid {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
 
-    .profile-info .bio {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-photo {
+        max-width: 220px;
+        margin-bottom: 1rem;
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 ```
 
-`@media (max-width: 600px)` is a *media query* - the rules inside it only apply when the screen is 600px wide or narrower (like a phone). Here we switch the two-column grid (`auto 1fr`) into a single column (`1fr` only) so the photo sits on top and the text below, then center everything (`text-align: center`) - this is what's called *responsive design*, a layout that adapts itself to different screen sizes.
+`@media (max-width: 600px)` is a *media query* - the rules inside it only apply when the screen is 600px wide or narrower (like a phone). Here we switch the two-column grid (`1.3fr 1fr`) into a single column (`1fr` only) so the photo sits on top and the text below - unlike the common approach of centering everything (`text-align: center`), the text here stays left-aligned (`text-align: left`) so the bio paragraph stays comfortable to read, and `.hero-photo` gets a capped width (`max-width: 220px`) so the large photo doesn't become excessive on a narrow screen. This is what's called *responsive design*, a layout that adapts itself to different screen sizes.
 
 Your folder structure so far (complete, through the end of Tutorial 01):
 
