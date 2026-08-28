@@ -155,7 +155,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
 <body>
     <header class="site-header">
         <div class="container">
-            <span class="brand">BH</span>
+            <a href="#profile" class="brand">Burhan</a>
             <nav>
                 <a href="#profile">Profile</a>
             </nav>
@@ -195,7 +195,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
 
     <footer class="site-footer">
         <div class="container">
-            <p>Burhan - 2206000000</p>
+            <p>&copy; 2026 Burhan. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
         </div>
     </footer>
 </body>
@@ -208,7 +208,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
 | Bagian | Contoh punya Burhan | Ganti dengan |
 |---|---|---|
 | `<title>` | `Burhan - Portfolio` | `<Nama Kamu> - Portfolio` |
-| `.brand` (header) | `BH` | Inisial namamu |
+| `.brand` (header) | `Burhan` | Nama kamu |
 | `.hero-kicker` | `Computer Science · Universitas Indonesia` | Program studi & universitasmu |
 | `<h1>` | `Burhan` | Nama lengkap kamu |
 | `.bio` | bio contoh Burhan | 2-3 kalimat tentang dirimu sendiri |
@@ -218,7 +218,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
 | Email | `burhan@example.com` | email kamu |
 | `src` avatar | `/static/img/burhan.png` | nama berkas foto kamu sendiri di `static/img/` |
 | `alt` avatar | `Photo of Burhan` | `Photo of <Nama Kamu>` |
-| Footer | `Burhan - 2206000000` | `<Nama Kamu> - <NPM Kamu>` |
+| Footer | `Burhan` | Nama kamu |
 
 Jangan lupa taruh foto kamu sendiri (format `.jpg` atau `.png`) di folder `static/img/`.
 :::
@@ -298,16 +298,10 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 }
 
 .brand {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--ink);
-    border: 2px solid var(--ink);
-    border-radius: 50%;
-    width: 2.2rem;
-    height: 2.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none;
 }
 
 .site-header nav {
@@ -324,7 +318,7 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 
 `display: flex` membuat elemen `.brand` dan `<nav>` di dalamnya sejajar secara horizontal secara otomatis. `justify-content: space-between` mendorong keduanya ke ujung kiri dan kanan, `align-items: center` menengahkan secara vertikal. `gap: 2rem` memberi jarak antar link navigasi tanpa perlu `margin` manual di tiap link.
 
-`.brand` di sini bukan lagi teks polos, tapi lingkaran kecil berisi inisial - `border-radius: 50%` pada elemen kotak (lebar = tinggi = `2.2rem`) membuatnya jadi lingkaran sempurna, lalu `display: flex` + `align-items`/`justify-content: center` menengahkan teks inisial di dalamnya secara horizontal DAN vertikal sekaligus. Pola "logo bulat berisi inisial" ini jauh lebih ringan dibanding logo gambar, tapi tetap terasa seperti identitas visual yang sengaja dirancang.
+`.brand` di sini sengaja dibiarkan sebagai teks polos - namamu sendiri, di-*style* dengan `font-family` Space Grotesk yang sudah kita atur lewat `h1, .brand` sebelumnya, plus `text-decoration: none` supaya tidak digarisbawahi seperti link biasa. Tidak perlu logo lingkaran atau ikon buatan - teks nama dengan tipografi yang sedikit lebih tegas sudah cukup untuk jadi identitas header, dan jauh lebih mudah kamu tiru dan sesuaikan sendiri.
 
 ### Section Hero dengan CSS Grid
 
@@ -442,7 +436,6 @@ Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong
 
 ```css
 .site-footer {
-    text-align: center;
     padding: 1.5rem;
     color: var(--text-muted);
     font-size: 0.85rem;
@@ -465,6 +458,8 @@ Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong
     }
 }
 ```
+
+Footer sengaja dibiarkan rata kiri (bukan `text-align: center`) dan isinya cuma satu baris teks hak cipta sederhana - footer yang isinya cuma nama dan NPM lagi (yang sudah ada di bagian hero) mudah terasa seperti tempelan generik, jadi lebih wajar diisi baris singkat semacam `&copy; 2026 <Nama Kamu>. <Nama Universitasmu>.`, mirip footer situs pada umumnya.
 
 `@media (max-width: 600px)` adalah *media query* - aturan CSS di dalamnya HANYA berlaku kalau lebar layar 600px atau kurang (misalnya HP). Di sini kita ubah grid dua kolom (`1.3fr 1fr`) menjadi satu kolom (`1fr` saja) supaya foto ada di atas dan teks di bawah - berbeda dari pendekatan umum yang menengahkan semuanya (`text-align: center`), di sini teks tetap rata kiri (`text-align: left`) supaya paragraf bio tetap nyaman dibaca, dan `.hero-photo` dibatasi lebarnya (`max-width: 220px`) supaya foto besarnya tidak berubah jadi berlebihan di layar sempit. Ini yang disebut *responsive design*, tampilan yang menyesuaikan diri ke berbagai ukuran layar.
 
@@ -776,7 +771,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
 <body>
     <header class="site-header">
         <div class="container">
-            <span class="brand">BH</span>
+            <a href="#profile" class="brand">Burhan</a>
             <nav>
                 <a href="#profile">Profile</a>
             </nav>
@@ -816,7 +811,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
 
     <footer class="site-footer">
         <div class="container">
-            <p>Burhan - 2206000000</p>
+            <p>&copy; 2026 Burhan. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
         </div>
     </footer>
 </body>
@@ -829,7 +824,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
 | Part | Burhan's example | Replace with |
 |---|---|---|
 | `<title>` | `Burhan - Portfolio` | `<Your Name> - Portfolio` |
-| `.brand` (header) | `BH` | Your initials |
+| `.brand` (header) | `Burhan` | Your name |
 | `.hero-kicker` | `Computer Science · Universitas Indonesia` | Your major & university |
 | `<h1>` | `Burhan` | Your full name |
 | `.bio` | Burhan's sample bio | 2-3 sentences about yourself |
@@ -839,7 +834,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
 | Email | `burhan@example.com` | your email |
 | avatar `src` | `/static/img/burhan.png` | your own photo's filename under `static/img/` |
 | avatar `alt` | `Photo of Burhan` | `Photo of <Your Name>` |
-| Footer | `Burhan - 2206000000` | `<Your Name> - <Your NPM>` |
+| Footer | `Burhan` | Your name |
 
 Don't forget to put your own photo (`.jpg` or `.png`) inside `static/img/`.
 :::
@@ -919,16 +914,10 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 }
 
 .brand {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--ink);
-    border: 2px solid var(--ink);
-    border-radius: 50%;
-    width: 2.2rem;
-    height: 2.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none;
 }
 
 .site-header nav {
@@ -945,7 +934,7 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 
 `display: flex` automatically lines up `.brand` and the `<nav>` inside it horizontally. `justify-content: space-between` pushes them to opposite ends, `align-items: center` vertically centers them. `gap: 2rem` spaces out the nav links without needing manual `margin` on each one.
 
-`.brand` here isn't plain text anymore, it's a small circle containing initials - `border-radius: 50%` on a square box (width = height = `2.2rem`) turns it into a perfect circle, then `display: flex` + `align-items`/`justify-content: center` centers the initials both horizontally AND vertically at once. This "round logo with initials" pattern is much lighter than an image-based logo, but still reads as a deliberately designed visual identity.
+`.brand` is deliberately left as plain text here - your own name, styled with the Space Grotesk `font-family` we already set up via `h1, .brand`, plus `text-decoration: none` so it doesn't get underlined like a regular link. No circular logo or custom icon needed - a name in slightly bolder type is enough to give the header an identity, and it's far easier for you to copy and adapt yourself.
 
 ### Hero Section with CSS Grid
 
@@ -1063,7 +1052,6 @@ The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` p
 
 ```css
 .site-footer {
-    text-align: center;
     padding: 1.5rem;
     color: var(--text-muted);
     font-size: 0.85rem;
@@ -1086,6 +1074,8 @@ The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` p
     }
 }
 ```
+
+The footer is deliberately left-aligned (not `text-align: center`) with just one plain copyright line - a footer that only repeats your name and NPM (already shown up in the hero) easily reads as generic filler, so a short line like `&copy; 2026 <Your Name>. <Your University>.` feels closer to a real site's footer.
 
 `@media (max-width: 600px)` is a *media query* - the rules inside it only apply when the screen is 600px wide or narrower (like a phone). Here we switch the two-column grid (`1.3fr 1fr`) into a single column (`1fr` only) so the photo sits on top and the text below - unlike the common approach of centering everything (`text-align: center`), the text here stays left-aligned (`text-align: left`) so the bio paragraph stays comfortable to read, and `.hero-photo` gets a capped width (`max-width: 220px`) so the large photo doesn't become excessive on a narrow screen. This is what's called *responsive design*, a layout that adapts itself to different screen sizes.
 
