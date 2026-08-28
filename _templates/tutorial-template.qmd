@@ -61,6 +61,11 @@ format-links:
       berdampingan, dan pastikan TIDAK ADA teks yang identik/belum
       ter-translate di keduanya (judul, sidebar, isi). Ini wajib jadi
       langkah regresi terakhir tiap kali bikin tutorial/tugas baru.
+  11. JANGAN hapus section "Pengumpulan"/"Submission" di bagian bawah -
+      teksnya sudah baku (sama di semua tutorial, tidak perlu disunting per
+      minggu) dan wajib ada supaya mahasiswa tahu Tutorial diverifikasi
+      lewat commit GitHub sebelum tenggat waktu, bukan lewat slot SCELE
+      terpisah.
 -->
 
 ::: {.content-visible when-profile="id"}
@@ -116,6 +121,10 @@ yang sama dengan yang baru dikerjakan di langkah-langkah di atas. Ini yang
 membantu mahasiswa paham "ngerjain tugas itu ternyata mirip tutorial, cuma
 temanya beda".>
 :::
+
+## Pengumpulan
+
+Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment minggu ini, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum tenggat waktu** di atas. Commit yang baru di-*push* setelah tenggat waktu dianggap tutorial belum selesai, sehingga Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
 
 ## Referensi Tambahan
 
@@ -175,6 +184,10 @@ same pattern just practiced in the steps above. This is what helps
 students see that "doing the assignment is like the tutorial, just with a
 different theme".>
 :::
+
+## Submission
+
+This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for this week's Individual Assignment, make sure all changes for this Tutorial are committed and pushed to your GitHub repository **before the deadline** above. Commits pushed after the deadline mean the Tutorial is considered incomplete, so the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 

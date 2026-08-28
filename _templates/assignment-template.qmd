@@ -56,6 +56,9 @@ format-links:
      berdampingan, dan pastikan TIDAK ADA teks yang identik/belum
      ter-translate di keduanya (judul, sidebar, isi). Ini wajib jadi
      langkah regresi terakhir tiap kali bikin tutorial/tugas baru.
+  8. JANGAN ubah isi section "Pengumpulan"/"Submission" - teksnya sudah
+     baku (link commit, sebelum tenggat waktu, repositori publik) dan sama
+     di semua tugas, tidak perlu disunting per minggu.
 -->
 
 ::: {.content-visible when-profile="id"}
@@ -91,7 +94,7 @@ Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** 
 
 ## Pengumpulan
 
-Tugas dikumpulkan dalam format <format berkas> dengan ketentuan nama berkas `<format nama berkas>`.
+Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
 
 ## Tenggat Waktu Pengerjaan
 
@@ -136,7 +139,7 @@ Individual Assignment N **is only graded if Tutorial N has been completed** by <
 
 ## Submission
 
-The assignment is submitted in <file format> with the file naming convention `<file naming convention>`.
+This assignment is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this assignment's final result, pushed **before the deadline** below. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public**, so teaching assistants can access it for grading.
 
 ## Deadline
 
