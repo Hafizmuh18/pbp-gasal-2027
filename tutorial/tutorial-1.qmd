@@ -647,6 +647,10 @@ Kamu bisa cek progresnya di tab **Logs** pada dashboard proyek PWS. Tunggu sampa
 
 ![Tab Logs pada dashboard PWS](../img/tutorial-1/pws-logs.png)
 
+## Pengumpulan
+
+Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment 1, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum Rabu, 2 September 2026**. Commit yang baru di-*push* setelah tenggat waktu itu dianggap Tutorial 01 belum selesai, sehingga Individual Assignment 1 tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+
 ## Referensi Tambahan
 
 - [MDN - HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
@@ -1281,6 +1285,10 @@ The first time you deploy, you might see a 502 (Bad Gateway) error in your *brow
 You can check the progress in the **Logs** tab on the PWS project dashboard. Wait until a `Listening at` log line appears (usually 15-20 seconds) - *refresh* the log page if needed, since it doesn't update via *streaming*.
 
 ![The Logs tab on the PWS dashboard](../img/tutorial-1/pws-logs.png)
+
+## Submission
+
+This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for Individual Assignment 1, make sure all changes for this tutorial are committed and pushed to your GitHub repository **before Wednesday, September 2, 2026**. Commits pushed after that deadline mean Tutorial 01 is considered incomplete, so Individual Assignment 1 won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 
