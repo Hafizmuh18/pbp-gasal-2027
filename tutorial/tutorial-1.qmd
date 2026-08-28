@@ -168,7 +168,7 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
                 <div class="hero-text">
                     <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
-                    <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
+                    <p class="bio">CS student at Universitas Indonesia for longer than planned, now a familiar (and slightly dreaded) face among Fasilkom students as a teaching assistant across several courses.</p>
                     <dl class="meta-list">
                         <div class="meta-row">
                             <dt>NPM</dt>
@@ -784,7 +784,7 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
                 <div class="hero-text">
                     <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
-                    <p class="bio">CS student at UI, currently the TA everyone side-eyes for explaining recursion with a mirror analogy.</p>
+                    <p class="bio">CS student at Universitas Indonesia for longer than planned, now a familiar (and slightly dreaded) face among Fasilkom students as a teaching assistant across several courses.</p>
                     <dl class="meta-list">
                         <div class="meta-row">
                             <dt>NPM</dt>
