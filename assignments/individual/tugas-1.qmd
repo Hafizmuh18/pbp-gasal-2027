@@ -58,7 +58,7 @@ Checklist minimal untuk tugas ini:
 
 ## Pengumpulan
 
-Tugas dikumpulkan dalam bentuk tautan repositori Git (branch/commit yang menunjukkan hasil akhir tugas ini) melalui slot submisi yang disediakan di SCELE.
+Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
 
 ## Tenggat Waktu Pengerjaan
 
@@ -119,7 +119,7 @@ Minimum checklist for this assignment:
 
 ## Submission
 
-Submit this assignment as a Git repository link (the branch/commit showing this assignment's final result) through the submission slot provided on SCELE.
+This assignment is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this assignment's final result, pushed **before the deadline** below. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public**, so teaching assistants can access it for grading.
 
 ## Deadline
 
