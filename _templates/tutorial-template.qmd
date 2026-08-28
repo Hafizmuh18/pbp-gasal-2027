@@ -19,53 +19,64 @@ format-links:
 ---
 
 <!--
-  TEMPLATE TUTORIAL - cara pakai:
-  1. Copy berkas ini ke tutorial/tutorial-N.qmd (ganti N dengan nomor minggu,
-     mengikuti urutan "Tutorial 01".."Tutorial 10" di jadwal homepage).
-  2. Ganti "Tutorial N: <Judul Topik>" & output-file revealjs sesuai nomor.
-  3. Tutorial dibangun BERKELANJUTAN di atas 1 aplikasi tema yang sama
-     sepanjang semester (bukan latihan berdiri sendiri per minggu seperti
-     dulu) - isi section "Yang Sudah Kita Bangun" merujuk balik ke tutorial
-     minggu sebelumnya (kosongkan/hapus section ini khusus di Tutorial 01).
-  4. JANGAN skip section "Menghubungkan ke Proyek Kamu" - ini bagian
-     terpenting: jelaskan eksplisit bagian mana dari proyek pribadi
-     mahasiswa (mis. website portofolio) yang bisa memakai pola yang sama
-     dengan yang baru dikerjakan di tutorial ini.
-  5. Isi tiap blok {.content-visible when-profile="id"} dan ="en" dengan versi
-     Bahasa Indonesia dan Inggris - JANGAN hapus salah satu blok, keduanya wajib ada
-     supaya switch bahasa di navbar berfungsi.
-  6. PENTING - jangan taruh APAPUN yang tampil ke pembaca (link slide, baris
-     "Pemrograman Berbasis Platform...", tanggal update, dst.) DI LUAR kedua
-     blok content-visible. Apapun di luar blok tampil sama persis di kedua
-     bahasa dan tidak ikut translate - ini penyebab paling umum halaman
-     "kelihatan belum di-translate" walau isinya sudah bilingual.
-  7. Judul frontmatter (`title:` di atas) TIDAK bisa berbeda per profile -
-     Quarto selalu pakai satu judul yang sama untuk tab browser & sidebar.
-     Supaya judul di HALAMAN tetap bilingual, tulis heading `#` manual
-     dengan atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa
-     (lihat contoh di bawah) - CSS di `styles.css` otomatis menyembunyikan
-     judul frontmatter kalau `.pbp-page-title` ada di halaman.
-  8. Daftarkan file baru di sidebar `contents:` DI KEDUA `_quarto-id.yml`
-     dan `_quarto-en.yml`, DAN beri `text:` eksplisit per bahasa (jangan
-     biarkan Quarto menurunkan label sidebar dari frontmatter title - itu
-     juga tidak ikut translate). Contoh:
-     ```yaml
-     - text: "Tutorial 01: Setup Git Repository, ..."   # di _quarto-id.yml
-       href: tutorial/tutorial-1.qmd
-     - text: "Tutorial 01: Set Up Git Repository, ..."  # di _quarto-en.yml
-       href: tutorial/tutorial-1.qmd
-     ```
-  9. Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
-  10. SEBELUM SELESAI: render dua profile (`quarto render` lalu
-      `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
-      berdampingan, dan pastikan TIDAK ADA teks yang identik/belum
-      ter-translate di keduanya (judul, sidebar, isi). Ini wajib jadi
-      langkah regresi terakhir tiap kali bikin tutorial/tugas baru.
-  11. JANGAN hapus section "Pengumpulan"/"Submission" di bagian bawah -
-      teksnya sudah baku (sama di semua tutorial, tidak perlu disunting per
-      minggu) dan wajib ada supaya mahasiswa tahu Tutorial diverifikasi
-      lewat commit GitHub sebelum tenggat waktu, bukan lewat slot SCELE
-      terpisah.
+  Cara pakai template ini kalau mau bikin Tutorial minggu baru:
+
+  Copy berkas ini ke tutorial/tutorial-N.qmd, ganti N dengan nomor minggunya
+  (urutannya "Tutorial 01" sampai "Tutorial 10", cek jadwal di homepage kalau
+  lupa), lalu sesuaikan judul di frontmatter dan output-file revealjs.
+
+  Satu hal yang beda dari pola tutorial dulu: sekarang semua Tutorial
+  membangun satu aplikasi tema yang sama secara berkelanjutan sepanjang
+  semester, bukan latihan berdiri sendiri tiap minggu. Jadi section "Yang
+  Sudah Kita Bangun" isinya ringkasan progres dari tutorial minggu
+  sebelumnya - kecuali di Tutorial 01, kosongkan/hapus saja karena belum ada
+  apa-apa untuk diringkas.
+
+  Section "Menghubungkan ke Proyek Kamu" itu yang paling sering kelewat
+  tapi justru paling penting - di situ jelaskan eksplisit bagian mana dari
+  proyek pribadi mahasiswa (misalnya website portofolio) yang bisa memakai
+  pola yang sama dengan yang baru dikerjakan di tutorial ini. Tanpa ini,
+  mahasiswa gampang bingung kenapa tugasnya terasa "beda" dari tutorial,
+  padahal seharusnya melanjutkan pola yang sama.
+
+  Isi kedua blok bahasa ({.content-visible when-profile="id"} dan ="en") -
+  jangan sampai ada yang kosong, karena keduanya yang membuat switch bahasa
+  di navbar berfungsi. Ini juga sumber bug yang paling sering muncul:
+  apapun yang tampil ke pembaca (link slide, baris "Pemrograman Berbasis
+  Platform...", dst.) harus ada di dalam salah satu dari kedua blok itu,
+  bukan di luar - kalau ditaruh di luar, teksnya tampil sama persis di
+  kedua bahasa dan jadi terlihat seperti belum di-translate padahal isinya
+  sudah bilingual.
+
+  Soal judul: frontmatter title tidak bisa beda per bahasa (Quarto selalu
+  pakai satu judul yang sama untuk tab browser dan sidebar), jadi supaya
+  judul di halaman tetap bilingual, tulis heading `#` manual dengan
+  atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa (contohnya
+  ada di bawah) - CSS di `styles.css` otomatis menyembunyikan judul
+  frontmatter kalau atribut ini ada di halaman.
+
+  Jangan lupa daftarkan file barunya di sidebar `contents:` di kedua
+  `_quarto-id.yml` dan `_quarto-en.yml`, dengan `text:` eksplisit per
+  bahasa (jangan biarkan Quarto menurunkan label sidebar dari frontmatter
+  title, itu juga tidak ikut ter-translate). Contoh:
+  ```yaml
+  - text: "Tutorial 01: Setup Git Repository, ..."   # di _quarto-id.yml
+    href: tutorial/tutorial-1.qmd
+  - text: "Tutorial 01: Set Up Git Repository, ..."  # di _quarto-en.yml
+    href: tutorial/tutorial-1.qmd
+  ```
+
+  Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
+
+  Section "Pengumpulan"/"Submission" di bagian bawah teksnya sudah baku
+  dan sama di semua tutorial - biarkan apa adanya, tidak perlu disunting
+  per minggu.
+
+  Langkah terakhir sebelum selesai: render dua profile (`quarto render`,
+  lalu `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
+  berdampingan, dan cek tidak ada teks yang identik/belum ter-translate di
+  keduanya (judul, sidebar, isi). Ini langkah regresi yang wajib dilakukan
+  tiap kali selesai bikin tutorial/tugas baru.
 -->
 
 ::: {.content-visible when-profile="id"}
