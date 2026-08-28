@@ -53,14 +53,14 @@ Kalau kamu masih ingat, di [Tutorial 0](tutorial-0.qmd) kita berhenti persis set
 Struktur folder proyekmu saat ini (hasil akhir Tutorial 0):
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── .git/
 ├── .gitignore
 ├── requirements.txt
 ├── db.sqlite3
 ├── manage.py
-└── myportfolio/          # folder konfigurasi utama proyek
+└── myportofolio/          # folder konfigurasi utama proyek
     ├── __init__.py
     ├── asgi.py
     ├── settings.py       # semua konfigurasi proyek ada di sini
@@ -69,12 +69,12 @@ myportfolio/
 ```
 
 ::: {.callout-note}
-Perhatikan ada **dua** folder bernama `myportfolio` - folder terluar adalah root proyekmu (tempat `manage.py` berada), sedangkan folder di dalamnya adalah *package* konfigurasi Django (tempat `settings.py` dan `urls.py` berada). Ini bukan duplikasi yang salah, memang begitu struktur bawaan `startproject`.
+Perhatikan ada **dua** folder bernama `myportofolio` - folder terluar adalah root proyekmu (tempat `manage.py` berada), sedangkan folder di dalamnya adalah *package* konfigurasi Django (tempat `settings.py` dan `urls.py` berada). Ini bukan duplikasi yang salah, memang begitu struktur bawaan `startproject`.
 :::
 
 ## Menyiapkan Views, URL, Templates, dan Static Files
 
-Buat sebuah *view* sederhana yang mengembalikan sebuah *template* HTML. Buat berkas `myportfolio/views.py`:
+Buat sebuah *view* sederhana yang mengembalikan sebuah *template* HTML. Buat berkas `myportofolio/views.py`:
 
 ```python
 from django.shortcuts import render
@@ -84,13 +84,13 @@ def landing_page(request):
     return render(request, "index.html")
 ```
 
-Hubungkan *view* ini ke URL kosong (`""`) di `myportfolio/urls.py`:
+Hubungkan *view* ini ke URL kosong (`""`) di `myportofolio/urls.py`:
 
 ```python
 from django.contrib import admin
 from django.urls import path
 
-from myportfolio.views import landing_page
+from myportofolio.views import landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -98,7 +98,7 @@ urlpatterns = [
 ]
 ```
 
-Buat folder `templates/`, `static/css/`, dan `static/img/` di root proyek (sejajar dengan `manage.py`), lalu daftarkan `templates/` dan `static/` di `myportfolio/settings.py` supaya Django tahu harus mencari berkas HTML dan aset statis di sana:
+Buat folder `templates/`, `static/css/`, dan `static/img/` di root proyek (sejajar dengan `manage.py`), lalu daftarkan `templates/` dan `static/` di `myportofolio/settings.py` supaya Django tahu harus mencari berkas HTML dan aset statis di sana:
 
 ```python
 TEMPLATES = [
@@ -118,14 +118,14 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 Struktur folder kamu sekarang:
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── manage.py
 ├── templates/
 ├── static/
 │   ├── css/
 │   └── img/
-└── myportfolio/
+└── myportofolio/
     ├── settings.py       # sudah ditambah TEMPLATES.DIRS & STATICFILES_DIRS
     ├── urls.py           # sudah ditambah routing ke landing_page
     ├── views.py          # baru dibuat
@@ -133,7 +133,7 @@ myportfolio/
 ```
 
 ::: {.callout-important}
-Ingat baik-baik langkah wiring views/urls/templates/static di atas - polanya persis sama yang bakal kamu pakai ulang di SETIAP tutorial berikutnya. Dan `myportfolio` ini bukan proyek latihan yang dibuang setelah tutorial selesai - ini website portofolio pribadimu yang beneran, terus berkembang sepanjang semester.
+Ingat baik-baik langkah wiring views/urls/templates/static di atas - polanya persis sama yang bakal kamu pakai ulang di SETIAP tutorial berikutnya. Dan `myportofolio` ini bukan proyek latihan yang dibuang setelah tutorial selesai - ini website portofolio pribadimu yang beneran, terus berkembang sepanjang semester.
 :::
 
 ## Struktur Halaman dengan HTML5
@@ -487,7 +487,7 @@ Perhatikan `.hero-grid` di dalam media query mendefinisikan ulang `grid-template
 Struktur folder kamu sekarang (lengkap sampai akhir Tutorial 01):
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── .git/
 ├── .gitignore
@@ -501,7 +501,7 @@ myportfolio/
 │   │   └── style.css
 │   └── img/
 │       └── burhan.png       # ganti dengan foto kamu sendiri
-└── myportfolio/
+└── myportofolio/
     ├── __init__.py
     ├── asgi.py
     ├── settings.py
@@ -540,7 +540,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
 
    ![Home page PWS](../img/tutorial-1/pws-home.png)
 
-4. Buat proyek baru dengan menekan tombol **Create New Project**. Pada halaman berikutnya, isi `Project Name` dengan `myportfolio`, lalu tekan **Create New Project** di bawahnya.
+4. Buat proyek baru dengan menekan tombol **Create New Project**. Pada halaman berikutnya, isi `Project Name` dengan `myportofolio`, lalu tekan **Create New Project** di bawahnya.
 
    ![Halaman Create Project PWS](../img/tutorial-1/pws-create-project.png)
 
@@ -567,7 +567,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
 7. Pada `settings.py` di proyek Django kamu, tambahkan URL *deployment* PWS ke `ALLOWED_HOSTS`.
 
    ::: {.callout-note}
-   URL *deployment* PWS memiliki format `<username-sso>-<nama-proyek>.pws.cs.ui.ac.id`. Kalau username SSO kamu ada karakter titik (`.`), ganti jadi *hyphen* (`-`). Contoh: kalau username SSO kamu `burhan.25` dan nama proyek `myportfolio`, URL *deployment*-nya `burhan-25-myportfolio.pws.cs.ui.ac.id`.
+   URL *deployment* PWS memiliki format `<username-sso>-<nama-proyek>.pws.cs.ui.ac.id`. Kalau username SSO kamu ada karakter titik (`.`), ganti jadi *hyphen* (`-`). Contoh: kalau username SSO kamu `burhan.25` dan nama proyek `myportofolio`, URL *deployment*-nya `burhan-25-myportofolio.pws.cs.ui.ac.id`.
    :::
 
    ```python
@@ -577,7 +577,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
    Lakukan `git add`, `commit`, dan `push` perubahan ini ke repositori GitHub kamu.
 
    ::: {.callout-warning}
-   Sebelum lanjut ke langkah berikutnya, pastikan struktur repositorimu lengkap: berkas `manage.py`, `requirements.txt`, `.gitignore`, direktori `myportfolio/` (folder konfigurasi proyek), dan **bukan** direktori `env/` atau berkas `db.sqlite3` (harusnya sudah di-*gitignore*).
+   Sebelum lanjut ke langkah berikutnya, pastikan struktur repositorimu lengkap: berkas `manage.py`, `requirements.txt`, `.gitignore`, direktori `myportofolio/` (folder konfigurasi proyek), dan **bukan** direktori `env/` atau berkas `db.sqlite3` (harusnya sudah di-*gitignore*).
 
    ![Contoh struktur repositori yang benar](../img/tutorial-1/pws-repo-structure.png)
    :::
@@ -599,7 +599,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
     Kamu tidak perlu mengulang instruksi *Project Command* lagi.
 
 ::: {.callout-important}
-Proyek `myportfolio` yang kamu *deploy* ini akan menjadi landasan untuk tutorial-tutorial berikutnya - repositori dan *deployment*-nya akan terus berkembang seiring tutorial yang kamu ikuti sepanjang semester.
+Proyek `myportofolio` yang kamu *deploy* ini akan menjadi landasan untuk tutorial-tutorial berikutnya - repositori dan *deployment*-nya akan terus berkembang seiring tutorial yang kamu ikuti sepanjang semester.
 :::
 
 ### Troubleshooting PWS
@@ -610,7 +610,7 @@ Kalau *build* gagal, coba periksa beberapa hal berikut:
 
 - **Isi Repositori**: pastikan struktur repositorimu sama seperti contoh di Langkah 7 di atas.
 - **Berkas `requirements.txt`**: pastikan namanya persis, bukan `requirement.txt` (kurang huruf "s") atau `requirements.txt.txt` (ekstensi ganda).
-- **Berkas `.gitignore`**: pastikan diawali titik, tidak punya ekstensi tambahan, dan berada di *root folder* bersama `manage.py`, direktori `myportfolio/`, `requirements.txt`, `.git`, dan `db.sqlite3`.
+- **Berkas `.gitignore`**: pastikan diawali titik, tidak punya ekstensi tambahan, dan berada di *root folder* bersama `manage.py`, direktori `myportofolio/`, `requirements.txt`, `.git`, dan `db.sqlite3`.
 
   ::: {.callout-tip}
   Pengguna Windows bisa centang opsi **File name extensions** di Windows Explorer untuk melihat ekstensi berkas dengan lebih jelas.
@@ -694,14 +694,14 @@ Quick recap - in [Tutorial 0](tutorial-0.qmd) we left off right after Django's w
 Your project's folder structure right now (the end result of Tutorial 0):
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── .git/
 ├── .gitignore
 ├── requirements.txt
 ├── db.sqlite3
 ├── manage.py
-└── myportfolio/          # the project's main config package
+└── myportofolio/          # the project's main config package
     ├── __init__.py
     ├── asgi.py
     ├── settings.py       # all project configuration lives here
@@ -710,12 +710,12 @@ myportfolio/
 ```
 
 ::: {.callout-note}
-Notice there are **two** folders named `myportfolio` - the outer one is your project root (where `manage.py` lives), while the one inside it is the Django configuration *package* (where `settings.py` and `urls.py` live). This isn't a mistake, it's `startproject`'s default structure.
+Notice there are **two** folders named `myportofolio` - the outer one is your project root (where `manage.py` lives), while the one inside it is the Django configuration *package* (where `settings.py` and `urls.py` live). This isn't a mistake, it's `startproject`'s default structure.
 :::
 
 ## Set Up Views, URLs, Templates, and Static Files
 
-Create a simple *view* that returns an HTML *template*. Create `myportfolio/views.py`:
+Create a simple *view* that returns an HTML *template*. Create `myportofolio/views.py`:
 
 ```python
 from django.shortcuts import render
@@ -725,13 +725,13 @@ def landing_page(request):
     return render(request, "index.html")
 ```
 
-Connect this view to the empty (`""`) URL in `myportfolio/urls.py`:
+Connect this view to the empty (`""`) URL in `myportofolio/urls.py`:
 
 ```python
 from django.contrib import admin
 from django.urls import path
 
-from myportfolio.views import landing_page
+from myportofolio.views import landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -739,7 +739,7 @@ urlpatterns = [
 ]
 ```
 
-Create a `templates/`, `static/css/`, and `static/img/` folder at the project root (next to `manage.py`), then register `templates/` and `static/` in `myportfolio/settings.py` so Django knows to look there for HTML pages and static assets:
+Create a `templates/`, `static/css/`, and `static/img/` folder at the project root (next to `manage.py`), then register `templates/` and `static/` in `myportofolio/settings.py` so Django knows to look there for HTML pages and static assets:
 
 ```python
 TEMPLATES = [
@@ -759,14 +759,14 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 Your folder structure so far:
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── manage.py
 ├── templates/
 ├── static/
 │   ├── css/
 │   └── img/
-└── myportfolio/
+└── myportofolio/
     ├── settings.py       # now has TEMPLATES.DIRS & STATICFILES_DIRS
     ├── urls.py           # now routes to landing_page
     ├── views.py          # newly created
@@ -774,7 +774,7 @@ myportfolio/
 ```
 
 ::: {.callout-important}
-Hold onto that wiring pattern (views/urls/templates/static) - you'll reuse it exactly the same way in every tutorial from here on. And `myportfolio` isn't a throwaway exercise - it's your actual personal portfolio website, growing with you all semester.
+Hold onto that wiring pattern (views/urls/templates/static) - you'll reuse it exactly the same way in every tutorial from here on. And `myportofolio` isn't a throwaway exercise - it's your actual personal portfolio website, growing with you all semester.
 :::
 
 ## Page Structure with HTML5
@@ -1126,7 +1126,7 @@ The footer is deliberately left-aligned (not `text-align: center`) with just one
 Your folder structure so far (complete, through the end of Tutorial 01):
 
 ```
-myportfolio/
+myportofolio/
 ├── env/
 ├── .git/
 ├── .gitignore
@@ -1140,7 +1140,7 @@ myportfolio/
 │   │   └── style.css
 │   └── img/
 │       └── burhan.png       # replace with your own photo
-└── myportfolio/
+└── myportofolio/
     ├── __init__.py
     ├── asgi.py
     ├── settings.py
@@ -1179,7 +1179,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
 
    ![PWS home page](../img/tutorial-1/pws-home.png)
 
-4. Create a new project by clicking **Create New Project**. On the next page, fill in `Project Name` with `myportfolio`, then click **Create New Project** below it.
+4. Create a new project by clicking **Create New Project**. On the next page, fill in `Project Name` with `myportofolio`, then click **Create New Project** below it.
 
    ![The Create Project page on PWS](../img/tutorial-1/pws-create-project.png)
 
@@ -1206,7 +1206,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
 7. In your Django project's `settings.py`, add the PWS *deployment* URL to `ALLOWED_HOSTS`.
 
    ::: {.callout-note}
-   The PWS *deployment* URL follows the format `<sso-username>-<project-name>.pws.cs.ui.ac.id`. If your SSO username has a dot (`.`) in it, replace it with a *hyphen* (`-`). Example: if your SSO username is `burhan.25` and your project name is `myportfolio`, your *deployment* URL is `burhan-25-myportfolio.pws.cs.ui.ac.id`.
+   The PWS *deployment* URL follows the format `<sso-username>-<project-name>.pws.cs.ui.ac.id`. If your SSO username has a dot (`.`) in it, replace it with a *hyphen* (`-`). Example: if your SSO username is `burhan.25` and your project name is `myportofolio`, your *deployment* URL is `burhan-25-myportofolio.pws.cs.ui.ac.id`.
    :::
 
    ```python
@@ -1216,7 +1216,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
    `git add`, `commit`, and `push` this change to your GitHub repository.
 
    ::: {.callout-warning}
-   Before moving to the next step, make sure your repository structure is complete: `manage.py`, `requirements.txt`, `.gitignore`, the `myportfolio/` config directory, and **not** an `env/` directory or a `db.sqlite3` file (those should already be *gitignored*).
+   Before moving to the next step, make sure your repository structure is complete: `manage.py`, `requirements.txt`, `.gitignore`, the `myportofolio/` config directory, and **not** an `env/` directory or a `db.sqlite3` file (those should already be *gitignored*).
 
    ![Example of a correct repository structure](../img/tutorial-1/pws-repo-structure.png)
    :::
@@ -1238,7 +1238,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
     You won't need to repeat the *Project Command* instructions again.
 
 ::: {.callout-important}
-The `myportfolio` project you just *deployed* will be the foundation for the following tutorials - its repository and deployment will keep growing along with the tutorials you complete throughout the semester.
+The `myportofolio` project you just *deployed* will be the foundation for the following tutorials - its repository and deployment will keep growing along with the tutorials you complete throughout the semester.
 :::
 
 ### Troubleshooting PWS
@@ -1249,7 +1249,7 @@ If the build fails, try checking a few things:
 
 - **Repository contents**: make sure your repository structure matches the example in Step 7 above.
 - **`requirements.txt` file**: make sure the name is exact - not `requirement.txt` (missing the "s") or `requirements.txt.txt` (double extension).
-- **`.gitignore` file**: make sure it starts with a dot, has no extra extension, and sits at the *root folder* alongside `manage.py`, the `myportfolio/` directory, `requirements.txt`, `.git`, and `db.sqlite3`.
+- **`.gitignore` file**: make sure it starts with a dot, has no extra extension, and sits at the *root folder* alongside `manage.py`, the `myportofolio/` directory, `requirements.txt`, `.git`, and `db.sqlite3`.
 
   ::: {.callout-tip}
   Windows users can check the **File name extensions** option in Windows Explorer to see file extensions more clearly.
