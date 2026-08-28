@@ -165,9 +165,15 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
     <main>
         <section class="hero" id="profile">
             <div class="container hero-grid">
-                <div class="hero-text">
+                <div class="hero-identity">
                     <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-block"></div>
+                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
+                </div>
+                <div class="hero-details">
                     <p class="bio">CS student at Universitas Indonesia for longer than planned, now a familiar (and slightly dreaded) face among Fasilkom students as a teaching assistant across several courses.</p>
                     <dl class="meta-list">
                         <div class="meta-row">
@@ -184,10 +190,6 @@ Sekarang kita bangun halaman utama: sebuah section "About Me" yang menampilkan f
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
                         <a href="mailto:burhan@example.com" class="social-link">Email</a>
                     </div>
-                </div>
-                <div class="hero-photo">
-                    <div class="photo-block"></div>
-                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
                 </div>
             </div>
         </section>
@@ -237,6 +239,10 @@ templates/
 ## Mempercantik Halaman dengan CSS3
 
 Buat berkas `static/css/style.css`. Kita bangun bertahap per bagian supaya lebih mudah dipahami - tapi hasil akhirnya harus jadi satu berkas `style.css` yang utuh, gabungan dari semua potongan kode di bawah, sesuai urutannya.
+
+::: {.callout-tip}
+Desain visual di tutorial ini (warna, font, tata letak, dsb.) cuma salah satu contoh untuk mendemonstrasikan teknik HTML5 dan CSS3 - kamu **tidak wajib** meniru tampilannya persis. Selama halamanmu tetap memakai HTML5 dan CSS3 murni (belum database/MVT) dan strukturnya rapi, kamu bebas berkreasi dengan skema warna, font, atau tata letak versimu sendiri, baik di tutorial ini maupun nanti di Individual Assignment 1.
+:::
 
 ### Reset Dasar & Custom Properties
 
@@ -330,8 +336,18 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 .hero-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
-    align-items: center;
-    gap: 3rem;
+    grid-template-areas:
+        "identity photo"
+        "details  photo";
+    gap: 1.5rem 3rem;
+}
+
+.hero-identity {
+    grid-area: identity;
+}
+
+.hero-details {
+    grid-area: details;
 }
 
 .hero-kicker {
@@ -343,13 +359,12 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
     margin-bottom: 0.75rem;
 }
 
-.hero-text h1 {
+.hero-identity h1 {
     font-size: clamp(3rem, 7vw, 5rem);
     line-height: 0.95;
-    margin-bottom: 1.25rem;
 }
 
-.hero-text .bio {
+.bio {
     color: var(--text-muted);
     max-width: 480px;
     margin-bottom: 1.5rem;
@@ -396,6 +411,8 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 }
 
 .hero-photo {
+    grid-area: photo;
+    align-self: center;
     position: relative;
 }
 
@@ -422,7 +439,7 @@ CSS *custom properties* (variabel yang ditulis `--nama-variabel`) memudahkan kam
 }
 ```
 
-`grid-template-columns: 1.3fr 1fr` membuat kolom teks sedikit lebih lebar dibanding kolom foto (1.3 bagian berbanding 1 bagian) - layout asimetris seperti ini terasa lebih dirancang dibanding kolom yang sama rata atau selebar-konten-saja. `clamp(3rem, 7vw, 5rem)` pada `.hero-text h1` membuat judul sangat besar dan otomatis menyesuaikan lebar layar (nilai tengah `7vw`), dibatasi minimum `3rem` dan maksimum `5rem` - tipografi besar seperti ini yang bikin halaman terasa punya *statement*, bukan sekadar judul kecil di pojok.
+`grid-template-columns: 1.3fr 1fr` membuat kolom teks sedikit lebih lebar dibanding kolom foto (1.3 bagian berbanding 1 bagian) - layout asimetris seperti ini terasa lebih dirancang dibanding kolom yang sama rata atau selebar-konten-saja. `grid-template-areas` memberi nama pada tiap area grid (`identity`, `photo`, `details`) lalu menyusunnya lewat "peta" berbentuk teks - `.hero-photo` muncul di kedua baris pada kolom yang sama, sehingga otomatis menyatu jadi satu area yang membentang dua baris. Elemen anak lalu menempel ke areanya masing-masing lewat `grid-area: nama-area`, tanpa perlu diurutkan manual di HTML. `clamp(3rem, 7vw, 5rem)` pada `.hero-identity h1` membuat judul sangat besar dan otomatis menyesuaikan lebar layar (nilai tengah `7vw`), dibatasi minimum `3rem` dan maksimum `5rem` - tipografi besar seperti ini yang bikin halaman terasa punya *statement*, bukan sekadar judul kecil di pojok.
 
 Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong yang diposisikan `absolute` sedikit *offset* (bergeser `1.25rem` ke kanan-bawah) dari foto aslinya, dengan warna solid `var(--accent)` sebagai latar. `.avatar` diposisikan `relative` dengan `z-index: 1` (di atas `.photo-block` yang `z-index: 0`) sehingga terlihat seperti foto punya "bayangan" berwarna solid di belakangnya - efek *layered* ini yang menggantikan `box-shadow` sederhana dan terasa lebih personal/craft dibanding foto bulat polos.
 
@@ -445,12 +462,14 @@ Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong
 @media (max-width: 600px) {
     .hero-grid {
         grid-template-columns: 1fr;
-        text-align: left;
+        grid-template-areas:
+            "identity"
+            "photo"
+            "details";
     }
 
     .hero-photo {
         max-width: 220px;
-        margin-bottom: 1rem;
     }
 
     .social-links {
@@ -460,6 +479,8 @@ Bagian paling menarik ada di `.hero-photo`: `.photo-block` adalah `<div>` kosong
 ```
 
 Footer sengaja dibiarkan rata kiri (bukan `text-align: center`) dan isinya cuma satu baris teks hak cipta sederhana - footer yang isinya cuma nama dan NPM lagi (yang sudah ada di bagian hero) mudah terasa seperti tempelan generik, jadi lebih wajar diisi baris singkat semacam `&copy; 2026 <Nama Kamu>. <Nama Universitasmu>.`, mirip footer situs pada umumnya.
+
+Perhatikan `.hero-grid` di dalam media query mendefinisikan ulang `grid-template-areas` dengan urutan `identity`, lalu `photo`, lalu `details` - ini yang membuat di layar sempit, nama tampil dulu, disusul foto, baru bio dan kontak di bawahnya, bukan sekadar menumpuk urutan HTML apa adanya. Karena letak tiap elemen ditentukan oleh nama area (bukan urutan dokumen), kamu bisa mengatur urutan tampilan mobile berbeda dari urutan HTML tanpa menulis ulang markup-nya sama sekali.
 
 `@media (max-width: 600px)` adalah *media query* - aturan CSS di dalamnya HANYA berlaku kalau lebar layar 600px atau kurang (misalnya HP). Di sini kita ubah grid dua kolom (`1.3fr 1fr`) menjadi satu kolom (`1fr` saja) supaya foto ada di atas dan teks di bawah - berbeda dari pendekatan umum yang menengahkan semuanya (`text-align: center`), di sini teks tetap rata kiri (`text-align: left`) supaya paragraf bio tetap nyaman dibaca, dan `.hero-photo` dibatasi lebarnya (`max-width: 220px`) supaya foto besarnya tidak berubah jadi berlebihan di layar sempit. Ini yang disebut *responsive design*, tampilan yang menyesuaikan diri ke berbagai ukuran layar.
 
@@ -781,9 +802,15 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
     <main>
         <section class="hero" id="profile">
             <div class="container hero-grid">
-                <div class="hero-text">
+                <div class="hero-identity">
                     <p class="hero-kicker">Computer Science &middot; Universitas Indonesia</p>
                     <h1>Burhan</h1>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-block"></div>
+                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
+                </div>
+                <div class="hero-details">
                     <p class="bio">CS student at Universitas Indonesia for longer than planned, now a familiar (and slightly dreaded) face among Fasilkom students as a teaching assistant across several courses.</p>
                     <dl class="meta-list">
                         <div class="meta-row">
@@ -800,10 +827,6 @@ Now let's build the main page: an "About Me" section showing a photo, name, and 
                         <a href="https://linkedin.com/" class="social-link">LinkedIn</a>
                         <a href="mailto:burhan@example.com" class="social-link">Email</a>
                     </div>
-                </div>
-                <div class="hero-photo">
-                    <div class="photo-block"></div>
-                    <img class="avatar" src="/static/img/burhan.png" alt="Photo of Burhan">
                 </div>
             </div>
         </section>
@@ -853,6 +876,10 @@ templates/
 ## Styling with CSS3
 
 Create `static/css/style.css`. We'll build it up section by section to make it easier to follow - but the final result should be one complete `style.css` file, combining all the snippets below in order.
+
+::: {.callout-tip}
+The visual design in this tutorial (colors, fonts, layout, etc.) is just one example to demonstrate HTML5 and CSS3 techniques - you're **not required** to copy it exactly. As long as your page still uses plain HTML5 and CSS3 (no database/MVT yet) and stays well-structured, you're free to design your own color scheme, fonts, or layout, both in this tutorial and later in Individual Assignment 1.
+:::
 
 ### Basic Reset & Custom Properties
 
@@ -946,8 +973,18 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 .hero-grid {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
-    align-items: center;
-    gap: 3rem;
+    grid-template-areas:
+        "identity photo"
+        "details  photo";
+    gap: 1.5rem 3rem;
+}
+
+.hero-identity {
+    grid-area: identity;
+}
+
+.hero-details {
+    grid-area: details;
 }
 
 .hero-kicker {
@@ -959,13 +996,12 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
     margin-bottom: 0.75rem;
 }
 
-.hero-text h1 {
+.hero-identity h1 {
     font-size: clamp(3rem, 7vw, 5rem);
     line-height: 0.95;
-    margin-bottom: 1.25rem;
 }
 
-.hero-text .bio {
+.bio {
     color: var(--text-muted);
     max-width: 480px;
     margin-bottom: 1.5rem;
@@ -1012,6 +1048,8 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 }
 
 .hero-photo {
+    grid-area: photo;
+    align-self: center;
     position: relative;
 }
 
@@ -1038,7 +1076,7 @@ CSS *custom properties* (variables written as `--variable-name`) let you change 
 }
 ```
 
-`grid-template-columns: 1.3fr 1fr` makes the text column slightly wider than the photo column (1.3 shares vs. 1 share) - an asymmetric layout like this feels more deliberately designed than evenly-split or content-width-only columns. `clamp(3rem, 7vw, 5rem)` on `.hero-text h1` makes the heading very large and automatically scales with screen width (the middle value `7vw`), bounded between a minimum of `3rem` and a maximum of `5rem` - big typography like this is what gives a page a *statement*, rather than just a small title tucked in a corner.
+`grid-template-columns: 1.3fr 1fr` makes the text column slightly wider than the photo column (1.3 shares vs. 1 share) - an asymmetric layout like this feels more deliberately designed than evenly-split or content-width-only columns. `grid-template-areas` names each region of the grid (`identity`, `photo`, `details`) and lays them out as a text "map" - `.hero-photo` shows up in both rows of the same column, so it automatically merges into one area spanning both rows. Child elements then attach to their area with `grid-area: area-name`, without needing to be reordered manually in the HTML. `clamp(3rem, 7vw, 5rem)` on `.hero-identity h1` makes the heading very large and automatically scales with screen width (the middle value `7vw`), bounded between a minimum of `3rem` and a maximum of `5rem` - big typography like this is what gives a page a *statement*, rather than just a small title tucked in a corner.
 
 The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` positioned `absolute`, offset slightly (shifted `1.25rem` down-right) from the actual photo, filled with the solid `var(--accent)` color. `.avatar` is positioned `relative` with `z-index: 1` (above `.photo-block`'s `z-index: 0`), so the photo looks like it has a solid-colored "shadow" behind it - this layered effect replaces a plain `box-shadow` and feels more personal/crafted than a plain round photo.
 
@@ -1061,12 +1099,14 @@ The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` p
 @media (max-width: 600px) {
     .hero-grid {
         grid-template-columns: 1fr;
-        text-align: left;
+        grid-template-areas:
+            "identity"
+            "photo"
+            "details";
     }
 
     .hero-photo {
         max-width: 220px;
-        margin-bottom: 1rem;
     }
 
     .social-links {
@@ -1077,7 +1117,7 @@ The most interesting part is `.hero-photo`: `.photo-block` is an empty `<div>` p
 
 The footer is deliberately left-aligned (not `text-align: center`) with just one plain copyright line - a footer that only repeats your name and NPM (already shown up in the hero) easily reads as generic filler, so a short line like `&copy; 2026 <Your Name>. <Your University>.` feels closer to a real site's footer.
 
-`@media (max-width: 600px)` is a *media query* - the rules inside it only apply when the screen is 600px wide or narrower (like a phone). Here we switch the two-column grid (`1.3fr 1fr`) into a single column (`1fr` only) so the photo sits on top and the text below - unlike the common approach of centering everything (`text-align: center`), the text here stays left-aligned (`text-align: left`) so the bio paragraph stays comfortable to read, and `.hero-photo` gets a capped width (`max-width: 220px`) so the large photo doesn't become excessive on a narrow screen. This is what's called *responsive design*, a layout that adapts itself to different screen sizes.
+`@media (max-width: 600px)` is a *media query* - the rules inside it only apply when the screen is 600px wide or narrower (like a phone). Notice `.hero-grid` redefines `grid-template-areas` here with `identity`, then `photo`, then `details` stacked in that order - that's what makes the name show up first on a narrow screen, followed by the photo, then the bio and contact info below it, instead of just dumping the HTML source order on the page. Because each element's position comes from its area name (not document order), you can give the mobile layout a different order from the HTML without rewriting any markup. `.hero-photo` also gets a capped width (`max-width: 220px`) so the large photo doesn't become excessive on a narrow screen. This is what's called *responsive design*, a layout that adapts itself to different screen sizes.
 
 Your folder structure so far (complete, through the end of Tutorial 01):
 
