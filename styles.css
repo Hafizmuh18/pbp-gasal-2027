@@ -255,22 +255,21 @@ table tbody tr:nth-child(even) {
 table tbody tr:hover {
   background-color: var(--pbp-blue-light);
 }
-/* Data-dense tables (5+ columns) become unreadable whenever the content
-   column is narrower than the table wants to be - not just on narrow
-   screens, but on any desktop width too, since the docked sidebar already
-   eats a big chunk of the viewport. Text squeezes to one word (or one
-   letter) per line trying to fit every column into what's left. Instead
-   let the table scroll sideways as a whole, with each column kept wide
-   enough to still wrap into readable multi-word lines, at every width. */
-table {
-  display: block;
-  overflow-x: auto;
-}
-table td, table th {
-  min-width: 200px;
-}
-table th:first-child, table td:first-child {
-  min-width: 140px;
+/* Data-dense tables (5+ columns) become unreadable on narrow screens -
+   text squeezes to one letter per line trying to fit every column into
+   ~300px. Instead let the table scroll sideways as a whole, with each
+   column kept wide enough to still wrap into readable multi-word lines. */
+@media (max-width: 700px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  table td, table th {
+    min-width: 130px;
+  }
+  table th:first-child, table td:first-child {
+    min-width: 60px;
+  }
 }
 .quarto-dark table tbody tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.03);
