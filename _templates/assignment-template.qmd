@@ -57,6 +57,11 @@ format-links:
   bahasa (jangan biarkan Quarto menurunkan label sidebar dari frontmatter
   title).
 
+  Section "Pertanyaan Reflektif"/"Reflective Question" berisi pertanyaan
+  minggu ini yang biasanya diisi dosen (bukan asdos) - kalau belum ada
+  pertanyaannya saat kamu menyiapkan halaman ini, biarkan placeholder-nya
+  kosong apa adanya, jangan diisi asal, tunggu dosen yang mengisi.
+
   Section "Pengumpulan"/"Submission" teksnya sudah baku (link commit,
   sebelum tenggat waktu, repositori publik) dan sama di semua tugas -
   biarkan apa adanya, tidak perlu disunting per minggu.
@@ -108,6 +113,10 @@ yang sama.>
 ### Tutorial N adalah Prasyarat Wajib
 Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** paling lambat <hari/tanggal Rabu minggu ini>. Kalau Tutorial N belum dikerjakan, Individual Assignment N **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
 :::
+
+## Pertanyaan Reflektif
+
+<Pertanyaan reflektif minggu ini, biasanya diisi oleh dosen. Jawabannya disertakan mahasiswa di README.md, sebagai bagian dari komponen "Dokumentasi & AI Disclosure + Pertanyaan Reflektif" di rubrik.>
 
 ## Pengumpulan
 
@@ -185,6 +194,10 @@ the same pattern.>
 ### Tutorial N Is a Mandatory Prerequisite
 Individual Assignment N **is only graded if Tutorial N has been completed** by <this week's Wednesday date> at the latest. If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
 :::
+
+## Reflective Question
+
+<This week's reflective question, usually filled in by the lecturer. Students include their answer in README.md, as part of the "Documentation & AI Disclosure + Reflective Question" rubric component.>
 
 ## Submission
 
