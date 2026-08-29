@@ -66,10 +66,12 @@ Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama denga
 
 ## Rubrik Penilaian
 
-1. Kelengkapan section "About Me" sesuai Tutorial 01, dengan data pribadi asli (30 poin)
-2. Kualitas dan kelengkapan section tambahan yang dipilih (40 poin)
-3. Kerapian dan konsistensi styling CSS, termasuk tampilan di layar sempit (20 poin)
-4. Struktur HTML semantik yang benar (10 poin)
+| Komponen | Bobot | 1 | 2 | 3 | 3.5 | 4 |
+|---|---|---|---|---|---|---|
+| **Fungsionalitas & Kesesuaian Topik** | 70% | Tugas belum lengkap; aplikasi gagal berjalan (*crash*/error 500); sama sekali gagal mengimplementasikan materi minggu ini. | Aplikasi berjalan sebagian; banyak fitur *error*; implementasi materi minggu ini minim atau salah. | Aplikasi berjalan baik dan berhasil mengimplementasikan materi minggu ini, dengan sedikit bug atau fungsi yang kurang mulus. | Fungsionalitas berjalan sempurna tanpa bug. Semua instruksi dan topik minggu ini diimplementasikan dengan akurat. | Menambahkan fitur ekstra, interaktivitas, atau elemen UI/UX yang relevan di luar instruksi minggu ini. |
+| **Kualitas & Struktur Kode** | 10% | Kode sangat berantakan; logika tidak jelas; terlihat seperti *copy-paste* tanpa memahami struktur yang mendasarinya. | Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*). | Kode cukup rapi dan terstruktur, mengikuti alur dasar HTML5/CSS3 yang diajarkan di Tutorial 01. | Struktur kode sangat rapi, modular, dan patuh ketat pada praktik terbaik HTML5/CSS3 (semantik, *reusable*). | Menerapkan optimasi kode tingkat lanjut, memisahkan *style* dengan bersih, atau menambahkan komentar kode yang sangat informatif. |
+| **Git & Disiplin** | 10% | Dikumpulkan terlambat; Git sama sekali tidak dipakai (hanya unggah ZIP/berkas manual). | Dikumpulkan tepat waktu; penggunaan Git sangat buruk (mis. cuma 1 *commit* besar dengan pesan tidak jelas). | Dikumpulkan tepat waktu; ada beberapa *commit*, tapi pesan *commit* tidak deskriptif (mis. "update", "fix"). | Dikumpulkan tepat waktu. Riwayat *commit* rutin, mencerminkan progres bertahap, dan pesannya sangat deskriptif. | Menerapkan *branching* yang terorganisir untuk tiap fitur, atau menjaga riwayat *commit* yang rapi dan profesional (mis. *conventional commits*). |
+| **Dokumentasi & AI Disclosure + Pertanyaan Reflektif** | 10% | `README.md` tidak disediakan; sama sekali tidak menyebutkan penggunaan AI. | `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas. AI *disclosure* sangat samar (mis. "saya pakai ChatGPT"). | `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas. AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI. | `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas. AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu. Menyertakan *chat* AI atau log *prompting*. | Dokumentasi berkualitas *open-source* (termasuk progres mingguan). AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan. |
 
 :::
 
@@ -127,9 +129,11 @@ Individual Assignment 1 is released **August 31, 2026** (Monday, the same week a
 
 ## Grading Rubric
 
-1. Completeness of the "About Me" section per Tutorial 01, with real personal data (30 points)
-2. Quality and completeness of the chosen additional section(s) (40 points)
-3. Neatness and consistency of the CSS styling, including on narrow screens (20 points)
-4. Correct semantic HTML structure (10 points)
+| Component | Weight | 1 | 2 | 3 | 3.5 | 4 |
+|---|---|---|---|---|---|---|
+| **Functionality & Topic Alignment** | 70% | Assignment is incomplete; application fails to run (*crashes*/error 500); completely fails to implement the week's material. | Application runs partially; multiple features error out; implementation of the week's material is minimal or incorrect. | Application runs well and successfully implements the week's material, with minor bugs or clunky functions remaining. | Functionality runs perfectly without bugs. All instructions and topics for the week are implemented accurately. | Adds relevant extra features, interactivity, or UI/UX elements beyond the week's instructions. |
+| **Code Quality & Structure** | 10% | Code is highly chaotic; logic is unclear; appears to be *copy-pasted* without understanding the underlying structure. | Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code). | Code is fairly neat and structured, following the basic HTML5/CSS3 flow taught in Tutorial 01. | Code structure is highly neat, modular, and strictly adheres to HTML5/CSS3 best practices (semantic, *reusable*). | Implements advanced code optimization, cleanly separates *style* concerns, or adds highly informative code comments. |
+| **Git & Discipline** | 10% | Submitted late; Git is not used at all (only uploaded ZIP/manual files). | Submitted on time; Git usage is very poor (e.g., only 1 massive *commit* with an unclear message). | Submitted on time; multiple *commits* exist, but commit messages are not descriptive (e.g., "update", "fix"). | Submitted on time. Commit history is routine, reflects gradual progress, and messages are highly descriptive. | Implements organized *branching* for individual features, or maintains a flawless and professional commit history (e.g., *conventional commits*). |
+| **Documentation & AI Disclosure + Reflective Question** | 10% | No `README.md` provided; no mention of AI usage whatsoever. | `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT"). | Structured `README.md` with clear project description and setup. AI disclosure lists tools used and generally mentions which parts were assisted. | Neat, structured `README.md` with clear weekly setup instructions. Transparent AI disclosure explaining the tools, prompt strategy, and specific assisted parts. Includes AI chat or prompting history/log. | *Open-source* quality documentation (includes the weekly progress). AI disclosure critically analyzes the AI's limitations and highlights manual fixes. |
 
 :::
