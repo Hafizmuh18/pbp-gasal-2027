@@ -61,6 +61,16 @@ format-links:
   sebelum tenggat waktu, repositori publik) dan sama di semua tugas -
   biarkan apa adanya, tidak perlu disunting per minggu.
 
+  Section "Rubrik Penilaian"/"Grading Rubric" juga sudah baku - empat
+  komponen dengan bobot tetap (Fungsionalitas & Kesesuaian Topik 70%,
+  Kualitas & Struktur Kode 10%, Git & Disiplin 10%, Dokumentasi & AI
+  Disclosure + Pertanyaan Reflektif 10%). Cuma level 3 dan 3.5 di komponen
+  "Kualitas & Struktur Kode" yang perlu disesuaikan per minggu (lihat
+  placeholder di dalamnya) - sisanya biarkan apa adanya, jangan diubah jadi
+  tabel lagi (tabel lebar begini pernah dicoba dan berantakan baik di
+  halaman HTML sempit karena sidebar, maupun di ekspor PDF Typst yang
+  tidak bisa membungkus/scroll sel seperti browser).
+
   Langkah terakhir sebelum selesai: render dua profile (`quarto render`,
   lalu `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
   berdampingan, dan cek tidak ada teks yang identik/belum ter-translate di
@@ -109,7 +119,39 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ## Rubrik Penilaian
 
-<Tabel atau daftar rubrik penilaian.>
+### Fungsionalitas & Kesesuaian Topik (70%)
+
+- **1** - Tugas belum lengkap; aplikasi gagal berjalan (*crash*/error 500); sama sekali gagal mengimplementasikan materi minggu ini.
+- **2** - Aplikasi berjalan sebagian; banyak fitur *error*; implementasi materi minggu ini minim atau salah.
+- **3** - Aplikasi berjalan baik dan berhasil mengimplementasikan materi minggu ini, dengan sedikit bug atau fungsi yang kurang mulus.
+- **3.5** - Fungsionalitas berjalan sempurna tanpa bug. Semua instruksi dan topik minggu ini diimplementasikan dengan akurat.
+- **4** - Menambahkan fitur ekstra, interaktivitas, atau elemen UI/UX yang relevan di luar instruksi minggu ini.
+
+### Kualitas & Struktur Kode (10%)
+
+<Level 3 dan 3.5 di bawah perlu disesuaikan dengan tumpukan teknologi minggu ini (mis. "mengikuti alur dasar Django MTV" atau "Flutter Widget Tree") - lihat assignments/individual/tugas-1.qmd untuk contoh versi HTML5/CSS3. Level 1, 2, dan 4 sudah cukup generik untuk dipakai apa adanya.>
+
+- **1** - Kode sangat berantakan; logika tidak jelas; terlihat seperti *copy-paste* tanpa memahami struktur yang mendasarinya.
+- **2** - Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*).
+- **3** - <Kode cukup rapi dan terstruktur, mengikuti alur dasar teknologi minggu ini.>
+- **3.5** - <Struktur kode sangat rapi, modular, efisien, dan patuh ketat pada praktik terbaik teknologi minggu ini.>
+- **4** - Menerapkan optimasi kode tingkat lanjut, memisahkan logika dengan bersih, atau menambahkan komentar/docstring kode yang sangat informatif.
+
+### Git & Disiplin (10%)
+
+- **1** - Dikumpulkan terlambat; Git sama sekali tidak dipakai (hanya unggah ZIP/berkas manual).
+- **2** - Dikumpulkan tepat waktu; penggunaan Git sangat buruk (mis. cuma 1 *commit* besar dengan pesan tidak jelas).
+- **3** - Dikumpulkan tepat waktu; ada beberapa *commit*, tapi pesan *commit* tidak deskriptif (mis. "update", "fix").
+- **3.5** - Dikumpulkan tepat waktu. Riwayat *commit* rutin, mencerminkan progres bertahap, dan pesannya sangat deskriptif.
+- **4** - Menerapkan *branching* yang terorganisir untuk tiap fitur, atau menjaga riwayat *commit* yang rapi dan profesional (mis. *conventional commits*).
+
+### Dokumentasi & AI Disclosure + Pertanyaan Reflektif (10%)
+
+- **1** - `README.md` tidak disediakan; sama sekali tidak menyebutkan penggunaan AI.
+- **2** - `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas. AI *disclosure* sangat samar (mis. "saya pakai ChatGPT").
+- **3** - `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas. AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI.
+- **3.5** - `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas. AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu. Menyertakan *chat* AI atau log *prompting*.
+- **4** - Dokumentasi berkualitas *open-source* (termasuk progres mingguan). AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan.
 
 :::
 
@@ -154,6 +196,38 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 
 ## Grading Rubric
 
-<Grading rubric table or list.>
+### Functionality & Topic Alignment (70%)
+
+- **1** - Assignment is incomplete; application fails to run (*crashes*/error 500); completely fails to implement the week's material.
+- **2** - Application runs partially; multiple features error out; implementation of the week's material is minimal or incorrect.
+- **3** - Application runs well and successfully implements the week's material, with minor bugs or clunky functions remaining.
+- **3.5** - Functionality runs perfectly without bugs. All instructions and topics for the week are implemented accurately.
+- **4** - Adds relevant extra features, interactivity, or UI/UX elements beyond the week's instructions.
+
+### Code Quality & Structure (10%)
+
+<Levels 3 and 3.5 below need adapting to this week's technology stack (e.g. "following the basic Django MTV flow" or "Flutter Widget Tree") - see assignments/individual/tugas-1.qmd for the HTML5/CSS3 version. Levels 1, 2, and 4 are already generic enough to use as-is.>
+
+- **1** - Code is highly chaotic; logic is unclear; appears to be *copy-pasted* without understanding the underlying structure.
+- **2** - Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code).
+- **3** - <Code is fairly neat and structured, following the basic flow of this week's technology.>
+- **3.5** - <Code structure is highly neat, modular, efficient, and strictly adheres to this week's technology best practices.>
+- **4** - Implements advanced code optimization, cleanly separates logic, or adds highly informative code comments/docstrings.
+
+### Git & Discipline (10%)
+
+- **1** - Submitted late; Git is not used at all (only uploaded ZIP/manual files).
+- **2** - Submitted on time; Git usage is very poor (e.g., only 1 massive *commit* with an unclear message).
+- **3** - Submitted on time; multiple *commits* exist, but commit messages are not descriptive (e.g., "update", "fix").
+- **3.5** - Submitted on time. Commit history is routine, reflects gradual progress, and messages are highly descriptive.
+- **4** - Implements organized *branching* for individual features, or maintains a flawless and professional commit history (e.g., *conventional commits*).
+
+### Documentation & AI Disclosure + Reflective Question (10%)
+
+- **1** - No `README.md` provided; no mention of AI usage whatsoever.
+- **2** - `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT").
+- **3** - Structured `README.md` with clear project description and setup. AI disclosure lists tools used and generally mentions which parts were assisted.
+- **3.5** - Neat, structured `README.md` with clear weekly setup instructions. Transparent AI disclosure explaining the tools, prompt strategy, and specific assisted parts. Includes AI chat or prompting history/log.
+- **4** - *Open-source* quality documentation (includes the weekly progress). AI disclosure critically analyzes the AI's limitations and highlights manual fixes.
 
 :::
