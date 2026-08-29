@@ -56,6 +56,10 @@ Checklist minimal untuk tugas ini:
 - [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
 - [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
 
+## Pertanyaan Reflektif
+
+*Pertanyaan reflektif untuk Individual Assignment 1 akan diisi menyusul oleh dosen.*
+
 ## Pengumpulan
 
 Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
@@ -143,6 +147,10 @@ Minimum checklist for this assignment:
 - [ ] That new section has real content (not `lorem ipsum` or an empty placeholder).
 - [ ] The page still looks clean at both desktop and mobile widths.
 - [ ] The project runs successfully with `python manage.py runserver` without errors.
+
+## Reflective Question
+
+*The reflective question for Individual Assignment 1 will be filled in by the lecturer soon.*
 
 ## Submission
 
