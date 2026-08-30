@@ -302,6 +302,130 @@ Gunakan perintah `cd [direktori]` untuk berpindah direktori ke direktori lain ya
         ```
 :::
 
+### Langkah 2: Membuat Aplikasi `main` dalam Proyek *myportfolio*
+
+Kamu akan membuat aplikasi baru bernama `main` dalam proyek *myportfolio*.
+
+1. Jalankan perintah berikut untuk membuat aplikasi baru dengan nama **main**.
+
+     ```shell
+     python manage.py startapp main
+     ```
+
+    Setelah perintah di atas dijalankan, direktori baru dengan nama `main` akan terbentuk. Direktori main akan berisi struktur awal untuk aplikasi Django kamu.
+
+::: {.callout-info}
+Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama**, **direktori proyek**, **direktori aplikasi**, *it's' okay!* Kamu akan terbiasa sesiring berjalannya waktu. Semangat!
+:::
+
+2. Mendaftarkan aplikasi `main` ke dalam proyek.
+
+   - Buka berkas `settings.py` di dalam direktori proyek `portfolio`.
+   - Tambahkan `'main'` ke dalam daftar aplikasi yang ada sebagai elemen paling terakhir. Daftar aplikasi dapat kamu akses pada variabel `INSTALLED_APPS`.
+
+     ```python
+     INSTALLED_APPS = [
+         ...,
+         'main'
+     ]
+     ```
+
+Dengan melakukan langkah-langkah tersebut, kamu telah mendaftarkan aplikasi `main` ke dalam proyek *myportfolio* kamu.
+
+
+## Tutorial: Implementasi Model Dasar
+
+### Langkah 1: Mengubah Berkas `models.py` dalam Aplikasi `main`
+Pada langkah ini, kamu akan mengubah berkas `models.py` yang terdapat di dalam direktori aplikasi `main` untuk mendefinisikan model baru.
+
+1. Buka berkas `models.py` pada direktori aplikasi `main`.
+2. Isi berkas `models.py` dengan kode berikut.
+
+```python
+import uuid
+from django.db import models
+
+class Experience(models.Model):
+    EXPERIENCE_CHOICES = [
+        ('internship', 'Internship'),
+        ('research', 'Research'),
+        ('volunteer', 'Volunteer'),
+        ('part-time', 'Part-Time'),
+        ('full-time', 'Full-Time'),
+        ('freelance', 'Freelance'),
+    ]
+    
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    category = models.CharField(max_length=20, choices=EXPERIENCE_CHOICES, default='Full-Time')
+    thumbnail = models.URLField(blank=True, null=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    ended_at = models.DateTimeField(blank=True, null=True)
+    is_ongoing = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.title
+    
+    @property
+    def is_ongoing(self):
+        return self.ended_at is None
+```
+
+**Penjelasan Kode:**
+
+- `models.Model` adalah kelas dasar yang digunakan untuk mendefinisikan model dalam Django.
+- `Experience` adalah nama model yang kamu definisikan.
+- `EXPERIENCE_CHOICES` adalah tuple yang mendefinisikan pilihan kategori pengalaman yang tersedia.
+- `id` adalah field bertipe `UUIDField` yang digunakan sebagai primary key dan nilainya di-generate otomatis menggunakan `uuid.uuid4`.
+- `title` adalah field bertipe `CharField` untuk judul pengalaman, dengan panjang maksimal 255 karakter.
+- `description` adalah field bertipe `TextField` untuk deskripsi pengalaman yang dapat menampung teks panjang.
+- `category` adalah field bertipe `CharField` dengan pilihan terbatas sesuai `EXPERIENCE_CHOICES`, dengan nilai default 'Full-Time'.
+- `thumbnail` adalah field bertipe `URLField` untuk menyimpan URL gambar thumbnail pengalaman (opsional).
+- `started_at` adalah field bertipe `DateTimeField` yang otomatis berisi tanggal dan waktu saat data dibuat.
+- `ended_at` adalah field bertipe `DateTimeField` yang dapat dibiarkan kosong dan nilainya dapat diatur ke `None`.
+- `is_ongoing` adalah field bertipe `BooleanField` untuk menandai apakah pengalaman ini sedang berlangsung.
+- Method `__str__` digunakan untuk mengembalikan representasi string dari objek (dalam hal ini judul pengalaman).
+- *Decorator* `@property` digunakan untuk membuat atribut read-only yang nilainya merupakan hasil perhitungan dari atribut lain. Dalam kasus ini, `is_ongoing` akan bernilai `True` jika `ended_at` adalah `None`.
+
+::: {.callout-info}
+Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata kuliah Basis Data nanti. Untuk sementara, apabila kamu ingin mengetahui lebih banyak tentang kegunaan *decorator* `@property`, kamu dapat membaca [dokumentasi Python mengenai *class property*](https://docs.python.org/3/library/functions.html#property).
+:::
+
+
+### Langkah 2: Membuat dan Mengaplikasikan Migrasi Model
+
+**Apa itu migrasi model?**
+
+- Migrasi model adalah cara Django melacak perubahan pada model basis data kamu.
+- Migrasi ini adalah instruksi untuk mengubah struktur tabel basis data sesuai dengan perubahan model yang didefinisikan dalam kode terbaru kamu.
+
+**Bagaimana cara melakukan migrasi model?**
+
+1. Jalankan perintah berikut untuk membuat migrasi model.
+
+    ```shell
+    python manage.py makemigrations
+    ```
+
+    ::: {.callout-info}
+    `makemigrations` menciptakan berkas migrasi yang berisi perubahan model yang **belum** diaplikasikan ke dalam basis data.
+    :::
+
+2. Jalankan perintah berikut untuk menerapkan migrasi ke dalam basis data lokal.
+
+    ```shell
+    python manage.py migrate
+    ```
+
+   ::: {.callout-info}
+   `migrate` mengaplikasikan perubahan model yang tercantum dalam berkas migrasi ke basis data dengan menjalankan perintah sebelumnya.
+   :::
+
+::: {.callout-warning}
+**Setiap kali kamu melakukan perubahan pada *model***, seperti menambahkan atau mengubah atribut, **kamu WAJIB melakukan migrasi** untuk merefleksikan perubahan tersebut.
+:::
+
 ::: {.callout-important}
 **Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
 proyek pribadi mahasiswa (mis. website portofolio) yang bisa memakai pola
