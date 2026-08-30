@@ -257,7 +257,7 @@ Dalam tutorial ini, akan dijelaskan mengenai konsep aplikasi dan proyek dalam Dj
 - **Aplikasi (*Apps*)** adalah unit modular yang melakukan tugas-tugas spesifik dalam suatu proyek Django. Setiap aplikasi dapat memiliki model, tampilan, *template*, dan URL yang terkait dengannya. Aplikasi memungkinkanmu untuk membagi fungsionalitas proyek menjadi bagian-bagian terpisah yang dapat dikelola secara independen.
 
 ::: {.callout-note}
-Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direktori **terluar** (`portfolio`), sedangkan direktori proyek adalah direktori **di dalam** direktori utama (`myportfolio`).
+Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direktori **terluar** (`myportfolio`), sedangkan direktori proyek adalah direktori **di dalam** direktori utama (`portfolio`).
 :::
 
 ### Langkah 1: <Nama Langkah>
