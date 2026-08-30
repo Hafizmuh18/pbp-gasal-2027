@@ -58,7 +58,9 @@ Checklist minimal untuk tugas ini:
 
 ## Pertanyaan Reflektif
 
-1. ...
+1. Pada Tutorial dan Tugas 1, Anda diberi kebebasan untuk menentukan tampilan dari website portofolio Anda. Saat Anda merancang struktur HTML yang digunakan, apakah Anda menggunakan elemen semantik HTML5 seperti `<section>`, `<article>`, atau `<aside>`? Jika iya, bagaimana elemen tersebut membantu Anda dalam membuat *static web*? Jika tidak, mengapa tanpa elemen tersebut sudah memenuhi kebutuhan desain Anda?
+2. Ketika Anda mengatur CSS Anda agar tetap *responsive*, tantangan tata letak apa yang Anda temukan? Bagaimana Anda mengevaluasi elemen mana yang harus diubah posisinya atau diprioritaskan ukurannya saat berpindah dari tampilan desktop ke mobile?
+3. Website yang Anda buat saat ini adalah *static web* murni. Batasan apa yang Anda rasakan saat mencoba menyajikan informasi pada portofolio Anda secara optimal? Berdasarkan batasan tersebut, fungsionalitas dinamis apa yang paling ingin Anda persiapkan dan tambahkan pada iterasi proyek selanjutnya?
 
 ## Pengumpulan
 
@@ -150,7 +152,9 @@ Minimum checklist for this assignment:
 
 ## Reflective Question
 
-1. ...
+1. In Tutorial 1 and Individual Assignment 1, you were given the freedom to decide your portfolio website's design. When you designed the HTML structure you used, did you use semantic HTML5 elements such as `<section>`, `<article>`, or `<aside>`? If so, how did those elements help you build the *static web*? If not, why did your design's needs stay met without them?
+2. When you set up your CSS to stay *responsive*, what layout challenges did you encounter? How did you evaluate which elements needed to be repositioned or prioritized in size when moving from the desktop view to mobile?
+3. The website you've built right now is a purely *static web*. What limitations did you feel while trying to present your portfolio's information optimally? Based on those limitations, what dynamic functionality would you most want to prepare and add in the next iteration of the project?
 
 ## Submission
 
