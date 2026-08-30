@@ -260,14 +260,47 @@ Dalam tutorial ini, akan dijelaskan mengenai konsep aplikasi dan proyek dalam Dj
 Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direktori **terluar** (`myportfolio`), sedangkan direktori proyek adalah direktori **di dalam** direktori utama (`portfolio`).
 :::
 
-### Langkah 1: <Nama Langkah>
+### Langkah 1: Persiapan Awal
 
-1. <Langkah pertama>
-2. <Langkah kedua>
+1. Buka Direktori Utama **`myportfolio`**.
 
-```bash
-<contoh perintah terminal>
-```
+    - Sebelum memulai, pastikan kamu berada di direktori **utama** **`myportfolio`** yang telah dibuat pada Tutorial 2.
+    - Pengembangan proyek Django kamu pada tutorial sebelumnya akan dilanjutkan pada direktori ini 😎.
+
+2. Buka terminal atau *command prompt* dan pastikan kamu sudah berada pada direktori utama, **`myportfolio`**.
+
+::: {.callout-info}
+
+Gunakan perintah `cd [direktori]` untuk berpindah direktori ke direktori lain yang ingin dituju. Perintah ini sangat penting untuk diingat, karena keahlian menggunakan terminal akan bermanfaat tidak hanya untuk mata kuliah PBP, tetapi juga mata kuliah lain nantinya.
+
+:::
+
+1. Aktifkan *virtual environment* yang telah dibuat sebelumnya dengan menjalankan perintah berikut. **(Mohon perhatikan sistem operasi yang kamu gunakan)**.
+
+   - **Windows:**
+
+     ```bash
+     env\Scripts\activate
+     ```
+
+   - **Unix (Linux & Mac OS):**
+
+     ```bash
+     source env/bin/activate
+     ```
+::: {.callout-info}
+- Untuk pengguna Windows, apabila kamu mendapatkan error berbunyi "*the execution of scripts is disabled on this system...*", berikut adalah solusi yang dapat kamu coba:
+    - Buka _PowerShell_ sebagai *administrator* dan jalankan perintah berikut:
+        ```bash
+        Set-ExecutionPolicy Unrestricted -Force
+        ```
+    - Pilih opsi `A` dan tekan `Enter`.
+- Untuk pengguna sistem operasi berbasis Unix (Linux & macOS), jika kamu mendapatkan error berbunyi "*... Permission Denied*", berikut adalah solusi yang dapat kamu coba:
+    - Jalankan perintah berikut:
+        ```bash
+        chmod +x env/bin/activate
+        ```
+:::
 
 ::: {.callout-important}
 **Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
