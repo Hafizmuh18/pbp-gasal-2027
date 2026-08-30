@@ -504,8 +504,71 @@ Sintaks `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, dan `{{ bio }}` adalah
 Pada tahap ini, kartu pengalaman yang sudah ada belum diubah menjadi dinamis. Variabel `experience_list` akan ditampilkan pada bagian implementasi *template* lanjutan.
 :::
 
+## Tutorial: Mengonfigurasi *Routing* URL
+
+*Routing* adalah proses memetakan URL ke *view* yang akan menangani permintaan tersebut. Agar routing tetap terorganisasi, proyek akan meneruskan permintaan halaman utama ke konfigurasi URL milik aplikasi `main`.
+
+### Langkah 1: Mengonfigurasi URL Aplikasi `main`
+
+1. Buat berkas baru bernama `urls.py` di dalam direktori `main`.
+2. Isi `main/urls.py` dengan kode berikut:
+
+```python
+from django.urls import path
+
+from main.views import show_main
+
+app_name = "main"
+
+urlpatterns = [
+    path("", show_main, name="show_main"),
+]
+```
+
+**Penjelasan Kode:**
+
+- `app_name = "main"` memberikan *namespace* pada URL milik aplikasi `main`.
+- Pola URL `""` berarti halaman utama aplikasi tanpa tambahan path.
+- `name="show_main"` memberi nama pada rute agar nantinya dapat dirujuk tanpa menulis URL secara langsung.
+
+### Langkah 2: Menghubungkan URL Proyek dengan URL Aplikasi
+
+Buka `portofolio/urls.py`, lalu ubah isinya menjadi:
+
+```python
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("main.urls")),
+]
+```
+
+Fungsi `include()` meneruskan URL `""` dari level proyek ke `main/urls.py`. Alur permintaannya kini adalah:
+
+```text
+Browser -> portofolio/urls.py -> main/urls.py -> main/views.py -> templates/index.html
+```
+
+### Langkah 3: Menjalankan Aplikasi
+
+Jalankan pemeriksaan konfigurasi Django:
+
+```shell
+python manage.py check
+```
+
+Jika tidak ditemukan masalah, jalankan server pengembangan:
+
+```shell
+python manage.py runserver
+```
+
+Buka <http://localhost:8000/> pada *browser*. Halaman portofolio akan tetap tampil, tetapi data profilnya sekarang berasal dari *context* pada `main/views.py` dan permintaannya melewati routing milik aplikasi `main`.
+
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - Ganti data profil pada `context` dengan data dirimu sendiri. Pola yang sama dapat digunakan saat menambah halaman atau fitur baru: ambil data melalui *view*, kirim melalui *context*, lalu tampilkan pada *template*.
+**Menghubungkan ke Proyek Kamu** - Ganti data profil pada `context` dengan data dirimu sendiri. Pola yang sama dapat digunakan saat menambah halaman atau fitur baru: ambil data melalui *view*, kirim melalui *context*, tampilkan pada *template*, lalu daftarkan URL-nya pada `urls.py` aplikasi.
 :::
 
 ## Pengumpulan
@@ -515,6 +578,7 @@ Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara
 ## Referensi Tambahan
 
 - [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
 - [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
 
 :::
@@ -626,8 +690,71 @@ The `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, and `{{ bio }}` syntax rep
 At this point, the existing experience cards are not dynamic yet. The `experience_list` variable will be displayed in the advanced template implementation section.
 :::
 
+## Tutorial: Configuring URL Routing
+
+Routing maps a URL to the view that handles its request. To keep the routing organized, the project will delegate requests for the home page to the `main` application's URL configuration.
+
+### Step 1: Configure the `main` Application URL
+
+1. Create a new `urls.py` file inside the `main` directory.
+2. Fill `main/urls.py` with the following code:
+
+```python
+from django.urls import path
+
+from main.views import show_main
+
+app_name = "main"
+
+urlpatterns = [
+    path("", show_main, name="show_main"),
+]
+```
+
+**Code Explanation:**
+
+- `app_name = "main"` provides a namespace for URLs owned by the `main` application.
+- The empty `""` URL pattern represents the application's root page.
+- `name="show_main"` names the route so it can later be referenced without hard-coding its URL.
+
+### Step 2: Connect the Project URL to the Application URL
+
+Open `portofolio/urls.py`, then replace its contents with:
+
+```python
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("main.urls")),
+]
+```
+
+The `include()` function delegates the project-level `""` URL to `main/urls.py`. The request now follows this flow:
+
+```text
+Browser -> portofolio/urls.py -> main/urls.py -> main/views.py -> templates/index.html
+```
+
+### Step 3: Run the Application
+
+Run Django's configuration check:
+
+```shell
+python manage.py check
+```
+
+If Django reports no issues, start the development server:
+
+```shell
+python manage.py runserver
+```
+
+Open <http://localhost:8000/> in a browser. The portfolio page will still appear, but its profile data now comes from the context in `main/views.py`, and the request passes through the `main` application's routing.
+
 ::: {.callout-important}
-**Connecting to Your Project** - Replace the profile values in the context with your own data. The same pattern applies whenever you add a new page or feature: retrieve data in a view, pass it through the context, and display it in a template.
+**Connecting to Your Project** - Replace the profile values in the context with your own data. The same pattern applies whenever you add a new page or feature: retrieve data in a view, pass it through the context, display it in a template, and register its URL in the application's `urls.py`.
 :::
 
 ## Submission
@@ -637,6 +764,7 @@ This Tutorial doesn't have a separate SCELE submission slot and isn't graded dir
 ## Additional References
 
 - [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
 - [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
 
 :::
