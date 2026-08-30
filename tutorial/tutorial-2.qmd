@@ -424,12 +424,88 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
 **Setiap kali kamu melakukan perubahan pada *model***, seperti menambahkan atau mengubah atribut, **kamu WAJIB melakukan migrasi** untuk merefleksikan perubahan tersebut.
 :::
 
+## Tutorial: Menghubungkan *View* dengan *Template*
+
+Pada tahap ini, kamu akan membuat *view* pada aplikasi `main`. *View* tersebut mengambil data `Experience` dari model, menyiapkan data profil, lalu meneruskannya ke `templates/index.html` melalui sebuah *context*.
+
+### Langkah 1: Membuat Fungsi `show_main`
+
+1. Buka berkas `main/views.py`.
+2. Ganti isi berkas tersebut dengan kode berikut. Ubah nilai data profil Burhan menjadi data dirimu sendiri.
+
+```python
+from django.shortcuts import render
+
+from main.models import Experience
+
+
+def show_main(request):
+    context = {
+        "name": "Burhan",
+        "npm": "2206000000",
+        "study_program": "S1 Ilmu Komputer",
+        "bio": (
+            "Mahasiswa Ilmu Komputer Universitas Indonesia yang tertarik "
+            "pada pengembangan perangkat lunak dan pendidikan."
+        ),
+        "experience_list": Experience.objects.all(),
+    }
+    return render(request, "index.html", context)
+```
+
+**Penjelasan Kode:**
+
+- `Experience.objects.all()` mengambil seluruh objek `Experience` dari basis data dalam bentuk *QuerySet*.
+- `context` adalah *dictionary* yang memetakan nama variabel dengan data yang akan tersedia pada *template*.
+- `render(request, "index.html", context)` memproses `templates/index.html` menggunakan data dalam `context`, lalu mengembalikan respons HTML.
+- `experience_list` sudah diteruskan ke *template* dan akan digunakan pada bagian implementasi *template* lanjutan.
+
+### Langkah 2: Menampilkan Data *Context* pada *Template*
+
+Buka `templates/index.html`, lalu ganti data profil yang masih ditulis langsung dengan *template variable* berikut:
+
+```html
+<title>{{ name }} - Portfolio</title>
+```
+
+```html
+<a href="#profile" class="brand">{{ name }}</a>
+```
+
+```html
+<h1>{{ name }}</h1>
+```
+
+```html
+<img class="avatar" src="/static/img/burhan.png" alt="Photo of {{ name }}">
+```
+
+```html
+<p class="bio">{{ bio }}</p>
+```
+
+```html
+<dd>{{ npm }}</dd>
+```
+
+```html
+<dd>{{ study_program }}</dd>
+```
+
+Terakhir, ubah nama pada bagian *footer*:
+
+```html
+<p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
+```
+
+Sintaks `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, dan `{{ bio }}` adalah *template variable* Django. Ketika halaman diproses, Django menggantinya dengan nilai dari `context` yang memiliki nama kunci yang sama.
+
+::: {.callout-note}
+Pada tahap ini, kartu pengalaman yang sudah ada belum diubah menjadi dinamis. Variabel `experience_list` akan ditampilkan pada bagian implementasi *template* lanjutan.
+:::
+
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
-proyek pribadi mahasiswa (mis. website portofolio) yang bisa memakai pola
-yang sama dengan yang baru dikerjakan di langkah-langkah di atas. Ini yang
-membantu mahasiswa paham "ngerjain tugas itu ternyata mirip tutorial, cuma
-temanya beda".>
+**Menghubungkan ke Proyek Kamu** - Ganti data profil pada `context` dengan data dirimu sendiri. Pola yang sama dapat digunakan saat menambah halaman atau fitur baru: ambil data melalui *view*, kirim melalui *context*, lalu tampilkan pada *template*.
 :::
 
 ## Pengumpulan
@@ -438,7 +514,8 @@ Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara
 
 ## Referensi Tambahan
 
-- [<Judul referensi>](<url>)
+- [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
 
 :::
 
@@ -469,29 +546,88 @@ After completing this tutorial, students are expected to be able to:
 app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
 :::
 
-## <Section 1 Title - usually the concept name from the Session 1 topic>
+## Tutorial: Connecting the *View* to the *Template*
 
-<Write the tutorial content/instructions here.>
+In this section, you will create a *view* in the `main` application. The view retrieves `Experience` data from the model, prepares profile data, and passes everything to `templates/index.html` through a *context*.
 
-::: {.callout-note}
-<Additional notes, tips, or warnings.>
-:::
+### Step 1: Create the `show_main` Function
 
-### Step 1: <Step Name>
+1. Open `main/views.py`.
+2. Replace its contents with the following code. Replace Burhan's profile values with your own data.
 
-1. <First step>
-2. <Second step>
+```python
+from django.shortcuts import render
 
-```bash
-<example terminal command>
+from main.models import Experience
+
+
+def show_main(request):
+    context = {
+        "name": "Burhan",
+        "npm": "2206000000",
+        "study_program": "S1 Ilmu Komputer",
+        "bio": (
+            "A Computer Science student at Universitas Indonesia interested "
+            "in software development and education."
+        ),
+        "experience_list": Experience.objects.all(),
+    }
+    return render(request, "index.html", context)
 ```
 
+**Code Explanation:**
+
+- `Experience.objects.all()` retrieves every `Experience` object from the database as a *QuerySet*.
+- `context` is a dictionary that maps variable names to data that will be available in the template.
+- `render(request, "index.html", context)` processes `templates/index.html` using the context data and returns an HTML response.
+- `experience_list` is already passed to the template and will be used in the advanced template implementation section.
+
+### Step 2: Display Context Data in the Template
+
+Open `templates/index.html`, then replace the hard-coded profile data with the following template variables:
+
+```html
+<title>{{ name }} - Portfolio</title>
+```
+
+```html
+<a href="#profile" class="brand">{{ name }}</a>
+```
+
+```html
+<h1>{{ name }}</h1>
+```
+
+```html
+<img class="avatar" src="/static/img/burhan.png" alt="Photo of {{ name }}">
+```
+
+```html
+<p class="bio">{{ bio }}</p>
+```
+
+```html
+<dd>{{ npm }}</dd>
+```
+
+```html
+<dd>{{ study_program }}</dd>
+```
+
+Finally, update the name in the footer:
+
+```html
+<p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
+```
+
+The `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, and `{{ bio }}` syntax represents Django template variables. When the page is rendered, Django replaces each variable with the value stored under the matching context key.
+
+::: {.callout-note}
+At this point, the existing experience cards are not dynamic yet. The `experience_list` variable will be displayed in the advanced template implementation section.
+:::
+
 ::: {.callout-important}
-**Connecting to Your Project** - <explicitly explain which part of the
-student's own individual project (e.g. portfolio website) can reuse the
-same pattern just practiced in the steps above. This is what helps
-students see that "doing the assignment is like the tutorial, just with a
-different theme".>
+**Connecting to Your Project** - Replace the profile values in the context with your own data. The same pattern applies whenever you add a new page or feature: retrieve data in a view, pass it through the context, and display it in a template.
 :::
 
 ## Submission
@@ -500,6 +636,7 @@ This Tutorial doesn't have a separate SCELE submission slot and isn't graded dir
 
 ## Additional References
 
-- [<Reference title>](<url>)
+- [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
 
 :::
