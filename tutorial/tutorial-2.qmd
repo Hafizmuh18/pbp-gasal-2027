@@ -602,7 +602,7 @@ After completing this tutorial, students are expected to be able to:
 - <Write learning objective 2>
 
 ::: {.callout-warning}
-**This Tutorial is a mandatory prerequisite for [Individual Assignment N](<link to assignments/individual/tugas-N.qmd>)** - if it hasn't been completed, that Individual Assignment won't be graded. This Tutorial's deadline is <this week's Wednesday date>; Individual Assignment N's deadline is <the following Monday's date>. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
+**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. See the [Schedule page](../index.qmd#semester-schedule) for the exact deadlines.
 :::
 
 ::: {.callout-tip}
