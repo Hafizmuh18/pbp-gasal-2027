@@ -78,7 +78,7 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ## Tenggat Waktu Pengerjaan
 
-Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
+Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 23.59 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
 
 ## Rubrik Penilaian
 
@@ -182,7 +182,7 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 
 ## Deadline
 
-Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 12:00 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
+Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 23:59 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
 
 ## Grading Rubric
 
