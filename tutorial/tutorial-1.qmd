@@ -593,6 +593,30 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "<URL deployment PWS kamu>"]
    ```
 
+   ::: {.callout-important}
+   ### Aktifkan Static Files untuk Produksi
+
+   Server produksi (`gunicorn`) tidak otomatis melayani berkas *static* seperti `python manage.py runserver` di lokal - tanpa langkah ini, CSS dan gambarmu akan 404 setelah di-*deploy*. Tambahkan `'whitenoise.middleware.WhiteNoiseMiddleware'` ke `MIDDLEWARE` di `settings.py`, tepat di bawah `SecurityMiddleware` (paket `whitenoise` sudah ada di `requirements.txt` kamu sejak Tutorial 0):
+
+   ```python
+   MIDDLEWARE = [
+       'django.middleware.security.SecurityMiddleware',
+       'whitenoise.middleware.WhiteNoiseMiddleware',
+       # baris MIDDLEWARE lain di bawahnya tetap sama
+       ...
+   ]
+   ```
+
+   Lalu tambahkan `STATIC_ROOT` dan `WHITENOISE_USE_FINDERS` di bagian `STATIC_URL`/`STATICFILES_DIRS` yang sudah kamu buat sebelumnya:
+
+   ```python
+   STATIC_URL = 'static/'
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+   STATIC_ROOT = BASE_DIR / 'staticfiles'
+   WHITENOISE_USE_FINDERS = True
+   ```
+   :::
+
    Lakukan `git add`, `commit`, dan `push` perubahan ini ke repositori GitHub kamu.
 
    ::: {.callout-warning}
@@ -1250,6 +1274,30 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
    ```python
    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "<your PWS deployment URL>"]
    ```
+
+   ::: {.callout-important}
+   ### Enable Static Files for Production
+
+   The production server (`gunicorn`) doesn't automatically serve *static* files the way `python manage.py runserver` does locally - without this step, your CSS and images will 404 once deployed. Add `'whitenoise.middleware.WhiteNoiseMiddleware'` to `MIDDLEWARE` in `settings.py`, right below `SecurityMiddleware` (the `whitenoise` package has been in your `requirements.txt` since Tutorial 0):
+
+   ```python
+   MIDDLEWARE = [
+       'django.middleware.security.SecurityMiddleware',
+       'whitenoise.middleware.WhiteNoiseMiddleware',
+       # the rest of the MIDDLEWARE list stays the same
+       ...
+   ]
+   ```
+
+   Then add `STATIC_ROOT` and `WHITENOISE_USE_FINDERS` alongside the `STATIC_URL`/`STATICFILES_DIRS` you already set up earlier:
+
+   ```python
+   STATIC_URL = 'static/'
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+   STATIC_ROOT = BASE_DIR / 'staticfiles'
+   WHITENOISE_USE_FINDERS = True
+   ```
+   :::
 
    `git add`, `commit`, and `push` this change to your GitHub repository.
 
