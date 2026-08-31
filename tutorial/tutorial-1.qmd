@@ -692,7 +692,7 @@ Kamu bisa cek progresnya di tab **Logs** pada dashboard proyek PWS. Tunggu sampa
 
 ## Pengumpulan
 
-Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment 1, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum Rabu, 2 September 2026**. Commit yang baru di-*push* setelah tenggat waktu itu dianggap Tutorial 01 belum selesai, sehingga Individual Assignment 1 tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment 1, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **paling lambat Rabu, 2 September 2026**. Commit yang baru di-*push* setelah tenggat waktu itu dianggap Tutorial 01 belum selesai, sehingga Individual Assignment 1 tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
 
 ## Referensi Tambahan
 
@@ -1374,7 +1374,7 @@ You can check the progress in the **Logs** tab on the PWS project dashboard. Wai
 
 ## Submission
 
-This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for Individual Assignment 1, make sure all changes for this tutorial are committed and pushed to your GitHub repository **before Wednesday, September 2, 2026**. Commits pushed after that deadline mean Tutorial 01 is considered incomplete, so Individual Assignment 1 won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for Individual Assignment 1, make sure all changes for this tutorial are committed and pushed to your GitHub repository **by Wednesday, September 2, 2026, at the latest**. Commits pushed after that deadline mean Tutorial 01 is considered incomplete, so Individual Assignment 1 won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 
