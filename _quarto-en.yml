@@ -39,12 +39,18 @@ website:
           href: tutorial/index.qmd
         - text: "Tutorial 0: Set Up Git Repository, Django Installation"
           href: tutorial/tutorial-0.qmd
+        - text: "Tutorial 01: Django Initial Project, HTML5 and CSS3"
+          href: tutorial/tutorial-1.qmd
     - id: assignments
       title: "Assignments"
       style: docked
       contents:
         - text: "Information"
           href: assignments/index.qmd
+        - section: "Individual Project"
+          contents:
+            - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"
+              href: assignments/individual/tugas-1.qmd
         - section: "Group Assignments"
           contents:
             - text: "Midterm Group Project"

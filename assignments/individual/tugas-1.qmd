@@ -1,0 +1,221 @@
+---
+title: "Individual Assignment 1: Static Web with HTML5 and CSS3"
+format:
+  html: default
+  typst: default
+  docx: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+---
+
+::: {.content-visible when-profile="id"}
+
+# Individual Assignment 1: Static Web with HTML5 and CSS3 {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** MUH - Hafiz
+
+***
+
+::: {.callout-important}
+### Tutorial 01 adalah Prasyarat Wajib
+Individual Assignment 1 **hanya dinilai apabila Tutorial 01 sudah diselesaikan** paling lambat **Rabu, 2 September 2026**. Kalau Tutorial 01 belum dikerjakan, Individual Assignment 1 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+:::
+
+## Tentang Proyek
+
+Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
+
+## Target Tugas Ini
+
+Lanjutkan halaman "About Me" yang sudah kamu buat di [Tutorial 01](../../tutorial/tutorial-1.qmd). Tambahkan **satu atau lebih section baru** ke halaman yang sama, masih murni dengan HTML5 dan CSS3 (belum ada database/MVT - itu bagian Tutorial 02).
+
+Kamu **bebas memilih** section apa yang mau ditambahkan, selama relevan untuk sebuah portofolio pribadi. Beberapa contoh inspirasi:
+
+- **Skills** - daftar kemampuan/teknologi yang kamu kuasai.
+- **Experience** - pengalaman organisasi, magang, atau kepanitiaan.
+- **Education** - riwayat pendidikan.
+- **Projects** - proyek-proyek yang pernah kamu kerjakan.
+
+Karena tugas ini sifatnya lebih bebas dibanding Tutorial, kamu dipersilakan membuat tampilan CSS yang lebih kompleks dari contoh di Tutorial 01 - tambahkan animasi, layout grid yang lebih rumit, atau elemen visual lain sesuai kreativitasmu, selama tetap rapi dan responsif.
+
+::: {.callout-tip}
+Desain visual (warna, font, tata letak, dsb.) di contoh Tutorial 01 hanyalah salah satu referensi. Kamu bebas mengubah desain **seluruh** halaman "About Me", bukan cuma section barunya, asal tetap murni HTML5 dan CSS3, terstruktur rapi, dan checklist di bawah tetap terpenuhi.
+:::
+
+Checklist minimal untuk tugas ini:
+
+- [ ] Section "About Me" dari Tutorial 01 sudah terisi dengan data kamu sendiri (nama, NPM, foto, bio - bukan lagi data contoh).
+- [ ] Minimal satu section baru ditambahkan ke halaman yang sama.
+- [ ] Section baru tersebut punya isi yang nyata (bukan `lorem ipsum` atau placeholder kosong).
+- [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
+- [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
+
+## Pertanyaan Reflektif
+
+1. Pada Tutorial dan Tugas 1, Anda diberi kebebasan untuk menentukan tampilan dari website portofolio Anda. Saat Anda merancang struktur HTML yang digunakan, apakah Anda menggunakan elemen semantik HTML5 seperti `<section>`, `<article>`, atau `<aside>`? Jika iya, bagaimana elemen tersebut membantu Anda dalam membuat *static web*? Jika tidak, mengapa tanpa elemen tersebut sudah memenuhi kebutuhan desain Anda?
+2. Ketika Anda mengatur CSS Anda agar tetap *responsive*, tantangan tata letak apa yang Anda temukan? Bagaimana Anda mengevaluasi elemen mana yang harus diubah posisinya atau diprioritaskan ukurannya saat berpindah dari tampilan desktop ke mobile?
+3. Website yang Anda buat saat ini adalah *static web* murni. Batasan apa yang Anda rasakan saat mencoba menyajikan informasi pada portofolio Anda secara optimal? Berdasarkan batasan tersebut, fungsionalitas dinamis apa yang paling ingin Anda persiapkan dan tambahkan pada iterasi proyek selanjutnya?
+
+Jawab pertanyaan-pertanyaan di atas di `README.md` proyekmu (bukan di halaman tugas ini), dengan format berikut supaya tetap rapi seiring bertambahnya pertanyaan reflektif tiap minggu sepanjang semester:
+
+```markdown
+### Tugas 1
+
+1. ...
+2. ...
+3. ...
+```
+
+## Pengumpulan
+
+Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
+
+## Tenggat Waktu Pengerjaan
+
+Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
+
+## Rubrik Penilaian
+
+### Fungsionalitas & Kesesuaian Topik (70%)
+
+- **1** - Tugas belum lengkap; aplikasi gagal berjalan (*crash*/error 500); sama sekali gagal mengimplementasikan materi minggu ini.
+- **2** - Aplikasi berjalan sebagian; banyak fitur *error*; implementasi materi minggu ini minim atau salah.
+- **3** - Aplikasi berjalan baik dan berhasil mengimplementasikan materi minggu ini, dengan sedikit bug atau fungsi yang kurang mulus.
+- **3.5** - Fungsionalitas berjalan sempurna tanpa bug. Semua instruksi dan topik minggu ini diimplementasikan dengan akurat.
+- **4** - Menambahkan fitur ekstra, interaktivitas, atau elemen UI/UX yang relevan di luar instruksi minggu ini.
+
+### Kualitas & Struktur Kode (10%)
+
+- **1** - Kode sangat berantakan; logika tidak jelas; terlihat seperti *copy-paste* tanpa memahami struktur yang mendasarinya.
+- **2** - Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*).
+- **3** - Kode cukup rapi dan terstruktur, mengikuti alur dasar HTML5/CSS3 yang diajarkan di Tutorial 01.
+- **3.5** - Struktur kode sangat rapi, modular, dan patuh ketat pada praktik terbaik HTML5/CSS3 (semantik, *reusable*).
+- **4** - Menerapkan optimasi kode tingkat lanjut, memisahkan *style* dengan bersih, atau menambahkan komentar kode yang sangat informatif.
+
+### Git & Disiplin (10%)
+
+- **1** - Dikumpulkan terlambat; Git sama sekali tidak dipakai (hanya unggah ZIP/berkas manual).
+- **2** - Dikumpulkan tepat waktu; penggunaan Git sangat buruk (mis. cuma 1 *commit* besar dengan pesan tidak jelas).
+- **3** - Dikumpulkan tepat waktu; ada beberapa *commit*, tapi pesan *commit* tidak deskriptif (mis. "update", "fix").
+- **3.5** - Dikumpulkan tepat waktu. Riwayat *commit* rutin, mencerminkan progres bertahap, dan pesannya sangat deskriptif.
+- **4** - Menerapkan *branching* yang terorganisir untuk tiap fitur, atau menjaga riwayat *commit* yang rapi dan profesional (mis. *conventional commits*).
+
+### Dokumentasi & AI Disclosure + Pertanyaan Reflektif (10%)
+
+- **1** - `README.md` tidak disediakan; sama sekali tidak menyebutkan penggunaan AI.
+- **2** - `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas. AI *disclosure* sangat samar (mis. "saya pakai ChatGPT").
+- **3** - `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas. AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI.
+- **3.5** - `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas. AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu. Menyertakan *chat* AI atau log *prompting*.
+- **4** - Dokumentasi berkualitas *open-source* (termasuk progres mingguan). AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan.
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+# Individual Assignment 1: Static Web with HTML5 and CSS3 {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** MUH - Hafiz
+
+***
+
+::: {.callout-important}
+### Tutorial 01 Is a Mandatory Prerequisite
+Individual Assignment 1 **is only graded if Tutorial 01 has been completed** by **Wednesday, September 2, 2026** at the latest. If Tutorial 01 hasn't been done, Individual Assignment 1 **will not be graded**, even if submitted through SCELE.
+:::
+
+## About the Project
+
+This course's Individual Project is a **personal portfolio website**, done individually. Individual Assignments are released weekly following that week's Tutorial topic, and each one continues directly from the code you wrote in that same week's Tutorial.
+
+## This Assignment's Target
+
+Continue the "About Me" page you built in [Tutorial 01](../../tutorial/tutorial-1.qmd). Add **one or more new sections** to that same page, still using plain HTML5 and CSS3 (no database/MVT yet - that's covered in Tutorial 02).
+
+You're **free to choose** what section(s) to add, as long as they're relevant to a personal portfolio. Some ideas for inspiration:
+
+- **Skills** - a list of skills/technologies you're proficient in.
+- **Experience** - organizational experience, internships, or committee work.
+- **Education** - your educational background.
+- **Projects** - projects you've worked on.
+
+Since this assignment is more open-ended than the Tutorial, you're encouraged to build a more complex CSS design than the Tutorial 01 example - add animations, more elaborate grid layouts, or other visual elements as you like, as long as it stays clean and responsive.
+
+::: {.callout-tip}
+The visual design (colors, fonts, layout, etc.) in the Tutorial 01 example is just one reference. You're free to change the design of the **whole** "About Me" page, not just the new section, as long as it's still plain HTML5 and CSS3, well-structured, and the checklist below is still met.
+:::
+
+Minimum checklist for this assignment:
+
+- [ ] The "About Me" section from Tutorial 01 is filled in with your own data (name, NPM, photo, bio - no longer sample data).
+- [ ] At least one new section has been added to the same page.
+- [ ] That new section has real content (not `lorem ipsum` or an empty placeholder).
+- [ ] The page still looks clean at both desktop and mobile widths.
+- [ ] The project runs successfully with `python manage.py runserver` without errors.
+
+## Reflective Question
+
+1. In Tutorial 1 and Individual Assignment 1, you were given the freedom to decide your portfolio website's design. When you designed the HTML structure you used, did you use semantic HTML5 elements such as `<section>`, `<article>`, or `<aside>`? If so, how did those elements help you build the *static web*? If not, why did your design's needs stay met without them?
+2. When you set up your CSS to stay *responsive*, what layout challenges did you encounter? How did you evaluate which elements needed to be repositioned or prioritized in size when moving from the desktop view to mobile?
+3. The website you've built right now is a purely *static web*. What limitations did you feel while trying to present your portfolio's information optimally? Based on those limitations, what dynamic functionality would you most want to prepare and add in the next iteration of the project?
+
+Answer the questions above in your project's `README.md` (not on this assignment page), using the following format so it stays organized as more reflective questions get added each week throughout the semester:
+
+```markdown
+### Assignment 1
+
+1. ...
+2. ...
+3. ...
+```
+
+## Submission
+
+This assignment is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this assignment's final result, pushed **before the deadline** below. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public**, so teaching assistants can access it for grading.
+
+## Deadline
+
+Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 12:00 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
+
+## Grading Rubric
+
+### Functionality & Topic Alignment (70%)
+
+- **1** - Assignment is incomplete; application fails to run (*crashes*/error 500); completely fails to implement the week's material.
+- **2** - Application runs partially; multiple features error out; implementation of the week's material is minimal or incorrect.
+- **3** - Application runs well and successfully implements the week's material, with minor bugs or clunky functions remaining.
+- **3.5** - Functionality runs perfectly without bugs. All instructions and topics for the week are implemented accurately.
+- **4** - Adds relevant extra features, interactivity, or UI/UX elements beyond the week's instructions.
+
+### Code Quality & Structure (10%)
+
+- **1** - Code is highly chaotic; logic is unclear; appears to be *copy-pasted* without understanding the underlying structure.
+- **2** - Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code).
+- **3** - Code is fairly neat and structured, following the basic HTML5/CSS3 flow taught in Tutorial 01.
+- **3.5** - Code structure is highly neat, modular, and strictly adheres to HTML5/CSS3 best practices (semantic, *reusable*).
+- **4** - Implements advanced code optimization, cleanly separates *style* concerns, or adds highly informative code comments.
+
+### Git & Discipline (10%)
+
+- **1** - Submitted late; Git is not used at all (only uploaded ZIP/manual files).
+- **2** - Submitted on time; Git usage is very poor (e.g., only 1 massive *commit* with an unclear message).
+- **3** - Submitted on time; multiple *commits* exist, but commit messages are not descriptive (e.g., "update", "fix").
+- **3.5** - Submitted on time. Commit history is routine, reflects gradual progress, and messages are highly descriptive.
+- **4** - Implements organized *branching* for individual features, or maintains a flawless and professional commit history (e.g., *conventional commits*).
+
+### Documentation & AI Disclosure + Reflective Question (10%)
+
+- **1** - No `README.md` provided; no mention of AI usage whatsoever.
+- **2** - `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT").
+- **3** - Structured `README.md` with clear project description and setup. AI disclosure lists tools used and generally mentions which parts were assisted.
+- **3.5** - Neat, structured `README.md` with clear weekly setup instructions. Transparent AI disclosure explaining the tools, prompt strategy, and specific assisted parts. Includes AI chat or prompting history/log.
+- **4** - *Open-source* quality documentation (includes the weekly progress). AI disclosure critically analyzes the AI's limitations and highlights manual fixes.
+
+:::
