@@ -99,14 +99,14 @@ Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 - Memahami kaitan *models*, *views* dan *template* pada Django
 - Memahami pembuatan *unit test* pada *framework* Django
 
-Tutorial ini adalah **Tutorial 01**, lanjutan langsung dari [Tutorial 1](tutorial-1.qmd) - tutorial ketiga dari proyek yang akan kamu bangun berkelanjutan sepanjang semester: sebuah **website portofolio pribadi**. Semua tutorial berikutnya akan melanjutkan langsung dari hasil tutorial ini, jadi pastikan proyekmu berjalan dengan baik sebelum lanjut ke tutorial berikutnya.
+Tutorial ini adalah **Tutorial 2**, lanjutan langsung dari [Tutorial 1](tutorial-1.qmd) - tutorial ketiga dari proyek yang akan kamu bangun berkelanjutan sepanjang semester: sebuah **website portofolio pribadi**. Semua tutorial berikutnya akan melanjutkan langsung dari hasil tutorial ini, jadi pastikan proyekmu berjalan dengan baik sebelum lanjut ke tutorial berikutnya.
 
 Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, maskot mata kuliah PBP. Setiap kali ada bagian yang berisi data pribadi Burhan (nama, NPM, bio, foto), akan ada catatan eksplisit yang bilang "ganti ini dengan data kamu sendiri" - jangan sampai kelewat.
 
 ::: {.callout-tip}
-**Yang Sudah Kita Bangun Sejauh Ini** - <ringkas 1-2 kalimat progres aplikasi
-tema dari tutorial-tutorial sebelumnya. Hapus/kosongkan callout ini khusus
-di Tutorial 01.>
+**Yang Sudah Kita Bangun Sejauh Ini** - Di Tutorial 1, kamu mengganti halaman bawaan Django dengan halaman portofolio "About Me", menghubungkan *view* ke *template* HTML, menambahkan CSS, dan men-*deploy* hasilnya ke PWS.
+
+Pada tutorial ini, kita akan memindahkan konten yang masih ditulis langsung di HTML ke dalam alur MVT Django.
 :::
 
 Struktur folder proyekmu saat ini (hasil akhir Tutorial 1):
