@@ -68,13 +68,32 @@ myportofolio/
     └── wsgi.py
 ```
 
-::: {.callout-note}
-Perhatikan ada **dua** folder bernama `myportofolio` - folder terluar adalah root proyekmu (tempat `manage.py` berada), sedangkan folder di dalamnya adalah *package* konfigurasi Django (tempat `settings.py` dan `urls.py` berada). Ini bukan duplikasi yang salah, memang begitu struktur bawaan `startproject`.
+::: {.callout-important}
+### Ganti Nama Folder Konfigurasi Django
+
+Ada **dua** folder bernama `myportofolio` di atas - folder terluar adalah root proyekmu (tempat `manage.py` berada), folder di dalamnya adalah *package* konfigurasi Django (tempat `settings.py` dan `urls.py` berada). Supaya keduanya tidak tertukar saat disebut di tutorial-tutorial berikutnya, ganti nama folder konfigurasi Django yang di dalam menjadi `portofolio` (folder terluar tetap `myportofolio`, sesuai nama repositori GitHub-mu):
+
+```bash
+mv myportofolio portofolio
+```
+
+Lalu ganti setiap `myportofolio.settings`, `myportofolio.urls`, dan `myportofolio.wsgi.application` menjadi `portofolio.settings`, `portofolio.urls`, `portofolio.wsgi.application` di 4 berkas berikut:
+
+- `manage.py`
+- `portofolio/settings.py` (baris `ROOT_URLCONF` dan `WSGI_APPLICATION`)
+- `portofolio/wsgi.py`
+- `portofolio/asgi.py`
+
+Pastikan proyekmu masih berjalan normal setelah ini:
+
+```bash
+python manage.py check
+```
 :::
 
 ## Menyiapkan Views, URL, Templates, dan Static Files
 
-Buat sebuah *view* sederhana yang mengembalikan sebuah *template* HTML. Buat berkas `myportofolio/views.py`:
+Buat sebuah *view* sederhana yang mengembalikan sebuah *template* HTML. Buat berkas `portofolio/views.py`:
 
 ```python
 from django.shortcuts import render
@@ -84,13 +103,13 @@ def landing_page(request):
     return render(request, "index.html")
 ```
 
-Hubungkan *view* ini ke URL kosong (`""`) di `myportofolio/urls.py`:
+Hubungkan *view* ini ke URL kosong (`""`) di `portofolio/urls.py`:
 
 ```python
 from django.contrib import admin
 from django.urls import path
 
-from myportofolio.views import landing_page
+from portofolio.views import landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -98,7 +117,7 @@ urlpatterns = [
 ]
 ```
 
-Buat folder `templates/`, `static/css/`, dan `static/img/` di root proyek (sejajar dengan `manage.py`), lalu daftarkan `templates/` dan `static/` di `myportofolio/settings.py` supaya Django tahu harus mencari berkas HTML dan aset statis di sana:
+Buat folder `templates/`, `static/css/`, dan `static/img/` di root proyek (sejajar dengan `manage.py`), lalu daftarkan `templates/` dan `static/` di `portofolio/settings.py` supaya Django tahu harus mencari berkas HTML dan aset statis di sana:
 
 ```python
 TEMPLATES = [
@@ -125,7 +144,7 @@ myportofolio/
 ├── static/
 │   ├── css/
 │   └── img/
-└── myportofolio/
+└── portofolio/
     ├── settings.py       # sudah ditambah TEMPLATES.DIRS & STATICFILES_DIRS
     ├── urls.py           # sudah ditambah routing ke landing_page
     ├── views.py          # baru dibuat
@@ -501,7 +520,7 @@ myportofolio/
 │   │   └── style.css
 │   └── img/
 │       └── burhan.png       # ganti dengan foto kamu sendiri
-└── myportofolio/
+└── portofolio/
     ├── __init__.py
     ├── asgi.py
     ├── settings.py
@@ -574,10 +593,34 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "<URL deployment PWS kamu>"]
    ```
 
+   ::: {.callout-important}
+   ### Aktifkan Static Files untuk Produksi
+
+   Server produksi (`gunicorn`) tidak otomatis melayani berkas *static* seperti `python manage.py runserver` di lokal - tanpa langkah ini, CSS dan gambarmu akan 404 setelah di-*deploy*. Tambahkan `'whitenoise.middleware.WhiteNoiseMiddleware'` ke `MIDDLEWARE` di `settings.py`, tepat di bawah `SecurityMiddleware` (paket `whitenoise` sudah ada di `requirements.txt` kamu sejak Tutorial 0):
+
+   ```python
+   MIDDLEWARE = [
+       'django.middleware.security.SecurityMiddleware',
+       'whitenoise.middleware.WhiteNoiseMiddleware',
+       # baris MIDDLEWARE lain di bawahnya tetap sama
+       ...
+   ]
+   ```
+
+   Lalu tambahkan `STATIC_ROOT` dan `WHITENOISE_USE_FINDERS` di bagian `STATIC_URL`/`STATICFILES_DIRS` yang sudah kamu buat sebelumnya:
+
+   ```python
+   STATIC_URL = 'static/'
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+   STATIC_ROOT = BASE_DIR / 'staticfiles'
+   WHITENOISE_USE_FINDERS = True
+   ```
+   :::
+
    Lakukan `git add`, `commit`, dan `push` perubahan ini ke repositori GitHub kamu.
 
    ::: {.callout-warning}
-   Sebelum lanjut ke langkah berikutnya, pastikan struktur repositorimu lengkap: berkas `manage.py`, `requirements.txt`, `.gitignore`, direktori `myportofolio/` (folder konfigurasi proyek), dan **bukan** direktori `env/` atau berkas `db.sqlite3` (harusnya sudah di-*gitignore*).
+   Sebelum lanjut ke langkah berikutnya, pastikan struktur repositorimu lengkap: berkas `manage.py`, `requirements.txt`, `.gitignore`, direktori `portofolio/` (folder konfigurasi proyek), dan **bukan** direktori `env/` atau berkas `db.sqlite3` (harusnya sudah di-*gitignore*).
 
    ![Contoh struktur repositori yang benar](../img/tutorial-1/pws-repo-structure.png)
    :::
@@ -610,7 +653,7 @@ Kalau *build* gagal, coba periksa beberapa hal berikut:
 
 - **Isi Repositori**: pastikan struktur repositorimu sama seperti contoh di Langkah 7 di atas.
 - **Berkas `requirements.txt`**: pastikan namanya persis, bukan `requirement.txt` (kurang huruf "s") atau `requirements.txt.txt` (ekstensi ganda).
-- **Berkas `.gitignore`**: pastikan diawali titik, tidak punya ekstensi tambahan, dan berada di *root folder* bersama `manage.py`, direktori `myportofolio/`, `requirements.txt`, `.git`, dan `db.sqlite3`.
+- **Berkas `.gitignore`**: pastikan diawali titik, tidak punya ekstensi tambahan, dan berada di *root folder* bersama `manage.py`, direktori `portofolio/`, `requirements.txt`, `.git`, dan `db.sqlite3`.
 
   ::: {.callout-tip}
   Pengguna Windows bisa centang opsi **File name extensions** di Windows Explorer untuk melihat ekstensi berkas dengan lebih jelas.
@@ -649,7 +692,7 @@ Kamu bisa cek progresnya di tab **Logs** pada dashboard proyek PWS. Tunggu sampa
 
 ## Pengumpulan
 
-Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment 1, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum Rabu, 2 September 2026**. Commit yang baru di-*push* setelah tenggat waktu itu dianggap Tutorial 01 belum selesai, sehingga Individual Assignment 1 tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment 1, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **paling lambat Rabu, 2 September 2026**. Commit yang baru di-*push* setelah tenggat waktu itu dianggap Tutorial 01 belum selesai, sehingga Individual Assignment 1 tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
 
 ## Referensi Tambahan
 
@@ -709,13 +752,32 @@ myportofolio/
     └── wsgi.py
 ```
 
-::: {.callout-note}
-Notice there are **two** folders named `myportofolio` - the outer one is your project root (where `manage.py` lives), while the one inside it is the Django configuration *package* (where `settings.py` and `urls.py` live). This isn't a mistake, it's `startproject`'s default structure.
+::: {.callout-important}
+### Rename the Django Config Folder
+
+There are **two** folders named `myportofolio` above - the outer one is your project root (where `manage.py` lives), the one inside it is the Django configuration *package* (where `settings.py` and `urls.py` live). So the two don't get mixed up when referenced in later tutorials, rename the inner Django config folder to `portofolio` (the outer folder stays `myportofolio`, matching your GitHub repository's name):
+
+```bash
+mv myportofolio portofolio
+```
+
+Then change every `myportofolio.settings`, `myportofolio.urls`, and `myportofolio.wsgi.application` to `portofolio.settings`, `portofolio.urls`, `portofolio.wsgi.application` in these 4 files:
+
+- `manage.py`
+- `portofolio/settings.py` (the `ROOT_URLCONF` and `WSGI_APPLICATION` lines)
+- `portofolio/wsgi.py`
+- `portofolio/asgi.py`
+
+Make sure your project still runs normally after this:
+
+```bash
+python manage.py check
+```
 :::
 
 ## Set Up Views, URLs, Templates, and Static Files
 
-Create a simple *view* that returns an HTML *template*. Create `myportofolio/views.py`:
+Create a simple *view* that returns an HTML *template*. Create `portofolio/views.py`:
 
 ```python
 from django.shortcuts import render
@@ -725,13 +787,13 @@ def landing_page(request):
     return render(request, "index.html")
 ```
 
-Connect this view to the empty (`""`) URL in `myportofolio/urls.py`:
+Connect this view to the empty (`""`) URL in `portofolio/urls.py`:
 
 ```python
 from django.contrib import admin
 from django.urls import path
 
-from myportofolio.views import landing_page
+from portofolio.views import landing_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -739,7 +801,7 @@ urlpatterns = [
 ]
 ```
 
-Create a `templates/`, `static/css/`, and `static/img/` folder at the project root (next to `manage.py`), then register `templates/` and `static/` in `myportofolio/settings.py` so Django knows to look there for HTML pages and static assets:
+Create a `templates/`, `static/css/`, and `static/img/` folder at the project root (next to `manage.py`), then register `templates/` and `static/` in `portofolio/settings.py` so Django knows to look there for HTML pages and static assets:
 
 ```python
 TEMPLATES = [
@@ -766,7 +828,7 @@ myportofolio/
 ├── static/
 │   ├── css/
 │   └── img/
-└── myportofolio/
+└── portofolio/
     ├── settings.py       # now has TEMPLATES.DIRS & STATICFILES_DIRS
     ├── urls.py           # now routes to landing_page
     ├── views.py          # newly created
@@ -1140,7 +1202,7 @@ myportofolio/
 │   │   └── style.css
 │   └── img/
 │       └── burhan.png       # replace with your own photo
-└── myportofolio/
+└── portofolio/
     ├── __init__.py
     ├── asgi.py
     ├── settings.py
@@ -1213,10 +1275,34 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "<your PWS deployment URL>"]
    ```
 
+   ::: {.callout-important}
+   ### Enable Static Files for Production
+
+   The production server (`gunicorn`) doesn't automatically serve *static* files the way `python manage.py runserver` does locally - without this step, your CSS and images will 404 once deployed. Add `'whitenoise.middleware.WhiteNoiseMiddleware'` to `MIDDLEWARE` in `settings.py`, right below `SecurityMiddleware` (the `whitenoise` package has been in your `requirements.txt` since Tutorial 0):
+
+   ```python
+   MIDDLEWARE = [
+       'django.middleware.security.SecurityMiddleware',
+       'whitenoise.middleware.WhiteNoiseMiddleware',
+       # the rest of the MIDDLEWARE list stays the same
+       ...
+   ]
+   ```
+
+   Then add `STATIC_ROOT` and `WHITENOISE_USE_FINDERS` alongside the `STATIC_URL`/`STATICFILES_DIRS` you already set up earlier:
+
+   ```python
+   STATIC_URL = 'static/'
+   STATICFILES_DIRS = [BASE_DIR / 'static']
+   STATIC_ROOT = BASE_DIR / 'staticfiles'
+   WHITENOISE_USE_FINDERS = True
+   ```
+   :::
+
    `git add`, `commit`, and `push` this change to your GitHub repository.
 
    ::: {.callout-warning}
-   Before moving to the next step, make sure your repository structure is complete: `manage.py`, `requirements.txt`, `.gitignore`, the `myportofolio/` config directory, and **not** an `env/` directory or a `db.sqlite3` file (those should already be *gitignored*).
+   Before moving to the next step, make sure your repository structure is complete: `manage.py`, `requirements.txt`, `.gitignore`, the `portofolio/` config directory, and **not** an `env/` directory or a `db.sqlite3` file (those should already be *gitignored*).
 
    ![Example of a correct repository structure](../img/tutorial-1/pws-repo-structure.png)
    :::
@@ -1249,7 +1335,7 @@ If the build fails, try checking a few things:
 
 - **Repository contents**: make sure your repository structure matches the example in Step 7 above.
 - **`requirements.txt` file**: make sure the name is exact - not `requirement.txt` (missing the "s") or `requirements.txt.txt` (double extension).
-- **`.gitignore` file**: make sure it starts with a dot, has no extra extension, and sits at the *root folder* alongside `manage.py`, the `myportofolio/` directory, `requirements.txt`, `.git`, and `db.sqlite3`.
+- **`.gitignore` file**: make sure it starts with a dot, has no extra extension, and sits at the *root folder* alongside `manage.py`, the `portofolio/` directory, `requirements.txt`, `.git`, and `db.sqlite3`.
 
   ::: {.callout-tip}
   Windows users can check the **File name extensions** option in Windows Explorer to see file extensions more clearly.
@@ -1288,7 +1374,7 @@ You can check the progress in the **Logs** tab on the PWS project dashboard. Wai
 
 ## Submission
 
-This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for Individual Assignment 1, make sure all changes for this tutorial are committed and pushed to your GitHub repository **before Wednesday, September 2, 2026**. Commits pushed after that deadline mean Tutorial 01 is considered incomplete, so Individual Assignment 1 won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for Individual Assignment 1, make sure all changes for this tutorial are committed and pushed to your GitHub repository **by Wednesday, September 2, 2026, at the latest**. Commits pushed after that deadline mean Tutorial 01 is considered incomplete, so Individual Assignment 1 won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 

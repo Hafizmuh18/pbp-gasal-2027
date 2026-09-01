@@ -29,10 +29,10 @@ title: "Materi Perkuliahan"
     <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
     <span class="pbp-card-status">✅ Tersedia</span>
   </a>
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="materi-02.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>02</strong> - Web Design Using HTML5 dan CSS3<br>
-    <span class="pbp-card-status">⏳ Belum diunggah</span>
-  </div>
+    <span class="pbp-card-status">✅ Tersedia</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>03</strong> - MTV Django Architecture<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
@@ -80,10 +80,10 @@ title: "Materi Perkuliahan"
     <strong>01</strong> - Introduction to Platform-Based Programming, Internet & Framework<br>
     <span class="pbp-card-status">✅ Available</span>
   </a>
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="materi-02.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>02</strong> - Web Design Using HTML5 and CSS3<br>
-    <span class="pbp-card-status">⏳ Not yet uploaded</span>
-  </div>
+    <span class="pbp-card-status">✅ Available</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>03</strong> - MTV Django Architecture<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
