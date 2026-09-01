@@ -807,7 +807,7 @@ Jangan lanjut sebelum test kembali menampilkan `OK`. Perubahan yang sengaja dibu
 ::: {.callout-important}
 **Menghubungkan ke Proyek Kamu** - Ganti data profil dan `Experience` contoh dengan data milikmu.
 
-Untuk fitur berikutnya, gunakan pola yang sama: buat model, ambil datanya di *view*, kirim lewat *context*, tampilkan dengan *template*, lalu lindungi perilaku pentingnya dengan test.
+Untuk fitur berikutnya, gunakan pola yang sama: buat model, ambil datanya di *view*, kirim lewat *context*, tampilkan dengan *template*, daftarkan URL-nya pada `urls.py` aplikasi, lalu lindungi perilaku pentingnya dengan test.
 :::
 
 ## Pengumpulan
