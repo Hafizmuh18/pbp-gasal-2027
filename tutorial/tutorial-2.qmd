@@ -99,6 +99,10 @@ Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 - Memahami kaitan *models*, *views* dan *template* pada Django
 - Memahami pembuatan *unit test* pada *framework* Django
 
+::: {.callout-warning}
+**Tutorial ini adalah prasyarat wajib untuk Individual Assignment minggu ini** - jika Tutorial ini belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tenggat waktu lengkap.
+:::
+
 Tutorial ini adalah **Tutorial 2**, lanjutan langsung dari [Tutorial 1](tutorial-1.qmd) - tutorial ketiga dari proyek yang akan kamu bangun berkelanjutan sepanjang semester: sebuah **website portofolio pribadi**. Semua tutorial berikutnya akan melanjutkan langsung dari hasil tutorial ini, jadi pastikan proyekmu berjalan dengan baik sebelum lanjut ke tutorial berikutnya.
 
 Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, maskot mata kuliah PBP. Setiap kali ada bagian yang berisi data pribadi Burhan (nama, NPM, bio, foto), akan ada catatan eksplisit yang bilang "ganti ini dengan data kamu sendiri" - jangan sampai kelewat.
@@ -826,7 +830,7 @@ Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara
 ::: {.content-visible when-profile="en"}
 
 
-# Tutorial 2: Implementing Model-View-Template (MVT) in Django {.pbp-page-title}
+# Tutorial 2: Model-View-Template (MVT) Django Implementation {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
@@ -843,6 +847,10 @@ After completing this tutorial, students are expected to be able to:
 - Configure application-level and project-level routing in `urls.py`.
 - Connect a model, view, and template to display database-backed content.
 - Write and run basic automated tests with Django's testing tools.
+
+::: {.callout-warning}
+**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. See the [Schedule page](../index.qmd#semester-schedule) for the exact deadlines.
+:::
 
 This is **Tutorial 2**, a direct continuation of [Tutorial 1](tutorial-1.qmd). It is the third tutorial in the personal portfolio project you will keep building throughout the semester.
 
