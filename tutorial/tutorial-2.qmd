@@ -826,11 +826,11 @@ Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara
 ::: {.content-visible when-profile="en"}
 
 
-# Tutorial 2: Model-View-Template (MVT) Django Implementation {.pbp-page-title}
+# Tutorial 2: Implementing Model-View-Template (MVT) in Django {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** Alvin Christian Halim
+**Contributors:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem, TIM - Justin Timothy W
 
 ***
 
@@ -838,16 +838,302 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 
 After completing this tutorial, students are expected to be able to:
 
-- <Write learning objective 1, usually a direct extension of this week's Session 1 topic>
-- <Write learning objective 2>
+- Explain the **MVT** pattern used by Django applications.
+- Trace how Django turns a browser request into an HTML response.
+- Configure application-level and project-level routing in `urls.py`.
+- Connect a model, view, and template to display database-backed content.
+- Write and run basic automated tests with Django's testing tools.
 
-::: {.callout-warning}
-**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. See the [Schedule page](../index.qmd#semester-schedule) for the exact deadlines.
-:::
+This is **Tutorial 2**, a direct continuation of [Tutorial 1](tutorial-1.qmd). It is the third tutorial in the personal portfolio project you will keep building throughout the semester.
+
+The examples use **Burhan's** portfolio. Whenever you see Burhan's name, NPM, bio, or experience, replace it with your own information instead of leaving the sample data unchanged.
 
 ::: {.callout-tip}
-**What We've Built So Far** - <1-2 sentence recap of the running theme
-app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
+**What We've Built So Far** - In Tutorial 1, you replaced Django's default page with an "About Me" portfolio page, connected a view to an HTML template, added CSS, and deployed the result to PWS.
+
+This week, we will move hard-coded content into Django's MVT flow.
+:::
+
+Your project should currently have the following structure:
+
+```
+myportofolio
+├── env/
+├── .git/
+├── .gitignore
+├── requirements.txt
+├── db.sqlite3
+├── manage.py
+├── portofolio            # main project configuration
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py       # project-wide settings
+│   ├── urls.py           # project-level URL routes
+│   ├── views.py
+│   └── wsgi.py
+├── static
+│   ├── css
+│   │   └── style.css
+│   └── img
+│       └── burhan.png
+└── templates
+    └── index.html
+```
+
+## Introducing MVT (Model-View-Template)
+
+Web applications are easier to maintain when data, request handling, and presentation do not all live in one place. Django organizes those responsibilities through the Model-View-Template pattern, usually shortened to MVT.
+
+### What Is MVT?
+
+MVT has three main parts:
+
+- A **Model** defines and manages application data.
+- A **View** receives a request, prepares the required data, and chooses a response.
+- A **Template** describes the final HTML shown to the user.
+
+### What Is a Model?
+
+A model describes the data used by an application. Django provides an Object-Relational Mapper (ORM), so you can create and retrieve records with Python rather than writing SQL for every operation.
+
+Here is a small model example:
+
+```python
+class Experience(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    date_started = models.DateField(auto_now_add=True)
+    date_ended = models.DateField(null=True, blank=True)
+```
+
+### What Is a View?
+
+A view handles a request and prepares the response. It can retrieve records from a model, put them into a context, and send that context to a template.
+
+```python
+def show_main(request):
+    experience_list = Experience.objects.all()
+    return render(request, "index.html", {"experience_list": experience_list})
+```
+
+### What Is a Template?
+
+A template is an HTML file that can also use values and simple presentation logic supplied by Django.
+
+```html
+<h1>Experiences</h1>
+<ul>
+  {% for experience in experience_list %}
+    <li>
+      <strong>{{ experience.title }}</strong>
+      <br>
+      <small>
+        {{ experience.date_started }} — {{ experience.date_ended }}
+      </small>
+    </li>
+  {% endfor %}
+</ul>
+```
+
+### The MVT Request Flow
+
+1. A user opens a URL in the browser.
+2. Django matches that URL to a view through `urls.py`.
+3. The view retrieves and processes model data when needed.
+4. The view passes its context to a template.
+5. Django returns the rendered HTML as a response.
+
+::: {.callout-note}
+In short: Request → URL configuration → View → Model → View → Template → Response.
+:::
+
+### Why Use MVT?
+
+MVT keeps separate responsibilities from getting tangled together:
+
+1. **Clear responsibilities:** data, request handling, and presentation each have a defined home.
+2. **Easier maintenance and testing:** smaller components are easier to understand and check.
+3. **Reuse:** views and templates can support more than one page without duplicating everything.
+
+## Before You Begin
+
+If `.env`, `.env.prod`, `db.sqlite3`, or the `env/` directory was accidentally committed, stop tracking those files with Git:
+
+```bash
+git rm --cached .env .env.prod db.sqlite3
+git rm -r --cached env/
+```
+
+These commands remove the files from future Git commits without deleting the local copies you still need.
+
+Check your `.gitignore`:
+
+```bash
+cat .gitignore
+```
+
+Make sure it contains:
+
+```
+.env*
+db.sqlite3
+env/
+```
+
+Then commit the cleanup:
+
+```bash
+git add .
+git commit -m "cleanup"
+```
+
+This keeps local credentials and development-only files out of your public repository.
+
+## Tutorial: Creating a Django Application
+
+A Django **project** is the complete website and its global configuration. A Django **application**, or *app*, is a smaller module responsible for a particular part of that project.
+
+One project can contain several apps. Each app may define its own models, views, templates, and URL routes.
+
+::: {.callout-note}
+In this tutorial, `myportofolio` is the outer project directory, `portofolio` contains the project configuration, and `main` will be the new Django application.
+:::
+
+### Step 1: Prepare the Project
+
+Open a terminal in the outer `myportofolio` directory. You should be in the same directory as `manage.py`.
+
+Activate the virtual environment you created in Tutorial 0.
+
+- **Windows:**
+
+  ```bash
+  env\Scripts\activate
+  ```
+
+- **Unix-based systems (Linux and macOS):**
+
+  ```bash
+  source env/bin/activate
+  ```
+
+::: {.callout-info}
+If PowerShell blocks script execution on Windows, open PowerShell as an administrator, run `Set-ExecutionPolicy Unrestricted -Force`, and select `A`.
+
+On Linux or macOS, if activation returns `Permission denied`, run `chmod +x env/bin/activate` and try again.
+:::
+
+### Step 2: Create and Register the `main` Application
+
+Create an application named `main`:
+
+```shell
+python manage.py startapp main
+```
+
+Django will create a new `main` directory with the initial files for an application.
+
+::: {.callout-info}
+Project directory, configuration directory, and application directory may sound similar at first. Keep an eye on the paths in each step and the distinction will become familiar quickly.
+:::
+
+Open `portofolio/settings.py`, find `INSTALLED_APPS`, and add `"main"` as its final item:
+
+```python
+INSTALLED_APPS = [
+    ...,
+    "main",
+]
+```
+
+The project can now discover the models, tests, and other components owned by the `main` application.
+
+## Tutorial: Implementing the Basic Model
+
+### Step 1: Define `Experience` in `main/models.py`
+
+Open `main/models.py` and replace its contents with:
+
+```python
+import uuid
+
+from django.db import models
+
+
+class Experience(models.Model):
+    EXPERIENCE_CHOICES = [
+        ("internship", "Internship"),
+        ("research", "Research"),
+        ("volunteer", "Volunteer"),
+        ("part-time", "Part-Time"),
+        ("full-time", "Full-Time"),
+        ("freelance", "Freelance"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    category = models.CharField(
+        max_length=20,
+        choices=EXPERIENCE_CHOICES,
+        default="full-time",
+    )
+    thumbnail = models.URLField(blank=True, null=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    ended_at = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def is_ongoing(self):
+        return self.ended_at is None
+```
+
+Here is what each part does:
+
+- `models.Model` is Django's base class for database-backed models.
+- `EXPERIENCE_CHOICES` limits `category` to a known set of values.
+- `id` creates a UUID primary key automatically.
+- `title` stores a short title, up to 255 characters.
+- `description` stores longer text about the experience.
+- `category` stores one value from `EXPERIENCE_CHOICES` and defaults to `full-time`.
+- `thumbnail` stores an optional image URL.
+- `started_at` records when the row is created.
+- `ended_at` may be left empty for an ongoing experience.
+- `__str__()` gives each object a readable string representation.
+- `is_ongoing` returns `True` when `ended_at` is empty.
+
+::: {.callout-info}
+The `@property` decorator lets you access a calculated method like an attribute. You can read more in the [Python documentation on `property`](https://docs.python.org/3/library/functions.html#property).
+:::
+
+### Step 2: Create and Apply the Model Migration
+
+A migration records how the database structure must change to match your models. Creating a model class alone does not create its table.
+
+First, generate the migration:
+
+```shell
+python manage.py makemigrations
+```
+
+::: {.callout-info}
+`makemigrations` creates migration files for model changes that have not been recorded yet.
+:::
+
+Apply those migrations to the local database:
+
+```shell
+python manage.py migrate
+```
+
+::: {.callout-info}
+`migrate` applies the recorded operations and creates or updates the corresponding database tables.
+:::
+
+::: {.callout-warning}
+Whenever you add, remove, or change model fields, create and apply a new migration so that the database stays in sync with your Python code.
 :::
 
 ## Tutorial: Connecting the *View* to the *Template*
@@ -927,7 +1213,152 @@ Finally, update the name in the footer:
 The `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, and `{{ bio }}` syntax represents Django template variables. When the page is rendered, Django replaces each variable with the value stored under the matching context key.
 
 ::: {.callout-note}
-At this point, the existing experience cards are not dynamic yet. The `experience_list` variable will be displayed in the advanced template implementation section.
+At this point, the view is already sending `experience_list`, but the template has not used it yet. In the next step, each object in that list will become an experience card.
+:::
+
+### Step 3: Display the Experience List Dynamically
+
+The profile fields now come from the context, but `experience_list` is still invisible. We will use the Django Template Language to turn every `Experience` object into an HTML card.
+
+Open `templates/index.html`. Inside `<main>`, place the following code after the closing `</section>` for the profile section and before `</main>`:
+
+```html
+<section class="experience-section" id="experience">
+    <div class="container">
+        <p class="section-kicker">My journey so far</p>
+        <h2>Experience</h2>
+
+        <div class="experience-grid">
+            {% for experience in experience_list %}
+                <article class="experience-card">
+                    <span class="experience-category">
+                        {{ experience.get_category_display }}
+                    </span>
+                    <h3>{{ experience.title }}</h3>
+                    <p class="experience-description">
+                        {{ experience.description }}
+                    </p>
+
+                    {% if experience.is_ongoing %}
+                        <p class="experience-status">Ongoing</p>
+                    {% else %}
+                        <p class="experience-status">Completed</p>
+                    {% endif %}
+                </article>
+            {% empty %}
+                <p class="empty-state">
+                    No experience has been added yet.
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+```
+
+There are three new forms of template syntax here:
+
+- `{{ ... }}` displays a value, such as an experience title.
+- `{% ... %}` runs presentation logic, such as a loop or condition.
+- `{% empty %}` runs when `experience_list` contains no objects.
+
+`get_category_display` turns a stored value such as `part-time` into the friendlier label `Part-Time`. Django creates this method automatically for fields that use `choices`.
+
+::: {.callout-note}
+A Django template is responsible for presentation. The view still handles data retrieval, so the HTML does not need to know how the database works.
+:::
+
+Add a link to the new section inside `<nav>`:
+
+```html
+<a href="#profile">Profile</a>
+<a href="#experience">Experience</a>
+```
+
+Finally, append the following CSS to `static/css/style.css`:
+
+```css
+.experience-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.section-kicker {
+    color: var(--accent-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.experience-section h2 {
+    margin: 0.4rem 0 1.5rem;
+    font-size: 2rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.experience-card {
+    padding: 1.25rem;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.experience-category {
+    color: var(--accent-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.experience-card h3 {
+    margin: 0.5rem 0;
+}
+
+.experience-description,
+.empty-state {
+    color: var(--text-muted);
+}
+
+.experience-status {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+```
+
+`repeat(auto-fit, minmax(240px, 1fr))` lets the grid choose how many columns fit. Cards line up when there is enough room and fall back to one column on a narrow screen.
+
+### Step 4: Add Some Data to Try It Out
+
+The `Experience` table is still empty after the migration. Start the Django shell from the directory that contains `manage.py`:
+
+```shell
+python manage.py shell
+```
+
+Add one of your own experiences. The sample below still uses Burhan's data, so change it before moving on:
+
+```python
+from main.models import Experience
+
+Experience.objects.create(
+    title="PBP Teaching Assistant",
+    description="Help students understand the basics of web development.",
+    category="part-time",
+)
+```
+
+Run `exit()` to leave the shell. Adding a row does not require `makemigrations` because the model structure has not changed.
+
+Start the server and open the home page again. The new record should appear as a card with the **Part-Time** category and an **Ongoing** status.
+
+::: {.callout-tip}
+**Try a small tweak:** add another `Experience` with a different category, then change the status text or card color. Both objects should appear without you writing a second card by hand.
 :::
 
 ## Tutorial: Configuring URL Routing
@@ -993,8 +1424,110 @@ python manage.py runserver
 
 Open <http://localhost:8000/> in a browser. The portfolio page will still appear, but its profile data now comes from the context in `main/views.py`, and the request passes through the `main` application's routing.
 
+## Tutorial: An Introduction to Django Unit Testing
+
+Opening the application in a browser is useful for checking its appearance, but manual checks are easy to miss. Unit tests help confirm that important behavior remains correct whenever the code changes.
+
+Django creates a separate database for its tests. Test data does not enter your `db.sqlite3` file, and Django removes the test database after the test run finishes.
+
+### Step 1: Write the Tests
+
+Django created `main/tests.py` when you created the `main` application. Open that file and replace its contents with:
+
+```python
+from django.test import TestCase
+from django.urls import reverse
+
+from main.models import Experience
+
+
+class MainTest(TestCase):
+    def setUp(self):
+        self.experience = Experience.objects.create(
+            title="PBP Teaching Assistant",
+            description="Help students understand web development.",
+            category="part-time",
+        )
+
+    def test_main_url_is_accessible(self):
+        response = self.client.get(reverse("main:show_main"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "index.html")
+
+    def test_nonexistent_page_returns_404(self):
+        response = self.client.get("/a-page-that-does-not-exist/")
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_experience_model(self):
+        self.assertEqual(str(self.experience), "PBP Teaching Assistant")
+        self.assertEqual(self.experience.category, "part-time")
+        self.assertTrue(self.experience.is_ongoing)
+
+    def test_experience_appears_on_main_page(self):
+        response = self.client.get(reverse("main:show_main"))
+
+        self.assertContains(response, self.experience.title)
+        self.assertContains(response, self.experience.description)
+```
+
+Django automatically runs every method whose name begins with `test_`. It runs `setUp()` before each test, giving every test a clean starting record.
+
+The four tests check different behavior:
+
+1. The home page is reachable and uses `index.html`.
+2. An unregistered URL returns `404 Not Found`.
+3. The model stores its values and calculates `is_ongoing` correctly.
+4. Model data reaches the HTML response received by the user.
+
+`reverse("main:show_main")` finds the route through the `app_name` and `name` declared in `main/urls.py`. This is safer than hard-coding `"/"` because the test can survive a later path change.
+
+### Step 2: Run the Tests
+
+From the directory containing `manage.py`, run the tests for the `main` application:
+
+```shell
+python manage.py test main
+```
+
+If everything is correct, the end of the output should look similar to this:
+
+```text
+....
+----------------------------------------------------------------------
+Ran 4 tests in ...s
+
+OK
+```
+
+The `....` line appears immediately before the separator. At normal verbosity, each dot represents one passing test. `F` represents a failed assertion, while `E` represents an error.
+
+For output that shows every test name, use:
+
+```shell
+python manage.py test main --verbosity 2
+```
+
+You can also run every test in the project with `python manage.py test`.
+
+### Step 3: Prove That a Test Can Catch a Mistake
+
+A test is only useful if it can fail when the behavior is wrong. Let us deliberately trigger one failure and then restore the correct expectation.
+
+1. Temporarily change `200` to `201` in `test_main_url_is_accessible`.
+2. Run `python manage.py test main` again.
+3. Find the failure message showing `200 != 201`.
+4. Change the value back to `200` and run the tests one more time.
+
+::: {.callout-warning}
+Do not move on until the tests show `OK` again. The deliberate failing change must not be included in your commit.
+:::
+
 ::: {.callout-important}
-**Connecting to Your Project** - Replace the profile values in the context with your own data. The same pattern applies whenever you add a new page or feature: retrieve data in a view, pass it through the context, display it in a template, and register its URL in the application's `urls.py`.
+**Connecting to Your Project** - Replace the sample profile and `Experience` values with your own data.
+
+For future features, follow the same path: define the model, retrieve its data in a view, pass it through the context, display it in a template, register the route in the application's `urls.py`, and protect important behavior with tests.
 :::
 
 ## Submission
@@ -1006,5 +1539,6 @@ This Tutorial doesn't have a separate SCELE submission slot and isn't graded dir
 - [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
 - [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
 - [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/4.2/topics/testing/overview/)
 
 :::
