@@ -501,7 +501,152 @@ Terakhir, ubah nama pada bagian *footer*:
 Sintaks `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, dan `{{ bio }}` adalah *template variable* Django. Ketika halaman diproses, Django menggantinya dengan nilai dari `context` yang memiliki nama kunci yang sama.
 
 ::: {.callout-note}
-Pada tahap ini, kartu pengalaman yang sudah ada belum diubah menjadi dinamis. Variabel `experience_list` akan ditampilkan pada bagian implementasi *template* lanjutan.
+Pada tahap ini, `experience_list` sudah dikirim oleh *view*, tetapi belum digunakan oleh *template*. Pada langkah berikutnya, setiap objek di dalamnya akan diubah menjadi satu kartu pengalaman.
+:::
+
+### Langkah 3: Menampilkan Daftar Pengalaman secara Dinamis
+
+Sekarang data profil sudah berasal dari `context`, tetapi `experience_list` belum tampil. Kita akan memakai Django Template Language untuk mengubah setiap objek `Experience` menjadi satu kartu HTML.
+
+Buka `templates/index.html`. Di dalam elemen `<main>`, letakkan kode berikut setelah penutup `</section>` milik bagian *profile* dan sebelum `</main>`:
+
+```html
+<section class="experience-section" id="experience">
+    <div class="container">
+        <p class="section-kicker">Perjalanan saya sejauh ini</p>
+        <h2>Experience</h2>
+
+        <div class="experience-grid">
+            {% for experience in experience_list %}
+                <article class="experience-card">
+                    <span class="experience-category">
+                        {{ experience.get_category_display }}
+                    </span>
+                    <h3>{{ experience.title }}</h3>
+                    <p class="experience-description">
+                        {{ experience.description }}
+                    </p>
+
+                    {% if experience.is_ongoing %}
+                        <p class="experience-status">Sedang berlangsung</p>
+                    {% else %}
+                        <p class="experience-status">Selesai</p>
+                    {% endif %}
+                </article>
+            {% empty %}
+                <p class="empty-state">
+                    Belum ada pengalaman yang ditambahkan.
+                </p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+```
+
+Perhatikan tiga bentuk sintaks baru berikut:
+
+- `{{ ... }}` menampilkan sebuah nilai, misalnya judul pengalaman.
+- `{% ... %}` menjalankan logika *template*, misalnya perulangan atau percabangan.
+- `{% empty %}` dijalankan ketika `experience_list` tidak memiliki data.
+
+`get_category_display` mengubah nilai seperti `part-time` menjadi label yang lebih ramah dibaca, yaitu `Part-Time`. Method ini disediakan otomatis oleh Django untuk *field* yang menggunakan `choices`.
+
+::: {.callout-note}
+Django *template* hanya mengatur tampilan. Pengambilan data tetap dilakukan oleh *view*. Pemisahan ini membuat HTML tidak perlu mengetahui cara basis data bekerja.
+:::
+
+Tambahkan pula tautan menuju bagian baru tersebut di dalam `<nav>`:
+
+```html
+<a href="#profile">Profile</a>
+<a href="#experience">Experience</a>
+```
+
+Terakhir, tambahkan CSS berikut di bagian bawah `static/css/style.css`:
+
+```css
+.experience-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.section-kicker {
+    color: var(--accent-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.experience-section h2 {
+    margin: 0.4rem 0 1.5rem;
+    font-size: 2rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.experience-card {
+    padding: 1.25rem;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.experience-category {
+    color: var(--accent-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.experience-card h3 {
+    margin: 0.5rem 0;
+}
+
+.experience-description,
+.empty-state {
+    color: var(--text-muted);
+}
+
+.experience-status {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+```
+
+`repeat(auto-fit, minmax(240px, 1fr))` membuat jumlah kolom menyesuaikan lebar layar. Kartu akan berjajar ketika ruang cukup dan turun menjadi satu kolom pada layar sempit.
+
+### Langkah 4: Menambahkan Data untuk Dicoba
+
+Setelah migrasi, tabel `Experience` masih kosong. Jalankan Django shell dari direktori yang berisi `manage.py`:
+
+```shell
+python manage.py shell
+```
+
+Masukkan satu pengalaman milikmu. Contoh berikut masih memakai data Burhan, jadi ubah isinya sebelum melanjutkan:
+
+```python
+from main.models import Experience
+
+Experience.objects.create(
+    title="Asisten Dosen PBP",
+    description="Membantu mahasiswa memahami dasar pengembangan web.",
+    category="part-time",
+)
+```
+
+Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `makemigrations`, karena struktur modelnya tidak berubah.
+
+Jalankan server dan buka kembali halaman utama. Data yang baru dibuat seharusnya tampil sebagai kartu dengan kategori **Part-Time** dan status **Sedang berlangsung**.
+
+::: {.callout-tip}
+**Coba sedikit modifikasi:** tambahkan satu objek `Experience` lagi dengan kategori berbeda, lalu ubah teks status atau warna kartunya. Pastikan kedua objek tetap tampil tanpa menulis kartu HTML kedua secara manual.
 :::
 
 ## Tutorial: Mengonfigurasi *Routing* URL
@@ -567,8 +712,102 @@ python manage.py runserver
 
 Buka <http://localhost:8000/> pada *browser*. Halaman portofolio akan tetap tampil, tetapi data profilnya sekarang berasal dari *context* pada `main/views.py` dan permintaannya melewati routing milik aplikasi `main`.
 
+## Tutorial: Pengenalan Django Unit Testing
+
+Menjalankan aplikasi di *browser* membantu kita memeriksa tampilan, tetapi pemeriksaan manual mudah terlewat. *Unit test* membantu memastikan perilaku penting tetap benar setiap kali kode diubah.
+
+Django menyediakan basis data khusus untuk pengujian. Data pengujian tidak masuk ke `db.sqlite3` milikmu dan akan dihapus setelah seluruh test selesai.
+
+### Langkah 1: Membuat Test
+
+Saat membuat aplikasi `main`, Django sudah menyediakan berkas `main/tests.py`. Buka berkas tersebut, lalu ganti isinya dengan kode berikut:
+
+```python
+from django.test import TestCase
+from django.urls import reverse
+
+from main.models import Experience
+
+
+class MainTest(TestCase):
+    def setUp(self):
+        self.experience = Experience.objects.create(
+            title="Asisten Dosen PBP",
+            description="Membantu mahasiswa memahami pengembangan web.",
+            category="part-time",
+        )
+
+    def test_main_url_is_accessible(self):
+        response = self.client.get(reverse("main:show_main"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "index.html")
+
+    def test_nonexistent_page_returns_404(self):
+        response = self.client.get("/halaman-yang-tidak-ada/")
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_experience_model(self):
+        self.assertEqual(str(self.experience), "Asisten Dosen PBP")
+        self.assertEqual(self.experience.category, "part-time")
+        self.assertTrue(self.experience.is_ongoing)
+
+    def test_experience_appears_on_main_page(self):
+        response = self.client.get(reverse("main:show_main"))
+
+        self.assertContains(response, self.experience.title)
+        self.assertContains(response, self.experience.description)
+```
+
+Semua method yang namanya diawali `test_` akan dijalankan otomatis oleh Django. Method `setUp()` dijalankan sebelum setiap test sehingga tiap test memperoleh data awal yang bersih.
+
+Empat test tersebut memeriksa hal yang berbeda:
+
+1. Halaman utama dapat diakses dan memakai `index.html`.
+2. URL yang tidak terdaftar menghasilkan status `404 Not Found`.
+3. Model menyimpan nilai dan menghitung `is_ongoing` dengan benar.
+4. Data dari model benar-benar sampai ke HTML yang diterima pengguna.
+
+`reverse("main:show_main")` mencari URL berdasarkan `app_name` dan `name` yang telah dibuat di `main/urls.py`. Cara ini lebih aman daripada menulis `"/"` secara langsung karena test tidak perlu diubah jika pola URL berubah.
+
+### Langkah 2: Menjalankan Test
+
+Pastikan terminal berada di direktori yang berisi `manage.py`, lalu jalankan test untuk aplikasi `main`:
+
+```shell
+python manage.py test main
+```
+
+Jika semuanya benar, bagian akhir keluarannya akan menyerupai berikut:
+
+```text
+....
+----------------------------------------------------------------------
+Ran 4 tests in ...s
+
+OK
+```
+
+Setiap titik (`.`) mewakili satu test yang berhasil. Tulisan `OK` berarti seluruh test lulus. Kamu juga dapat menjalankan semua test dalam proyek dengan `python manage.py test`.
+
+### Langkah 3: Membuktikan bahwa Test Dapat Menangkap Kesalahan
+
+Test yang selalu hijau belum tentu benar-benar berguna. Mari buktikan bahwa test di atas dapat gagal ketika perilaku aplikasi tidak sesuai harapan.
+
+1. Ubah sementara nilai `200` menjadi `201` pada `test_main_url_is_accessible`.
+2. Jalankan kembali `python manage.py test main`.
+3. Perhatikan pesan gagal yang menunjukkan `200 != 201`.
+4. Kembalikan nilai tersebut menjadi `200`, lalu jalankan test sekali lagi.
+
+::: {.callout-warning}
+Jangan lanjut sebelum test kembali menampilkan `OK`. Perubahan yang sengaja dibuat untuk memicu kegagalan tidak boleh ikut di-*commit*.
+:::
+
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - Ganti data profil pada `context` dengan data dirimu sendiri. Pola yang sama dapat digunakan saat menambah halaman atau fitur baru: ambil data melalui *view*, kirim melalui *context*, tampilkan pada *template*, lalu daftarkan URL-nya pada `urls.py` aplikasi.
+**Menghubungkan ke Proyek Kamu** - Ganti data profil dan `Experience` contoh dengan data milikmu.
+
+Untuk fitur berikutnya, gunakan pola yang sama: buat model, ambil datanya di *view*, kirim lewat *context*, tampilkan dengan *template*, lalu lindungi perilaku pentingnya dengan test.
 :::
 
 ## Pengumpulan
@@ -580,6 +819,7 @@ Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara
 - [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
 - [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
 - [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/4.2/topics/testing/overview/)
 
 :::
 
