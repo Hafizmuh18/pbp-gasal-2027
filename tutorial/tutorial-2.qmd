@@ -85,7 +85,7 @@ format-links:
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
-**Kontributor:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem
+**Kontributor:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem, TIM - Justin Timothy W
 
 ***
 
