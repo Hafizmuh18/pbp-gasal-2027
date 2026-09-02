@@ -116,55 +116,69 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 
 ::: {.content-visible when-profile="en"}
 
-# Individual Assignment N: <Assignment Title> {.pbp-page-title}
+# Individual Assignment 2: Implementing Model-View-Template (MVT) in Django {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** <Author Name>
+**Contributor:** Alvin Christian Halim
 
 ***
 
+::: {.callout-important}
+### Tutorial 02 Is a Mandatory Prerequisite
+Individual Assignment 2 **is only graded if Tutorial 02 has been completed** by **Wednesday, September 9, 2026** at the latest. If Tutorial 02 has not been completed, Individual Assignment 2 **will not be graded**, even if it has been submitted through SCELE.
+:::
+
 ## About the Project
 
-<Short description of the overall individual project - e.g. "personal
-portfolio website" - fill this in once and copy it verbatim into every
-following assignment so the context is always there.>
+This course's Individual Project is a **personal portfolio website** completed individually. Individual Assignments are released weekly according to that week's Tutorial topic, and each assignment continues directly from the code you wrote in the Tutorial for the same week.
 
 ## This Assignment's Target
 
-<Explain which part of the project needs to be added/completed for this
-assignment, and explicitly reference the related tutorial week that taught
-the same pattern.>
+In [Tutorial 02](../../tutorial/tutorial-2.qmd), you applied the Model-View-Template (MVT) pattern to display your portfolio's experience data. In this assignment, apply the same flow to **one other part** of your portfolio, such as a project list, education, certifications, or another relevant section.
 
-1. <Target point 1 - e.g. "Continue your project list & detail pages,
-   following the Model-View-Template pattern from [Tutorial 02](../../tutorial/tutorial-2.qmd)">
-2. <Target point 2>
+The new section must have its own page, separate from the main page that contains the experience section, and must be accessible from the navbar.
 
-::: {.callout-important}
-### Tutorial N Is a Mandatory Prerequisite
-Individual Assignment N **is only graded if Tutorial N has been completed** by <this week's Wednesday date> at the latest. If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
+::: {.callout-note}
+This assignment only requires a **list page** for your chosen section. A detail page is optional and may count as an additional feature.
 :::
 
-## Reflective Question
+Minimum checklist for this assignment:
 
-<This week's reflective question, usually filled in by the lecturer.>
+- [ ] Add one new model to the `main` application that represents your chosen portfolio section.
+- [ ] The model has at least three fields besides its primary key (`id`, whether created automatically by Django or defined explicitly), using appropriate data types.
+- [ ] Create and apply the model migration, then include the migration file in your commit.
+- [ ] Create a view that retrieves data from the model, places it in a context, and passes it to a new template.
+- [ ] Display every object with a Django Template Language loop and provide an empty state for when no data is available.
+- [ ] Data in the new portfolio section is not hard-coded in the HTML. Static interface text, such as the page title, navigation labels, and footer content, may remain in the template.
+- [ ] Register a named route in `main/urls.py` with a URL distinct from the main page.
+- [ ] Add a navbar link to the new page using the `{% url %}` tag. Keep the navbar and footer consistent with the other pages.
+- [ ] Add unit tests that verify the URL is accessible, the correct template is used, and model data appears in the HTML response.
+- [ ] Make sure the project runs without errors with `python manage.py runserver` and that all tests pass with `python manage.py test`.
+
+## Reflective Questions
+
+1. Explain what happens when a user opens the new portfolio page, starting from the request received by the project until the data appears in the browser. In your answer, explain the roles of the project's `urls.py`, the application's `urls.py`, the view, the model, and the template.
+2. Why should the data for the new portfolio section be stored in a model instead of being written directly in the template? Explain how this choice affects application maintenance and future development.
+3. What is the difference between `makemigrations` and `migrate` in Django? Give an example of a model change that requires you to run both commands.
 
 Answer the questions above in your project's `README.md` (not this assignment page), using the following format so it stays organized as more reflective questions get added each week throughout the semester:
 
 ```markdown
-### Assignment N
+### Assignment 2
 
 1. ...
 2. ...
+3. ...
 ```
 
 ## Submission
 
-This assignment is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this assignment's final result, pushed **before the deadline** below. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public**, so teaching assistants can access it for grading.
+Submit this assignment through the SCELE submission slot as **one link to a GitHub commit**, not just a repository link. Submit the **latest commit that was pushed before the deadline** and represents the final result of this assignment. That commit becomes the endpoint of the history reviewed by the teaching assistants. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public** so the teaching assistants can access it for grading.
 
 ## Deadline
 
-<This assignment's deadline - note that it's later than Tutorial N's own deadline (see the [Schedule page](../../index.qmd#semester-schedule) for exact dates).>
+Individual Assignment 2 is released on **September 7, 2026** and is due no later than **September 14, 2026, 12:00 WIB**. This deadline is later than Tutorial 02's deadline on Wednesday, September 9, 2026.
 
 ## Grading Rubric
 
@@ -178,12 +192,10 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 
 ### Code Quality & Structure (10%)
 
-<Levels 3 and 3.5 below need adapting to this week's technology stack (e.g. "following the basic Django MTV flow" or "Flutter Widget Tree") - see assignments/individual/tugas-1.qmd for the HTML5/CSS3 version. Levels 1, 2, and 4 are already generic enough to use as-is.>
-
 - **1** - Code is highly chaotic; logic is unclear; appears to be *copy-pasted* without understanding the underlying structure.
 - **2** - Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code).
-- **3** - <Code is fairly neat and structured, following the basic flow of this week's technology.>
-- **3.5** - <Code structure is highly neat, modular, efficient, and strictly adheres to this week's technology best practices.>
+- **3** - Code is fairly neat and structured, following the Model-View-Template flow and routing taught in Tutorial 02.
+- **3.5** - Code is highly neat and modular; model, view, template, and URL configuration responsibilities are clearly separated; and tests are easy to read.
 - **4** - Implements advanced code optimization, cleanly separates logic, or adds highly informative code comments/docstrings.
 
 ### Git & Discipline (10%)
@@ -194,7 +206,7 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 - **3.5** - Submitted on time. Commit history is routine, reflects gradual progress, and messages are highly descriptive.
 - **4** - Implements organized *branching* for individual features, or maintains a flawless and professional commit history (e.g., *conventional commits*).
 
-### Documentation & AI Disclosure + Reflective Question (10%)
+### Documentation & AI Disclosure + Reflective Questions (10%)
 
 - **1** - No `README.md` provided; no mention of AI usage whatsoever.
 - **2** - `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT").
