@@ -81,7 +81,7 @@ format-links:
 
 ::: {.content-visible when-profile="id"}
 
-# Tutorial 2: Model-View-Template (MVT) Django Implementation {.pbp-page-title}
+# Tutorial 2: Implementaasi Model-View-Template (MVT) Django {.pbp-page-title}
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
