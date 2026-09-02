@@ -50,6 +50,15 @@ Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, 
 Kalau kamu masih ingat, di [Tutorial 0](tutorial-0.qmd) kita berhenti persis setelah lihat halaman selamat datang Django - Git repository jalan, `env` aktif, Django terinstall, `startproject` udah dijalankan. Sekarang kita ganti halaman default itu dengan halaman "About Me" pertamamu.
 :::
 
+::: {.callout-tip}
+Sebelum melangkah ke instruksi di bawah, pastikan kondisi lingkungan lokalmu dari [Tutorial 0](tutorial-0.qmd) sudah siap:
+
+- [ ] Virtual environment (`env`) sudah aktif di terminal.
+- [ ] Django sudah terinstall (`python -m django --version`).
+- [ ] Perintah `python manage.py runserver` berhasil menampilkan halaman selamat datang bawaan Django di `http://localhost:8000/`.
+- [ ] Repositori Git lokal `myportofolio` sudah diinisiasi dan statusnya bersih (`git status` menampilkan *nothing to commit*).
+:::
+
 Struktur folder proyekmu saat ini (hasil akhir Tutorial 0):
 
 ```
@@ -73,8 +82,15 @@ myportofolio/
 
 Ada **dua** folder bernama `myportofolio` di atas - folder terluar adalah root proyekmu (tempat `manage.py` berada), folder di dalamnya adalah *package* konfigurasi Django (tempat `settings.py` dan `urls.py` berada). Supaya keduanya tidak tertukar saat disebut di tutorial-tutorial berikutnya, ganti nama folder konfigurasi Django yang di dalam menjadi `portofolio` (folder terluar tetap `myportofolio`, sesuai nama repositori GitHub-mu):
 
-```bash
+```shell
+# macOS / Linux-based OS
 mv myportofolio portofolio
+
+# Windows (CMD)
+move myportofolio portofolio
+
+# Windows (PowerShell)
+Move-Item myportofolio portofolio
 ```
 
 Lalu ganti setiap `myportofolio.settings`, `myportofolio.urls`, dan `myportofolio.wsgi.application` menjadi `portofolio.settings`, `portofolio.urls`, `portofolio.wsgi.application` di 4 berkas berikut:
@@ -245,7 +261,20 @@ Jangan lupa taruh foto kamu sendiri (format `.jpg` atau `.png`) di folder `stati
 :::
 
 ::: {.callout-note}
-Perhatikan elemen semantik HTML5 yang dipakai: `<header>` untuk kop halaman, `<nav>` untuk navigasi, `<main>` untuk konten utama, `<section>` untuk satu bagian konten yang berdiri sendiri, dan `<footer>` untuk kaki halaman. Elemen-elemen ini tidak mengubah tampilan secara otomatis, tapi memberi *makna* pada struktur halamanmu - lebih baik untuk aksesibilitas (mis. pembaca layar tahu mana bagian navigasi vs. konten utama) dan SEO dibanding menumpuk `<div>` di mana-mana. `<dl>`/`<dt>`/`<dd>` (dipakai untuk NPM dan Program di atas) khusus untuk pasangan label-nilai seperti ini - lebih tepat secara semantik dibanding sekadar `<div>` atau `<span>` biasa. Atribut `alt` pada `<img>` juga penting untuk aksesibilitas - selalu isi dengan deskripsi gambar, jangan dikosongkan.
+### Referensi Elemen Semantik HTML5
+
+Elemen semantik memberi *makna* pada struktur halamanmu - lebih baik untuk aksesibilitas (mis. pembaca layar tahu mana bagian navigasi vs. konten utama) dan SEO dibanding menumpuk `<div>` di mana-mana:
+
+| Elemen HTML5 | Peran & Makna Semantik | Contoh Penggunaan | Mengapa Lebih Baik dari `<div>`? |
+|---|---|---|---|
+| `<header>` | Kop/banner halaman atau section | Logo `.brand`, link navigasi utama | Membantu screen reader dan pencari web mengenali area navigasi atas |
+| `<nav>` | Blok link navigasi utama | Link menu (`Profile`) | Memungkinkan alat aksesibilitas langsung melompat ke navigasi |
+| `<main>` | Konten utama halaman | Section hero / profile | Menandai area konten unik utama; memisahkan header dan footer |
+| `<section>` | Bagian konten mandiri | Section "About Me" | Mengelompokkan elemen yang memiliki satu topik pembahasan |
+| `<footer>` | Kaki halaman | Teks hak cipta, informasi footer | Menandai bagian penutup halaman secara terstruktur |
+| `<dl>`, `<dt>`, `<dd>` | Daftar deskripsi (pasangan label-nilai) | Label NPM (`<dt>`) & angka NPM (`<dd>`) | Khusus untuk data berpasangan, lebih tepat dibanding `<div>` polos |
+
+*Catatan Aksesibilitas:* Atribut `alt` pada `<img>` juga sangat penting — selalu isi dengan deskripsi gambar, jangan dikosongkan.
 :::
 
 Struktur folder kamu sekarang:
@@ -636,8 +665,14 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
 10. Kalau nanti ada perubahan pada proyek Django yang mau kamu push ke PWS lagi, kamu cukup jalankan (setelah `add` dan `commit`):
 
     ```bash
-    git push pws master
+    git push pws main:master
     ```
+
+    ::: {.callout-note}
+    Perintah `git push pws main:master` memberitahu Git untuk mengirim *branch* lokalmu yang bernama `main` ke *branch* `master` di remote PWS.
+    Dengan begini, repositori lokal dan GitHub kamu tetap rapi menggunakan *branch* `main`!
+    Jika *branch* lokalmu bernama `master`, kamu cukup menggunakan `git push pws master`.
+    :::
 
     Kamu tidak perlu mengulang instruksi *Project Command* lagi.
 
@@ -645,6 +680,7 @@ Sekarang halaman "About Me" kamu sudah berjalan di lokal. Langkah terakhir adala
 Proyek `myportofolio` yang kamu *deploy* ini akan menjadi landasan untuk tutorial-tutorial berikutnya - repositori dan *deployment*-nya akan terus berkembang seiring tutorial yang kamu ikuti sepanjang semester.
 :::
 
+::: {.callout-note collapse="true"}
 ### Troubleshooting PWS
 
 **Build Gagal**
@@ -662,7 +698,7 @@ Kalau *build* gagal, coba periksa beberapa hal berikut:
   :::
 
 - Pastikan direktori `env/` dan `db.sqlite3` **tidak** ikut ter-*push* oleh Git. Kalau sudah telanjur, tambahkan `.gitignore` lalu jalankan `git rm --cached -r env db.sqlite3` sebelum `add`, `commit`, `push` lagi.
-- Kalau struktur sudah yakin lengkap tapi tetap gagal, pastikan kamu push ke PWS menggunakan *branch* `master`.
+- Kalau struktur sudah yakin lengkap tapi tetap gagal, pastikan kamu push ke PWS mengarah ke *branch* `master` (misalnya lewat `git push pws main:master`).
 
 **Tidak Menyimpan Credentials**
 
@@ -674,7 +710,7 @@ Ikuti langkah-langkah pada tab tersebut, atau alternatifnya buat proyek baru.
 
 **Mengganti Remote URL PWS pada Repositori Lokal**
 
-Kalau kamu membuat proyek baru di PWS untuk mengatasi masalah proyek sebelumnya, ganti *remote* URL di repositori lokalmu supaya `git push pws master` mengarah ke proyek yang baru, bukan yang lama:
+Kalau kamu membuat proyek baru di PWS untuk mengatasi masalah proyek sebelumnya, ganti *remote* URL di repositori lokalmu supaya `git push pws main:master` mengarah ke proyek yang baru, bukan yang lama:
 
 ```bash
 git remote set-url pws <link-proyek-baru>
@@ -689,6 +725,7 @@ Saat *deployment* pertama kali, kamu mungkin melihat error 502 (Bad Gateway) di 
 Kamu bisa cek progresnya di tab **Logs** pada dashboard proyek PWS. Tunggu sampai muncul log `Listening at` (biasanya 15-20 detik) - *refresh* halaman *log* kalau perlu, karena tidak update secara *streaming*.
 
 ![Tab Logs pada dashboard PWS](../img/tutorial-1/pws-logs.png)
+:::
 
 ## Pengumpulan
 
@@ -734,6 +771,15 @@ Throughout this tutorial, the running example is **Burhan**'s portfolio, the PBP
 Quick recap - in [Tutorial 0](tutorial-0.qmd) we left off right after Django's welcome page: Git repository set up, `env` running, Django installed, `startproject` already done. Now we swap that default page out for your first "About Me" page.
 :::
 
+::: {.callout-tip}
+Before stepping into the instructions below, make sure your local environment from [Tutorial 0](tutorial-0.qmd) is ready:
+
+- [ ] Virtual environment (`env`) is active in your terminal.
+- [ ] Django is installed (`python -m django --version`).
+- [ ] Running `python manage.py runserver` successfully displays Django's default welcome page at `http://localhost:8000/`.
+- [ ] Your local Git repository `myportofolio` is initialized and clean (`git status` shows *nothing to commit*).
+:::
+
 Your project's folder structure right now (the end result of Tutorial 0):
 
 ```
@@ -757,8 +803,15 @@ myportofolio/
 
 There are **two** folders named `myportofolio` above - the outer one is your project root (where `manage.py` lives), the one inside it is the Django configuration *package* (where `settings.py` and `urls.py` live). So the two don't get mixed up when referenced in later tutorials, rename the inner Django config folder to `portofolio` (the outer folder stays `myportofolio`, matching your GitHub repository's name):
 
-```bash
+```shell
+# macOS / Linux-based OS
 mv myportofolio portofolio
+
+# Windows (CMD)
+move myportofolio portofolio
+
+# Windows (PowerShell)
+Move-Item myportofolio portofolio
 ```
 
 Then change every `myportofolio.settings`, `myportofolio.urls`, and `myportofolio.wsgi.application` to `portofolio.settings`, `portofolio.urls`, `portofolio.wsgi.application` in these 4 files:
@@ -929,7 +982,20 @@ Don't forget to put your own photo (`.jpg` or `.png`) inside `static/img/`.
 :::
 
 ::: {.callout-note}
-Notice the semantic HTML5 elements used: `<header>` for the page banner, `<nav>` for navigation, `<main>` for the main content, `<section>` for a standalone chunk of content, and `<footer>` for the page footer. These elements don't change appearance automatically, but they give *meaning* to your page structure - better for accessibility (e.g. screen readers know which part is navigation vs. main content) and SEO than stacking `<div>`s everywhere. `<dl>`/`<dt>`/`<dd>` (used for NPM and Program above) are specifically for label-value pairs like this - more semantically correct than a plain `<div>` or `<span>`. The `alt` attribute on `<img>` also matters for accessibility - always fill it with a real description, never leave it empty.
+### HTML5 Semantic Elements Reference
+
+Semantic elements give *meaning* to your page structure - far better for accessibility (e.g. screen readers know navigation vs. main content) and SEO than stacking `<div>`s everywhere:
+
+| HTML5 Element | Role & Semantic Meaning | Example Usage | Why Better Than `<div>`? |
+|---|---|---|---|
+| `<header>` | Page or section banner | `.brand` logo, primary navigation links | Helps screen readers and search engines identify top banner content |
+| `<nav>` | Primary navigation link container | Menu link (`Profile`) | Enables accessibility tools to skip directly to navigation |
+| `<main>` | Primary content of the page | Hero / profile section | Marks the main unique content area; separates header and footer |
+| `<section>` | Standalone section of content | "About Me" section | Groups elements sharing a single topic or thematic focus |
+| `<footer>` | Page footer | Copyright text, footer details | Explicitly marks the closing section of the document |
+| `<dl>`, `<dt>`, `<dd>` | Description list (label-value pairs) | NPM label (`<dt>`) & NPM number (`<dd>`) | Built specifically for name-value pairs, far clearer than plain `<div>`s |
+
+*Accessibility Note:* The `alt` attribute on `<img>` is equally essential - always fill it with a descriptive text, never leave it empty.
 :::
 
 Your folder structure so far:
@@ -1318,8 +1384,14 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
 10. If you make changes to your Django project later that you want to push to PWS, just run this (after `add` and `commit`):
 
     ```bash
-    git push pws master
+    git push pws main:master
     ```
+
+    ::: {.callout-note}
+    The command `git push pws main:master` tells Git to send your local branch named `main` to the `master` branch on the PWS remote.
+    This keeps your local repository and GitHub neat using the `main` branch!
+    If your local branch is named `master`, you can simply use `git push pws master`.
+    :::
 
     You won't need to repeat the *Project Command* instructions again.
 
@@ -1327,6 +1399,7 @@ Your "About Me" page now works locally. The last step is *deploying* it so it's 
 The `myportofolio` project you just *deployed* will be the foundation for the following tutorials - its repository and deployment will keep growing along with the tutorials you complete throughout the semester.
 :::
 
+::: {.callout-note collapse="true"}
 ### Troubleshooting PWS
 
 **Build Failed**
@@ -1344,7 +1417,7 @@ If the build fails, try checking a few things:
   :::
 
 - Make sure the `env/` directory and `db.sqlite3` are **not** being pushed by Git. If they already were, add a `.gitignore` then run `git rm --cached -r env db.sqlite3` before `add`, `commit`, `push` again.
-- If you're sure the structure is complete but it still fails, make sure you're pushing to PWS using the `master` branch.
+- If you're sure the structure is complete but it still fails, make sure you're pushing to PWS targeting the `master` branch (e.g. via `git push pws main:master`).
 
 **Forgot to Save Credentials**
 
@@ -1356,7 +1429,7 @@ Follow the steps shown on that tab, or alternatively create a new project.
 
 **Changing the PWS Remote URL on Your Local Repository**
 
-If you created a new PWS project to work around an issue with a previous one, update the *remote* URL in your local repository so `git push pws master` points to the new project instead of the old one:
+If you created a new PWS project to work around an issue with a previous one, update the *remote* URL in your local repository so `git push pws main:master` points to the new project instead of the old one:
 
 ```bash
 git remote set-url pws <new-project-link>
@@ -1371,6 +1444,7 @@ The first time you deploy, you might see a 502 (Bad Gateway) error in your *brow
 You can check the progress in the **Logs** tab on the PWS project dashboard. Wait until a `Listening at` log line appears (usually 15-20 seconds) - *refresh* the log page if needed, since it doesn't update via *streaming*.
 
 ![The Logs tab on the PWS dashboard](../img/tutorial-1/pws-logs.png)
+:::
 
 ## Submission
 
