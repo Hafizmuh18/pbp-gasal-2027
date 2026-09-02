@@ -48,6 +48,8 @@ website:
           contents:
             - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"
               href: assignments/individual/tugas-1.qmd
+            - text: "Individual Assignment 2: Implementasi MVT pada Django"
+              href: assignments/individual/tugas-2.qmd
         - section: "Tugas Kelompok"
           contents:
             - text: "Proyek Tengah Semester"
