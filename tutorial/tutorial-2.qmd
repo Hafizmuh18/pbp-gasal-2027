@@ -647,7 +647,6 @@ Experience.objects.create(
 
 Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `makemigrations`, karena struktur modelnya tidak berubah.
 
-Jalankan server dan buka kembali halaman utama. Data yang baru dibuat seharusnya tampil sebagai kartu dengan kategori **Part-Time** dan status **Sedang berlangsung**.
 
 ::: {.callout-tip}
 **Coba sedikit modifikasi:** tambahkan satu objek `Experience` lagi dengan kategori berbeda, lalu ubah teks status atau warna kartunya. Pastikan kedua objek tetap tampil tanpa menulis kartu HTML kedua secara manual.
