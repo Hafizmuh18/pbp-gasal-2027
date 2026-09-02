@@ -12,80 +12,9 @@ format-links:
   - docx
 ---
 
-<!--
-  Cara pakai template ini untuk bikin Individual Assignment minggu baru:
-
-  Dulu tugas individu mingguan berdiri sendiri per minggu, tapi format
-  tahun ini beda. Penilaian individu sekarang terdiri dari tiga hal: Kuis
-  1/2/3 (lewat SCELE, tidak perlu halaman di situs ini), dua Tutorial
-  Asynchronous (pakai _templates/tutorial-template.qmd biasa, bukan
-  template ini, cukup tandai judulnya dengan "(Asynchronous)"), dan satu
-  Proyek Individu (misalnya website portofolio) yang dikerjakan
-  berkelanjutan sepanjang semester - template ini yang dipakai untuk tiap
-  Tugas/checkpoint dari proyek itu, jadi copy ulang untuk setiap tugas baru
-  dan sesuaikan nomor & judulnya. Tugas kelompok (PTS/PAS) sudah punya
-  halaman sendiri di assignments/group/, jadi tidak lewat template ini.
-
-  Copy berkas ini ke assignments/individual/tugas-N.qmd, ganti N sesuai
-  minggunya. Branch kode referensinya juga bernama tugas-N (bukan
-  milestone-N), dibuat dari branch tutorial-N minggu yang sama - model
-  branch lengkapnya ada di personal-portofolio/README.md kalau perlu
-  detail lebih jauh.
-
-  Bagian "Target Tugas Ini" sebaiknya merujuk eksplisit ke tutorial minggu
-  terkait (misalnya "lanjutkan pola MVT dari Tutorial 02 untuk daftar
-  proyek kamu") - ini yang membantu mahasiswa paham bahwa tugasnya memang
-  melanjutkan langsung dari tutorial, bukan proyek yang terpisah. Berbeda
-  dari Tutorial, Tugas di sini tidak perlu screenshot atau langkah
-  step-by-step - cukup deskripsi target, checklist singkat, pengumpulan,
-  tenggat waktu, dan rubrik.
-
-  Isi kedua blok bahasa ({.content-visible when-profile="id"} dan ="en") -
-  jangan sampai ada yang kosong, dan pastikan semua yang tampil ke pembaca
-  (termasuk baris "Pemrograman Berbasis Platform...") ada di dalam salah
-  satu dari kedua blok, bukan di luar - jadi baris itu memang ditulis dua
-  kali, satu di tiap blok, seperti contoh di bawah.
-
-  Untuk judul: frontmatter title tidak bisa beda per bahasa, jadi supaya
-  judul di halaman tetap bilingual, tulis heading `#` manual dengan
-  atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa (lihat
-  contoh di bawah) - CSS di `styles.css` otomatis menyembunyikan judul
-  frontmatter kalau atribut ini ada di halaman.
-
-  Jangan lupa daftarkan file barunya di sidebar `contents:` di kedua
-  `_quarto-id.yml` dan `_quarto-en.yml`, dengan `text:` eksplisit per
-  bahasa (jangan biarkan Quarto menurunkan label sidebar dari frontmatter
-  title).
-
-  Section "Pertanyaan Reflektif"/"Reflective Question" berisi pertanyaan
-  minggu ini yang biasanya diisi dosen (bukan asdos) - kalau belum ada
-  pertanyaannya saat kamu menyiapkan halaman ini, biarkan placeholder-nya
-  kosong apa adanya, jangan diisi asal, tunggu dosen yang mengisi.
-
-  Section "Pengumpulan"/"Submission" teksnya sudah baku (link commit,
-  sebelum tenggat waktu, repositori publik) dan sama di semua tugas -
-  biarkan apa adanya, tidak perlu disunting per minggu.
-
-  Section "Rubrik Penilaian"/"Grading Rubric" juga sudah baku - empat
-  komponen dengan bobot tetap (Fungsionalitas & Kesesuaian Topik 70%,
-  Kualitas & Struktur Kode 10%, Git & Disiplin 10%, Dokumentasi & AI
-  Disclosure + Pertanyaan Reflektif 10%). Cuma level 3 dan 3.5 di komponen
-  "Kualitas & Struktur Kode" yang perlu disesuaikan per minggu (lihat
-  placeholder di dalamnya) - sisanya biarkan apa adanya, jangan diubah jadi
-  tabel lagi (tabel lebar begini pernah dicoba dan berantakan baik di
-  halaman HTML sempit karena sidebar, maupun di ekspor PDF Typst yang
-  tidak bisa membungkus/scroll sel seperti browser).
-
-  Langkah terakhir sebelum selesai: render dua profile (`quarto render`,
-  lalu `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
-  berdampingan, dan cek tidak ada teks yang identik/belum ter-translate di
-  keduanya (judul, sidebar, isi). Ini langkah regresi yang wajib dilakukan
-  tiap kali selesai bikin tutorial/tugas baru.
--->
-
 ::: {.content-visible when-profile="id"}
 
-# Individual Assignment 2: Django MVT Implementation {.pbp-page-title}
+# Individual Assignment 2: Implementasi Model-View-Template (MVT) pada Django {.pbp-page-title}
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
@@ -100,19 +29,30 @@ Individual Assignment 2 **hanya dinilai apabila Tutorial 02 sudah diselesaikan**
 
 ## Tentang Proyek
 
-Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
+Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi** yang dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan setiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial pada minggu yang sama.
 
 ## Target Tugas Ini
 
-Pada tutorial 2, kamu sudah mengaplikasikan pola Model-View-Template (MVT) untuk bagian experience di portofolio kamu. Pada tugas kali ini, kamu diminta untuk melanjutkan implementasi MVT ke 1 bagian lain dari portofolio kamu (misalnya project list & detail, atau bagian lain yang relevan). Berikut adalah target spesifik yang harus dicapai di tugas ini:
+Pada [Tutorial 02](../../tutorial/tutorial-2.qmd), kamu sudah menerapkan pola Model-View-Template (MVT) untuk menampilkan data pengalaman (*experience*) pada portofoliomu. Pada tugas ini, terapkan kembali alur yang sama untuk **satu bagian lain** dari portofoliomu, misalnya daftar proyek, pendidikan, sertifikasi, atau bagian lain yang relevan.
 
-1. Mengimplementasikan pola MVT dengan benar untuk 1 bagian lain dari portofolio kamu, sesuai dengan materi Tutorial 02.
-2. Semua data yang ditampilkan di bagian tersebut tidak boleh hard-coded di template HTML.
-3. Model yang kalian buat harus mengandung minimal 3 field diluar field `id` (`id` tetap wajib ada).
-4. View yang kalian buat harus mengambil data dari model dan mengirimkannya ke template.
-5. Bagian portfolio yang kalian buat harus dalam halaman yang berbeda dari halaman experience dan landing page, dan dapat diakses melalui navigasi di navbar.
-6. Pastikan bahwa navbar dan footer di halaman baru ini konsisten dengan halaman lain yang sudah ada.
+Bagian baru tersebut harus memiliki halaman sendiri, terpisah dari halaman utama yang memuat bagian *experience*, dan dapat dibuka melalui *navbar*.
 
+::: {.callout-note}
+Tugas ini hanya mewajibkan **halaman daftar** untuk bagian yang kamu pilih. Halaman detail bersifat opsional dan dapat menjadi fitur tambahan.
+:::
+
+Checklist minimal untuk tugas ini:
+
+- [ ] Tambahkan satu model baru pada aplikasi `main` yang merepresentasikan bagian portofolio pilihanmu.
+- [ ] Model tersebut memiliki minimal tiga *field* selain *primary key* (`id`, baik dibuat otomatis oleh Django maupun ditentukan sendiri), dengan tipe data yang sesuai.
+- [ ] Buat dan terapkan migrasi model, lalu sertakan berkas migrasinya dalam commit.
+- [ ] Buat sebuah *view* yang mengambil data dari model, memasukkannya ke dalam *context*, dan meneruskannya ke *template* baru.
+- [ ] Tampilkan seluruh objek menggunakan perulangan Django Template Language dan sediakan tampilan untuk kondisi ketika data masih kosong.
+- [ ] Data pada bagian portofolio baru tidak ditulis langsung (*hard-coded*) di HTML. Teks antarmuka statis, seperti judul halaman, label navigasi, dan isi *footer*, tetap boleh ditulis di *template*.
+- [ ] Daftarkan *named route* pada `main/urls.py` dengan URL yang berbeda dari halaman utama.
+- [ ] Tambahkan tautan menuju halaman baru pada *navbar* menggunakan tag `{% url %}`. Pastikan *navbar* dan *footer* konsisten dengan halaman lain.
+- [ ] Tambahkan *unit test* yang memastikan URL dapat diakses, *template* yang tepat digunakan, dan data dari model tampil pada respons HTML.
+- [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* dan seluruh test lulus ketika menjalankan `python manage.py test`.
 
 ## Pertanyaan Reflektif
 
@@ -147,12 +87,10 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ### Kualitas & Struktur Kode (10%)
 
-<Level 3 dan 3.5 di bawah perlu disesuaikan dengan tumpukan teknologi minggu ini (mis. "mengikuti alur dasar Django MTV" atau "Flutter Widget Tree") - lihat assignments/individual/tugas-1.qmd untuk contoh versi HTML5/CSS3. Level 1, 2, dan 4 sudah cukup generik untuk dipakai apa adanya.>
-
 - **1** - Kode sangat berantakan; logika tidak jelas; terlihat seperti *copy-paste* tanpa memahami struktur yang mendasarinya.
 - **2** - Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*).
-- **3** - <Kode cukup rapi dan terstruktur, mengikuti alur dasar teknologi minggu ini.>
-- **3.5** - <Struktur kode sangat rapi, modular, efisien, dan patuh ketat pada praktik terbaik teknologi minggu ini.>
+- **3** - Kode cukup rapi dan terstruktur, mengikuti alur Model-View-Template serta *routing* yang diajarkan di Tutorial 02.
+- **3.5** - Struktur kode sangat rapi dan modular; tanggung jawab model, *view*, *template*, dan konfigurasi URL dipisahkan dengan jelas; serta test mudah dibaca.
 - **4** - Menerapkan optimasi kode tingkat lanjut, memisahkan logika dengan bersih, atau menambahkan komentar/docstring kode yang sangat informatif.
 
 ### Git & Disiplin (10%)
