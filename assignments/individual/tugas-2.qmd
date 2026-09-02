@@ -56,24 +56,27 @@ Checklist minimal untuk tugas ini:
 
 ## Pertanyaan Reflektif
 
-<Pertanyaan reflektif minggu ini, biasanya diisi oleh dosen.>
+1. Jelaskan alur yang terjadi ketika pengguna membuka halaman portofolio baru, mulai dari permintaan yang diterima proyek hingga data ditampilkan pada *browser*. Dalam jawabanmu, jelaskan peran `urls.py` proyek, `urls.py` aplikasi, *view*, model, dan *template*.
+2. Mengapa data untuk bagian portofolio baru sebaiknya disimpan pada model dan tidak ditulis langsung di dalam *template*? Jelaskan dampaknya terhadap kemudahan pemeliharaan dan pengembangan aplikasi.
+3. Apa perbedaan fungsi `makemigrations` dan `migrate` pada Django? Berikan contoh perubahan model yang mengharuskanmu menjalankan kedua perintah tersebut.
 
 Jawab pertanyaan-pertanyaan di atas di `README.md` proyekmu (bukan di halaman tugas ini), dengan format berikut supaya tetap rapi seiring bertambahnya pertanyaan reflektif tiap minggu sepanjang semester:
 
 ```markdown
-### Tugas N
+### Tugas 2
 
 1. ...
 2. ...
+3. ...
 ```
 
 ## Pengumpulan
 
-Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
+Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE dalam bentuk **satu tautan ke commit** di GitHub, bukan sekadar tautan repositori. Kumpulkan tautan ke **commit paling akhir yang sudah di-*push* sebelum tenggat waktu** dan menunjukkan hasil akhir tugas ini. Commit tersebut menjadi batas riwayat yang akan diperiksa oleh asisten dosen. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik** supaya asisten dosen dapat mengaksesnya untuk penilaian.
 
 ## Tenggat Waktu Pengerjaan
 
-<Tenggat waktu tugas ini - jangan lupa sebutkan bahwa deadline ini lebih lama dari deadline Tutorial N (lihat [halaman Jadwal](../../index.qmd#jadwal-semester) untuk tanggal lengkap).>
+Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling lambat **14 September 2026, pukul 12.00 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 02, yaitu Rabu, 9 September 2026.
 
 ## Rubrik Penilaian
 
