@@ -815,7 +815,7 @@ Untuk fitur berikutnya, gunakan pola yang sama: buat model, ambil datanya di *vi
 
 ## Pengumpulan
 
-Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment minggu ini, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum tenggat waktu** di atas. Commit yang baru di-*push* setelah tenggat waktu dianggap tutorial belum selesai, sehingga Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+Tutorial ini tidak memiliki slot submisi terpisah di SCELE dan tidak dinilai secara langsung. Untuk pengecekan prasyarat Individual Assignment minggu ini, asisten dosen akan menggunakan **commit terbaru (*latest commit*) yang sudah di-*push* sebelum tenggat waktu** di atas. Pastikan commit tersebut memuat seluruh perubahan Tutorial ini. Commit yang baru di-*push* setelah tenggat waktu tidak akan diperhitungkan. Pastikan juga repositori GitHub kamu bersifat **publik** agar asisten dosen dapat mengaksesnya.
 
 ## Referensi Tambahan
 
@@ -1539,7 +1539,7 @@ For future features, follow the same path: define the model, retrieve its data i
 
 ## Submission
 
-This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for this week's Individual Assignment, make sure all changes for this Tutorial are committed and pushed to your GitHub repository **before the deadline** above. Commits pushed after the deadline mean the Tutorial is considered incomplete, so the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+This Tutorial does not have a separate SCELE submission slot and is not graded directly. To verify the prerequisite for this week's Individual Assignment, teaching assistants will use **the latest commit pushed before the deadline** above. Make sure that commit contains all changes for this Tutorial. Commits first pushed after the deadline will not be considered. Also make sure your GitHub repository is **public** so teaching assistants can access it.
 
 ## Additional References
 
