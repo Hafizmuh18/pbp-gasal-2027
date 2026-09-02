@@ -146,10 +146,10 @@ Dalam dunia *web development*, terdapat berbagai pola arsitektur yang dapat memb
 
 ### Apa Itu Konsep MVT?
 
-Seperti yang sudah kalian lihat, MVT terdiri atas Model, View, dan Template. Secara sederhana:
-- Model merupakan data & logika bisnis
-- Template merupakan tampilan akhir yang dilihat oleh pengguna
-- View merupakan jembatan yang menghubungkan antara data(model) dan tampilan(template)
+Seperti yang sudah kalian lihat, MVT terdiri atas Model, View, dan Template. Secara sederhana: </br>
+- Model merupakan data & logika bisnis</br>
+- Template merupakan tampilan akhir yang dilihat oleh pengguna</br>
+- View merupakan jembatan yang menghubungkan antara data(model) dan tampilan(template)</br>
 
 ### Apa Itu Model?
 
@@ -210,13 +210,13 @@ Request → urls → View → Model → View → Template → Response
 
 ### Manfaat MVT
 
-Manfaat MVT ada banyak, di antaranya:
+Manfaat MVT ada banyak, di antaranya:</br>
 1. Pemisahan Tugas:
-Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapi sehingga lebih mudah dikelola untuk developer.
+Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapi sehingga lebih mudah dikelola untuk developer.</br>
 2. Kode yang Lebih Terstruktur:
-Aplikasi menjadi lebih modular, mudah diuji dengan test, dan juga scalable.
+Aplikasi menjadi lebih modular, mudah diuji dengan test, dan juga scalable.</br>
 3. Reusability:
-Template & View dapat digunakan kembali di berbagai bagian aplikasi secara berulang.
+Template & View dapat digunakan kembali di berbagai bagian aplikasi secara berulang.</br>
 
 
 ## Pre-Tutorial Notes
@@ -432,7 +432,7 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
 
 Pada tahap ini, kamu akan membuat *view* pada aplikasi `main`. *View* tersebut mengambil data `Experience` dari model, menyiapkan data profil, lalu meneruskannya ke `templates/index.html` melalui sebuah *context*.
 
-### Langkah 1: Membuat Fungsi `show_main`
+### Langkah 1: Membuat Fungsi __show_main__
 
 1. Buka berkas `main/views.py`.
 2. Ganti isi berkas tersebut dengan kode berikut. Ubah nilai data profil Burhan menjadi data dirimu sendiri.
