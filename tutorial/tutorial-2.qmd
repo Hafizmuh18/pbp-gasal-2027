@@ -261,17 +261,17 @@ Dalam tutorial ini, akan dijelaskan mengenai konsep aplikasi dan proyek dalam Dj
 - **Aplikasi (*Apps*)** adalah unit modular yang melakukan tugas-tugas spesifik dalam suatu proyek Django. Setiap aplikasi dapat memiliki model, tampilan, *template*, dan URL yang terkait dengannya. Aplikasi memungkinkanmu untuk membagi fungsionalitas proyek menjadi bagian-bagian terpisah yang dapat dikelola secara independen.
 
 ::: {.callout-note}
-Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direktori **terluar** (`myportfolio`), sedangkan direktori proyek adalah direktori **di dalam** direktori utama (`portfolio`).
+Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direktori **terluar** (`myportofolio`), sedangkan direktori proyek adalah direktori **di dalam** direktori utama (`portofolio`).
 :::
 
 ### Langkah 1: Persiapan Awal
 
-1. Buka Direktori Utama **`myportfolio`**.
+1. Buka Direktori Utama **`myportofolio`**.
 
-    - Sebelum memulai, pastikan kamu berada di direktori **utama** **`myportfolio`** yang telah dibuat pada Tutorial 2.
+    - Sebelum memulai, pastikan kamu berada di direktori **utama** **`myportofolio`** yang telah dibuat pada Tutorial 2.
     - Pengembangan proyek Django kamu pada tutorial sebelumnya akan dilanjutkan pada direktori ini 😎.
 
-2. Buka terminal atau *command prompt* dan pastikan kamu sudah berada pada direktori utama, **`myportfolio`**.
+2. Buka terminal atau *command prompt* dan pastikan kamu sudah berada pada direktori utama, **`myportofolio`**.
 
 ::: {.callout-info}
 
@@ -307,9 +307,9 @@ Gunakan perintah `cd [direktori]` untuk berpindah direktori ke direktori lain ya
         ```
 :::
 
-### Langkah 2: Membuat Aplikasi `main` dalam Proyek *myportfolio*
+### Langkah 2: Membuat Aplikasi `main` dalam Proyek *myportofolio*
 
-Kamu akan membuat aplikasi baru bernama `main` dalam proyek *myportfolio*.
+Kamu akan membuat aplikasi baru bernama `main` dalam proyek *myportofolio*.
 
 1. Jalankan perintah berikut untuk membuat aplikasi baru dengan nama **main**.
 
@@ -325,7 +325,7 @@ Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama*
 
 2. Mendaftarkan aplikasi `main` ke dalam proyek.
 
-   - Buka berkas `settings.py` di dalam direktori proyek `portfolio`.
+   - Buka berkas `settings.py` di dalam direktori proyek `portofolio`.
    - Tambahkan `'main'` ke dalam daftar aplikasi yang ada sebagai elemen paling terakhir. Daftar aplikasi dapat kamu akses pada variabel `INSTALLED_APPS`.
 
      ```python
@@ -335,7 +335,7 @@ Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama*
      ]
      ```
 
-Dengan melakukan langkah-langkah tersebut, kamu telah mendaftarkan aplikasi `main` ke dalam proyek *myportfolio* kamu.
+Dengan melakukan langkah-langkah tersebut, kamu telah mendaftarkan aplikasi `main` ke dalam proyek *myportofolio* kamu.
 
 
 ## Tutorial: Implementasi Model Dasar
