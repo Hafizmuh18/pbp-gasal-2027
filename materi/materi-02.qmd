@@ -1,0 +1,27 @@
+---
+title: "Materi 02"
+---
+
+::: {.content-visible when-profile="id"}
+
+# Materi 02: Web Design Menggunakan HTML5 dan CSS3 {.pbp-page-title}
+
+[📖 Baca / Presentasikan](../pdfjs/web/viewer.html?file=../../slides/materi-02-web-design-using-html5-and-css3.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-02-web-design-using-html5-and-css3.pdf){.btn .btn-outline-secondary download="Materi-02-Web-Design-Using-HTML5-and-CSS3.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-02-web-design-using-html5-and-css3.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+# Material 02: Web Design Using HTML5 and CSS3 {.pbp-page-title}
+
+[📖 Read / Present](../pdfjs/web/viewer.html?file=../../slides/materi-02-web-design-using-html5-and-css3.pdf){.btn .btn-primary target="_blank" role="button"} [⬇️ Download PDF](../slides/materi-02-web-design-using-html5-and-css3.pdf){.btn .btn-outline-secondary download="Materi-02-Web-Design-Using-HTML5-and-CSS3.pdf" role="button"}
+
+```{=html}
+<iframe src="../pdfjs/web/viewer.html?file=../../slides/materi-02-web-design-using-html5-and-css3.pdf" width="100%" height="800" style="border:1px solid #ccc; border-radius:4px; margin-top:1rem;"></iframe>
+```
+
+:::
