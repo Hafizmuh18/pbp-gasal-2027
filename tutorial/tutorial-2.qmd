@@ -167,7 +167,7 @@ class Experience(models.Model):
 
 ### Apa Itu View?
 
-View menangani logika yang akan ditampilkan kepada pengguna. Alur view meliputi penerimaan request dari pengguna, mengambil data dari model, lalu mengirimkannya ke template untuk ditambilkan ke pengguna.
+View menangani logika yang akan ditampilkan kepada pengguna. Alur view meliputi penerimaan request dari pengguna, mengambil data dari model, lalu mengirimkannya ke template untuk ditampilkan ke pengguna.
 
 Contoh view:
 ```python
@@ -178,7 +178,7 @@ def show_main(request):
 
 ### Apa Itu Template?
 
-Template merupakan berkass HTML yanng menentukan bagaimana aplikasi ditampilkan.
+Template merupakan berkas HTML yanng menentukan bagaimana aplikasi ditampilkan.
 
 Contoh template:
 ```html
@@ -212,10 +212,10 @@ Request → urls → View → Model → View → Template → Response
 
 Manfaat MVT ada banyak, di antaranya:
 1. Pemisahan Tugas:
-Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapih sehingga lebih mudah dikelola untuk developer.
+Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapi sehingga lebih mudah dikelola untuk developer.
 2. Kode yang Lebih Terstruktur:
 Aplikasi menjadi lebih modular, mudah diuji dengan test, dan juga scalable.
-3. Reuseability:
+3. Reusability:
 Template & View dapat digunakan kembali di berbagai bagian aplikasi secara berulang.
 
 
@@ -320,7 +320,7 @@ Kamu akan membuat aplikasi baru bernama `main` dalam proyek *myportofolio*.
     Setelah perintah di atas dijalankan, direktori baru dengan nama `main` akan terbentuk. Direktori main akan berisi struktur awal untuk aplikasi Django kamu.
 
 ::: {.callout-info}
-Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama**, **direktori proyek**, **direktori aplikasi**, *it's' okay!* Kamu akan terbiasa sesiring berjalannya waktu. Semangat!
+Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama**, **direktori proyek**, **direktori aplikasi**, *it's' okay!* Kamu akan terbiasa seiring berjalannya waktu. Semangat!
 :::
 
 2. Mendaftarkan aplikasi `main` ke dalam proyek.
