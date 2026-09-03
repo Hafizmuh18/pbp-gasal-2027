@@ -428,15 +428,13 @@ iframe {
 .quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-title {
   color: #8ec3f0;
 }
-:is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
+.quarto-dark :is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
+  color: inherit;
   background-color: transparent;
   padding: 0;
   font-family: inherit;
   font-size: inherit;
   font-weight: 700;
-}
-.quarto-dark :is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
-  color: inherit;
 }
 .quarto-dark .pbp-banner {
   background: linear-gradient(135deg, #1e2f3d 0%, #12181f 100%);
