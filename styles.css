@@ -428,7 +428,7 @@ iframe {
 .quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-title {
   color: #8ec3f0;
 }
-:is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
+.quarto-dark :is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
   color: inherit;
   background-color: transparent;
   padding: 0;
