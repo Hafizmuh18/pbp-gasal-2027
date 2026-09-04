@@ -599,7 +599,7 @@ Membantu tim merencanakan dan mengelola proyek sederhana dengan integrasi penuh 
 ---
 
 ## 2. Linear.app
-![Gambar Dashboard Linear App](https://www.figma.com/community/resource/956bf56e-ed4c-4fdd-af69-a13a9ccded49/thumbnail)
+![Gambar Dashboard Linear App](https://linear.app/static/og/homepage.jpg)
 
 ### Pengenalan
 Linear adalah tool modern untuk tim pengembang software. Fokus pada kecepatan, desain minimalis, dan alur kerja agile seperti sprint, issue tracking, dan roadmap.
@@ -1284,7 +1284,7 @@ Help teams plan and manage simple projects with full integration in Microsoft Te
 ---
 
 ## 2. Linear.app
-![Linear App Dashboard Image](https://www.figma.com/community/resource/956bf56e-ed4c-4fdd-af69-a13a9ccded49/thumbnail)
+![Linear App Dashboard Image](https://linear.app/static/og/homepage.jpg)
 
 ### Introduction
 Linear is a modern tool for software development teams. Focuses on speed, minimalist design, and agile workflow like sprint, issue tracking, and roadmap.
