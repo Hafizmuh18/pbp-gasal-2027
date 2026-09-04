@@ -35,7 +35,7 @@ Proyek Tengah Semester adalah **situs web** yang dibangun berkelompok menggunaka
 
 ## Tema Proyek: Bebas, Selama Berdampak bagi Masyarakat
 
-Tahun lalu, tema Proyek Tengah Semester ditentukan tetap oleh tim dosen (tema **OLAHRAGA**, bertepatan dengan momen kualifikasi Piala Dunia 2026). **Tahun ini berbeda** - setiap kelompok bebas menentukan sendiri ide aplikasi yang akan dibuat, tidak ada tema tetap yang diwajibkan.
+Setiap kelompok bebas menentukan sendiri ide aplikasi yang akan dibuat - **tidak ada tema tetap** yang diwajibkan.
 
 Satu-satunya syarat: aplikasi yang kamu bangun harus punya **manfaat atau dampak nyata bagi masyarakat**, bukan sekadar aplikasi generik tanpa tujuan yang jelas. Bentuk aplikasinya bebas - *marketplace*, direktori informasi, platform komunitas, sistem pelaporan, dan seterusnya - selama membantu menyelesaikan masalah nyata bagi sekelompok pengguna tertentu.
 
@@ -147,7 +147,7 @@ The Mid-Term Group Project is a **website** built in groups using Django, follow
 
 ## Project Theme: Open, As Long As It Benefits Society
 
-Last year, the Mid-Term Group Project's theme was fixed by the teaching team (the **SPORTS** theme, timed with the 2026 World Cup qualifiers). **This year is different** - every group is free to decide their own application idea, with no fixed theme required.
+Every group is free to decide their own application idea - **no fixed theme** is required.
 
 The only requirement: the application you build must have a **real benefit or impact on society**, not just a generic app with no clear purpose. The application's form is open - a *marketplace*, an information directory, a community platform, a reporting system, and so on - as long as it helps solve a real problem for a specific group of users.
 
