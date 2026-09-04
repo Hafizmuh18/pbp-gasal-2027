@@ -60,6 +60,7 @@ Apa pun arah yang kamu pilih, kelompokmu harus bisa menjelaskan dengan jelas **s
    ::: {.callout-note}
    Disarankan memakai **GitHub Organization** supaya kolaborasi antaranggota lebih mudah dikelola - repositori Proyek Akhir Semester nanti juga bisa dikelompokkan di organisasi yang sama.
    :::
+
 3. Setiap kelompok menentukan **satu kategori data utama** yang jadi *initial dataset* aplikasi, berisi minimal **100 entri**. Sumber data boleh dari mana saja (misalnya Kaggle atau Wikipedia); kalau datasetnya tidak tersedia di sumber manapun, kelompok boleh melakukan *scraping* sendiri.
 4. *Initial dataset* itu diimplementasikan sebagai *class* Model dan datanya disimpan ke basis data Django.
 5. Setiap anggota kelompok mengerjakan **satu modul berbeda**, ditentukan sendiri oleh kelompok sesuai ide aplikasi yang sudah didiskusikan bersama.
@@ -172,6 +173,7 @@ Whichever direction you pick, your group must be able to clearly explain **who t
    ::: {.callout-note}
    Using a **GitHub Organization** is recommended to make collaboration between members easier to manage - the Final Group Project's repository can later be grouped under the same organization too.
    :::
+
 3. Each group determines **one main data category** as the application's *initial dataset*, containing at least **100 entries**. Data sources can come from anywhere (e.g. Kaggle or Wikipedia); if no dataset is available anywhere, groups may *scrape* their own.
 4. That *initial dataset* is implemented as a Model *class* and its data stored in Django's database.
 5. Each group member works on **one different module**, determined by the group according to the application idea they've discussed together.
