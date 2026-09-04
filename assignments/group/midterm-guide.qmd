@@ -1,5 +1,15 @@
 ---
 title: "Panduan Tugas Kelompok"
+format:
+  html: default
+  typst: default
+  docx: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
 ---
 
 ::: {.content-visible when-profile="id"}
@@ -579,7 +589,7 @@ Project management tools ini bersifat **TIDAK WAJIB**, namun hanya mempermudah k
 :::
 
 ## 1. Microsoft Planner
-![Gambar MS Planner](https://www.timeneye.com/hs-fs/hubfs/microsoft%20planner%20ui%202025.png?width=1431&height=670&name=microsoft%20planner%20ui%202025.png)
+![Gambar MS Planner](../../img/group/ms-planner.png)
 
 ### Pengenalan
 Microsoft Planner adalah aplikasi manajemen tugas yang terintegrasi dengan Microsoft 365. Cocok untuk mengatur to-do list, membagi tugas, dan memantau progres lewat tampilan board (Kanban), kalender, dan grafik.
@@ -605,7 +615,7 @@ Membantu tim merencanakan dan mengelola proyek sederhana dengan integrasi penuh 
 ---
 
 ## 2. Linear.app
-![Gambar Dashboard Linear App](https://linear.app/static/og/homepage.jpg)
+![Gambar Dashboard Linear App](../../img/group/linear.jpg)
 
 ### Pengenalan
 Linear adalah tool modern untuk tim pengembang software. Fokus pada kecepatan, desain minimalis, dan alur kerja agile seperti sprint, issue tracking, dan roadmap.
@@ -630,7 +640,7 @@ Membantu tim developer mengelola task teknis, sprint, dan bug tracking dengan ce
 ---
 
 ## 3. Notion
-![Gambar Notion](https://res.cloudinary.com/zapier-media/image/upload/f_auto/q_auto/v1707419888/Blog/what-is-notion/what-is-notion-image11_mxqioe.png)
+![Gambar Notion](../../img/group/notion.png)
 
 ### Pengenalan
 Notion adalah all-in-one workspace yang menggabungkan catatan, database, wiki, dan manajemen proyek dalam satu aplikasi.
@@ -656,7 +666,7 @@ Membantu tim mendokumentasikan ide, membuat to-do list, hingga mengelola project
 ---
 
 ## 4. ClickUp
-![Gambar Click Up](https://blog.rimbahouse.com/wp-content/uploads/2024/04/demo-clickup.png)
+![Gambar Click Up](../../img/group/clickup.png)
 
 ### Pengenalan
 ClickUp adalah platform manajemen kerja yang serbaguna, bisa digunakan untuk task management, goal setting, docs, chat, dan timeline.
@@ -1270,7 +1280,7 @@ These project management tools are **NOT MANDATORY**, but only facilitate you in
 :::
 
 ## 1. Microsoft Planner
-![MS Planner Image](https://www.timeneye.com/hs-fs/hubfs/microsoft%20planner%20ui%202025.png?width=1431&height=670&name=microsoft%20planner%20ui%202025.png)
+![MS Planner Image](../../img/group/ms-planner.png)
 
 ### Introduction
 Microsoft Planner is a task management application integrated with Microsoft 365. Suitable for organizing to-do lists, dividing tasks, and monitoring progress through board (Kanban), calendar, and chart views.
@@ -1296,7 +1306,7 @@ Help teams plan and manage simple projects with full integration in Microsoft Te
 ---
 
 ## 2. Linear.app
-![Linear App Dashboard Image](https://linear.app/static/og/homepage.jpg)
+![Linear App Dashboard Image](../../img/group/linear.jpg)
 
 ### Introduction
 Linear is a modern tool for software development teams. Focuses on speed, minimalist design, and agile workflow like sprint, issue tracking, and roadmap.
@@ -1321,7 +1331,7 @@ Help developer teams manage technical tasks, sprints, and bug tracking quickly a
 ---
 
 ## 3. Notion
-![Notion Image](https://res.cloudinary.com/zapier-media/image/upload/f_auto/q_auto/v1707419888/Blog/what-is-notion/what-is-notion-image11_mxqioe.png)
+![Notion Image](../../img/group/notion.png)
 
 ### Introduction
 Notion is an all-in-one workspace that combines notes, databases, wikis, and project management in one application.
@@ -1347,7 +1357,7 @@ Help teams document ideas, create to-do lists, to managing project boards flexib
 ---
 
 ## 4. ClickUp
-![ClickUp Image](https://blog.rimbahouse.com/wp-content/uploads/2024/04/demo-clickup.png)
+![ClickUp Image](../../img/group/clickup.png)
 
 ### Introduction
 ClickUp is a versatile work management platform, can be used for task management, goal setting, docs, chat, and timeline.
