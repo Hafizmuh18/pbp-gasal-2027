@@ -49,7 +49,8 @@ GitHub Organization merupakan workspace bersama yang memungkinkan tim untuk meng
 1. Klik tab "People" di organization
 2. Cari nama anggota yang ingin diatur
 3. Klik dropdown di sebelah nama mereka
-Pilih role yang sesuai:
+
+   Pilih role yang sesuai:
 
     * Owner: Full access, bisa manage organization
     * Member: Access sesuai permission yang diberikan
@@ -767,7 +768,8 @@ GitHub Organization is a shared workspace that allows teams to manage various re
 1. Click the "People" tab in the organization
 2. Find the name of the member you want to configure
 3. Click the dropdown next to their name
-Choose the appropriate role:
+
+   Choose the appropriate role:
 
     * Owner: Full access, can manage organization
     * Member: Access according to given permissions
