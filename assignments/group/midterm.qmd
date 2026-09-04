@@ -1,44 +1,237 @@
 ---
-title: "Proyek Tengah Semester"
+title: "Proyek Tengah Semester: Membuat Situs Web dengan Django (Kelompok)"
+format:
+  html: default
+  typst: default
+  docx: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
 ---
 
-```{=html}
-<div class="pbp-banner">
-  <img src="../../img/burhan/burhan_group_project.png" alt="Maskot Proyek Kelompok">
-  <div class="pbp-banner-text">
-```
-
 ::: {.content-visible when-profile="id"}
-<div class="pbp-banner-title">Proyek Tengah Semester</div>
-<p class="pbp-banner-sub">Dikerjakan berkelompok - kolaborasi lewat satu repositori Git.</p>
+
+# Proyek Tengah Semester: Membuat Situs Web dengan Django (Kelompok) {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** MUH - Hafiz
+
+***
+
+## Tentang Proyek
+
+Proyek Tengah Semester adalah **situs web** yang dibangun berkelompok menggunakan Django, mengikuti pola *Model-View-Template* yang sudah kamu pelajari di Tutorial 02-06. Proyek ini nantinya juga jadi fondasi untuk Proyek Akhir Semester (aplikasi *mobile* Flutter yang terhubung ke situs web ini lewat *web service*), jadi pastikan situs web kelompokmu berjalan dengan baik sebelum masuk ke tahap itu.
+
+## Tujuan Pembelajaran Khusus
+
+1. Merancang halaman web yang ***responsive*** dengan memanfaatkan *framework* CSS.
+2. Mengimplementasikan situs web menggunakan Django dengan memenuhi pola **Models**, **Views**, dan **Template**.
+3. Menerapkan *unit test* dan men-*deploy* hasilnya ke PWS.
+4. Berkolaborasi dalam tim lewat satu repositori Git bersama.
+
+## Tema Proyek: Bebas, Selama Berdampak bagi Masyarakat
+
+Tahun lalu, tema Proyek Tengah Semester ditentukan tetap oleh tim dosen (tema **OLAHRAGA**, bertepatan dengan momen kualifikasi Piala Dunia 2026). **Tahun ini berbeda** - setiap kelompok bebas menentukan sendiri ide aplikasi yang akan dibuat, tidak ada tema tetap yang diwajibkan.
+
+Satu-satunya syarat: aplikasi yang kamu bangun harus punya **manfaat atau dampak nyata bagi masyarakat**, bukan sekadar aplikasi generik tanpa tujuan yang jelas. Bentuk aplikasinya bebas - *marketplace*, direktori informasi, platform komunitas, sistem pelaporan, dan seterusnya - selama membantu menyelesaikan masalah nyata bagi sekelompok pengguna tertentu.
+
+Beberapa contoh arah tema yang bisa jadi inspirasi (**bukan daftar wajib** - kelompok bebas mencari ide lain di luar daftar ini):
+
+- **Marketplace UMKM** - platform bagi pelaku usaha mikro/kecil di suatu daerah untuk menjual produk mereka secara daring.
+- **Koordinasi Relawan & Donasi** - platform yang menghubungkan relawan atau donatur dengan kebutuhan bencana maupun kegiatan sosial.
+- **Pelaporan Lingkungan** - sistem pelaporan sampah, kerusakan fasilitas umum, atau isu lingkungan di suatu wilayah.
+- **Akses Pendidikan** - platform berbagi materi belajar atau bimbingan untuk daerah/sekolah yang kurang terlayani.
+- **Informasi Kesehatan Komunitas** - direktori fasilitas kesehatan, jadwal donor darah, atau edukasi kesehatan untuk masyarakat umum.
+- **Pasar Petani/Nelayan Lokal** - platform yang menghubungkan petani atau nelayan langsung dengan konsumen, memotong rantai distribusi.
+- **Pelaporan ke Pemerintah Daerah** - sistem pelaporan warga untuk infrastruktur publik (jalan berlubang, lampu jalan mati, dan sejenisnya).
+- **Direktori Layanan Inklusif** - informasi fasilitas atau layanan yang ramah difabel di suatu kota.
+
+Apa pun arah yang kamu pilih, kelompokmu harus bisa menjelaskan dengan jelas **siapa penggunanya** dan **masalah apa yang diselesaikan** - dua hal ini akan ditanyakan sejak Checkpoint 1.
+
+## Aturan Umum Tugas Kelompok
+
+1. Satu kelompok terdiri atas 5-6 orang, sesuai pembagian yang diumumkan lewat SCELE/Discord PBP.
+2. Satu kelompok membuat **satu repositori Git** yang digunakan bersama oleh seluruh anggota. Kumpulkan tautan repositori ke SCELE.
+
+   ::: {.callout-note}
+   Disarankan memakai **GitHub Organization** supaya kolaborasi antaranggota lebih mudah dikelola - repositori Proyek Akhir Semester nanti juga bisa dikelompokkan di organisasi yang sama.
+   :::
+3. Setiap kelompok menentukan **satu kategori data utama** yang jadi *initial dataset* aplikasi, berisi minimal **100 entri**. Sumber data boleh dari mana saja (misalnya Kaggle atau Wikipedia); kalau datasetnya tidak tersedia di sumber manapun, kelompok boleh melakukan *scraping* sendiri.
+4. *Initial dataset* itu diimplementasikan sebagai *class* Model dan datanya disimpan ke basis data Django.
+5. Setiap anggota kelompok mengerjakan **satu modul berbeda**, ditentukan sendiri oleh kelompok sesuai ide aplikasi yang sudah didiskusikan bersama.
+6. Situs web kelompok di-*deploy* sebagai satu kesatuan aplikasi ke **PWS** (kelompok bebas memakai PaaS lain kalau mau, tapi PWS tetap yang direkomendasikan).
+7. `README.md` proyek **wajib** memuat:
+   - Deskripsi aplikasi (cerita aplikasi dan manfaatnya bagi masyarakat).
+   - Nama dan NPM seluruh anggota kelompok.
+   - Daftar modul beserta deskripsi dan pembagian kerja per anggota.
+   - Sumber *initial dataset*.
+   - Jenis/peran pengguna aplikasi (bisa lebih dari satu jenis pengguna).
+   - Tautan *deployment* PWS.
+   - Tautan desain (Figma, Canva, dst.) - opsional, tapi jadi nilai tambah.
+
+## Aturan Khusus per Anggota Kelompok
+
+Setiap anggota mengimplementasikan modulnya masing-masing, dengan mencakup:
+
+1. **Models** - baik yang dibuat sendiri, disediakan Django, maupun dipakai bersama dari modul anggota lain.
+2. **Views** - untuk memproses *request* dan mengembalikan respons lewat *template* HTML maupun JSON.
+3. **Template** HTML dengan kerangka yang sistematis (`base.html`, `header.html`, `footer.html`, dst.) dan memakai *framework* CSS yang *responsive* (misalnya Bootstrap atau Tailwind).
+4. **Form** yang menerima input pengguna dan diproses lewat *Views* (misalnya *insert*/*update*/*query* data ke Models).
+5. **Interaktivitas sisi klien** (AJAX/HTMX, sesuai yang diajarkan di Tutorial 05 dan 06).
+6. **Filter berbasis autentikasi** - sebagian informasi hanya bisa dilihat pengguna yang sudah *login* (misalnya data kontak pribadi).
+7. **Filter pada data** dari *initial dataset* yang ditampilkan (misalnya berdasarkan kategori atau harga).
+
+## Tahapan & Tenggat Waktu
+
+### Checkpoint 1: Ide & Inisiasi Proyek
+
+Kelompok sudah punya ide aplikasi yang jelas: repositori Git dibuat, `README.md` awal terisi (deskripsi aplikasi, daftar modul rencana, sumber *initial dataset*, peran pengguna), dan pembagian modul per anggota sudah disepakati.
+
+**Tenggat:** Rabu, 16 September 2026, pukul 23.59 WIB.
+
+### Checkpoint 2: Design System & Deployment Pertama
+
+*Template* dasar dan *design system* (palet warna, komponen UI bersama) sudah disepakati dan mulai diimplementasikan, dan situs web kelompok sudah berhasil di-*deploy* ke PWS untuk pertama kali (belum harus lengkap semua modul).
+
+**Tenggat:** dalam Minggu 6 (28 September - 2 Oktober 2026).
+
+::: {.callout-note}
+Checkpoint 1 dan 2 adalah pemeriksaan progres bersama asisten dosen, bukan submisi bernilai terpisah - tujuannya memastikan kelompokmu berjalan sesuai linimasa sebelum tenggat akhir. Nilai Proyek Tengah Semester ditentukan dari hasil akhir yang dikumpulkan di tenggat akhir.
 :::
+
+### Pengumpulan Akhir
+
+Seluruh modul sudah terintegrasi sebagai satu kesatuan aplikasi, fungsionalitasnya sesuai rancangan, dan *unit test* untuk seluruh aspek sudah **lulus** (*code coverage* minimal 80% disarankan).
+
+**Tenggat akhir:** Jumat, 23 Oktober 2026, pukul 23.59 WIB. Kumpulkan tautan repositori Git ke SCELE.
+
+::: {.callout-warning}
+Sesuai Kontrak Kelas, **tidak ada perpanjangan *deadline*** dengan alasan apa pun - kumpulkan sebelum tenggat waktu di atas.
+:::
+
+## Komponen Penilaian
+
+Proyek Tengah Semester bernilai **10% dari nilai akhir** (lihat [Kriteria Penilaian](../../index.qmd#kriteria-penilaian) di halaman Jadwal untuk komponen lain), terbagi menjadi:
+
+- **7% Individu** - dinilai dari modul masing-masing anggota, mengacu ke **Aturan Khusus per Anggota Kelompok** di atas.
+- **3% Kelompok** - dinilai dari integrasi seluruh modul menjadi satu aplikasi, kelengkapan *deployment* PWS, dan kelengkapan `README.md`.
+
+Rincian rubrik penilaian akan diunggah menyusul di [Panduan Tugas Kelompok](midterm-guide.qmd).
+
+:::
+
 ::: {.content-visible when-profile="en"}
-<div class="pbp-banner-title">Mid-Term Group Project</div>
-<p class="pbp-banner-sub">Done in groups - collaboration through a single Git repository.</p>
+
+# Mid-Term Group Project: Building a Website with Django (Group) {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** MUH - Hafiz
+
+***
+
+## About the Project
+
+The Mid-Term Group Project is a **website** built in groups using Django, following the *Model-View-Template* pattern you've learned across Tutorials 02-06. This project also becomes the foundation for the Final Group Project (a Flutter mobile app connected to this website through a *web service*), so make sure your group's website runs well before moving into that stage.
+
+## Learning Objectives
+
+1. Design a ***responsive*** web page using a CSS *framework*.
+2. Implement a website using Django following the **Models**, **Views**, and **Template** pattern.
+3. Apply *unit tests* and *deploy* the result to PWS.
+4. Collaborate as a team through one shared Git repository.
+
+## Project Theme: Open, As Long As It Benefits Society
+
+Last year, the Mid-Term Group Project's theme was fixed by the teaching team (the **SPORTS** theme, timed with the 2026 World Cup qualifiers). **This year is different** - every group is free to decide their own application idea, with no fixed theme required.
+
+The only requirement: the application you build must have a **real benefit or impact on society**, not just a generic app with no clear purpose. The application's form is open - a *marketplace*, an information directory, a community platform, a reporting system, and so on - as long as it helps solve a real problem for a specific group of users.
+
+Some example directions for inspiration (**not a mandatory list** - groups are free to look for other ideas beyond this list):
+
+- **MSME Marketplace** - a platform for small/micro business owners in an area to sell their products online.
+- **Volunteer & Donation Coordination** - a platform connecting volunteers or donors with disaster relief or social-cause needs.
+- **Environmental Reporting** - a system for reporting waste, damaged public facilities, or environmental issues in an area.
+- **Education Access** - a platform sharing learning materials or tutoring for underserved areas/schools.
+- **Community Health Information** - a directory of health facilities, blood donation schedules, or public health education.
+- **Local Farmer/Fisher Marketplace** - a platform connecting farmers or fishers directly with consumers, cutting out distribution chains.
+- **Local Government Reporting** - a citizen reporting system for public infrastructure (potholes, broken streetlights, and similar issues).
+- **Inclusive Services Directory** - information on disability-friendly facilities or services in a city.
+
+Whichever direction you pick, your group must be able to clearly explain **who the users are** and **what problem it solves** - both of these will be asked starting from Checkpoint 1.
+
+## General Group Assignment Rules
+
+1. Each group has 5-6 members, following the grouping announced through SCELE/Discord PBP.
+2. Each group creates **one Git repository** shared by all members. Submit the repository link to SCELE.
+
+   ::: {.callout-note}
+   Using a **GitHub Organization** is recommended to make collaboration between members easier to manage - the Final Group Project's repository can later be grouped under the same organization too.
+   :::
+3. Each group determines **one main data category** as the application's *initial dataset*, containing at least **100 entries**. Data sources can come from anywhere (e.g. Kaggle or Wikipedia); if no dataset is available anywhere, groups may *scrape* their own.
+4. That *initial dataset* is implemented as a Model *class* and its data stored in Django's database.
+5. Each group member works on **one different module**, determined by the group according to the application idea they've discussed together.
+6. The group's website is *deployed* as one unified application to **PWS** (groups are free to use another PaaS if they want, but PWS remains the recommended one).
+7. The project's `README.md` **must** include:
+   - Application description (the app's story and its benefit to society).
+   - Names and student IDs of all group members.
+   - List of modules with descriptions and the work division per member.
+   - The *initial dataset*'s source.
+   - The application's user type(s)/role(s) (there can be more than one type of user).
+   - The PWS *deployment* link.
+   - A design link (Figma, Canva, etc.) - optional, but counts as a bonus.
+
+## Rules Specific to Each Group Member
+
+Each member implements their own module, covering:
+
+1. **Models** - whether self-made, provided by Django, or shared from another member's module.
+2. **Views** - to process *requests* and return responses through an HTML *template* or JSON.
+3. HTML **Templates** with a systematic structure (`base.html`, `header.html`, `footer.html`, etc.) using a *responsive* CSS *framework* (e.g. Bootstrap or Tailwind).
+4. A **form** that accepts user input and is processed through *Views* (e.g. *insert*/*update*/*query* data to Models).
+5. **Client-side interactivity** (AJAX/HTMX, as taught in Tutorials 05 and 06).
+6. **Authentication-based filtering** - some information is only visible to logged-in users (e.g. personal contact data).
+7. **Filtering** on the displayed *initial dataset* (e.g. by category or price).
+
+## Stages & Deadlines
+
+### Checkpoint 1: Project Ideas & Initiation
+
+The group has a clear application idea: the Git repository is created, the initial `README.md` is filled in (application description, planned module list, *initial dataset* source, user roles), and the module division per member has been agreed on.
+
+**Deadline:** Wednesday, September 16, 2026, 23:59 WIB.
+
+### Checkpoint 2: Design System & First Deployment
+
+The base *template* and *design system* (color palette, shared UI components) have been agreed on and are being implemented, and the group's website has been successfully *deployed* to PWS for the first time (not all modules need to be complete yet).
+
+**Deadline:** within Week 6 (September 28 - October 2, 2026).
+
+::: {.callout-note}
+Checkpoints 1 and 2 are progress check-ins with teaching assistants, not separately graded submissions - their purpose is to make sure your group is on track before the final deadline. The Mid-Term Group Project's grade is determined from the final result submitted at the final deadline.
 :::
 
-```{=html}
-  </div>
-</div>
-```
+### Final Submission
 
-::: {.content-visible when-profile="id"}
-Rincian lengkap Proyek Tengah Semester (tema, aturan, tahapan, rubrik penilaian) untuk Semester Gasal 2026/2027 akan diunggah di halaman ini menyusul, mengikuti jadwal berikut:
+All modules are integrated into one unified application, functionality matches the design, and *unit tests* for every aspect **pass** (a minimum of 80% *code coverage* is recommended).
 
-- **Guideline dirilis:** Minggu 3 (7-11 September)
-- **Checkpoint 1** (Project Ideas, Project Initiation): Minggu 4 (16 September)
-- **Checkpoint 2** (Design System, 1st Deployment): Minggu 6 (28 September - 2 Oktober)
-- **Deadline akhir:** Minggu 9 (19-23 Oktober)
+**Final deadline:** Friday, October 23, 2026, 23:59 WIB. Submit the Git repository link to SCELE.
 
-Lihat halaman **Jadwal** untuk detail tanggal terbaru.
+::: {.callout-warning}
+Per the Class Contract, **no deadline extensions** will be given for any reason - submit before the deadline above.
 :::
-::: {.content-visible when-profile="en"}
-Full details for the Mid-Term Group Project (theme, rules, stages, grading rubric) for Odd Semester 2026/2027 will be uploaded to this page later, following this schedule:
 
-- **Guideline released:** Week 3 (Sep 7-11)
-- **Checkpoint 1** (Project Ideas, Project Initiation): Week 4 (Sep 16)
-- **Checkpoint 2** (Design System, 1st Deployment): Week 6 (Sep 28 - Oct 2)
-- **Final deadline:** Week 9 (Oct 19-23)
+## Grading Components
 
-See the **Schedule** page for the latest dates.
+The Mid-Term Group Project is worth **10% of the final grade** (see [Assessment Criteria](../../index.qmd#assessment-criteria) on the Schedule page for other components), split into:
+
+- **7% Individual** - graded from each member's own module, based on the **Rules Specific to Each Group Member** above.
+- **3% Group** - graded from how well all modules integrate into one application, the completeness of the PWS *deployment*, and the completeness of the `README.md`.
+
+Detailed grading rubric will be uploaded later on the [Group Assignment Guide](midterm-guide.qmd) page.
+
 :::
