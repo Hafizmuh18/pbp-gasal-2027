@@ -33,24 +33,20 @@ Proyek Tengah Semester adalah **situs web** yang dibangun berkelompok menggunaka
 3. Menerapkan *unit test* dan men-*deploy* hasilnya ke PWS.
 4. Berkolaborasi dalam tim lewat satu repositori Git bersama.
 
-## Tema Proyek: Bebas, Selama Berdampak bagi Masyarakat
+## Tema Proyek: Sustainable Living
 
-Setiap kelompok bebas menentukan sendiri ide aplikasi yang akan dibuat - **tidak ada tema tetap** yang diwajibkan.
+Tema Proyek Tengah Semester tahun ini adalah **Sustainable Living**. Beberapa sub-tema yang bisa dipilih (tidak terbatas pada daftar ini):
 
-Satu-satunya syarat: aplikasi yang kamu bangun harus punya **manfaat atau dampak nyata bagi masyarakat**, bukan sekadar aplikasi generik tanpa tujuan yang jelas. Bentuk aplikasinya bebas - *marketplace*, direktori informasi, platform komunitas, sistem pelaporan, dan seterusnya - selama membantu menyelesaikan masalah nyata bagi sekelompok pengguna tertentu.
+- Waste Management
+- Sustainable Food & Diet
+- Clean Energy & Carbon Footprint
+- Slow Fashion & Conscious Shopping
+- Urban Farming & Biodiversity
+- Eco-Mindfulness
 
-Beberapa contoh arah tema yang bisa jadi inspirasi (**bukan daftar wajib** - kelompok bebas mencari ide lain di luar daftar ini):
+Kelompok bebas menentukan sub-tema spesifik dan bentuk aplikasinya (*marketplace*, direktori informasi, platform komunitas, sistem pelaporan, dan seterusnya), selama masih berada dalam payung tema **Sustainable Living**.
 
-- **Marketplace UMKM** - platform bagi pelaku usaha mikro/kecil di suatu daerah untuk menjual produk mereka secara daring.
-- **Koordinasi Relawan & Donasi** - platform yang menghubungkan relawan atau donatur dengan kebutuhan bencana maupun kegiatan sosial.
-- **Pelaporan Lingkungan** - sistem pelaporan sampah, kerusakan fasilitas umum, atau isu lingkungan di suatu wilayah.
-- **Akses Pendidikan** - platform berbagi materi belajar atau bimbingan untuk daerah/sekolah yang kurang terlayani.
-- **Informasi Kesehatan Komunitas** - direktori fasilitas kesehatan, jadwal donor darah, atau edukasi kesehatan untuk masyarakat umum.
-- **Pasar Petani/Nelayan Lokal** - platform yang menghubungkan petani atau nelayan langsung dengan konsumen, memotong rantai distribusi.
-- **Pelaporan ke Pemerintah Daerah** - sistem pelaporan warga untuk infrastruktur publik (jalan berlubang, lampu jalan mati, dan sejenisnya).
-- **Direktori Layanan Inklusif** - informasi fasilitas atau layanan yang ramah difabel di suatu kota.
-
-Apa pun arah yang kamu pilih, kelompokmu harus bisa menjelaskan dengan jelas **siapa penggunanya** dan **masalah apa yang diselesaikan** - dua hal ini akan ditanyakan sejak Checkpoint 1.
+Kelompokmu harus bisa menjelaskan dengan jelas **siapa penggunanya** dan **masalah apa yang diselesaikan** - dua hal ini akan ditanyakan sejak Checkpoint 1.
 
 ## Aturan Umum Tugas Kelompok
 
@@ -61,36 +57,42 @@ Apa pun arah yang kamu pilih, kelompokmu harus bisa menjelaskan dengan jelas **s
    Disarankan memakai **GitHub Organization** supaya kolaborasi antaranggota lebih mudah dikelola - repositori Proyek Akhir Semester nanti juga bisa dikelompokkan di organisasi yang sama.
    :::
 
-3. Setiap kelompok menentukan **satu kategori data utama** yang jadi *initial dataset* aplikasi, berisi minimal **100 entri**. Sumber data boleh dari mana saja (misalnya Kaggle atau Wikipedia); kalau datasetnya tidak tersedia di sumber manapun, kelompok boleh melakukan *scraping* sendiri.
-4. *Initial dataset* itu diimplementasikan sebagai *class* Model dan datanya disimpan ke basis data Django.
+3. Data aplikasi **wajib** berasal dari *Public API* eksternal. Kalau terpaksa tidak ada *Public API* yang sesuai (harus memakai *dummy data*/*fetch data* sendiri), kelompok **wajib** membuat *mock API*/*dummy API* eksternal sendiri - bukan sekadar data statis yang ditulis langsung di kode.
+4. Rancangan *desain* aplikasi (wireframe/UI) **wajib** dibuat di **Figma**.
 5. Setiap anggota kelompok mengerjakan **satu modul berbeda**, ditentukan sendiri oleh kelompok sesuai ide aplikasi yang sudah didiskusikan bersama.
 6. Situs web kelompok di-*deploy* sebagai satu kesatuan aplikasi ke **PWS** (kelompok bebas memakai PaaS lain kalau mau, tapi PWS tetap yang direkomendasikan).
 7. `README.md` proyek **wajib** memuat:
    - Deskripsi aplikasi (cerita aplikasi dan manfaatnya bagi masyarakat).
    - Nama dan NPM seluruh anggota kelompok.
    - Daftar modul beserta deskripsi dan pembagian kerja per anggota.
-   - Sumber *initial dataset*.
+   - Sumber/dokumentasi *Public API* yang dipakai (atau tautan *mock API* kalau kelompok membuat sendiri).
    - Jenis/peran pengguna aplikasi (bisa lebih dari satu jenis pengguna).
    - Tautan *deployment* PWS.
-   - Tautan desain (Figma, Canva, dst.) - opsional, tapi jadi nilai tambah.
+   - Tautan desain **Figma** (wajib).
 
 ## Aturan Khusus per Anggota Kelompok
+
+::: {.callout-important}
+### Definisi Satu Modul
+
+Satu modul (untuk Proyek Tengah Semester berbasis web) berarti implementasi **CRUD** (*Create*, *Read*, *Update*, *Delete*) yang lengkap untuk satu bagian data aplikasi.
+:::
 
 Setiap anggota mengimplementasikan modulnya masing-masing, dengan mencakup:
 
 1. **Models** - baik yang dibuat sendiri, disediakan Django, maupun dipakai bersama dari modul anggota lain.
-2. **Views** - untuk memproses *request* dan mengembalikan respons lewat *template* HTML maupun JSON.
+2. **Views** - untuk memproses *request* dan mengembalikan respons lewat *template* HTML maupun JSON, mencakup keempat operasi CRUD di atas.
 3. **Template** HTML dengan kerangka yang sistematis (`base.html`, `header.html`, `footer.html`, dst.) dan memakai *framework* CSS yang *responsive* (misalnya Bootstrap atau Tailwind).
-4. **Form** yang menerima input pengguna dan diproses lewat *Views* (misalnya *insert*/*update*/*query* data ke Models).
+4. **Form** yang menerima input pengguna dan diproses lewat *Views* (*insert*/*update*/*delete*/*query* data ke Models).
 5. **Interaktivitas sisi klien** (AJAX/HTMX, sesuai yang diajarkan di Tutorial 05 dan 06).
 6. **Filter berbasis autentikasi** - sebagian informasi hanya bisa dilihat pengguna yang sudah *login* (misalnya data kontak pribadi).
-7. **Filter pada data** dari *initial dataset* yang ditampilkan (misalnya berdasarkan kategori atau harga).
+7. **Filter pada data** yang diambil dari *Public API*/*mock API* dan ditampilkan (misalnya berdasarkan kategori atau harga).
 
 ## Tahapan & Tenggat Waktu
 
 ### Checkpoint 1: Ide & Inisiasi Proyek
 
-Kelompok sudah punya ide aplikasi yang jelas: repositori Git dibuat, `README.md` awal terisi (deskripsi aplikasi, daftar modul rencana, sumber *initial dataset*, peran pengguna), dan pembagian modul per anggota sudah disepakati.
+Kelompok sudah punya ide aplikasi yang jelas: repositori Git dibuat, `README.md` awal terisi (deskripsi aplikasi, daftar modul rencana, *Public API*/*mock API* yang akan dipakai, peran pengguna), dan pembagian modul per anggota sudah disepakati.
 
 **Tenggat:** Rabu, 16 September 2026, pukul 23.59 WIB.
 
@@ -116,12 +118,7 @@ Sesuai Kontrak Kelas, **tidak ada perpanjangan *deadline*** dengan alasan apa pu
 
 ## Komponen Penilaian
 
-Proyek Tengah Semester bernilai **10% dari nilai akhir** (lihat [Kriteria Penilaian](../../index.qmd#kriteria-penilaian) di halaman Jadwal untuk komponen lain), terbagi menjadi:
-
-- **7% Individu** - dinilai dari modul masing-masing anggota, mengacu ke **Aturan Khusus per Anggota Kelompok** di atas.
-- **3% Kelompok** - dinilai dari integrasi seluruh modul menjadi satu aplikasi, kelengkapan *deployment* PWS, dan kelengkapan `README.md`.
-
-Rincian rubrik penilaian akan diunggah menyusul di [Panduan Tugas Kelompok](midterm-guide.qmd).
+Proyek Tengah Semester bernilai **10% dari nilai akhir** (lihat [Kriteria Penilaian](../../index.qmd#kriteria-penilaian) di halaman Jadwal untuk komponen lain). Rincian komponen penilaian individu dan kelompok mengacu pada **BRP** mata kuliah ini.
 
 :::
 
@@ -146,24 +143,20 @@ The Mid-Term Group Project is a **website** built in groups using Django, follow
 3. Apply *unit tests* and *deploy* the result to PWS.
 4. Collaborate as a team through one shared Git repository.
 
-## Project Theme: Open, As Long As It Benefits Society
+## Project Theme: Sustainable Living
 
-Every group is free to decide their own application idea - **no fixed theme** is required.
+This year's Mid-Term Group Project theme is **Sustainable Living**. Some subthemes to choose from (not limited to this list):
 
-The only requirement: the application you build must have a **real benefit or impact on society**, not just a generic app with no clear purpose. The application's form is open - a *marketplace*, an information directory, a community platform, a reporting system, and so on - as long as it helps solve a real problem for a specific group of users.
+- Waste Management
+- Sustainable Food & Diet
+- Clean Energy & Carbon Footprint
+- Slow Fashion & Conscious Shopping
+- Urban Farming & Biodiversity
+- Eco-Mindfulness
 
-Some example directions for inspiration (**not a mandatory list** - groups are free to look for other ideas beyond this list):
+Groups are free to pick their specific subtheme and the application's form (a *marketplace*, an information directory, a community platform, a reporting system, and so on), as long as it stays within the **Sustainable Living** theme.
 
-- **MSME Marketplace** - a platform for small/micro business owners in an area to sell their products online.
-- **Volunteer & Donation Coordination** - a platform connecting volunteers or donors with disaster relief or social-cause needs.
-- **Environmental Reporting** - a system for reporting waste, damaged public facilities, or environmental issues in an area.
-- **Education Access** - a platform sharing learning materials or tutoring for underserved areas/schools.
-- **Community Health Information** - a directory of health facilities, blood donation schedules, or public health education.
-- **Local Farmer/Fisher Marketplace** - a platform connecting farmers or fishers directly with consumers, cutting out distribution chains.
-- **Local Government Reporting** - a citizen reporting system for public infrastructure (potholes, broken streetlights, and similar issues).
-- **Inclusive Services Directory** - information on disability-friendly facilities or services in a city.
-
-Whichever direction you pick, your group must be able to clearly explain **who the users are** and **what problem it solves** - both of these will be asked starting from Checkpoint 1.
+Your group must be able to clearly explain **who the users are** and **what problem it solves** - both of these will be asked starting from Checkpoint 1.
 
 ## General Group Assignment Rules
 
@@ -174,36 +167,42 @@ Whichever direction you pick, your group must be able to clearly explain **who t
    Using a **GitHub Organization** is recommended to make collaboration between members easier to manage - the Final Group Project's repository can later be grouped under the same organization too.
    :::
 
-3. Each group determines **one main data category** as the application's *initial dataset*, containing at least **100 entries**. Data sources can come from anywhere (e.g. Kaggle or Wikipedia); if no dataset is available anywhere, groups may *scrape* their own.
-4. That *initial dataset* is implemented as a Model *class* and its data stored in Django's database.
+3. Application data **must** come from an external *Public API*. If no suitable *Public API* is available (forcing you to use your own *dummy data*/*fetch data*), your group **must** build your own external *mock API*/*dummy API* - not just static data written directly in the code.
+4. The application's *design* (wireframe/UI) **must** be made in **Figma**.
 5. Each group member works on **one different module**, determined by the group according to the application idea they've discussed together.
 6. The group's website is *deployed* as one unified application to **PWS** (groups are free to use another PaaS if they want, but PWS remains the recommended one).
 7. The project's `README.md` **must** include:
    - Application description (the app's story and its benefit to society).
    - Names and student IDs of all group members.
    - List of modules with descriptions and the work division per member.
-   - The *initial dataset*'s source.
+   - Source/documentation of the *Public API* used (or a link to your *mock API* if your group built one).
    - The application's user type(s)/role(s) (there can be more than one type of user).
    - The PWS *deployment* link.
-   - A design link (Figma, Canva, etc.) - optional, but counts as a bonus.
+   - A **Figma** design link (required).
 
 ## Rules Specific to Each Group Member
+
+::: {.callout-important}
+### Definition of "One Module"
+
+One module (for the web-based Mid-Term Group Project) means a complete **CRUD** (*Create*, *Read*, *Update*, *Delete*) implementation for one part of the application's data.
+:::
 
 Each member implements their own module, covering:
 
 1. **Models** - whether self-made, provided by Django, or shared from another member's module.
-2. **Views** - to process *requests* and return responses through an HTML *template* or JSON.
+2. **Views** - to process *requests* and return responses through an HTML *template* or JSON, covering all four CRUD operations above.
 3. HTML **Templates** with a systematic structure (`base.html`, `header.html`, `footer.html`, etc.) using a *responsive* CSS *framework* (e.g. Bootstrap or Tailwind).
-4. A **form** that accepts user input and is processed through *Views* (e.g. *insert*/*update*/*query* data to Models).
+4. A **form** that accepts user input and is processed through *Views* (*insert*/*update*/*delete*/*query* data to Models).
 5. **Client-side interactivity** (AJAX/HTMX, as taught in Tutorials 05 and 06).
 6. **Authentication-based filtering** - some information is only visible to logged-in users (e.g. personal contact data).
-7. **Filtering** on the displayed *initial dataset* (e.g. by category or price).
+7. **Filtering** on data fetched from the *Public API*/*mock API* (e.g. by category or price).
 
 ## Stages & Deadlines
 
 ### Checkpoint 1: Project Ideas & Initiation
 
-The group has a clear application idea: the Git repository is created, the initial `README.md` is filled in (application description, planned module list, *initial dataset* source, user roles), and the module division per member has been agreed on.
+The group has a clear application idea: the Git repository is created, the initial `README.md` is filled in (application description, planned module list, the *Public API*/*mock API* to be used, user roles), and the module division per member has been agreed on.
 
 **Deadline:** Wednesday, September 16, 2026, 23:59 WIB.
 
@@ -229,11 +228,6 @@ Per the Class Contract, **no deadline extensions** will be given for any reason 
 
 ## Grading Components
 
-The Mid-Term Group Project is worth **10% of the final grade** (see [Assessment Criteria](../../index.qmd#assessment-criteria) on the Schedule page for other components), split into:
-
-- **7% Individual** - graded from each member's own module, based on the **Rules Specific to Each Group Member** above.
-- **3% Group** - graded from how well all modules integrate into one application, the completeness of the PWS *deployment*, and the completeness of the `README.md`.
-
-Detailed grading rubric will be uploaded later on the [Group Assignment Guide](midterm-guide.qmd) page.
+The Mid-Term Group Project is worth **10% of the final grade** (see [Assessment Criteria](../../index.qmd#assessment-criteria) on the Schedule page for other components). The individual and group grading component breakdown refers to this course's **BRP**.
 
 :::
