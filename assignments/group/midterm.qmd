@@ -35,7 +35,9 @@ Proyek Tengah Semester adalah **situs web** yang dibangun berkelompok menggunaka
 
 ## Tema Proyek: Sustainable Living
 
-Tema Proyek Tengah Semester tahun ini adalah **Sustainable Living**. Beberapa sub-tema yang bisa dipilih (tidak terbatas pada daftar ini):
+Tema Proyek Tengah Semester tahun ini adalah **Sustainable Living** - gaya hidup yang berusaha mengurangi dampak negatif terhadap lingkungan dan sumber daya alam, lewat pilihan konsumsi, kebiasaan, dan keputusan sehari-hari yang lebih berkelanjutan.
+
+Beberapa sub-tema yang bisa dipilih (tidak terbatas pada daftar ini):
 
 - Waste Management
 - Sustainable Food & Diet
@@ -145,7 +147,9 @@ The Mid-Term Group Project is a **website** built in groups using Django, follow
 
 ## Project Theme: Sustainable Living
 
-This year's Mid-Term Group Project theme is **Sustainable Living**. Some subthemes to choose from (not limited to this list):
+This year's Mid-Term Group Project theme is **Sustainable Living** - a lifestyle that tries to reduce negative impact on the environment and natural resources, through more sustainable everyday consumption choices, habits, and decisions.
+
+Some subthemes to choose from (not limited to this list):
 
 - Waste Management
 - Sustainable Food & Diet
