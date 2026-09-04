@@ -58,6 +58,7 @@ Dengan mengikuti langkah-langkah di atas, tim kalian akan memiliki workspace Git
 
 ## Figma
 ![image](../../img/group/guide-1.png)
+
 Figma adalah salah satu alat desain berbasis cloud yang banyak digunakan untuk membuat tampilan antarmuka (UI) dan pengalaman pengguna (UX) pada website maupun aplikasi. Keunggulan utama Figma dibandingkan software desain lain adalah sifatnya yang kolaboratif. Banyak desainer, developer, maupun stakeholder dapat bekerja bersama pada satu file secara real-time, mirip seperti Google Docs. Hal ini memudahkan tim dalam melakukan diskusi, revisi, dan persetujuan desain tanpa perlu mengirim file bolak-balik.
 
 Dalam mempelajari figma adapun beberapa hal yang dapat kalian lakukan, yaitu
@@ -422,7 +423,8 @@ Dalam kerja tim, branch utama seperti `main` atau `master` harus selalu dalam ko
 2. Klik tab "Settings" di repository
 3. Di sidebar kiri, pilih "Branches"
 4. Klik "Add classic branch protection rule"
-![image](../../img/group/guide-9.png)
+
+   ![image](../../img/group/guide-9.png)
 
 5. Di field "Branch name pattern", masukkan nama branch utama yang ingin dilindungi (biasanya `main` atau `master`)
 6. Centang opsi-opsi berikut:
@@ -430,8 +432,10 @@ Dalam kerja tim, branch utama seperti `main` atau `master` harus selalu dalam ko
     - "Require approvals": PR harus di-approve dulu sebelum bisa di-merge
     - "Do not allow bypassing the above settings": Memastikan bahkan admin/owner tidak bisa bypass rules yang sudah dibuat
 7. Klik "Create" untuk menyimpan rules
-![image](../../img/group/guide-10.png)
-![image](../../img/group/guide-11.png)
+
+   ![image](../../img/group/guide-10.png)
+
+   ![image](../../img/group/guide-11.png)
 
 
 
@@ -457,6 +461,7 @@ Step-by Step penggunaan
 **Contoh Penggunaan**
 
 ![Screenshot 2025-09-20 at 13.46.52](../../img/group/guide-12.png)
+
 ![Screenshot 2025-09-20 at 13.47.41](../../img/group/guide-13.png)
 
 Referensi : [Github Docs Issue Tracker](https://docs.github.com/en/issues/tracking-your-work-with-issues)
@@ -771,6 +776,7 @@ By following the steps above, your team will have an organized GitHub workspace 
 
 ## Figma
 ![image](../../img/group/guide-1.png)
+
 Figma is one of the cloud-based design tools widely used to create user interface (UI) designs and user experience (UX) for websites and applications. Figma's main advantage over other design software is its collaborative nature. Many designers, developers, and stakeholders can work together on one file in real-time, similar to Google Docs. This makes it easier for teams to discuss, revise, and approve designs without having to send files back and forth.
 
 In learning Figma, there are several things you can do:
@@ -1114,7 +1120,8 @@ In team work, main branch like `main` or `master` must always be in stable condi
 2. Click "Settings" tab in repository
 3. In left sidebar, select "Branches"
 4. Click "Add classic branch protection rule"
-![image](../../img/group/guide-9.png)
+
+   ![image](../../img/group/guide-9.png)
 
 5. In "Branch name pattern" field, enter name of main branch you want to protect (usually `main` or `master`)
 6. Check the following options:
@@ -1122,8 +1129,10 @@ In team work, main branch like `main` or `master` must always be in stable condi
     - "Require approvals": PR must be approved before it can be merged
     - "Do not allow bypassing the above settings": Ensures even admin/owner cannot bypass created rules
 7. Click "Create" to save rules
-![image](../../img/group/guide-10.png)
-![image](../../img/group/guide-11.png)
+
+   ![image](../../img/group/guide-10.png)
+
+   ![image](../../img/group/guide-11.png)
 
 ## GitHub Issue Tracker
 Issue tracker (or bug / issue tracking system) is a centralized tool used by teams to record, organize, track, and resolve work in the form of bugs, tasks, feature requests, or operational issues throughout project lifecycle.
@@ -1147,6 +1156,7 @@ Step-by-Step usage:
 **Usage Example**
 
 ![image](../../img/group/guide-12.png)
+
 ![image](../../img/group/guide-13.png)
 
 Reference: [Github Docs Issue Tracker](https://docs.github.com/en/issues/tracking-your-work-with-issues)
