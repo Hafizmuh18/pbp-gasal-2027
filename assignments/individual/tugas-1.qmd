@@ -27,13 +27,14 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Individual Assignment 1 **hanya dinilai apabila Tutorial 01 sudah diselesaikan** paling lambat **Rabu, 2 September 2026**. Kalau Tutorial 01 belum dikerjakan, Individual Assignment 1 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
 :::
 
-## Tentang Proyek
-
-Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
-
 ## Target Tugas Ini
 
-Lanjutkan halaman "About Me" yang sudah kamu buat di [Tutorial 01](../../tutorial/tutorial-1.qmd). Tambahkan **satu atau lebih section baru** ke halaman yang sama, masih murni dengan HTML5 dan CSS3 (belum ada database/MVT - itu bagian Tutorial 02).
+Lanjutkan halaman "About Me" yang sudah kamu buat di [Tutorial 01](../../tutorial/tutorial-1.qmd). Tambahkan **satu atau lebih section baru** ke halaman yang sama, dan halaman tersebut masih murni dengan HTML5 dan CSS3. Kamu belum perlu menggunakan database atau menerapkan arsiktektur MVT. Kedua hal tersebut akan dibahas di tutorial selanjutnya.
+
+::: {.callout-note}
+### Tentang Proyek Portofolio
+Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi**, dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan tiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial minggu yang sama.
+:::
 
 Kamu **bebas memilih** section apa yang mau ditambahkan, selama relevan untuk sebuah portofolio pribadi. Beberapa contoh inspirasi:
 
@@ -51,8 +52,11 @@ Desain visual (warna, font, tata letak, dsb.) di contoh Tutorial 01 hanyalah sal
 Checklist minimal untuk tugas ini:
 
 - [ ] Section "About Me" dari Tutorial 01 sudah terisi dengan data kamu sendiri (nama, NPM, foto, bio - bukan lagi data contoh).
-- [ ] Minimal satu section baru ditambahkan ke halaman yang sama.
-- [ ] Section baru tersebut punya isi yang nyata (bukan `lorem ipsum` atau placeholder kosong).
+- [ ] Minimal membuat satu section baru ke halaman yang sama dengan isi minimal 3 item konten.
+      Misalnya, jika membuat section tentang Skills, maka tuliskan tiga contoh bakat kamu.
+      Atau jika kamu membuat section tentang Projects, maka tuliskan tiga contoh proyek yang pernah kerjakan.
+- [ ] Section baru tersebut memiliki aturan CSS khusus di `style.css`.
+      Misalnya, menggunakan tata letak/*layout* Flexbox/Grid, styling item di dalam section, warna, atau efek *hover* tersendiri.
 - [ ] Halaman tetap terlihat rapi di lebar layar desktop maupun mobile.
 - [ ] Proyek berhasil dijalankan dengan `python manage.py runserver` tanpa error.
 
@@ -76,13 +80,26 @@ Jawab pertanyaan-pertanyaan di atas di `README.md` proyekmu (bukan di halaman tu
 ```
 >>>>>>> 02ebcd3e95bc4bb9978a6baaff92413422fd34c2
 
+::: {.callout-note}
+Jika kamu mengerjakan tugas ini 100% secara mandiri tanpa bantuan AI, tuliskan secara jujur *"Tidak menggunakan AI"* pada `README.md` disertai refleksi singkat mengenai proses pemecahan masalah mandiri yang kamu lakukan.
+Kamu tetap berhak mendapatkan nilai penuh (3.5–4.0).
+:::
+
 ## Pengumpulan
 
 Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir tugas ini, di-*push* **sebelum tenggat waktu** di bawah. Commit yang di-*push* setelah tenggat waktu tidak akan diterima. Pastikan repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya untuk penilaian.
 
+Format tautan commit yang benar: 
+`https://github.com/<username>/<repository>/commit/<commit-hash>`
+
+::: {.callout-tip}
+Pastikan *commit* kamu sudah berhasil di-push ke GitHub. Kamu bisa mengujinya dengan membuka browser di mode Incognito/Private Browsing, lalu coba buka alamat tautan *commit* yang akan kamu kumpulkan.
+Jika berhasil dibuka, maka repositori Git kamu di GitHub bisa diakses juga oleh tim pengajar untuk keperluan penilaian.
+:::
+
 ## Tenggat Waktu Pengerjaan
 
-Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 12.00 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
+Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama dengan sesi lab Tutorial 01) dan dikumpulkan paling lambat **7 September 2026, pukul 23.59 WIB** (Senin minggu berikutnya) - lebih lama dari deadline Tutorial 01 sendiri (Rabu, 2 September 2026).
 
 ## Rubrik Penilaian
 
@@ -112,11 +129,11 @@ Individual Assignment 1 rilis **31 Agustus 2026** (Senin, minggu yang sama denga
 
 ### Dokumentasi & AI Disclosure + Pertanyaan Reflektif (10%)
 
-- **1** - `README.md` tidak disediakan; sama sekali tidak menyebutkan penggunaan AI.
-- **2** - `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas. AI *disclosure* sangat samar (mis. "saya pakai ChatGPT").
-- **3** - `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas. AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI.
-- **3.5** - `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas. AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu. Menyertakan *chat* AI atau log *prompting*.
-- **4** - Dokumentasi berkualitas *open-source* (termasuk progres mingguan). AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan.
+- **1** - `README.md` tidak disediakan; 3 pertanyaan reflektif tidak dijawab; sama sekali tidak menyebutkan penggunaan AI.
+- **2** - `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas; 3 pertanyaan reflektif dijawab ala kadarnya; AI *disclosure* sangat samar (mis. "saya pakai ChatGPT").
+- **3** - `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas; 3 pertanyaan reflektif dijawab dengan relevan; AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI.
+- **3.5** - `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas; 3 pertanyaan reflektif dijawab secara mendalam dan analitis; AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu (atau menjelaskan refleksi pemecahan masalah mandiri jika tidak menggunakan AI). Menyertakan *chat* AI atau log *prompting*.
+- **4** - Dokumentasi berkualitas *open-source* (termasuk progres mingguan); jawaban pertanyaan reflektif menunjukkan pemahaman konseptual yang sangat matang; AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan.
 
 :::
 
@@ -135,13 +152,14 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 Individual Assignment 1 **is only graded if Tutorial 01 has been completed** by **Wednesday, September 2, 2026** at the latest. If Tutorial 01 hasn't been done, Individual Assignment 1 **will not be graded**, even if submitted through SCELE.
 :::
 
-## About the Project
-
-This course's Individual Project is a **personal portfolio website**, done individually. Individual Assignments are released weekly following that week's Tutorial topic, and each one continues directly from the code you wrote in that same week's Tutorial.
-
 ## This Assignment's Target
 
-Continue the "About Me" page you built in [Tutorial 01](../../tutorial/tutorial-1.qmd). Add **one or more new sections** to that same page, still using plain HTML5 and CSS3 (no database/MVT yet - that's covered in Tutorial 02).
+Continue the "About Me" page you built in [Tutorial 01](../../tutorial/tutorial-1.qmd). Add **one or more new sections** to that same page, and that page should still use plain HTML5 and CSS3. You do not need to use a database or implement the MVT architecture yet. Both topics will be covered in subsequent tutorials.
+
+::: {.callout-note}
+### About the Portfolio Project
+This course's Individual Project is a **personal portfolio website**, done individually. Individual Assignments are released weekly following that week's Tutorial topic, and each one continues directly from the code you wrote in that same week's Tutorial.
+:::
 
 You're **free to choose** what section(s) to add, as long as they're relevant to a personal portfolio. Some ideas for inspiration:
 
@@ -159,8 +177,11 @@ The visual design (colors, fonts, layout, etc.) in the Tutorial 01 example is ju
 Minimum checklist for this assignment:
 
 - [ ] The "About Me" section from Tutorial 01 is filled in with your own data (name, NPM, photo, bio - no longer sample data).
-- [ ] At least one new section has been added to the same page.
-- [ ] That new section has real content (not `lorem ipsum` or an empty placeholder).
+- [ ] Create at least one new section on the same page with a minimum of 3 content items.
+      For example, if creating a section about Skills, list three examples of your skills.
+      Or if creating a section about Projects, list three examples of projects you have worked on.
+- [ ] That new section has custom CSS rules in `style.css`.
+      For example, using Flexbox/Grid layout, styling items inside the section, colors, or custom hover effects.
 - [ ] The page still looks clean at both desktop and mobile widths.
 - [ ] The project runs successfully with `python manage.py runserver` without errors.
 
@@ -184,13 +205,26 @@ Answer the questions above in your project's `README.md` (not on this assignment
 ```
 >>>>>>> 02ebcd3e95bc4bb9978a6baaff92413422fd34c2
 
+::: {.callout-note}
+If you completed this assignment 100% independently without AI assistance, explicitly state *"Did not use AI"* in your `README.md` along with a brief reflection on your manual problem-solving process.
+You remain fully eligible for maximum marks (3.5–4.0).
+:::
+
 ## Submission
 
 This assignment is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this assignment's final result, pushed **before the deadline** below. Commits pushed after the deadline will not be accepted. Make sure your GitHub repository is **public**, so teaching assistants can access it for grading.
 
+Correct commit link format: 
+`https://github.com/<username>/<repository>/commit/<commit-hash>`
+
+::: {.callout-tip}
+Make sure your commit has been successfully pushed to GitHub. You can test this by opening a browser in Incognito/Private Browsing mode, then try opening the commit link you plan to submit.
+If it opens successfully, your Git repository on GitHub can also be accessed by the teaching team for grading.
+:::
+
 ## Deadline
 
-Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 12:00 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
+Individual Assignment 1 is released **August 31, 2026** (Monday, the same week as the Tutorial 01 lab session) and due no later than **September 7, 2026, 23:59 WIB** (the following Monday) - later than Tutorial 01's own deadline (Wednesday, September 2, 2026).
 
 ## Grading Rubric
 
@@ -220,10 +254,10 @@ Individual Assignment 1 is released **August 31, 2026** (Monday, the same week a
 
 ### Documentation & AI Disclosure + Reflective Question (10%)
 
-- **1** - No `README.md` provided; no mention of AI usage whatsoever.
-- **2** - `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT").
-- **3** - Structured `README.md` with clear project description and setup. AI disclosure lists tools used and generally mentions which parts were assisted.
-- **3.5** - Neat, structured `README.md` with clear weekly setup instructions. Transparent AI disclosure explaining the tools, prompt strategy, and specific assisted parts. Includes AI chat or prompting history/log.
-- **4** - *Open-source* quality documentation (includes the weekly progress). AI disclosure critically analyzes the AI's limitations and highlights manual fixes.
+- **1** - No `README.md` provided; 3 reflective questions not answered; no mention of AI usage whatsoever.
+- **2** - `README.md` exists but lacks project description or clear *setup* instructions; 3 reflective questions answered vaguely; AI disclosure is extremely vague (e.g., "I used ChatGPT").
+- **3** - Structured `README.md` with clear project description and setup; 3 reflective questions answered relevantly; AI disclosure lists tools used and generally mentions which parts were assisted.
+- **3.5** - Neat, structured `README.md` with clear weekly setup instructions; 3 reflective questions answered thoroughly and analytically; transparent AI disclosure explaining tools, prompt strategy, and specific assisted parts (or manual problem-solving reflection if no AI was used). Includes AI chat or prompting history/log.
+- **4** - *Open-source* quality documentation (includes the weekly progress); reflective answers demonstrate mature conceptual understanding; AI disclosure critically analyzes AI limitations and highlights manual fixes.
 
 :::
