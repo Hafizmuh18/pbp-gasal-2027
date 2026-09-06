@@ -38,7 +38,7 @@ website:
           href: tutorial/tutorial-0.qmd
         - text: "Tutorial 01: Django Initial Project, HTML5 dan CSS3"
           href: tutorial/tutorial-1.qmd
-        - text: "Tutorial 2: Implementasi Model-View-Template (MVT) Django"
+        - text: "Tutorial 2: Implementasi Model-View-Template (MVT) pada Django"
           href: tutorial/tutorial-2.qmd
     - id: assignments
       title: "Tugas"

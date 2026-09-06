@@ -437,13 +437,14 @@ iframe {
 .quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-title {
   color: #8ec3f0;
 }
+/* Bootstrap's dark-mode code background (rgba(67,67,67,.65)) only applies
+   to its own `code:not(.sourceCode), li code:not(.sourceCode), td
+   code:not(.sourceCode)` selector - a heading isn't li/td, so code inside
+   h1-h6 falls through to the plain `code:not(.sourceCode)` rule instead,
+   which keeps the *light*-mode background value even in dark mode
+   (illegible: white text on a near-white pill). Match it explicitly. */
 .quarto-dark :is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
-  color: inherit;
-  background-color: transparent;
-  padding: 0;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 700;
+  background-color: rgba(67, 67, 67, 0.65);
 }
 .quarto-dark .pbp-banner {
   background: linear-gradient(135deg, #1e2f3d 0%, #12181f 100%);
