@@ -81,7 +81,7 @@ format-links:
 
 ::: {.content-visible when-profile="id"}
 
-# Tutorial 2: Implementaasi Model-View-Template (MVT) Django {.pbp-page-title}
+# Tutorial 2: Implementasi Model-View-Template (MVT) pada Django {.pbp-page-title}
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
 
@@ -146,10 +146,11 @@ Dalam dunia *web development*, terdapat berbagai pola arsitektur yang dapat memb
 
 ### Apa Itu Konsep MVT?
 
-Seperti yang sudah kalian lihat, MVT terdiri atas Model, View, dan Template. Secara sederhana: </br>
-- Model merupakan data & logika bisnis</br>
-- Template merupakan tampilan akhir yang dilihat oleh pengguna</br>
-- View merupakan jembatan yang menghubungkan antara data(model) dan tampilan(template)</br>
+Seperti yang sudah kalian lihat, MVT terdiri atas Model, View, dan Template. Secara sederhana:
+
+- Model merupakan data & logika bisnis
+- Template merupakan tampilan akhir yang dilihat oleh pengguna
+- View merupakan jembatan yang menghubungkan antara data(model) dan tampilan(template)
 
 ### Apa Itu Model?
 
@@ -178,7 +179,7 @@ def show_experience(request):
 
 ### Apa Itu Template?
 
-Template merupakan berkas HTML yanng menentukan bagaimana aplikasi ditampilkan.
+Template merupakan berkas HTML yang menentukan bagaimana aplikasi ditampilkan.
 
 Contoh template:
 ```html
@@ -201,7 +202,8 @@ Contoh template:
 1. Pengguna mengakses URL tertentu melalui browser.
 2. Django akan memetakan URL tersebut ke View melalui `urls.py`.
 3. View mengambil dan memproses data dari Model apabila dibutuhkan.
-4. Output dari View ditampilkan ke pengguna dengan cara dikirim ke Template
+4. View mengirim *context*-nya ke Template.
+5. Django mengembalikan HTML yang telah dirender sebagai *response*.
 
 ::: {.callout-note}
 Alurnya secara simple:
@@ -210,13 +212,11 @@ Request → urls → View → Model → View → Template → Response
 
 ### Manfaat MVT
 
-Manfaat MVT ada banyak, di antaranya:</br>
-1. Pemisahan Tugas:
-Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapi sehingga lebih mudah dikelola untuk developer.</br>
-2. Kode yang Lebih Terstruktur:
-Aplikasi menjadi lebih modular, mudah diuji dengan test, dan juga scalable.</br>
-3. Reusability:
-Template & View dapat digunakan kembali di berbagai bagian aplikasi secara berulang.</br>
+Manfaat MVT ada banyak, di antaranya:
+
+1. **Pemisahan Tugas** - Logika aplikasi, tampilan, dan data dipisahkan secara jelas dan rapi sehingga lebih mudah dikelola untuk developer.
+2. **Kode yang Lebih Terstruktur** - Aplikasi menjadi lebih modular, mudah diuji dengan test, dan juga scalable.
+3. **Reusability** - Template & View dapat digunakan kembali di berbagai bagian aplikasi secara berulang.
 
 
 ## Pre-Tutorial Notes
@@ -273,7 +273,7 @@ Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direk
 
 2. Buka terminal atau *command prompt* dan pastikan kamu sudah berada pada direktori utama, **`myportofolio`**.
 
-::: {.callout-info}
+::: {.callout-note}
 
 Gunakan perintah `cd [direktori]` untuk berpindah direktori ke direktori lain yang ingin dituju. Perintah ini sangat penting untuk diingat, karena keahlian menggunakan terminal akan bermanfaat tidak hanya untuk mata kuliah PBP, tetapi juga mata kuliah lain nantinya.
 
@@ -293,15 +293,18 @@ Gunakan perintah `cd [direktori]` untuk berpindah direktori ke direktori lain ya
      source env/bin/activate
      ```
 
-::: {.callout-info}
+::: {.callout-note}
 - Untuk pengguna Windows, apabila kamu mendapatkan error berbunyi "*the execution of scripts is disabled on this system...*", berikut adalah solusi yang dapat kamu coba:
     - Buka _PowerShell_ sebagai *administrator* dan jalankan perintah berikut:
+
         ```bash
         Set-ExecutionPolicy Unrestricted -Force
         ```
+
     - Pilih opsi `A` dan tekan `Enter`.
 - Untuk pengguna sistem operasi berbasis Unix (Linux & macOS), jika kamu mendapatkan error berbunyi "*... Permission Denied*", berikut adalah solusi yang dapat kamu coba:
     - Jalankan perintah berikut:
+
         ```bash
         chmod +x env/bin/activate
         ```
@@ -319,8 +322,8 @@ Kamu akan membuat aplikasi baru bernama `main` dalam proyek *myportofolio*.
 
     Setelah perintah di atas dijalankan, direktori baru dengan nama `main` akan terbentuk. Direktori main akan berisi struktur awal untuk aplikasi Django kamu.
 
-::: {.callout-info}
-Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama**, **direktori proyek**, **direktori aplikasi**, *it's' okay!* Kamu akan terbiasa seiring berjalannya waktu. Semangat!
+::: {.callout-note}
+Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama**, **direktori proyek**, **direktori aplikasi**, *it's okay!* Kamu akan terbiasa seiring berjalannya waktu. Semangat!
 :::
 
 2. Mendaftarkan aplikasi `main` ke dalam proyek.
@@ -390,7 +393,7 @@ class Experience(models.Model):
 - Method `__str__` digunakan untuk mengembalikan representasi string dari objek (dalam hal ini judul pengalaman).
 - *Decorator* `@property` digunakan untuk membuat atribut read-only yang nilainya merupakan hasil perhitungan dari atribut lain. Dalam kasus ini, `is_ongoing` akan bernilai `True` jika `ended_at` adalah `None`.
 
-::: {.callout-info}
+::: {.callout-note}
 Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata kuliah Basis Data nanti. Untuk sementara, apabila kamu ingin mengetahui lebih banyak tentang kegunaan *decorator* `@property`, kamu dapat membaca [dokumentasi Python mengenai *class property*](https://docs.python.org/3/library/functions.html#property).
 :::
 
@@ -410,7 +413,7 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
     python manage.py makemigrations
     ```
 
-::: {.callout-info}
+::: {.callout-note}
 `makemigrations` menciptakan berkas migrasi yang berisi perubahan model yang **belum** diaplikasikan ke dalam basis data.
 :::
 
@@ -420,7 +423,7 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
     python manage.py migrate
     ```
 
-::: {.callout-info}
+::: {.callout-note}
 `migrate` mengaplikasikan perubahan model yang tercantum dalam berkas migrasi ke basis data dengan menjalankan perintah sebelumnya.
 :::
 
@@ -474,33 +477,21 @@ def show_experience(request):
 
 ### Langkah 2: Menampilkan Data *Context* pada *Template*
 
-Buka `templates/index.html`, lalu ganti data profil yang masih ditulis langsung dengan *template variable* berikut:
+Buka `templates/index.html`, lalu ganti data profil yang masih ditulis langsung dengan *template variable* berikut (baris `...` menandakan ada konten lain di antaranya yang tidak perlu diubah):
 
 ```html
 <title>{{ name }} - Portofolio</title>
-```
-
-```html
+...
 <a href="#profile" class="brand">{{ name }}</a>
-```
-
-```html
+...
 <h1>{{ name }}</h1>
-```
-
-```html
+...
 <img class="avatar" src="/static/img/burhan.png" alt="Photo of {{ name }}">
-```
-
-```html
+...
 <p class="bio">{{ bio }}</p>
-```
-
-```html
+...
 <dd>{{ npm }}</dd>
-```
-
-```html
+...
 <dd>{{ study_program }}</dd>
 ```
 
@@ -510,7 +501,7 @@ Terakhir, ubah nama pada bagian *footer*:
 <p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
 ```
 
-Sintaks `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, dan `{{ bio }}` adalah *template variable* Django. Ketika halaman diproses, Django menggantinya dengan nilai dari `context` yang memiliki nama kunci yang sama.
+Sintaks `{{{ name }}}`, `{{{ npm }}}`, `{{{ study_program }}}`, dan `{{{ bio }}}` adalah *template variable* Django. Ketika halaman diproses, Django menggantinya dengan nilai dari `context` yang memiliki nama kunci yang sama.
 
 ::: {.callout-note}
 `index.html` tetap menjadi halaman profil. Pada langkah berikutnya, kita akan membuat `experience.html` untuk menampilkan daftar pengalaman. Selesaikan bagian *routing* sebelum mencoba kedua halaman melalui browser, karena *view* baru belum dihubungkan ke URL.
@@ -561,7 +552,7 @@ Sekarang data profil sudah berasal dari `context`. Kita akan membuat halaman ter
 
 Perhatikan tiga bentuk sintaks baru berikut:
 
-- `{{ ... }}` menampilkan sebuah nilai, misalnya judul pengalaman.
+- `{{{ ... }}}` menampilkan sebuah nilai, misalnya judul pengalaman.
 - `{% ... %}` menjalankan logika *template*, misalnya perulangan atau percabangan.
 - `{% empty %}` dijalankan ketika `experience_list` tidak memiliki data.
 
@@ -859,7 +850,15 @@ Ran 6 tests in ...s
 OK
 ```
 
-Setiap titik (`.`) mewakili satu test yang berhasil. Tulisan `OK` berarti seluruh test lulus. Kamu juga dapat menjalankan semua test dalam proyek dengan `python manage.py test`.
+Baris `......` muncul tepat sebelum separator. Pada *verbosity* normal, setiap titik mewakili satu test yang berhasil. `F` mewakili *assertion* yang gagal, sedangkan `E` mewakili error.
+
+Untuk output yang menampilkan nama setiap test, gunakan:
+
+```shell
+python manage.py test main --verbosity 2
+```
+
+Kamu juga dapat menjalankan semua test dalam proyek dengan `python manage.py test`.
 
 ### Langkah 3: Membuktikan bahwa Test Dapat Menangkap Kesalahan
 
@@ -1091,7 +1090,7 @@ Activate the virtual environment you created in Tutorial 0.
   source env/bin/activate
   ```
 
-::: {.callout-info}
+::: {.callout-note}
 If PowerShell blocks script execution on Windows, open PowerShell as an administrator, run `Set-ExecutionPolicy Unrestricted -Force`, and select `A`.
 
 On Linux or macOS, if activation returns `Permission denied`, run `chmod +x env/bin/activate` and try again.
@@ -1107,7 +1106,7 @@ python manage.py startapp main
 
 Django will create a new `main` directory with the initial files for an application.
 
-::: {.callout-info}
+::: {.callout-note}
 Project directory, configuration directory, and application directory may sound similar at first. Keep an eye on the paths in each step and the distinction will become familiar quickly.
 :::
 
@@ -1178,7 +1177,7 @@ Here is what each part does:
 - `__str__()` gives each object a readable string representation.
 - `is_ongoing` returns `True` when `ended_at` is empty.
 
-::: {.callout-info}
+::: {.callout-note}
 The `@property` decorator lets you access a calculated method like an attribute. You can read more in the [Python documentation on `property`](https://docs.python.org/3/library/functions.html#property).
 :::
 
@@ -1192,7 +1191,7 @@ First, generate the migration:
 python manage.py makemigrations
 ```
 
-::: {.callout-info}
+::: {.callout-note}
 `makemigrations` creates migration files for model changes that have not been recorded yet.
 :::
 
@@ -1202,7 +1201,7 @@ Apply those migrations to the local database:
 python manage.py migrate
 ```
 
-::: {.callout-info}
+::: {.callout-note}
 `migrate` applies the recorded operations and creates or updates the corresponding database tables.
 :::
 
@@ -1256,33 +1255,21 @@ def show_experience(request):
 
 ### Step 2: Display Context Data in the Template
 
-Open `templates/index.html`, then replace the hard-coded profile data with the following template variables:
+Open `templates/index.html`, then replace the hard-coded profile data with the following template variables (the `...` lines mark other content in between that you leave unchanged):
 
 ```html
 <title>{{ name }} - Portfolio</title>
-```
-
-```html
+...
 <a href="#profile" class="brand">{{ name }}</a>
-```
-
-```html
+...
 <h1>{{ name }}</h1>
-```
-
-```html
+...
 <img class="avatar" src="/static/img/burhan.png" alt="Photo of {{ name }}">
-```
-
-```html
+...
 <p class="bio">{{ bio }}</p>
-```
-
-```html
+...
 <dd>{{ npm }}</dd>
-```
-
-```html
+...
 <dd>{{ study_program }}</dd>
 ```
 
@@ -1292,7 +1279,7 @@ Finally, update the name in the footer:
 <p>&copy; 2026 {{ name }}. Fakultas Ilmu Komputer, Universitas Indonesia.</p>
 ```
 
-The `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, and `{{ bio }}` syntax represents Django template variables. When the page is rendered, Django replaces each variable with the value stored under the matching context key.
+The `{{{ name }}}`, `{{{ npm }}}`, `{{{ study_program }}}`, and `{{{ bio }}}` syntax represents Django template variables. When the page is rendered, Django replaces each variable with the value stored under the matching context key.
 
 ::: {.callout-note}
 `index.html` remains the profile page. Next, we will create `experience.html` for the experience list. Complete the routing section before trying either page in a browser, because the new views are not connected to URLs yet.
@@ -1343,7 +1330,7 @@ The profile fields now come from the context. We will create a separate page tha
 
 There are three new forms of template syntax here:
 
-- `{{ ... }}` displays a value, such as an experience title.
+- `{{{ ... }}}` displays a value, such as an experience title.
 - `{% ... %}` runs presentation logic, such as a loop or condition.
 - `{% empty %}` runs when `experience_list` contains no objects.
 
