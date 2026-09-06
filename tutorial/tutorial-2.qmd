@@ -100,7 +100,7 @@ Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 - Memahami pembuatan *unit test* pada *framework* Django
 
 ::: {.callout-warning}
-**Tutorial ini adalah prasyarat wajib untuk Individual Assignment minggu ini** - jika Tutorial ini belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tenggat waktu lengkap.
+**Tutorial ini adalah prasyarat wajib untuk Individual Assignment minggu ini** - jika Tutorial ini belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial 02 adalah **Rabu, 9 September 2026**; deadline Individual Assignment 2 adalah **Senin, 14 September 2026**. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
 :::
 
 Tutorial ini adalah **Tutorial 2**, lanjutan langsung dari [Tutorial 1](tutorial-1.qmd) - tutorial ketiga dari proyek yang akan kamu bangun berkelanjutan sepanjang semester: sebuah **website portofolio pribadi**. Semua tutorial berikutnya akan melanjutkan langsung dari hasil tutorial ini, jadi pastikan proyekmu berjalan dengan baik sebelum lanjut ke tutorial berikutnya.
@@ -915,7 +915,7 @@ After completing this tutorial, students are expected to be able to:
 - Write and run basic automated tests with Django's testing tools.
 
 ::: {.callout-warning}
-**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. See the [Schedule page](../index.qmd#semester-schedule) for the exact deadlines.
+**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. Tutorial 02's deadline is **Wednesday, September 9, 2026**; Individual Assignment 2's deadline is **Monday, September 14, 2026**. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
 :::
 
 This is **Tutorial 2**, a direct continuation of [Tutorial 1](tutorial-1.qmd). It is the third tutorial in the personal portfolio project you will keep building throughout the semester.
