@@ -477,7 +477,7 @@ def show_experience(request):
 Buka `templates/index.html`, lalu ganti data profil yang masih ditulis langsung dengan *template variable* berikut:
 
 ```html
-<title>{{ name }} - Portfolio</title>
+<title>{{ name }} - Portofolio</title>
 ```
 
 ```html
