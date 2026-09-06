@@ -76,7 +76,7 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE dalam bentuk **sat
 
 ## Tenggat Waktu Pengerjaan
 
-Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling lambat **14 September 2026, pukul 12.00 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 02, yaitu Rabu, 9 September 2026.
+Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling lambat **14 September 2026, pukul 23.59 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 02, yaitu Rabu, 9 September 2026.
 
 ## Rubrik Penilaian
 
@@ -86,7 +86,7 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 - **2** - Aplikasi berjalan sebagian; banyak fitur *error*; implementasi materi minggu ini minim atau salah.
 - **3** - Aplikasi berjalan baik dan berhasil mengimplementasikan materi minggu ini, dengan sedikit bug atau fungsi yang kurang mulus.
 - **3.5** - Fungsionalitas berjalan sempurna tanpa bug. Semua instruksi dan topik minggu ini diimplementasikan dengan akurat.
-- **4** - Menambahkan fitur ekstra, interaktivitas, atau elemen UI/UX yang relevan di luar instruksi minggu ini.
+- **4** - Melampaui ekspektasi instruksi minggu ini secara kreatif - bebas berkreasi sesuai idemu sendiri, bukan sekadar mengikuti arahan yang tersedia.
 
 ### Kualitas & Struktur Kode (10%)
 
@@ -94,7 +94,7 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 - **2** - Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*).
 - **3** - Kode cukup rapi dan terstruktur, mengikuti alur Model-View-Template serta *routing* yang diajarkan di Tutorial 02.
 - **3.5** - Struktur kode sangat rapi dan modular; tanggung jawab model, *view*, *template*, dan konfigurasi URL dipisahkan dengan jelas; serta test mudah dibaca.
-- **4** - Menerapkan optimasi kode tingkat lanjut, memisahkan logika dengan bersih, atau menambahkan komentar/docstring kode yang sangat informatif.
+- **4** - Kualitas kode melampaui ekspektasi minggu ini, mencerminkan kreativitas dan penguasaan yang matang - bukan sekadar mengikuti pola yang diajarkan.
 
 ### Git & Disiplin (10%)
 
@@ -102,7 +102,7 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 - **2** - Dikumpulkan tepat waktu; penggunaan Git sangat buruk (mis. cuma 1 *commit* besar dengan pesan tidak jelas).
 - **3** - Dikumpulkan tepat waktu; ada beberapa *commit*, tapi pesan *commit* tidak deskriptif (mis. "update", "fix").
 - **3.5** - Dikumpulkan tepat waktu. Riwayat *commit* rutin, mencerminkan progres bertahap, dan pesannya sangat deskriptif.
-- **4** - Menerapkan *branching* yang terorganisir untuk tiap fitur, atau menjaga riwayat *commit* yang rapi dan profesional (mis. *conventional commits*).
+- **4** - Disiplin dan riwayat Git melampaui ekspektasi minggu ini, mencerminkan kematangan dan inisiatif dalam mengelola proyek.
 
 ### Dokumentasi & AI Disclosure + Pertanyaan Reflektif (10%)
 
@@ -110,7 +110,7 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 - **2** - `README.md` ada tapi tidak ada deskripsi proyek atau instruksi *setup* yang jelas. AI *disclosure* sangat samar (mis. "saya pakai ChatGPT").
 - **3** - `README.md` terstruktur dengan deskripsi proyek dan *setup* yang jelas. AI *disclosure* menyebutkan *tools* yang dipakai dan secara umum menyebutkan bagian mana yang dibantu AI.
 - **3.5** - `README.md` rapi dan terstruktur dengan instruksi *setup* mingguan yang jelas. AI *disclosure* transparan menjelaskan *tools*, strategi *prompting*, dan bagian spesifik yang dibantu. Menyertakan *chat* AI atau log *prompting*.
-- **4** - Dokumentasi berkualitas *open-source* (termasuk progres mingguan). AI *disclosure* menganalisis secara kritis keterbatasan AI dan menyoroti perbaikan manual yang dilakukan.
+- **4** - Dokumentasi dan AI *disclosure* melampaui ekspektasi minggu ini, mencerminkan kedalaman dan inisiatif yang matang.
 
 :::
 
@@ -178,7 +178,7 @@ Submit this assignment through the SCELE submission slot as **one link to a GitH
 
 ## Deadline
 
-Individual Assignment 2 is released on **September 7, 2026** and is due no later than **September 14, 2026, 12:00 WIB**. This deadline is later than Tutorial 02's deadline on Wednesday, September 9, 2026.
+Individual Assignment 2 is released on **September 7, 2026** and is due no later than **September 14, 2026, 23:59 WIB**. This deadline is later than Tutorial 02's deadline on Wednesday, September 9, 2026.
 
 ## Grading Rubric
 
@@ -188,7 +188,7 @@ Individual Assignment 2 is released on **September 7, 2026** and is due no later
 - **2** - Application runs partially; multiple features error out; implementation of the week's material is minimal or incorrect.
 - **3** - Application runs well and successfully implements the week's material, with minor bugs or clunky functions remaining.
 - **3.5** - Functionality runs perfectly without bugs. All instructions and topics for the week are implemented accurately.
-- **4** - Adds relevant extra features, interactivity, or UI/UX elements beyond the week's instructions.
+- **4** - Goes beyond this week's expectations creatively - free to build on your own ideas, not just follow the given instructions.
 
 ### Code Quality & Structure (10%)
 
@@ -196,7 +196,7 @@ Individual Assignment 2 is released on **September 7, 2026** and is due no later
 - **2** - Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code).
 - **3** - Code is fairly neat and structured, following the Model-View-Template flow and routing taught in Tutorial 02.
 - **3.5** - Code is highly neat and modular; model, view, template, and URL configuration responsibilities are clearly separated; and tests are easy to read.
-- **4** - Implements advanced code optimization, cleanly separates logic, or adds highly informative code comments/docstrings.
+- **4** - Code quality goes beyond this week's expectations, reflecting creativity and mature mastery - not just following the taught pattern.
 
 ### Git & Discipline (10%)
 
@@ -204,7 +204,7 @@ Individual Assignment 2 is released on **September 7, 2026** and is due no later
 - **2** - Submitted on time; Git usage is very poor (e.g., only 1 massive *commit* with an unclear message).
 - **3** - Submitted on time; multiple *commits* exist, but commit messages are not descriptive (e.g., "update", "fix").
 - **3.5** - Submitted on time. Commit history is routine, reflects gradual progress, and messages are highly descriptive.
-- **4** - Implements organized *branching* for individual features, or maintains a flawless and professional commit history (e.g., *conventional commits*).
+- **4** - Git discipline and history go beyond this week's expectations, reflecting maturity and initiative in managing the project.
 
 ### Documentation & AI Disclosure + Reflective Questions (10%)
 
@@ -212,6 +212,6 @@ Individual Assignment 2 is released on **September 7, 2026** and is due no later
 - **2** - `README.md` exists but lacks project description or clear *setup* instructions. AI disclosure is extremely vague (e.g., "I used ChatGPT").
 - **3** - Structured `README.md` with clear project description and setup. AI disclosure lists tools used and generally mentions which parts were assisted.
 - **3.5** - Neat, structured `README.md` with clear weekly setup instructions. Transparent AI disclosure explaining the tools, prompt strategy, and specific assisted parts. Includes AI chat or prompting history/log.
-- **4** - *Open-source* quality documentation (includes the weekly progress). AI disclosure critically analyzes the AI's limitations and highlights manual fixes.
+- **4** - Documentation and AI disclosure go beyond this week's expectations, reflecting mature depth and initiative.
 
 :::
