@@ -11,7 +11,7 @@ profile:
   default: id
 
 website:
-  site-url: https://hafizmuh18.github.io/pbp-gasal-2027/
+  site-url: https://github.com/pbp-fasilkom-ui/gasal-2027
   favicon: img/logo.png
 
 from: markdown-citations

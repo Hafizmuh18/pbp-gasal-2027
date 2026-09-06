@@ -130,6 +130,15 @@ h2 {
   padding-bottom: 0.35rem;
   display: inline-block;
 }
+/* Bootstrap dims h3/h4 to opacity:0.9 by default. Barely visible on solid
+   text, but it compounds with inline <code>'s already-low-contrast color
+   (purple on near-white) whenever a heading contains a `code span`, making
+   it look faded/blurry compared to code elsewhere on the page - restore
+   full opacity so headings render at their code's true color in both
+   light and dark mode. */
+h3, h4 {
+  opacity: 1;
+}
 
 /* ===== Banners (hero / section headers with mascot) ===== */
 .pbp-banner {

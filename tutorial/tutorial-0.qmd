@@ -138,6 +138,13 @@ git config user.email "burhan@example.com"
 Konfigurasi internal (nama dan email yang kamu gunakan untuk *login*) hanya berlaku untuk proyek Git yang sedang kamu buka - jadi cuma untuk folder Git yang sedang aktif.
 :::
 
+::: {.callout-important}
+Pastikan kamu menggunakan nama (`user.name`) dan email (`user.email`) yang konsisten di seluruh pekerjaan terkait kuliah PBP.
+Tim pengajar (dosen dan asisten dosen) memeriksa proses pengerjaan dan kepemilikan kode berdasarkan riwayat *commit* Git.
+*Commit* dengan identitas yang tidak konsisten akan mempersulit pemeriksaan dan berpotensi dianulir saat penilaian,
+atau pada kasus terburuk dianggap sebagai indikasi plagiarisme.
+:::
+
 ### Langkah 3: Konfigurasi Autentikasi
 
 **Windows:**
@@ -262,7 +269,10 @@ Kebiasaan baik menulis pesan *commit*: jelaskan singkat apa yang kamu lakukan, b
    git clone <URL_CLONE>
    ```
 
-Setelah ini kamu punya tiga repositori: repositori asli di komputer lokal, repositori daring di GitHub, dan repositori baru hasil *cloning* yang terhubung ke repositori GitHub yang sama. Ini memungkinkanmu bekerja dengan repositori yang sama dari beberapa tempat/komputer dengan mudah.
+Setelah ini kamu punya tiga repositori: repositori asli di komputer lokal, repositori daring di GitHub, dan repositori baru hasil *cloning* yang terhubung ke repositori GitHub yang sama.
+Ini memungkinkanmu bekerja dengan repositori yang sama dari beberapa tempat/komputer dengan mudah.
+
+Sebelum lanjut ke langkah selanjutnya, harap kembali ke repositori asli `myportofolio` yang kamu buat di Langkah 1 menggunakan terminal.
 
 ### Langkah 4: Latihan Branching dan Pull Request
 
@@ -273,17 +283,34 @@ Pada tahap ini kamu akan mempelajari penggunaan *branch* di Git. Penggunaan *bra
 - *Branch* di Git adalah cabang terpisah dari *source code* yang memungkinkan pengembangan independen dari fitur atau perubahan.
 - Hal ini memungkinkan kamu untuk bekerja pada fitur atau perbaikan *bug* tanpa mengganggu kode yang ada di *branch* utama (`main`).
 
-1. Buat dan pindah ke *branch* baru dengan perintah `git checkout -b <NAMA_BRANCH>`.
+1. Cek *branch* yang sedang aktif dengan perintah `git branch`:
+
+   ```shell
+   git branch
+   ```
+
+   Perintah tersebut akan menampilkan daftar nama *branch* yang ada di repositori Git.
+   *Branch* yang sedang aktif akan memiliki awalan berupa tanda *asterisk* (`\*`).
+   Pastikan nama *branch* yang sedang aktif adalah *branch* `main`.
+
+2. Buat dan pindah ke *branch* baru dengan perintah `git switch -c <NAMA_BRANCH>`.
 
    ```bash
-   git checkout -b latihan-branch
+   git switch -c latihan-branch
    ```
 
    ::: {.callout-tip}
-   Kalau kamu ingin berpindah ke *branch* yang **sudah ada** (bukan membuat baru), jalankan `git checkout <NAMA_BRANCH>` saja tanpa flag `-b`. Flag `-b` khusus dipakai untuk membuat *branch* baru sekaligus langsung berpindah ke sana.
+   Kalau kamu ingin berpindah ke *branch* yang **sudah ada** (bukan membuat baru),
+   jalankan `git switch <NAMA_BRANCH>` saja tanpa flag apapun.
+   Flag `-c` khusus dipakai untuk membuat *branch* baru sekaligus langsung berpindah ke sana.
+
+   Beberapa contoh pemanggilan perintah Git di Internet juga menyarankan perintah `git checkout -b` untuk membuat *branch* baru sekaligus pindah ke *branch* tersebut.
+   Secara fungsionalitas mirip dengan `git switch` yang disebutkan di tutorial ini.
+   Hanya saja, perintah `checkout` tumpang tindih dengan fitur Git lainnya yang tidak berkaitan dengan navigasi antar *branch*.
+   Oleh karena itu, muncullah perintah `git switch` yang lebih fokus untuk berpindah *branch*.
    :::
 
-2. Ubah sedikit isi `README.md`, lalu simpan, `add`, `commit`, dan push *branch* tersebut.
+3. Ubah sedikit isi `README.md`, lalu simpan, `add`, `commit`, dan push *branch* tersebut.
 
    ```bash
    git add README.md
@@ -291,8 +318,17 @@ Pada tahap ini kamu akan mempelajari penggunaan *branch* di Git. Penggunaan *bra
    git push -u origin latihan-branch
    ```
 
-3. Buka repositorimu di GitHub. Secara otomatis akan muncul *pop-up* dengan tombol **Compare & pull request**. Kalau tidak muncul, alternatifnya tekan tombol **Pull Request**, lalu pilih **New pull request**. GitHub akan membandingkan perubahan di kedua *branch* yang ingin digabungkan.
-4. Apabila tidak ada konflik, klik **Merge pull request** untuk menggabungkan perubahan dari `latihan-branch` ke `main`.
+4. Buka repositorimu di GitHub. Secara otomatis akan muncul *pop-up* dengan tombol **Compare & pull request**. Kalau tidak muncul, alternatifnya tekan tombol **Pull Request**, lalu pilih **New pull request**. GitHub akan membandingkan perubahan di kedua *branch* yang ingin digabungkan.
+5. Apabila tidak ada konflik, klik **Merge pull request** untuk menggabungkan perubahan dari `latihan-branch` ke `main`.
+6. Setelah *pull request* berhasil digabungkan di GitHub, buka kembali terminal dan repositori Git tutorial ini di komputermu.
+   Lalu pindah *branch* aktif ke `main` dan ambil versi terkini dari *branch* tersebut:
+
+   ```shell
+   git switch main
+   git pull origin main
+   ```
+
+   Riwayat *commit* terbaru dari *branch* `main` akan ditarik dari GitHub dan digabungkan dengan *branch* `main` milikmu di repositori Git lokal.
 
 ::: {.callout-note}
 **Konflik** terjadi ketika perubahan pada satu *branch* bertabrakan dengan perubahan di *branch* lain - misalnya kalau dua bagian berbeda mengubah baris yang sama dalam waktu bersamaan, Git tidak bisa otomatis memutuskan perubahan mana yang harus dipakai. Kalau ini terjadi, GitHub akan minta kamu menentukan sendiri perubahan mana yang dipakai sebelum bisa merge - ini normal terjadi kalau kamu bekerja di banyak *branch* sekaligus. Memahami konsep *branching* ini penting karena memungkinkan pengembangan yang terorganisir dan terpisah, sebelum semua perubahan digabungkan kembali ke kode utama.
@@ -336,17 +372,23 @@ Kamu akan lihat `(env)` muncul di depan prompt terminal kalau berhasil.
 
 ### Langkah 2: Menyiapkan Dependencies dan Membuat Proyek Django
 
-**Dependencies** adalah *library*/*package* yang dibutuhkan aplikasimu untuk berjalan. Buat berkas `requirements.txt` berisi daftar *dependencies* berikut (tanpa perlu menentukan versi spesifik):
+**Dependencies** adalah *library*/*package* yang dibutuhkan aplikasimu untuk berjalan.
+Buat berkas `requirements.txt` berisi daftar *dependencies* berikut:
 
 ```text
-django
+django~=6.0
 gunicorn
-whitenoise
 psycopg2-binary
-requests
-urllib3
 python-dotenv
+whitenoise
 ```
+
+::: {.callout-note}
+Perhatikan bahwa *dependency* Django mencantumkan rentang versi menggunakan simbol `~=`.
+Rentang versi tersebut membatasi `pip` (*package manager* Python) agar memasang Django versi 6 ke atas dan di bawah versi 7 (`6.0 <= x < 7.0`).
+Hal ini bertujuan untuk memastikan versi Django yang dipakai selama perkuliahan PBP tetap konsisten di versi 6,
+terutama ketika mulai mengembangkan proyek Django secara berkelompok.
+:::
 
 Install semua *dependencies* tersebut:
 
@@ -364,11 +406,37 @@ django-admin startproject myportofolio .
 Pastikan karakter `.` tertulis di akhir perintah - ini membuat Django meletakkan `manage.py` langsung di folder `myportofolio`, bukan di dalam subfolder baru.
 :::
 
+3. Buat berkas `.gitignore` di root proyek (sejajar dengan `manage.py`) untuk memastikan berkas sensitif (`.env*`),
+   database lokal (`db.sqlite3`), dan folder *virtual environment* (`env/`) tidak pernah masuk sebagai *commit* ke repositori Git:
+
+   ```text
+   # Environments & Credentials
+   env/
+   venv/
+   .env*
+
+   # Django Database & Cache
+   db.sqlite3
+   __pycache__/
+   *.pyc
+
+   # OS & IDE Files
+   .DS_Store
+   .vscode/*
+   !.vscode/settings.json
+   .idea/
+   ```
+
+   ::: {.callout-important}
+   Pastikan berkas `.gitignore` di atas sudah dibuat sebelum kamu membuat berkas `.env` atau menjalankan `git add`,
+   agar kredensial dan berkas lokal tidak terlanjur masuk ke riwayat *commit* Git.
+   :::
+
 ### Langkah 3: Konfigurasi Environment Variables
 
 **Environment variables** adalah variabel yang disimpan di luar kode program, dipakai untuk menyimpan informasi konfigurasi (kredensial database, API key, dst) supaya kode yang sama bisa jalan di environment yang berbeda tanpa diubah.
 
-1. Buat berkas `.env` di root proyek (sejajar dengan `manage.py`), isi dengan:
+1. Buat berkas `.env` di root proyek, isi dengan:
 
    ```env
    PRODUCTION=False
@@ -392,24 +460,33 @@ Pastikan karakter `.` tertulis di akhir perintah - ini membuat Django meletakkan
    - `SCHEMA`: nama schema database, disesuaikan lagi dengan kebutuhan tiap tutorial/tugas.
    :::
 
-3. Tambahkan kode berikut di bagian atas `settings.py` (setelah import `Path`), lalu tambahkan konfigurasi `ALLOWED_HOSTS` dan `PRODUCTION`:
+3. Buka berkas `settings.py` yang ada di dalam subfolder `myportofolio`. Di bagian paling atas berkas (setelah `from pathlib import Path`), tambahkan kode untuk mengimpor *package* `os` dan membaca berkas `.env`:
 
    ```python
    import os
    from dotenv import load_dotenv
+
    # Load environment variables from .env file
    load_dotenv()
    ```
+
+4. Cari variabel `ALLOWED_HOSTS` yang sudah ada di dalam `settings.py` (secara default berisi `ALLOWED_HOSTS = []`), lalu ubah nilainya agar mengizinkan akses dari `localhost` dan `127.0.0.1`:
 
    ```python
    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
    ```
 
+   ::: {.callout-important}
+   Pastikan kamu mengubah baris `ALLOWED_HOSTS = []` yang sudah ada, bukannya menambahkan baris baru di bagian atas file.
+   :::
+
+5. Di bawah `ALLOWED_HOSTS`, tambahkan variabel `PRODUCTION` untuk membaca status *environment* dari berkas `.env`:
+
    ```python
    PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
    ```
 
-4. Cari bagian `DATABASES` di `settings.py`, ganti dengan konfigurasi yang otomatis memilih SQLite (development) atau PostgreSQL (production):
+6. Cari bagian `DATABASES` di `settings.py`, lalu ganti dengan konfigurasi dinamis berikut yang otomatis memilih SQLite (development) atau PostgreSQL (production):
 
    ```python
    # Database configuration
@@ -462,137 +539,6 @@ Selamat, kamu sudah berhasil membuat aplikasi Django dari awal!
 
 ### Langkah 6: Simpan Perubahan ke GitHub
 
-Buat berkas `.gitignore` di root proyek (sejajar dengan `manage.py`) supaya `env/`, berkas `.env`/`.env.prod`, `db.sqlite3`, dan berkas sementara lain tidak ikut ter-*commit*:
-
-```
-# Django
-*.log
-*.pot
-*.pyc
-__pycache__/
-db.sqlite3
-media
-
-# Backup files
-*.bak
-
-# If you are using PyCharm
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-.idea/**/aws.xml
-.idea/**/contentModel.xml
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
-.idea/**/gradle.xml
-.idea/**/libraries
-*.iws
-
-# IntelliJ
-out/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Python
-*.py[cod]
-*$py.class
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery
-celerybeat-schedule.*
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env*
-!.env.example*
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-
-# Sublime Text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history
-
-# macOS
-.DS_Store
-```
-
-::: {.callout-important}
-Berkas `.env` dan `.env.prod` **tidak boleh** ikut ter-*push* ke GitHub karena (nantinya) berisi kredensial - pastikan `.gitignore` di atas sudah dibuat SEBELUM kamu menjalankan `git add`.
-:::
-
 Aktifkan lagi *virtual environment* kalau perlu, lalu commit dan push proyek Django yang baru dibuat.
 
 ```bash
@@ -614,7 +560,7 @@ Selamat! Kamu sudah menyiapkan akun GitHub, IDE, Git, dan proyek Django pertamam
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 - [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-- [Django - Installation](https://docs.djangoproject.com/en/4.2/topics/install/)
+- [Django - Installation](https://docs.djangoproject.com/en/stable/topics/install/)
 
 :::
 
@@ -744,6 +690,13 @@ git config user.email "burhan@example.com"
 Internal configuration (the name and email used for *login*) only applies to the Git project you currently have open - so only for the Git folder that's currently active.
 :::
 
+::: {.callout-important}
+Please make sure you use a consistent Git identity (`user.name` and `user.email`) across all PBP coursework.
+The teaching team (TAs and lecturers) evaluates your work by inspecting your development process and verifying code authorship via Git commit history.
+Git commits with inconsistent identity make verification difficult, thus increasing the risk of grade penalties or,
+in the worst case, being flagged as a plagiarism attempt.
+:::
+
 ### Step 3: Configure Authentication
 
 **Windows:**
@@ -868,7 +821,15 @@ Good commit message habit: briefly explain what you did, usually in English (e.g
    git clone <CLONE_URL>
    ```
 
-You now have three repositories: the original one on your local machine, the remote one on GitHub, and the new cloned copy connected to that same GitHub repository. This lets you work with the same repository from multiple places easily.
+At this stage, you have three Git repositories:
+
+1. The original, local Git repository you initially created in the first step.
+2. The online Git repository on GitHub that was pushed from the local Git repository.
+3. The cloned, local Git repository that is sourced from GitHub to a different location from the original Git repository locally.
+
+These examples show you that we can have multiple Git repositories either in our own local computer or on a remote location.
+
+Before moving on to the next step, please return to your original `myportofolio` repository created in Step 1 using your terminal.
 
 ### Step 4: Practice Branching and Pull Requests
 
@@ -879,26 +840,51 @@ At this stage you'll learn how to use *branches* in Git. Branching lets you deve
 - A *branch* in Git is a separate line of *source code* that allows independent development of a feature or change.
 - This lets you work on a feature or bug fix without disturbing the code on the main branch (`main`).
 
-1. Create and switch to a new branch with `git checkout -b <BRANCH_NAME>`.
+1. Check the currently active branch using `git branch`:
+
+   ```shell
+   git branch
+   ```
+
+   This command lists all existing branches in your Git repository.
+   The currently active branch will be marked with an asterisk symbol (`*`).
+   Make sure the active branch is `main`.
+
+2. Create and switch to a new branch with `git switch -c <BRANCH_NAME>`.
 
    ```bash
-   git checkout -b latihan-branch
+   git switch -c branching-practice
    ```
 
    ::: {.callout-tip}
-   If you want to switch to a branch that **already exists** (not create a new one), just run `git checkout <BRANCH_NAME>` without the `-b` flag. The `-b` flag is specifically for creating a new branch and switching to it in one step.
+   If you want to switch to an existing branch, run `git switch <BRANCH_NAME>` without any flags.
+   The `-c` flag is specifically used to create a new branch and switch to it.
+
+   Many Git examples on the Internet still suggest `git checkout -b` to create and switch to a branch.
+   Functionally, it is similar to `git switch` used in this tutorial.
+   However, `git checkout` overloads multiple Git features unrelated to branch navigation.
+   Hence, Git developers introduced `git switch` to provide a more focused command for branch switching.
    :::
 
-2. Make a small change to `README.md`, save it, then `add`, `commit`, and push that branch.
+3. Make a small change to `README.md`, save it, then `add`, `commit`, and push that branch.
 
    ```bash
    git add README.md
    git commit -m "Update README.md"
-   git push -u origin latihan-branch
+   git push -u origin branching-practice
    ```
 
-3. Open your repository on GitHub. A **Compare & pull request** *pop-up* will appear automatically. If it doesn't, click the **Pull Request** button instead, then choose **New pull request**. GitHub will compare the changes between the two branches you want to merge.
-4. If there's no conflict, click **Merge pull request** to merge the changes from `latihan-branch` into `main`.
+4. Open your repository on GitHub. A **Compare & pull request** *pop-up* will appear automatically. If it doesn't, click the **Pull Request** button instead, then choose **New pull request**. GitHub will compare the changes between the two branches you want to merge.
+5. If there's no conflict, click **Merge pull request** to merge the changes from `branching-practice` into `main`.
+6. After you successfully merge the pull request on GitHub, reopen your terminal and navigate to the local Git repository of this tutorial in your computer.
+   Then, switch the active branch to `main` and pull the latest version of `main` branch:
+
+   ```shell
+   git switch main
+   git pull origin main
+   ```
+
+   The latest commit history from `main` branch on GitHub will be fetched and merged into your local `main` branch.
 
 ::: {.callout-note}
 A **conflict** happens when changes on one branch collide with changes on another - for example, if two different changes touch the same line at the same time, Git can't automatically decide which change should be kept. When this happens, GitHub will ask you to decide which change to keep before you can merge - this is normal when working across multiple branches. Understanding this branching concept matters because it enables organized, isolated development before everything gets merged back into the main code.
@@ -942,17 +928,23 @@ You'll see `(env)` appear in front of your terminal prompt once it's active.
 
 ### Step 2: Set Up Dependencies and Create the Django Project
 
-**Dependencies** are the libraries/packages your app needs to run. Create a `requirements.txt` file with the following dependencies (no need to pin specific versions):
+**Dependencies** are the libraries/packages your app needs to run.
+Create a `requirements.txt` file with the following dependencies:
 
 ```text
-django
+django~=6.0
 gunicorn
-whitenoise
 psycopg2-binary
-requests
-urllib3
 python-dotenv
+whitenoise
 ```
+
+::: {.callout-note}
+Notice that the Django version is pinned to a specific version range using the `~=` symbol.
+This version range tells `pip` (Python's package manager) to install the latest Django release from version 6.0 up to, but excluding, version 7.0 (`6.0 <= x < 7.0`).
+Version pinning ensures the Django version used throughout PBP coursework stays consistent at version 6,
+especially when developing a Django project in the group assignments.
+:::
 
 Install all of them:
 
@@ -970,11 +962,37 @@ django-admin startproject myportofolio .
 Make sure the `.` character is at the end of the command - this makes Django place `manage.py` directly in the `myportofolio` folder instead of inside a new subfolder.
 :::
 
+3. Create a `.gitignore` file at the project root (next to `manage.py`) to ensure sensitive credentials (`.env*`),
+   local databases (`db.sqlite3`), and virtual environment folders (`env/`) are never committed to GitHub:
+
+   ```text
+   # Environments & Credentials
+   env/
+   venv/
+   .env*
+
+   # Django Database & Cache
+   db.sqlite3
+   __pycache__/
+   *.pyc
+
+   # OS & IDE Files
+   .DS_Store
+   .vscode/*
+   !.vscode/settings.json
+   .idea/
+   ```
+
+   ::: {.callout-important}
+   Make sure the `.gitignore` file above is created before you create `.env` files or run `git add`,
+   so sensitive credentials and local files are never tracked in your Git history.
+   :::
+
 ### Step 3: Configure Environment Variables
 
 **Environment variables** are variables stored outside your program's code, used to hold configuration info (database credentials, API keys, etc.) so the same code can run in different environments without being changed.
 
-1. Create a `.env` file at the project root (next to `manage.py`) with:
+1. Create a `.env` file at the project root with:
 
    ```env
    PRODUCTION=False
@@ -998,24 +1016,33 @@ Make sure the `.` character is at the end of the command - this makes Django pla
    - `SCHEMA`: the database schema name, adjust it to whatever each tutorial/assignment needs.
    :::
 
-3. Add the following near the top of `settings.py` (after the `Path` import), then add `ALLOWED_HOSTS` and `PRODUCTION`:
+3. Open the `settings.py` file located inside the `myportofolio` subfolder. Near the top of the file (after `from pathlib import Path`), add the code to import `os` package and load environment variables from `.env`:
 
    ```python
    import os
    from dotenv import load_dotenv
+
    # Load environment variables from .env file
    load_dotenv()
    ```
+
+4. Find the existing `ALLOWED_HOSTS` variable in `settings.py` (default is `ALLOWED_HOSTS = []`) and change its value to allow access from `localhost` and `127.0.0.1`:
 
    ```python
    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
    ```
 
+   ::: {.callout-important}
+   Make sure to modify the existing `ALLOWED_HOSTS = []` line rather than adding a new line at the top of the file.
+   :::
+
+5. Below `ALLOWED_HOSTS`, add the `PRODUCTION` variable to read the environment status from `.env`:
+
    ```python
    PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
    ```
 
-4. Find the `DATABASES` section in `settings.py` and replace it with configuration that automatically picks SQLite (development) or PostgreSQL (production):
+6. Find the `DATABASES` section in `settings.py` and replace it with dynamic configuration that automatically picks SQLite (development) or PostgreSQL (production):
 
    ```python
    # Database configuration
@@ -1068,137 +1095,6 @@ Congratulations, you've successfully built a Django app from scratch!
 
 ### Step 6: Save Your Progress to GitHub
 
-Create a `.gitignore` file at the project root (next to `manage.py`) so `env/`, the `.env`/`.env.prod` files, `db.sqlite3`, and other temporary files don't get committed:
-
-```
-# Django
-*.log
-*.pot
-*.pyc
-__pycache__/
-db.sqlite3
-media
-
-# Backup files
-*.bak
-
-# If you are using PyCharm
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-.idea/**/aws.xml
-.idea/**/contentModel.xml
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
-.idea/**/gradle.xml
-.idea/**/libraries
-*.iws
-
-# IntelliJ
-out/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Python
-*.py[cod]
-*$py.class
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery
-celerybeat-schedule.*
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env*
-!.env.example*
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-
-# Sublime Text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history
-
-# macOS
-.DS_Store
-```
-
-::: {.callout-important}
-The `.env` and `.env.prod` files must **not** be pushed to GitHub since they (eventually) hold credentials - make sure the `.gitignore` above exists BEFORE you run `git add`.
-:::
-
 Reactivate the virtual environment if needed, then commit and push the newly created Django project.
 
 ```bash
@@ -1220,6 +1116,6 @@ Congratulations! You've set up a GitHub account, an IDE, Git, and your first Dja
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 - [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-- [Django - Installation](https://docs.djangoproject.com/en/4.2/topics/install/)
+- [Django - Installation](https://docs.djangoproject.com/en/stable/topics/install/)
 
 :::
