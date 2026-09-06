@@ -268,7 +268,7 @@ Sebelum dimulai, kamu perlu mengingat kembali bahwa direktori utama adalah direk
 
 1. Buka Direktori Utama **`myportofolio`**.
 
-    - Sebelum memulai, pastikan kamu berada di direktori **utama** **`myportofolio`** yang telah dibuat pada Tutorial 2.
+    - Sebelum memulai, pastikan kamu berada di direktori **utama** **`myportofolio`** yang telah dibuat pada Tutorial 0 dan dilanjutkan pada Tutorial 1.
     - Pengembangan proyek Django kamu pada tutorial sebelumnya akan dilanjutkan pada direktori ini 😎.
 
 2. Buka terminal atau *command prompt* dan pastikan kamu sudah berada pada direktori utama, **`myportofolio`**.
@@ -633,34 +633,6 @@ Terakhir, tambahkan CSS berikut di bagian bawah `static/css/style.css`:
 
 `repeat(auto-fit, minmax(240px, 1fr))` membuat jumlah kolom menyesuaikan lebar layar. Kartu akan berjajar ketika ruang cukup dan turun menjadi satu kolom pada layar sempit.
 
-### Langkah 4: Menambahkan Data untuk Dicoba
-
-Setelah migrasi, tabel `Experience` masih kosong. Jalankan Django shell dari direktori yang berisi `manage.py`:
-
-```shell
-python manage.py shell
-```
-
-Masukkan satu pengalaman milikmu. Contoh berikut masih memakai data Burhan, jadi ubah isinya sebelum melanjutkan:
-
-```python
-from main.models import Experience
-
-Experience.objects.create(
-    title="Asisten Dosen PBP",
-    description="Membantu mahasiswa memahami dasar pengembangan web.",
-    category="part-time",
-)
-```
-
-Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `makemigrations`, karena struktur modelnya tidak berubah.
-
-Lanjutkan ke bagian *routing*. Setelah URL terhubung, buka `/experience/` untuk melihat data ini sebagai kartu dengan kategori **Part-Time** dan status **Sedang berlangsung**.
-
-::: {.callout-tip}
-**Coba sedikit modifikasi:** tambahkan satu objek `Experience` lagi dengan kategori berbeda, lalu ubah teks status atau warna kartunya. Pastikan kedua objek tetap tampil tanpa menulis kartu HTML kedua secara manual.
-:::
-
 ## Tutorial: Mengonfigurasi *Routing* URL
 
 *Routing* adalah proses memetakan URL ke *view* yang akan menangani permintaan tersebut. Agar routing tetap terorganisasi, proyek akan meneruskan permintaan halaman profil dan pengalaman ke konfigurasi URL milik aplikasi `main`.
@@ -753,9 +725,37 @@ python manage.py runserver
 ```
 
 1. Buka <http://localhost:8000/> pada *browser*. Halaman ini menampilkan profil dengan data dari `show_main`.
-2. Klik **Experience**. Alamat browser berubah menjadi <http://localhost:8000/experience/> dan daftar pengalaman tampil pada halaman tersendiri.
+2. Klik **Experience**. Alamat browser berubah menjadi <http://localhost:8000/experience/>. Karena belum ada data, halaman ini menampilkan pesan **Belum ada pengalaman yang ditambahkan.** Kita akan mengisinya pada langkah berikutnya.
 3. Klik **Profile** atau nama pada *header* untuk kembali ke halaman profil. Kartu pengalaman hanya tampil di halaman Experience.
 4. Coba buka <http://localhost:8000/experience/> secara langsung untuk memastikan halaman tersebut juga dapat diakses tanpa melewati halaman profil.
+
+### Langkah 5: Menambahkan Data untuk Dicoba
+
+Pada tahap ini, halaman Experience sudah dapat diakses, tetapi tabel `Experience` masih kosong. Hentikan server dengan `Ctrl+C`, lalu jalankan Django shell dari direktori yang berisi `manage.py` dengan *virtual environment* tetap aktif:
+
+```shell
+python manage.py shell
+```
+
+Masukkan satu pengalaman milikmu. Contoh berikut masih memakai data Burhan, jadi ubah isinya sebelum melanjutkan:
+
+```python
+from main.models import Experience
+
+Experience.objects.create(
+    title="Asisten Dosen PBP",
+    description="Membantu mahasiswa memahami dasar pengembangan web.",
+    category="part-time",
+)
+```
+
+Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `makemigrations`, karena struktur modelnya tidak berubah.
+
+Jalankan kembali server dengan `python manage.py runserver`, lalu muat ulang <http://localhost:8000/experience/>. Data yang baru dibuat akan tampil sebagai kartu dengan kategori **Part-Time** dan status **Sedang berlangsung**.
+
+::: {.callout-tip}
+**Coba sedikit modifikasi:** tambahkan satu objek `Experience` lagi dengan kategori berbeda, lalu ubah teks status atau warna kartunya. Pastikan kedua objek tetap tampil tanpa menulis kartu HTML kedua secara manual.
+:::
 
 ## Tutorial: Pengenalan Django Unit Testing
 
@@ -843,7 +843,7 @@ Enam test tersebut memeriksa hal yang berbeda:
 
 ### Langkah 2: Menjalankan Test
 
-Pastikan terminal berada di direktori yang berisi `manage.py`, lalu jalankan test untuk aplikasi `main`:
+Hentikan server dengan `Ctrl+C` jika masih berjalan di terminal yang sama. Pastikan terminal berada di direktori yang berisi `manage.py` dan *virtual environment* masih aktif, lalu jalankan test untuk aplikasi `main`:
 
 ```shell
 python manage.py test main
@@ -1415,34 +1415,6 @@ Finally, append the following CSS to `static/css/style.css`:
 
 `repeat(auto-fit, minmax(240px, 1fr))` lets the grid choose how many columns fit. Cards line up when there is enough room and fall back to one column on a narrow screen.
 
-### Step 4: Add Some Data to Try It Out
-
-The `Experience` table is still empty after the migration. Start the Django shell from the directory that contains `manage.py`:
-
-```shell
-python manage.py shell
-```
-
-Add one of your own experiences. The sample below still uses Burhan's data, so change it before moving on:
-
-```python
-from main.models import Experience
-
-Experience.objects.create(
-    title="PBP Teaching Assistant",
-    description="Help students understand the basics of web development.",
-    category="part-time",
-)
-```
-
-Run `exit()` to leave the shell. Adding a row does not require `makemigrations` because the model structure has not changed.
-
-Continue to the routing section. Once the URLs are connected, open `/experience/` to see this record as a card with the **Part-Time** category and an **Ongoing** status.
-
-::: {.callout-tip}
-**Try a small tweak:** add another `Experience` with a different category, then change the status text or card color. Both objects should appear without you writing a second card by hand.
-:::
-
 ## Tutorial: Configuring URL Routing
 
 Routing maps a URL to the view that handles its request. To keep the routing organized, the project will delegate requests for both the profile and experience pages to the `main` application's URL configuration.
@@ -1535,9 +1507,37 @@ python manage.py runserver
 ```
 
 1. Open <http://localhost:8000/> in a browser. This page displays the profile using data from `show_main`.
-2. Click **Experience**. The browser address changes to <http://localhost:8000/experience/> and the experience list appears on its own page.
+2. Click **Experience**. The browser address changes to <http://localhost:8000/experience/>. With no records yet, this page displays **No experience has been added yet.** We will add data in the next step.
 3. Click **Profile** or the header name to return to the profile page. Experience cards only appear on the Experience page.
 4. Open <http://localhost:8000/experience/> directly to check that the page is also accessible without visiting the profile first.
+
+### Step 5: Add Some Data to Try It Out
+
+The Experience page is now accessible, but the `Experience` table is still empty. Stop the server with `Ctrl+C`, then start the Django shell from the directory that contains `manage.py`, keeping your virtual environment active:
+
+```shell
+python manage.py shell
+```
+
+Add one of your own experiences. The sample below still uses Burhan's data, so change it before moving on:
+
+```python
+from main.models import Experience
+
+Experience.objects.create(
+    title="PBP Teaching Assistant",
+    description="Help students understand the basics of web development.",
+    category="part-time",
+)
+```
+
+Run `exit()` to leave the shell. Adding a row does not require `makemigrations` because the model structure has not changed.
+
+Restart the server with `python manage.py runserver`, then reload <http://localhost:8000/experience/>. The new record will appear as a card with the **Part-Time** category and an **Ongoing** status.
+
+::: {.callout-tip}
+**Try a small tweak:** add another `Experience` with a different category, then change the status text or card color. Both objects should appear without you writing a second card by hand.
+:::
 
 ## Tutorial: An Introduction to Django Unit Testing
 
@@ -1625,7 +1625,7 @@ The six tests check different behavior:
 
 ### Step 2: Run the Tests
 
-From the directory containing `manage.py`, run the tests for the `main` application:
+Stop the server with `Ctrl+C` if it is still running in the same terminal. From the directory containing `manage.py`, with the virtual environment still active, run the tests for the `main` application:
 
 ```shell
 python manage.py test main
