@@ -110,7 +110,7 @@ Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, 
 ::: {.callout-tip}
 **Yang Sudah Kita Bangun Sejauh Ini** - Di Tutorial 1, kamu mengganti halaman bawaan Django dengan halaman portofolio "About Me", menghubungkan *view* ke *template* HTML, menambahkan CSS, dan men-*deploy* hasilnya ke PWS.
 
-Pada tutorial ini, kita akan memindahkan konten yang masih ditulis langsung di HTML ke dalam alur MVT Django.
+Pada tutorial ini, kita akan memindahkan data profil yang masih ditulis langsung di HTML ke dalam *context* dan membuat halaman **Experience** yang mengambil data dari model. Halaman profil tetap di `/`, sedangkan daftar pengalaman akan tampil di `/experience/`.
 :::
 
 Struktur folder proyekmu saat ini (hasil akhir Tutorial 1):
@@ -171,9 +171,9 @@ View menangani logika yang akan ditampilkan kepada pengguna. Alur view meliputi 
 
 Contoh view:
 ```python
-def show_main(request):
+def show_experience(request):
     experience_list = Experience.objects.all()
-    return render(request, "main.html", {"experience_list": experience_list})
+    return render(request, "experience.html", {"experience_list": experience_list})
 ```
 
 ### Apa Itu Template?
@@ -430,12 +430,12 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
 
 ## Tutorial: Menghubungkan *View* dengan *Template*
 
-Pada tahap ini, kamu akan membuat *view* pada aplikasi `main`. *View* tersebut mengambil data `Experience` dari model, menyiapkan data profil, lalu meneruskannya ke `templates/index.html` melalui sebuah *context*.
+Pada tahap ini, kamu akan membuat dua *view* pada aplikasi `main`: `show_main` untuk halaman profil dan `show_experience` untuk halaman pengalaman. Masing-masing *view* menyiapkan *context* dan meneruskannya ke *template* yang sesuai.
 
-### Langkah 1: Membuat Fungsi __show_main__
+### Langkah 1: Membuat Fungsi `show_main` dan `show_experience`
 
 1. Buka berkas `main/views.py`.
-2. Ganti isi berkas tersebut dengan kode berikut. Ubah nilai data profil Burhan menjadi data dirimu sendiri.
+2. Ganti isi berkas tersebut dengan kode berikut. Ubah nilai data profil Burhan menjadi data dirimu sendiri, termasuk `name` pada kedua *view*.
 
 ```python
 from django.shortcuts import render
@@ -452,9 +452,16 @@ def show_main(request):
             "Mahasiswa Ilmu Komputer Universitas Indonesia yang tertarik "
             "pada pengembangan perangkat lunak dan pendidikan."
         ),
-        "experience_list": Experience.objects.all(),
     }
     return render(request, "index.html", context)
+
+
+def show_experience(request):
+    context = {
+        "name": "Burhan",
+        "experience_list": Experience.objects.all(),
+    }
+    return render(request, "experience.html", context)
 ```
 
 **Penjelasan Kode:**
@@ -462,7 +469,8 @@ def show_main(request):
 - `Experience.objects.all()` mengambil seluruh objek `Experience` dari basis data dalam bentuk *QuerySet*.
 - `context` adalah *dictionary* yang memetakan nama variabel dengan data yang akan tersedia pada *template*.
 - `render(request, "index.html", context)` memproses `templates/index.html` menggunakan data dalam `context`, lalu mengembalikan respons HTML.
-- `experience_list` sudah diteruskan ke *template* dan akan digunakan pada bagian implementasi *template* lanjutan.
+- `show_main` mengirim data profil ke `index.html`, sedangkan `show_experience` mengirim nama dan `experience_list` ke `experience.html`.
+- Setiap *view* memiliki *context* sendiri. Nilai `name` pada `show_experience` dipakai oleh judul, *header*, dan *footer* halaman pengalaman.
 
 ### Langkah 2: Menampilkan Data *Context* pada *Template*
 
@@ -505,46 +513,50 @@ Terakhir, ubah nama pada bagian *footer*:
 Sintaks `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, dan `{{ bio }}` adalah *template variable* Django. Ketika halaman diproses, Django menggantinya dengan nilai dari `context` yang memiliki nama kunci yang sama.
 
 ::: {.callout-note}
-Pada tahap ini, `experience_list` sudah dikirim oleh *view*, tetapi belum digunakan oleh *template*. Pada langkah berikutnya, setiap objek di dalamnya akan diubah menjadi satu kartu pengalaman.
+`index.html` tetap menjadi halaman profil. Pada langkah berikutnya, kita akan membuat `experience.html` untuk menampilkan daftar pengalaman. Selesaikan bagian *routing* sebelum mencoba kedua halaman melalui browser, karena *view* baru belum dihubungkan ke URL.
 :::
 
-### Langkah 3: Menampilkan Daftar Pengalaman secara Dinamis
+### Langkah 3: Membuat Halaman Experience secara Dinamis
 
-Sekarang data profil sudah berasal dari `context`, tetapi `experience_list` belum tampil. Kita akan memakai Django Template Language untuk mengubah setiap objek `Experience` menjadi satu kartu HTML.
+Sekarang data profil sudah berasal dari `context`. Kita akan membuat halaman terpisah yang memakai Django Template Language untuk mengubah setiap objek `Experience` menjadi satu kartu HTML.
 
-Buka `templates/index.html`. Di dalam elemen `<main>`, letakkan kode berikut setelah penutup `</section>` milik bagian *profile* dan sebelum `</main>`:
+1. Salin `templates/index.html` menjadi `templates/experience.html` di folder `templates/` yang sama, sejajar dengan `manage.py`. Folder ini sudah didaftarkan melalui `TEMPLATES.DIRS` pada Tutorial 1.
+2. Di `experience.html`, ubah judul menjadi `<title>Experience - {{ name }}</title>`. Pertahankan `<head>`, tautan CSS, *header*, dan *footer* dari halaman profil agar tampilannya konsisten.
+3. Ganti **seluruh elemen `<main>...</main>`** pada `experience.html` dengan kode berikut. Dengan demikian, bagian profil hanya ada di `index.html`.
 
 ```html
-<section class="experience-section" id="experience">
-    <div class="container">
-        <p class="section-kicker">Perjalanan saya sejauh ini</p>
-        <h2>Experience</h2>
+<main>
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <p class="section-kicker">Perjalanan saya sejauh ini</p>
+            <h1>Experience</h1>
 
-        <div class="experience-grid">
-            {% for experience in experience_list %}
-                <article class="experience-card">
-                    <span class="experience-category">
-                        {{ experience.get_category_display }}
-                    </span>
-                    <h3>{{ experience.title }}</h3>
-                    <p class="experience-description">
-                        {{ experience.description }}
+            <div class="experience-grid">
+                {% for experience in experience_list %}
+                    <article class="experience-card">
+                        <span class="experience-category">
+                            {{ experience.get_category_display }}
+                        </span>
+                        <h2>{{ experience.title }}</h2>
+                        <p class="experience-description">
+                            {{ experience.description }}
+                        </p>
+
+                        {% if experience.is_ongoing %}
+                            <p class="experience-status">Sedang berlangsung</p>
+                        {% else %}
+                            <p class="experience-status">Selesai</p>
+                        {% endif %}
+                    </article>
+                {% empty %}
+                    <p class="empty-state">
+                        Belum ada pengalaman yang ditambahkan.
                     </p>
-
-                    {% if experience.is_ongoing %}
-                        <p class="experience-status">Sedang berlangsung</p>
-                    {% else %}
-                        <p class="experience-status">Selesai</p>
-                    {% endif %}
-                </article>
-            {% empty %}
-                <p class="empty-state">
-                    Belum ada pengalaman yang ditambahkan.
-                </p>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 ```
 
 Perhatikan tiga bentuk sintaks baru berikut:
@@ -559,12 +571,7 @@ Perhatikan tiga bentuk sintaks baru berikut:
 Django *template* hanya mengatur tampilan. Pengambilan data tetap dilakukan oleh *view*. Pemisahan ini membuat HTML tidak perlu mengetahui cara basis data bekerja.
 :::
 
-Tambahkan pula tautan menuju bagian baru tersebut di dalam `<nav>`:
-
-```html
-<a href="#profile">Profile</a>
-<a href="#experience">Experience</a>
-```
+Kita akan menghubungkan navigasi kedua halaman setelah mendaftarkan URL-nya pada bagian *routing*.
 
 Terakhir, tambahkan CSS berikut di bagian bawah `static/css/style.css`:
 
@@ -582,7 +589,7 @@ Terakhir, tambahkan CSS berikut di bagian bawah `static/css/style.css`:
     text-transform: uppercase;
 }
 
-.experience-section h2 {
+.experience-section h1 {
     margin: 0.4rem 0 1.5rem;
     font-size: 2rem;
 }
@@ -607,8 +614,9 @@ Terakhir, tambahkan CSS berikut di bagian bawah `static/css/style.css`:
     text-transform: uppercase;
 }
 
-.experience-card h3 {
+.experience-card h2 {
     margin: 0.5rem 0;
+    font-size: 1.25rem;
 }
 
 .experience-description,
@@ -647,6 +655,7 @@ Experience.objects.create(
 
 Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `makemigrations`, karena struktur modelnya tidak berubah.
 
+Lanjutkan ke bagian *routing*. Setelah URL terhubung, buka `/experience/` untuk melihat data ini sebagai kartu dengan kategori **Part-Time** dan status **Sedang berlangsung**.
 
 ::: {.callout-tip}
 **Coba sedikit modifikasi:** tambahkan satu objek `Experience` lagi dengan kategori berbeda, lalu ubah teks status atau warna kartunya. Pastikan kedua objek tetap tampil tanpa menulis kartu HTML kedua secara manual.
@@ -654,7 +663,7 @@ Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `
 
 ## Tutorial: Mengonfigurasi *Routing* URL
 
-*Routing* adalah proses memetakan URL ke *view* yang akan menangani permintaan tersebut. Agar routing tetap terorganisasi, proyek akan meneruskan permintaan halaman utama ke konfigurasi URL milik aplikasi `main`.
+*Routing* adalah proses memetakan URL ke *view* yang akan menangani permintaan tersebut. Agar routing tetap terorganisasi, proyek akan meneruskan permintaan halaman profil dan pengalaman ke konfigurasi URL milik aplikasi `main`.
 
 ### Langkah 1: Mengonfigurasi URL Aplikasi `main`
 
@@ -664,12 +673,13 @@ Keluar dari shell dengan menjalankan `exit()`. Menambah data tidak membutuhkan `
 ```python
 from django.urls import path
 
-from main.views import show_main
+from main.views import show_main, show_experience
 
 app_name = "main"
 
 urlpatterns = [
     path("", show_main, name="show_main"),
+    path("experience/", show_experience, name="show_experience"),
 ]
 ```
 
@@ -677,7 +687,8 @@ urlpatterns = [
 
 - `app_name = "main"` memberikan *namespace* pada URL milik aplikasi `main`.
 - Pola URL `""` berarti halaman utama aplikasi tanpa tambahan path.
-- `name="show_main"` memberi nama pada rute agar nantinya dapat dirujuk tanpa menulis URL secara langsung.
+- Pola URL `"experience/"` mengarahkan permintaan `/experience/` ke `show_experience`.
+- `name="show_main"` dan `name="show_experience"` memberi nama pada rute agar dapat dirujuk melalui navigasi dan test tanpa menulis URL secara langsung.
 
 ### Langkah 2: Menghubungkan URL Proyek dengan URL Aplikasi
 
@@ -693,13 +704,41 @@ urlpatterns = [
 ]
 ```
 
-Fungsi `include()` meneruskan URL `""` dari level proyek ke `main/urls.py`. Alur permintaannya kini adalah:
+Fungsi `include()` meneruskan permintaan dengan awalan `""` dari level proyek ke `main/urls.py`. Di sana, Django memilih *view* berdasarkan sisa path. Rute langsung ke `landing_page` dari Tutorial 1 digantikan oleh `include("main.urls")`, sehingga halaman profil sekarang ditangani oleh `show_main`.
+
+Kedua halaman mengikuti alur `Browser -> portofolio/urls.py -> main/urls.py`, lalu:
 
 ```text
-Browser -> portofolio/urls.py -> main/urls.py -> main/views.py -> templates/index.html
+/             -> show_main       -> templates/index.html
+/experience/  -> show_experience -> templates/experience.html
 ```
 
-### Langkah 3: Menjalankan Aplikasi
+`urls.py` proyek menghubungkan aplikasi, sedangkan `urls.py` aplikasi memilih *view* untuk setiap halaman. Satu aplikasi `main` dapat melayani kedua halaman ini.
+
+### Langkah 3: Menghubungkan Navigasi Antarhalaman
+
+Buka **kedua berkas**, `templates/index.html` dan `templates/experience.html`. Pada masing-masing berkas, ganti elemen `<nav>...</nav>` dengan:
+
+```html
+<nav>
+    <a href="{% url 'main:show_main' %}">Profile</a>
+    <a href="{% url 'main:show_experience' %}">Experience</a>
+</nav>
+```
+
+Ubah pula tautan nama pada *header* kedua berkas agar selalu kembali ke halaman profil:
+
+```html
+<a href="{% url 'main:show_main' %}" class="brand">{{ name }}</a>
+```
+
+**Penjelasan Kode:**
+
+- `{% url 'main:show_experience' %}` menghasilkan URL berdasarkan *namespace* `main` dan nama rute `show_experience`, yaitu `/experience/` pada konfigurasi ini.
+- `{% url 'main:show_main' %}` menghasilkan URL `/`, sehingga tautan **Profile** dan nama pada *header* dapat dipakai untuk kembali dari halaman pengalaman.
+- Tautan `#profile` hanya berpindah ke elemen dengan `id="profile"` di halaman yang sedang dibuka. Untuk berpindah halaman, kita memakai URL rute yang sudah didaftarkan.
+
+### Langkah 4: Menjalankan Aplikasi
 
 Jalankan pemeriksaan konfigurasi Django:
 
@@ -713,7 +752,10 @@ Jika tidak ditemukan masalah, jalankan server pengembangan:
 python manage.py runserver
 ```
 
-Buka <http://localhost:8000/> pada *browser*. Halaman portofolio akan tetap tampil, tetapi data profilnya sekarang berasal dari *context* pada `main/views.py` dan permintaannya melewati routing milik aplikasi `main`.
+1. Buka <http://localhost:8000/> pada *browser*. Halaman ini menampilkan profil dengan data dari `show_main`.
+2. Klik **Experience**. Alamat browser berubah menjadi <http://localhost:8000/experience/> dan daftar pengalaman tampil pada halaman tersendiri.
+3. Klik **Profile** atau nama pada *header* untuk kembali ke halaman profil. Kartu pengalaman hanya tampil di halaman Experience.
+4. Coba buka <http://localhost:8000/experience/> secara langsung untuk memastikan halaman tersebut juga dapat diakses tanpa melewati halaman profil.
 
 ## Tutorial: Pengenalan Django Unit Testing
 
@@ -728,6 +770,7 @@ Saat membuat aplikasi `main`, Django sudah menyediakan berkas `main/tests.py`. B
 ```python
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
 
 from main.models import Experience
 
@@ -745,6 +788,8 @@ class MainTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "index.html")
+        self.assertNotContains(response, self.experience.title)
+        self.assertContains(response, f'href="{reverse("main:show_experience")}"')
 
     def test_nonexistent_page_returns_404(self):
         response = self.client.get("/halaman-yang-tidak-ada/")
@@ -756,23 +801,45 @@ class MainTest(TestCase):
         self.assertEqual(self.experience.category, "part-time")
         self.assertTrue(self.experience.is_ongoing)
 
-    def test_experience_appears_on_main_page(self):
-        response = self.client.get(reverse("main:show_main"))
+    def test_experience_page(self):
+        response = self.client.get(reverse("main:show_experience"))
 
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "experience.html")
         self.assertContains(response, self.experience.title)
         self.assertContains(response, self.experience.description)
+        self.assertContains(response, "Part-Time")
+        self.assertContains(response, "Sedang berlangsung")
+        self.assertContains(response, f'href="{reverse("main:show_main")}"')
+
+    def test_empty_experience_page(self):
+        Experience.objects.all().delete()
+        response = self.client.get(reverse("main:show_experience"))
+
+        self.assertContains(response, "Belum ada pengalaman yang ditambahkan.")
+
+    def test_completed_experience(self):
+        self.experience.ended_at = timezone.now()
+        self.experience.save()
+        response = self.client.get(reverse("main:show_experience"))
+
+        self.assertFalse(self.experience.is_ongoing)
+        self.assertContains(response, "Selesai")
+        self.assertNotContains(response, "Sedang berlangsung")
 ```
 
 Semua method yang namanya diawali `test_` akan dijalankan otomatis oleh Django. Method `setUp()` dijalankan sebelum setiap test sehingga tiap test memperoleh data awal yang bersih.
 
-Empat test tersebut memeriksa hal yang berbeda:
+Enam test tersebut memeriksa hal yang berbeda:
 
-1. Halaman utama dapat diakses dan memakai `index.html`.
+1. Halaman profil dapat diakses, memakai `index.html`, tidak menampilkan kartu pengalaman, dan memiliki tautan ke halaman Experience.
 2. URL yang tidak terdaftar menghasilkan status `404 Not Found`.
 3. Model menyimpan nilai dan menghitung `is_ongoing` dengan benar.
-4. Data dari model benar-benar sampai ke HTML yang diterima pengguna.
+4. Halaman Experience memakai `experience.html`, menampilkan data model beserta kategori dan statusnya, serta memiliki tautan kembali ke profil.
+5. Halaman Experience menampilkan pesan yang sesuai ketika belum ada data.
+6. Pengalaman dengan `ended_at` terisi menampilkan status **Selesai**.
 
-`reverse("main:show_main")` mencari URL berdasarkan `app_name` dan `name` yang telah dibuat di `main/urls.py`. Cara ini lebih aman daripada menulis `"/"` secara langsung karena test tidak perlu diubah jika pola URL berubah.
+`reverse()` mencari URL berdasarkan `app_name` dan `name` yang telah dibuat di `main/urls.py`, sama seperti tag `{% url %}` pada *template*. Cara ini membuat tautan dan test tetap mengikuti rute jika path berubah. `assertNotContains` memastikan teks tertentu tidak muncul dalam respons, sedangkan `timezone.now()` memberikan waktu saat ini untuk mengisi `ended_at` pada test pengalaman yang sudah selesai.
 
 ### Langkah 2: Menjalankan Test
 
@@ -785,9 +852,9 @@ python manage.py test main
 Jika semuanya benar, bagian akhir keluarannya akan menyerupai berikut:
 
 ```text
-....
+......
 ----------------------------------------------------------------------
-Ran 4 tests in ...s
+Ran 6 tests in ...s
 
 OK
 ```
@@ -858,7 +925,7 @@ The examples use **Burhan's** portfolio. Whenever you see Burhan's name, NPM, bi
 ::: {.callout-tip}
 **What We've Built So Far** - In Tutorial 1, you replaced Django's default page with an "About Me" portfolio page, connected a view to an HTML template, added CSS, and deployed the result to PWS.
 
-This week, we will move hard-coded content into Django's MVT flow.
+This week, we will move hard-coded profile data into a *context* and create an **Experience** page that retrieves model data. The profile stays at `/`, while the experience list will appear at `/experience/`.
 :::
 
 Your project should currently have the following structure:
@@ -918,9 +985,9 @@ class Experience(models.Model):
 A view handles a request and prepares the response. It can retrieve records from a model, put them into a context, and send that context to a template.
 
 ```python
-def show_main(request):
+def show_experience(request):
     experience_list = Experience.objects.all()
-    return render(request, "index.html", {"experience_list": experience_list})
+    return render(request, "experience.html", {"experience_list": experience_list})
 ```
 
 ### What Is a Template?
@@ -1145,12 +1212,12 @@ Whenever you add, remove, or change model fields, create and apply a new migrati
 
 ## Tutorial: Connecting the *View* to the *Template*
 
-In this section, you will create a *view* in the `main` application. The view retrieves `Experience` data from the model, prepares profile data, and passes everything to `templates/index.html` through a *context*.
+In this section, you will create two *views* in the `main` application: `show_main` for the profile page and `show_experience` for the experience page. Each view prepares its own *context* and passes it to the appropriate *template*.
 
-### Step 1: Create the `show_main` Function
+### Step 1: Create the `show_main` and `show_experience` Functions
 
 1. Open `main/views.py`.
-2. Replace its contents with the following code. Replace Burhan's profile values with your own data.
+2. Replace its contents with the following code. Replace Burhan's profile values with your own data, including `name` in both views.
 
 ```python
 from django.shortcuts import render
@@ -1167,9 +1234,16 @@ def show_main(request):
             "A Computer Science student at Universitas Indonesia interested "
             "in software development and education."
         ),
-        "experience_list": Experience.objects.all(),
     }
     return render(request, "index.html", context)
+
+
+def show_experience(request):
+    context = {
+        "name": "Burhan",
+        "experience_list": Experience.objects.all(),
+    }
+    return render(request, "experience.html", context)
 ```
 
 **Code Explanation:**
@@ -1177,7 +1251,8 @@ def show_main(request):
 - `Experience.objects.all()` retrieves every `Experience` object from the database as a *QuerySet*.
 - `context` is a dictionary that maps variable names to data that will be available in the template.
 - `render(request, "index.html", context)` processes `templates/index.html` using the context data and returns an HTML response.
-- `experience_list` is already passed to the template and will be used in the advanced template implementation section.
+- `show_main` sends profile data to `index.html`, while `show_experience` sends the name and `experience_list` to `experience.html`.
+- Each view has its own context. The `name` value in `show_experience` is used by the experience page's title, header, and footer.
 
 ### Step 2: Display Context Data in the Template
 
@@ -1220,46 +1295,50 @@ Finally, update the name in the footer:
 The `{{ name }}`, `{{ npm }}`, `{{ study_program }}`, and `{{ bio }}` syntax represents Django template variables. When the page is rendered, Django replaces each variable with the value stored under the matching context key.
 
 ::: {.callout-note}
-At this point, the view is already sending `experience_list`, but the template has not used it yet. In the next step, each object in that list will become an experience card.
+`index.html` remains the profile page. Next, we will create `experience.html` for the experience list. Complete the routing section before trying either page in a browser, because the new views are not connected to URLs yet.
 :::
 
-### Step 3: Display the Experience List Dynamically
+### Step 3: Create a Dynamic Experience Page
 
-The profile fields now come from the context, but `experience_list` is still invisible. We will use the Django Template Language to turn every `Experience` object into an HTML card.
+The profile fields now come from the context. We will create a separate page that uses the Django Template Language to turn every `Experience` object into an HTML card.
 
-Open `templates/index.html`. Inside `<main>`, place the following code after the closing `</section>` for the profile section and before `</main>`:
+1. Copy `templates/index.html` to `templates/experience.html` in the same `templates/` folder alongside `manage.py`. This folder was registered through `TEMPLATES.DIRS` in Tutorial 1.
+2. In `experience.html`, change the title to `<title>Experience - {{ name }}</title>`. Keep the profile page's `<head>`, stylesheet links, header, and footer for a consistent appearance.
+3. Replace the **entire `<main>...</main>` element** in `experience.html` with the following code. The profile section will then only exist in `index.html`.
 
 ```html
-<section class="experience-section" id="experience">
-    <div class="container">
-        <p class="section-kicker">My journey so far</p>
-        <h2>Experience</h2>
+<main>
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <p class="section-kicker">My journey so far</p>
+            <h1>Experience</h1>
 
-        <div class="experience-grid">
-            {% for experience in experience_list %}
-                <article class="experience-card">
-                    <span class="experience-category">
-                        {{ experience.get_category_display }}
-                    </span>
-                    <h3>{{ experience.title }}</h3>
-                    <p class="experience-description">
-                        {{ experience.description }}
+            <div class="experience-grid">
+                {% for experience in experience_list %}
+                    <article class="experience-card">
+                        <span class="experience-category">
+                            {{ experience.get_category_display }}
+                        </span>
+                        <h2>{{ experience.title }}</h2>
+                        <p class="experience-description">
+                            {{ experience.description }}
+                        </p>
+
+                        {% if experience.is_ongoing %}
+                            <p class="experience-status">Ongoing</p>
+                        {% else %}
+                            <p class="experience-status">Completed</p>
+                        {% endif %}
+                    </article>
+                {% empty %}
+                    <p class="empty-state">
+                        No experience has been added yet.
                     </p>
-
-                    {% if experience.is_ongoing %}
-                        <p class="experience-status">Ongoing</p>
-                    {% else %}
-                        <p class="experience-status">Completed</p>
-                    {% endif %}
-                </article>
-            {% empty %}
-                <p class="empty-state">
-                    No experience has been added yet.
-                </p>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 ```
 
 There are three new forms of template syntax here:
@@ -1274,12 +1353,7 @@ There are three new forms of template syntax here:
 A Django template is responsible for presentation. The view still handles data retrieval, so the HTML does not need to know how the database works.
 :::
 
-Add a link to the new section inside `<nav>`:
-
-```html
-<a href="#profile">Profile</a>
-<a href="#experience">Experience</a>
-```
+We will connect the navigation between both pages after registering their URLs in the routing section.
 
 Finally, append the following CSS to `static/css/style.css`:
 
@@ -1297,7 +1371,7 @@ Finally, append the following CSS to `static/css/style.css`:
     text-transform: uppercase;
 }
 
-.experience-section h2 {
+.experience-section h1 {
     margin: 0.4rem 0 1.5rem;
     font-size: 2rem;
 }
@@ -1322,8 +1396,9 @@ Finally, append the following CSS to `static/css/style.css`:
     text-transform: uppercase;
 }
 
-.experience-card h3 {
+.experience-card h2 {
     margin: 0.5rem 0;
+    font-size: 1.25rem;
 }
 
 .experience-description,
@@ -1362,7 +1437,7 @@ Experience.objects.create(
 
 Run `exit()` to leave the shell. Adding a row does not require `makemigrations` because the model structure has not changed.
 
-Start the server and open the home page again. The new record should appear as a card with the **Part-Time** category and an **Ongoing** status.
+Continue to the routing section. Once the URLs are connected, open `/experience/` to see this record as a card with the **Part-Time** category and an **Ongoing** status.
 
 ::: {.callout-tip}
 **Try a small tweak:** add another `Experience` with a different category, then change the status text or card color. Both objects should appear without you writing a second card by hand.
@@ -1370,7 +1445,7 @@ Start the server and open the home page again. The new record should appear as a
 
 ## Tutorial: Configuring URL Routing
 
-Routing maps a URL to the view that handles its request. To keep the routing organized, the project will delegate requests for the home page to the `main` application's URL configuration.
+Routing maps a URL to the view that handles its request. To keep the routing organized, the project will delegate requests for both the profile and experience pages to the `main` application's URL configuration.
 
 ### Step 1: Configure the `main` Application URL
 
@@ -1380,12 +1455,13 @@ Routing maps a URL to the view that handles its request. To keep the routing org
 ```python
 from django.urls import path
 
-from main.views import show_main
+from main.views import show_main, show_experience
 
 app_name = "main"
 
 urlpatterns = [
     path("", show_main, name="show_main"),
+    path("experience/", show_experience, name="show_experience"),
 ]
 ```
 
@@ -1393,7 +1469,8 @@ urlpatterns = [
 
 - `app_name = "main"` provides a namespace for URLs owned by the `main` application.
 - The empty `""` URL pattern represents the application's root page.
-- `name="show_main"` names the route so it can later be referenced without hard-coding its URL.
+- The `"experience/"` URL pattern maps requests for `/experience/` to `show_experience`.
+- `name="show_main"` and `name="show_experience"` name the routes so navigation and tests can reference them without hard-coding their URLs.
 
 ### Step 2: Connect the Project URL to the Application URL
 
@@ -1409,13 +1486,41 @@ urlpatterns = [
 ]
 ```
 
-The `include()` function delegates the project-level `""` URL to `main/urls.py`. The request now follows this flow:
+The `include()` function delegates requests with the `""` prefix to `main/urls.py`. Django then chooses a view based on the remaining path. The direct route to Tutorial 1's `landing_page` is replaced by `include("main.urls")`, so `show_main` now handles the profile page.
+
+Both pages follow `Browser -> portofolio/urls.py -> main/urls.py`, then:
 
 ```text
-Browser -> portofolio/urls.py -> main/urls.py -> main/views.py -> templates/index.html
+/             -> show_main       -> templates/index.html
+/experience/  -> show_experience -> templates/experience.html
 ```
 
-### Step 3: Run the Application
+The project's `urls.py` connects applications, while the application's `urls.py` chooses a view for each page. A single `main` application can serve both pages.
+
+### Step 3: Connect Navigation Between Pages
+
+Open **both files**, `templates/index.html` and `templates/experience.html`. In each file, replace the `<nav>...</nav>` element with:
+
+```html
+<nav>
+    <a href="{% url 'main:show_main' %}">Profile</a>
+    <a href="{% url 'main:show_experience' %}">Experience</a>
+</nav>
+```
+
+Also update the name link in both headers so it always returns to the profile page:
+
+```html
+<a href="{% url 'main:show_main' %}" class="brand">{{ name }}</a>
+```
+
+**Code Explanation:**
+
+- `{% url 'main:show_experience' %}` builds a URL using the `main` namespace and the `show_experience` route name, producing `/experience/` with this configuration.
+- `{% url 'main:show_main' %}` produces `/`, so the **Profile** link and header name can take you back from the experience page.
+- A `#profile` link only jumps to the element with `id="profile"` on the current page. To move between pages, we use the registered route URLs.
+
+### Step 4: Run the Application
 
 Run Django's configuration check:
 
@@ -1429,7 +1534,10 @@ If Django reports no issues, start the development server:
 python manage.py runserver
 ```
 
-Open <http://localhost:8000/> in a browser. The portfolio page will still appear, but its profile data now comes from the context in `main/views.py`, and the request passes through the `main` application's routing.
+1. Open <http://localhost:8000/> in a browser. This page displays the profile using data from `show_main`.
+2. Click **Experience**. The browser address changes to <http://localhost:8000/experience/> and the experience list appears on its own page.
+3. Click **Profile** or the header name to return to the profile page. Experience cards only appear on the Experience page.
+4. Open <http://localhost:8000/experience/> directly to check that the page is also accessible without visiting the profile first.
 
 ## Tutorial: An Introduction to Django Unit Testing
 
@@ -1444,6 +1552,7 @@ Django created `main/tests.py` when you created the `main` application. Open tha
 ```python
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
 
 from main.models import Experience
 
@@ -1461,6 +1570,8 @@ class MainTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "index.html")
+        self.assertNotContains(response, self.experience.title)
+        self.assertContains(response, f'href="{reverse("main:show_experience")}"')
 
     def test_nonexistent_page_returns_404(self):
         response = self.client.get("/a-page-that-does-not-exist/")
@@ -1472,23 +1583,45 @@ class MainTest(TestCase):
         self.assertEqual(self.experience.category, "part-time")
         self.assertTrue(self.experience.is_ongoing)
 
-    def test_experience_appears_on_main_page(self):
-        response = self.client.get(reverse("main:show_main"))
+    def test_experience_page(self):
+        response = self.client.get(reverse("main:show_experience"))
 
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "experience.html")
         self.assertContains(response, self.experience.title)
         self.assertContains(response, self.experience.description)
+        self.assertContains(response, "Part-Time")
+        self.assertContains(response, "Ongoing")
+        self.assertContains(response, f'href="{reverse("main:show_main")}"')
+
+    def test_empty_experience_page(self):
+        Experience.objects.all().delete()
+        response = self.client.get(reverse("main:show_experience"))
+
+        self.assertContains(response, "No experience has been added yet.")
+
+    def test_completed_experience(self):
+        self.experience.ended_at = timezone.now()
+        self.experience.save()
+        response = self.client.get(reverse("main:show_experience"))
+
+        self.assertFalse(self.experience.is_ongoing)
+        self.assertContains(response, "Completed")
+        self.assertNotContains(response, "Ongoing")
 ```
 
 Django automatically runs every method whose name begins with `test_`. It runs `setUp()` before each test, giving every test a clean starting record.
 
-The four tests check different behavior:
+The six tests check different behavior:
 
-1. The home page is reachable and uses `index.html`.
+1. The profile page is reachable, uses `index.html`, has no experience cards, and links to the Experience page.
 2. An unregistered URL returns `404 Not Found`.
 3. The model stores its values and calculates `is_ongoing` correctly.
-4. Model data reaches the HTML response received by the user.
+4. The Experience page uses `experience.html`, displays model data with its category and status, and links back to the profile.
+5. The Experience page displays a helpful message when there are no records.
+6. An experience with an `ended_at` value displays the **Completed** status.
 
-`reverse("main:show_main")` finds the route through the `app_name` and `name` declared in `main/urls.py`. This is safer than hard-coding `"/"` because the test can survive a later path change.
+`reverse()` finds a URL through the `app_name` and `name` declared in `main/urls.py`, just like the `{% url %}` template tag. Links and tests can then follow the route if its path changes. `assertNotContains` checks that particular text is absent from a response, while `timezone.now()` supplies the current time for `ended_at` in the completed experience test.
 
 ### Step 2: Run the Tests
 
@@ -1501,14 +1634,14 @@ python manage.py test main
 If everything is correct, the end of the output should look similar to this:
 
 ```text
-....
+......
 ----------------------------------------------------------------------
-Ran 4 tests in ...s
+Ran 6 tests in ...s
 
 OK
 ```
 
-The `....` line appears immediately before the separator. At normal verbosity, each dot represents one passing test. `F` represents a failed assertion, while `E` represents an error.
+The `......` line appears immediately before the separator. At normal verbosity, each dot represents one passing test. `F` represents a failed assertion, while `E` represents an error.
 
 For output that shows every test name, use:
 
