@@ -5,7 +5,7 @@ format:
   typst: default
   docx: default
   revealjs:
-    output-file: tutorial-N-slide.html
+    output-file: tutorial-3-slide.html
     scrollable: true
 format-links:
   - html
@@ -81,7 +81,6 @@ format-links:
 
 ::: {.content-visible when-profile="id"}
 
-
 # Tutorial 03: Form dan Data Delivery {.pbp-page-title}
 
 Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
@@ -94,63 +93,111 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
 
-- <Tulis tujuan pembelajaran 1, biasanya turunan langsung dari Topik Sesi 1 minggu ini>
-- <Tulis tujuan pembelajaran 2>
+- Mengetahui konsep *data delivery* menggunakan XML dan JSON.
+- Memahami struktur, perbedaan format, dan cara membaca data dalam bentuk XML dan JSON.
 
 ::: {.callout-warning}
-**Tutorial ini adalah prasyarat wajib untuk [Individual Assignment N](<link ke assignments/individual/tugas-N.qmd>)** - kalau belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial ini adalah <hari/tanggal Rabu minggu ini>; deadline Individual Assignment N adalah <hari/tanggal Senin minggu berikutnya>. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
+**Tutorial ini adalah prasyarat wajib untuk Individual Assignment minggu ini** - jika Tutorial ini belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial 03 adalah **Rabu, 16 September 2026**; deadline Individual Assignment 3 adalah **Senin, 21 September 2026**. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
 :::
+
+Tutorial ini adalah **Tutorial 03**, lanjutan langsung dari [Tutorial 02](tutorial-2.qmd) - tutorial keempat dari proyek yang akan kamu bangun berkelanjutan sepanjang semester: sebuah **website portofolio pribadi**. Semua tutorial berikutnya akan melanjutkan langsung dari hasil tutorial ini, jadi pastikan proyekmu berjalan dengan baik sebelum lanjut ke tutorial berikutnya.
+
+Sepanjang tutorial ini, contoh yang dipakai adalah portofolio milik **Burhan**, maskot mata kuliah PBP. Setiap kali ada bagian yang berisi data pribadi Burhan (nama, NPM, bio, foto), akan ada catatan eksplisit yang bilang "ganti ini dengan data kamu sendiri" - jangan sampai kelewat.
 
 ::: {.callout-tip}
-**Yang Sudah Kita Bangun Sejauh Ini** - <ringkas 1-2 kalimat progres aplikasi
-tema dari tutorial-tutorial sebelumnya. Hapus/kosongkan callout ini khusus
-di Tutorial 01.>
+**Yang Sudah Kita Bangun Sejauh Ini** - Di Tutorial 2, kamu memindahkan data profil yang masih ditulis langsung di HTML ke dalam *context* dan membuat halaman **Experience** yang mengambil data dari model. 
+
+Pada tutorial ini, kita akan mempelajari konsep *Data Delivery* menggunakan XML dan JSON, sebagai fondasi sebelum kita mengimplementasikannya pada proyek myportofolio.
 :::
 
-## <Judul Section 1 - biasanya nama konsep dari Topik Sesi 1>
+## Pengenalan Data Delivery
 
-<Isi materi/instruksi tutorial di sini.>
+Dalam mengembangkan suatu *platform* web atau perangkat lunak modern, ada kalanya kita perlu mengirimkan data dari satu *stack* ke *stack* lainnya (misalnya dari *backend server* ke *frontend client*, atau dari satu layanan web ke layanan web lainnya). 
 
-::: {.callout-note}
-<Catatan tambahan, tips, atau peringatan.>
-:::
+Data yang dikirimkan bisa bermacam-macam bentuknya. Beberapa format penyajian data yang umum digunakan antara lain HTML, XML, dan JSON. Implementasi *data delivery* dalam bentuk HTML yang dirender oleh server sudah kamu pelajari pada tutorial sebelumnya. Pada bagian ini, kita akan berfokus pada dua format populer lainnya: **XML dan JSON**.
 
-### Langkah 1: <Nama Langkah>
+### XML (Extensible Markup Language)
 
-1. <Langkah pertama>
-2. <Langkah kedua>
+**XML** (*eXtensible Markup Language*) adalah sebuah format teks yang dirancang agar mudah dimengerti hanya dengan membacanya, karena setiap elemen dalam XML mendeskripsikan dirinya sendiri (*self-descriptive*). XML banyak digunakan dalam berbagai aplikasi *web* dan *mobile* generasi terdahulu maupun sistem *enterprise* untuk tujuan penyimpanan dan pertukaran data. 
 
-```bash
-<contoh perintah terminal>
+File XML hanya berisi data yang dikemas dalam *tag* tertentu. Untuk dapat mengirim, menerima, menyimpan, atau menampilkan informasi dari *file* tersebut, kita perlu membuat program yang dapat memproses strukturnya.
+
+Contoh Format XML:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+    <name>Burhan</name>
+    <age>25</age>
+    <address>
+        <street>Jl. PeBePe No.1</street>
+        <city>Depok</city>
+        <province>Jawa Barat</province>
+        <zip>16424</zip>
+    </address>
+</person>
 ```
 
+XML di atas sangatlah *self-descriptive*:
+- Ada informasi nama (`name`)
+- Ada informasi umur (`age`)
+- Ada informasi alamat (`address`) yang bersarang (*nested*), mencakup:
+  - jalan (`street`)
+  - kota (`city`)
+  - provinsi (`province`)
+  - kode pos (`zip`)
+
+Dokumen XML membentuk struktur hierarki seperti *tree* yang dimulai dari elemen *root*, lalu ke cabang (*branch*), hingga berakhir pada daun (*leaves*). Dokumen XML **harus mengandung sebuah *root element*** yang merupakan induk (*parent*) dari elemen lainnya. Pada contoh di atas, `<person>` adalah *root element*.
+
+Baris `<?xml version="1.0" encoding="UTF-8"?>` disebut sebagai **XML Prolog**. Prolog ini bersifat opsional, tetapi jika ada, posisinya harus berada paling awal di dokumen. Pada dokumen XML, **semua elemen wajib memiliki *closing tag***. *Tag* pada XML juga bersifat ***case sensitive***, sehingga tag `<person>` dianggap **berbeda** dengan tag `<Person>`.
+
+### JSON (JavaScript Object Notation)
+
+**JSON** (*JavaScript Object Notation*) adalah sebuah format pertukaran data ringan yang sangat populer saat ini. Seperti XML, JSON dirancang agar mudah dimengerti manusia (karena juga bersifat *self-describing*) dan mudah di-*parsing* atau di-*generate* oleh mesin. 
+
+Meskipun sintaks JSON berasal dari notasi objek bahasa pemrograman JavaScript, JSON sebenarnya adalah format teks murni yang independen terhadap bahasa. Hampir seluruh bahasa pemrograman modern memiliki dukungan bawaan (*built-in*) untuk membaca dan membuat struktur JSON.
+
+Contoh format JSON:
+
+```json
+{
+  "name": "Burhan",
+  "age": 25,
+  "address": {
+    "street": "Jl. PeBePe No.1",
+    "city": "Depok",
+    "province": "Jawa Barat",
+    "zip": "16424"
+  }
+}
+```
+
+Data pada JSON direpresentasikan dalam bentuk pasangan ***key*** dan ***value*** (kunci-nilai). Pada contoh di atas, yang menjadi *key* adalah `"name"`, `"age"`, dan `"address"`. *Value* pada JSON dapat berupa tipe data primitif (*string*, *number*, *boolean*, *null*), himpunan (*array*), ataupun sekumpulan pasangan *key-value* lain (berupa objek bersarang/ *nested object*). 
+
+Saat ini, JSON lebih disukai dibandingkan XML pada aplikasi modern (terutama pada arsitektur *RESTful API*) karena ukurannya yang lebih ringkas, *parser* yang sangat cepat, dan integrasi yang sangat natural dengan JavaScript di sisi *frontend*.
+
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
-proyek pribadi mahasiswa (mis. website portofolio) yang bisa memakai pola
-yang sama dengan yang baru dikerjakan di langkah-langkah di atas. Ini yang
-membantu mahasiswa paham "ngerjain tugas itu ternyata mirip tutorial, cuma
-temanya beda".>
+**Menghubungkan ke Proyek Kamu** - Pemahaman mengenai XML dan JSON adalah langkah awal yang esensial agar aplikasi portofolio yang kamu bangun dapat berkomunikasi dengan sistem lain. Seiring dengan berkembangnya kompleksitas proyekmu, aplikasi tidak lagi sekadar mengembalikan dokumen HTML utuh. Kamu akan dihadapkan pada kebutuhan untuk menyediakan data mentah (seperti JSON) yang dapat diproses secara asinkronus, misalnya melalui AJAX, untuk meningkatkan interaktivitas pada sisi *frontend*.
 :::
 
 ## Pengumpulan
 
-Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir Tutorial ini, di-*push* **sebelum tenggat waktu** di atas. Commit yang di-*push* setelah tenggat waktu tidak akan diterima, sehingga tutorial ini dianggap belum selesai dan Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir Tutorial ini, di-*push* **sebelum tenggat waktu** di atas. Commit yang di-*push* setelah tenggat waktu tidak akan diterima, sehingga Tutorial ini dianggap belum selesai dan Individual Assignment minggu ini tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
 
 ## Referensi Tambahan
 
-- [<Judul referensi>](<url>)
+- [JSON Introduction (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [XML Tutorial (W3Schools)](https://www.w3schools.com/xml/)
 
 :::
 
 ::: {.content-visible when-profile="en"}
 
-[📊 View Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
-
-# Tutorial N: <Topic Title> {.pbp-page-title}
+# Tutorial 03: Form and Data Delivery {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** <Author Name>
+**Contributors:** FERN - Vazha Khayri, EHW - Evan Haryo Widodo, DUH - Bermulya Anugrah Putra
 
 ***
 
@@ -158,49 +205,100 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 
 After completing this tutorial, students are expected to be able to:
 
-- <Write learning objective 1, usually a direct extension of this week's Session 1 topic>
-- <Write learning objective 2>
+- Understand the concept of data delivery using XML and JSON.
+- Understand the structural and formatting differences between XML and JSON forms.
 
 ::: {.callout-warning}
-**This Tutorial is a mandatory prerequisite for [Individual Assignment N](<link to assignments/individual/tugas-N.qmd>)** - if it hasn't been completed, that Individual Assignment won't be graded. This Tutorial's deadline is <this week's Wednesday date>; Individual Assignment N's deadline is <the following Monday's date>. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
+**This Tutorial is a mandatory prerequisite for this week's Individual Assignment** - if it has not been completed, that Individual Assignment will not be graded. Tutorial 03's deadline is **Wednesday, September 16, 2026**; Individual Assignment 3's deadline is **Monday, September 21, 2026**. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
 :::
+
+This is **Tutorial 03**, a direct continuation of [Tutorial 02](tutorial-2.qmd). It is the fourth tutorial in the personal portfolio project you will keep building throughout the semester. All subsequent tutorials will continue directly from the results of this tutorial, so ensure your project runs smoothly before proceeding.
+
+The examples use **Burhan's** portfolio. Whenever you see Burhan's name, NPM, bio, or experience, replace it with your own information instead of leaving the sample data unchanged.
 
 ::: {.callout-tip}
-**What We've Built So Far** - <1-2 sentence recap of the running theme
-app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
+**What We've Built So Far** - In Tutorial 2, you moved hard-coded profile data into a *context* and created an **Experience** page that retrieves model data. 
+
+This week, we will learn the concept of *Data Delivery* using XML and JSON as a foundation before implementing it in your portfolio project.
 :::
 
-## <Section 1 Title - usually the concept name from the Session 1 topic>
+## Introduction to Data Delivery
 
-<Write the tutorial content/instructions here.>
+In developing a web platform or modern software, there are times when we need to transfer data from one stack to another (e.g., from a backend server to a frontend client, or from one web service to another).
 
-::: {.callout-note}
-<Additional notes, tips, or warnings.>
-:::
+The data sent can be formatted in various ways. Several common presentation formats include HTML, XML, and JSON. You have learned about data delivery in the form of server-rendered HTML in previous tutorials. In this section, we will focus on two other popular formats: **XML and JSON**.
 
-### Step 1: <Step Name>
+### XML (Extensible Markup Language)
 
-1. <First step>
-2. <Second step>
+**XML** (*eXtensible Markup Language*) is a text format designed to be easily understood just by reading it, because each element in XML describes itself (*self-descriptive*). XML is widely used in various older generation web and mobile applications as well as enterprise systems for data storage and exchange.
 
-```bash
-<example terminal command>
+An XML file only contains data packaged within specific *tags*. To be able to send, receive, store, or display information from the file, we need to create a program that can process its structure.
+
+Example of XML Format:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+    <name>Burhan</name>
+    <age>25</age>
+    <address>
+        <street>Jl. PeBePe No.1</street>
+        <city>Depok</city>
+        <province>Jawa Barat</province>
+        <zip>16424</zip>
+    </address>
+</person>
 ```
 
+The XML above is very *self-descriptive*:
+- There is name information (`name`)
+- There is age information (`age`)
+- There is nested address information (`address`), encompassing:
+  - street (`street`)
+  - city (`city`)
+  - province (`province`)
+  - postal code (`zip`)
+
+XML documents form a tree-like hierarchical structure starting from the *root* element, then branching out (*branch*), and ending at the *leaves*. An XML document **must contain a *root element*** that acts as the parent of other elements. In the example above, `<person>` is the *root element*.
+
+The line `<?xml version="1.0" encoding="UTF-8"?>` is called the **XML Prolog**. This prolog is optional, but if present, it must be positioned at the very beginning of the document. In an XML document, **all elements must have a *closing tag***. XML *tags* are also ***case sensitive***, so the tag `<person>` is considered **different** from the tag `<Person>`.
+
+### JSON (JavaScript Object Notation)
+
+**JSON** (*JavaScript Object Notation*) is a lightweight data interchange format that is highly popular today. Like XML, JSON is designed to be easily understood by humans (as it is also *self-describing*) and easy for machines to parse or generate.
+
+Although JSON syntax is derived from object notation in the JavaScript programming language, JSON is actually a pure text format that is language-independent. Almost all modern programming languages have built-in support for reading (*parsing*) and creating JSON structures.
+
+Example of JSON format:
+
+```json
+{
+  "name": "Burhan",
+  "age": 25,
+  "address": {
+    "street": "Jl. PeBePe No.1",
+    "city": "Depok",
+    "province": "Jawa Barat",
+    "zip": "16424"
+  }
+}
+```
+
+Data in JSON is represented as ***key-value*** pairs. In the example above, the keys are `"name"`, `"age"`, and `"address"`. A JSON *value* can be a primitive data type (*string*, *number*, *boolean*, *null*), a collection (*array*), or another set of key-value pairs (as a *nested object*).
+
+Currently, JSON is preferred over XML in modern applications (especially in *RESTful API* architectures) due to its more compact size, extremely fast parsers, and natural integration with JavaScript on the frontend.
+
 ::: {.callout-important}
-**Connecting to Your Project** - <explicitly explain which part of the
-student's own individual project (e.g. portfolio website) can reuse the
-same pattern just practiced in the steps above. This is what helps
-students see that "doing the assignment is like the tutorial, just with a
-different theme".>
+**Connecting to Your Project** - Understanding XML and JSON is an essential first step in enabling your portfolio application to communicate with other systems. As your project grows in complexity, it will no longer suffice to merely return full HTML documents. You will eventually need to provide raw data (such as JSON) that can be processed asynchronously, for instance via AJAX, to enhance interactivity on the *frontend*.
 :::
 
 ## Submission
 
-This Tutorial is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this Tutorial's final result, pushed **before the deadline** above. Commits pushed after the deadline will not be accepted, so the Tutorial is considered incomplete and the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+This Tutorial is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this Tutorial's final result, pushed **before the deadline** above. Commits pushed after the deadline will not be accepted, so this Tutorial is considered incomplete and this week's Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 
-- [<Reference title>](<url>)
+- [JSON Introduction (MDN Web Docs)](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [XML Tutorial (W3Schools)](https://www.w3schools.com/xml/)
 
 :::
