@@ -40,6 +40,8 @@ website:
           href: tutorial/tutorial-1.qmd
         - text: "Tutorial 2: Implementasi Model-View-Template (MVT) pada Django"
           href: tutorial/tutorial-2.qmd
+        - text: "Tutorial 03: Form dan Data Delivery"
+          href: tutorial/tutorial-3.qmd
     - id: assignments
       title: "Tugas"
       style: docked

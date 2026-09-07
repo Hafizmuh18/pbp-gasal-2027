@@ -1,0 +1,206 @@
+---
+title: "Tutorial 03: Form dan Data Delivery"
+format:
+  html: default
+  typst: default
+  docx: default
+  revealjs:
+    output-file: tutorial-N-slide.html
+    scrollable: true
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+  - format: revealjs
+    text: Slide
+    icon: easel
+---
+
+<!--
+  Cara pakai template ini kalau mau bikin Tutorial minggu baru:
+
+  Copy berkas ini ke tutorial/tutorial-N.qmd, ganti N dengan nomor minggunya
+  (urutannya "Tutorial 01" sampai "Tutorial 10", cek jadwal di homepage kalau
+  lupa), lalu sesuaikan judul di frontmatter dan output-file revealjs.
+
+  Satu hal yang beda dari pola tutorial dulu: sekarang semua Tutorial
+  membangun satu aplikasi tema yang sama secara berkelanjutan sepanjang
+  semester, bukan latihan berdiri sendiri tiap minggu. Jadi section "Yang
+  Sudah Kita Bangun" isinya ringkasan progres dari tutorial minggu
+  sebelumnya - kecuali di Tutorial 01, kosongkan/hapus saja karena belum ada
+  apa-apa untuk diringkas.
+
+  Section "Menghubungkan ke Proyek Kamu" itu yang paling sering kelewat
+  tapi justru paling penting - di situ jelaskan eksplisit bagian mana dari
+  proyek pribadi mahasiswa (misalnya website portofolio) yang bisa memakai
+  pola yang sama dengan yang baru dikerjakan di tutorial ini. Tanpa ini,
+  mahasiswa gampang bingung kenapa tugasnya terasa "beda" dari tutorial,
+  padahal seharusnya melanjutkan pola yang sama.
+
+  Isi kedua blok bahasa ({.content-visible when-profile="id"} dan ="en") -
+  jangan sampai ada yang kosong, karena keduanya yang membuat switch bahasa
+  di navbar berfungsi. Ini juga sumber bug yang paling sering muncul:
+  apapun yang tampil ke pembaca (link slide, baris "Pemrograman Berbasis
+  Platform...", dst.) harus ada di dalam salah satu dari kedua blok itu,
+  bukan di luar - kalau ditaruh di luar, teksnya tampil sama persis di
+  kedua bahasa dan jadi terlihat seperti belum di-translate padahal isinya
+  sudah bilingual.
+
+  Soal judul: frontmatter title tidak bisa beda per bahasa (Quarto selalu
+  pakai satu judul yang sama untuk tab browser dan sidebar), jadi supaya
+  judul di halaman tetap bilingual, tulis heading `#` manual dengan
+  atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa (contohnya
+  ada di bawah) - CSS di `styles.css` otomatis menyembunyikan judul
+  frontmatter kalau atribut ini ada di halaman.
+
+  Jangan lupa daftarkan file barunya di sidebar `contents:` di kedua
+  `_quarto-id.yml` dan `_quarto-en.yml`, dengan `text:` eksplisit per
+  bahasa (jangan biarkan Quarto menurunkan label sidebar dari frontmatter
+  title, itu juga tidak ikut ter-translate). Contoh:
+  ```yaml
+  - text: "Tutorial 01: Setup Git Repository, ..."   # di _quarto-id.yml
+    href: tutorial/tutorial-1.qmd
+  - text: "Tutorial 01: Set Up Git Repository, ..."  # di _quarto-en.yml
+    href: tutorial/tutorial-1.qmd
+  ```
+
+  Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
+
+  Section "Pengumpulan"/"Submission" di bagian bawah teksnya sudah baku
+  dan sama di semua tutorial - biarkan apa adanya, tidak perlu disunting
+  per minggu.
+
+  Langkah terakhir sebelum selesai: render dua profile (`quarto render`,
+  lalu `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
+  berdampingan, dan cek tidak ada teks yang identik/belum ter-translate di
+  keduanya (judul, sidebar, isi). Ini langkah regresi yang wajib dilakukan
+  tiap kali selesai bikin tutorial/tugas baru.
+-->
+
+::: {.content-visible when-profile="id"}
+
+
+# Tutorial 03: Form dan Data Delivery {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** FERN - Vazha Khayri, EHW - Evan Haryo Widodo, DUH - Bermulya Anugrah Putra
+
+***
+
+### Tujuan Pembelajaran
+
+Setelah menyelesaikan tutorial ini, mahasiswa diharapkan untuk dapat:
+
+- <Tulis tujuan pembelajaran 1, biasanya turunan langsung dari Topik Sesi 1 minggu ini>
+- <Tulis tujuan pembelajaran 2>
+
+::: {.callout-warning}
+**Tutorial ini adalah prasyarat wajib untuk [Individual Assignment N](<link ke assignments/individual/tugas-N.qmd>)** - kalau belum diselesaikan, Individual Assignment tersebut tidak akan dinilai. Deadline Tutorial ini adalah <hari/tanggal Rabu minggu ini>; deadline Individual Assignment N adalah <hari/tanggal Senin minggu berikutnya>. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap.
+:::
+
+::: {.callout-tip}
+**Yang Sudah Kita Bangun Sejauh Ini** - <ringkas 1-2 kalimat progres aplikasi
+tema dari tutorial-tutorial sebelumnya. Hapus/kosongkan callout ini khusus
+di Tutorial 01.>
+:::
+
+## <Judul Section 1 - biasanya nama konsep dari Topik Sesi 1>
+
+<Isi materi/instruksi tutorial di sini.>
+
+::: {.callout-note}
+<Catatan tambahan, tips, atau peringatan.>
+:::
+
+### Langkah 1: <Nama Langkah>
+
+1. <Langkah pertama>
+2. <Langkah kedua>
+
+```bash
+<contoh perintah terminal>
+```
+
+::: {.callout-important}
+**Menghubungkan ke Proyek Kamu** - <jelaskan eksplisit: bagian mana dari
+proyek pribadi mahasiswa (mis. website portofolio) yang bisa memakai pola
+yang sama dengan yang baru dikerjakan di langkah-langkah di atas. Ini yang
+membantu mahasiswa paham "ngerjain tugas itu ternyata mirip tutorial, cuma
+temanya beda".>
+:::
+
+## Pengumpulan
+
+Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir Tutorial ini, di-*push* **sebelum tenggat waktu** di atas. Commit yang di-*push* setelah tenggat waktu tidak akan diterima, sehingga tutorial ini dianggap belum selesai dan Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+
+## Referensi Tambahan
+
+- [<Judul referensi>](<url>)
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+[📊 View Slide](../slides/tutorial-N.qmd){.btn .btn-outline-primary role="button"}
+
+# Tutorial N: <Topic Title> {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** <Author Name>
+
+***
+
+### Learning Objectives
+
+After completing this tutorial, students are expected to be able to:
+
+- <Write learning objective 1, usually a direct extension of this week's Session 1 topic>
+- <Write learning objective 2>
+
+::: {.callout-warning}
+**This Tutorial is a mandatory prerequisite for [Individual Assignment N](<link to assignments/individual/tugas-N.qmd>)** - if it hasn't been completed, that Individual Assignment won't be graded. This Tutorial's deadline is <this week's Wednesday date>; Individual Assignment N's deadline is <the following Monday's date>. See the [Schedule page](../index.qmd#semester-schedule) for exact dates.
+:::
+
+::: {.callout-tip}
+**What We've Built So Far** - <1-2 sentence recap of the running theme
+app's progress from previous tutorials. Remove/leave empty for Tutorial 01.>
+:::
+
+## <Section 1 Title - usually the concept name from the Session 1 topic>
+
+<Write the tutorial content/instructions here.>
+
+::: {.callout-note}
+<Additional notes, tips, or warnings.>
+:::
+
+### Step 1: <Step Name>
+
+1. <First step>
+2. <Second step>
+
+```bash
+<example terminal command>
+```
+
+::: {.callout-important}
+**Connecting to Your Project** - <explicitly explain which part of the
+student's own individual project (e.g. portfolio website) can reuse the
+same pattern just practiced in the steps above. This is what helps
+students see that "doing the assignment is like the tutorial, just with a
+different theme".>
+:::
+
+## Submission
+
+This Tutorial is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this Tutorial's final result, pushed **before the deadline** above. Commits pushed after the deadline will not be accepted, so the Tutorial is considered incomplete and the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+
+## Additional References
+
+- [<Reference title>](<url>)
+
+:::
