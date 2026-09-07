@@ -16,6 +16,8 @@ website:
         href: tutorial/index.qmd
       - text: "Assignments"
         href: assignments/index.qmd
+      - text: "Find My Group"
+        href: kelompok-search.html
     right:
       - text: "🇮🇩 Indonesia"
         href: ../index.html

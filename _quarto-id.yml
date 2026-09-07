@@ -13,6 +13,8 @@ website:
         href: tutorial/index.qmd
       - text: "Tugas"
         href: assignments/index.qmd
+      - text: "Cari Kelompok"
+        href: kelompok-search.html
     right:
       - text: "🇬🇧 English"
         href: en/index.html
