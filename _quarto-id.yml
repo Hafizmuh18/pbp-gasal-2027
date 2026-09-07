@@ -13,6 +13,8 @@ website:
         href: tutorial/index.qmd
       - text: "Tugas"
         href: assignments/index.qmd
+      - text: "Cari Kelompok"
+        href: kelompok-search.html
     right:
       - text: "🇬🇧 English"
         href: en/index.html
@@ -38,7 +40,7 @@ website:
           href: tutorial/tutorial-0.qmd
         - text: "Tutorial 01: Django Initial Project, HTML5 dan CSS3"
           href: tutorial/tutorial-1.qmd
-        - text: "Tutorial 2: Implementasi Model-View-Template (MVT) pada Django"
+        - text: "Tutorial 02: Implementasi Model-View-Template (MVT) pada Django"
           href: tutorial/tutorial-2.qmd
         - text: "Tutorial 03: Form dan Data Delivery"
           href: tutorial/tutorial-3.qmd

@@ -52,10 +52,10 @@ title: "Informasi"
     <strong>1</strong> - Static Web with HTML5 and CSS3<br>
     <span class="pbp-card-status">✅ Tersedia</span>
   </a>
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="individual/tugas-2.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>2</strong> - MVT Django Implementation<br>
-    <span class="pbp-card-status">⏳ Belum diunggah</span>
-  </div>
+    <span class="pbp-card-status">✅ Tersedia</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>3</strong> - Form & Data Delivery<br>
     <span class="pbp-card-status">⏳ Belum diunggah</span>
@@ -97,10 +97,10 @@ title: "Informasi"
     <strong>1</strong> - Static Web with HTML5 and CSS3<br>
     <span class="pbp-card-status">✅ Available</span>
   </a>
-  <div class="pbp-card" style="opacity:0.55;">
+  <a href="individual/tugas-2.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>2</strong> - MVT Django Implementation<br>
-    <span class="pbp-card-status">⏳ Not yet uploaded</span>
-  </div>
+    <span class="pbp-card-status">✅ Available</span>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>3</strong> - Form & Data Delivery<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
