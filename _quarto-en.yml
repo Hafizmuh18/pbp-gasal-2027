@@ -41,6 +41,8 @@ website:
           href: tutorial/tutorial-0.qmd
         - text: "Tutorial 01: Django Initial Project, HTML5 and CSS3"
           href: tutorial/tutorial-1.qmd
+        - text: "Tutorial 2: Model-View-Template (MVT) Django Implementation"
+          href: tutorial/tutorial-2.qmd
     - id: assignments
       title: "Assignments"
       style: docked
