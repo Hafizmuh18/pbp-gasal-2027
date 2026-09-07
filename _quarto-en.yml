@@ -53,6 +53,8 @@ website:
           contents:
             - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"
               href: assignments/individual/tugas-1.qmd
+            - text: "Individual Assignment 2: Implementing MVT in Django"
+              href: assignments/individual/tugas-2.qmd
         - section: "Group Assignments"
           contents:
             - text: "Midterm Group Project"
