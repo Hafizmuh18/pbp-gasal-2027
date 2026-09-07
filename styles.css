@@ -51,6 +51,14 @@ pre:not(.sourceCode) {
   border-radius: 0.25rem;
   padding: 0.4em 0.6em;
 }
+/* The rule above is a light-mode-only color, so a bare fence (like
+   ```text, used for diagrams/tables with no real syntax to highlight)
+   stays glaringly light in dark mode instead of following the page.
+   Match div.sourceCode's own dark-mode background/border exactly. */
+.quarto-dark pre:not(.sourceCode) {
+  background-color: rgba(67, 67, 67, 0.65);
+  border-color: rgba(67, 67, 67, 0.65);
+}
 
 /* Navbar */
 .navbar {
@@ -129,6 +137,15 @@ h2 {
   border-bottom: 3px solid var(--pbp-orange);
   padding-bottom: 0.35rem;
   display: inline-block;
+}
+/* Bootstrap dims h3/h4 to opacity:0.9 by default. Barely visible on solid
+   text, but it compounds with inline <code>'s already-low-contrast color
+   (purple on near-white) whenever a heading contains a `code span`, making
+   it look faded/blurry compared to code elsewhere on the page - restore
+   full opacity so headings render at their code's true color in both
+   light and dark mode. */
+h3, h4 {
+  opacity: 1;
 }
 
 /* ===== Banners (hero / section headers with mascot) ===== */
@@ -427,6 +444,15 @@ iframe {
 .quarto-dark h2,
 .quarto-dark .pbp-banner .pbp-banner-text .pbp-banner-title {
   color: #8ec3f0;
+}
+/* Bootstrap's dark-mode code background (rgba(67,67,67,.65)) only applies
+   to its own `code:not(.sourceCode), li code:not(.sourceCode), td
+   code:not(.sourceCode)` selector - a heading isn't li/td, so code inside
+   h1-h6 falls through to the plain `code:not(.sourceCode)` rule instead,
+   which keeps the *light*-mode background value even in dark mode
+   (illegible: white text on a near-white pill). Match it explicitly. */
+.quarto-dark :is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
+  background-color: rgba(67, 67, 67, 0.65);
 }
 .quarto-dark .pbp-banner {
   background: linear-gradient(135deg, #1e2f3d 0%, #12181f 100%);

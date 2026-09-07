@@ -135,7 +135,7 @@ temanya beda".>
 
 ## Pengumpulan
 
-Tutorial ini tidak punya slot submisi terpisah di SCELE dan tidak dinilai secara langsung - tapi karena statusnya sebagai prasyarat wajib Individual Assignment minggu ini, pastikan seluruh perubahan tutorial ini sudah di-*commit* dan di-*push* ke repositori GitHub kamu **sebelum tenggat waktu** di atas. Commit yang baru di-*push* setelah tenggat waktu dianggap tutorial belum selesai, sehingga Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
+Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir Tutorial ini, di-*push* **sebelum tenggat waktu** di atas. Commit yang di-*push* setelah tenggat waktu tidak akan diterima, sehingga tutorial ini dianggap belum selesai dan Individual Assignment terkait tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
 
 ## Referensi Tambahan
 
@@ -198,7 +198,7 @@ different theme".>
 
 ## Submission
 
-This Tutorial doesn't have a separate SCELE submission slot and isn't graded directly - but since it's a mandatory prerequisite for this week's Individual Assignment, make sure all changes for this Tutorial are committed and pushed to your GitHub repository **before the deadline** above. Commits pushed after the deadline mean the Tutorial is considered incomplete, so the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
+This Tutorial is submitted through the SCELE submission slot, as a **link to the commit** (not just a repository link) on GitHub that shows this Tutorial's final result, pushed **before the deadline** above. Commits pushed after the deadline will not be accepted, so the Tutorial is considered incomplete and the related Individual Assignment won't be graded. Also make sure your GitHub repository is **public**, so teaching assistants can access it.
 
 ## Additional References
 
