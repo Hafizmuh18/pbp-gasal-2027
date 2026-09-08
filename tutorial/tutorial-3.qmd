@@ -423,6 +423,14 @@ class ProjectForm(ModelForm):
             "project_image_url",
         ]
 
+        labels = {
+            "title": "Nama Proyek",
+            "description": "Deskripsi Proyek",
+            "tech_stack": "Teknologi yang Digunakan",
+            "project_url": "URL Proyek",
+            "project_image_url": "URL Gambar Proyek",
+        }
+
         widgets = {
             "title": TextInput(
                 attrs={
@@ -1532,6 +1540,14 @@ class ProjectForm(ModelForm):
             "project_url",
             "project_image_url",
         ]
+
+        labels = {
+            "title": "Nama Proyek",
+            "description": "Deskripsi Proyek",
+            "tech_stack": "Teknologi yang Digunakan",
+            "project_url": "URL Proyek",
+            "project_image_url": "URL Gambar Proyek",
+        }
 
         widgets = {
             "title": TextInput(
