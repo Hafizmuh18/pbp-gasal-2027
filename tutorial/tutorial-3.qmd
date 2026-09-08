@@ -389,6 +389,12 @@ Sekarang, kalian boleh menerapkan hal yang sama pada berkas html lainnya, sepert
 ## Tutorial: Implementasi Form & Data Delivery 
 Data delivery melibatkan kebutuhan untuk berkomunikasi antar client yang biasanya merupakan antarmuka yang dilihat pengguna dan server yang biasanya adalah backend yang mengelola database, pada implementasi kali ini, kita akan memanfaatkan library Form yang telah disediakan oleh Django untuk mengirim data ke server atau biasanya disebut **request** dan menangkap balasan dari server atau biasanya disebut **response**. 
 
+
+::: {.callout-important}
+**Important Acknowledgment** - Kode dan implementasi yang akan saya jelaskan adalah contoh, sesuaikan object dan fields dengan hasil dari tugas 2 anda, jangan melakukan kopi paste secara langsung tanpa adjustment jika object dan fields yang anda buat pada tugas 2 berbeda!
+:::
+
+
 ### Langkah 1: Implementasi Form 
 Pada tugas 2, kamu diminta untuk membuat satu page untuk portfoliomu antara lain proyek, pendidikan, sertifikasi, atau bagian lain yang relevan. Kali ini, kita akan membuat konten tersebut dinamis. Pada tutorial ini saya akan menggunakan proyek sebagai contoh, tapi kalian bisa menyesuaikan dari apa yang telah dibaut di tutorial 2.
 
@@ -652,10 +658,6 @@ Pastikan kamu memasukkan URL thumbnail tersebut ke field **Project image url** p
 
 ### Langkah 2: Menyesuaikan dengan Tugas 2 
 Setelah tugas dua, kamu diharapkan memiliki page HTML baru, disini sebagai contoh, saya telah memiliki `project.html`, isi kodenya adalah sebagai berikut: 
-
-::: {.callout-important}
-**Kode Contoh** - Kode dan implementasi yang akan saya jelaskan adalah contoh, sesuaikan dengan hasil dari tugas anda, jangan melakukan kopi paste kode-kode ini jika page yang anda implementasikan berbeda!
-:::
 
 
 ```html
@@ -1183,6 +1185,16 @@ Tampilan akhir dari page `projects/` adalah sebagai berikut:
 
 Coba tambahkan project-project kamu, jika berhasil **selamat!** Jika masih gagal, coba debug yaa.. :D
 
+
+::: {.callout-tip}
+**Orang Lain Bisa Edit Portfolio-mu!** - Karena kita belum mempelajari terkait Autentikasi, Session, & Cookies. Technically yes, semua orang bisa mengotak-atik portfolio kamu. Kalau kamu mau mengamankannya untuk sementara, coba implementasikan request header yang memiliki kode rahasia, hanya kamu yang bisa tahu.
+
+**HINTS:**
+
+- buat kode rahasia di .env dan cocokkan dengan header ketika melakukan request.
+- Untuk form, karena tidak bisa membuat custom header tanpa javascript, tambahkan field password
+:::
+
 ## Pengumpulan
 
 Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **tautan ke commit** (bukan sekadar tautan repositori) di GitHub yang menunjukkan hasil akhir Tutorial ini, di-*push* **sebelum tenggat waktu** di atas. Commit yang di-*push* setelah tenggat waktu tidak akan diterima, sehingga Tutorial ini dianggap belum selesai dan Individual Assignment minggu ini tidak akan dinilai. Pastikan juga repositori GitHub kamu bersifat **publik**, supaya asisten dosen bisa mengaksesnya.
@@ -1508,6 +1520,11 @@ Now, you may apply the same thing to other html files, just like **index.html**,
 
 Data delivery involves communication between the client, which is usually the interface viewed by the user, and the server, which is usually the backend that manages the database. In this implementation, we will use Django's built-in Form library to send data to the server, usually called a **request**, and receive a response from the server, usually called a **response**.
 
+
+::: {.callout-important}
+**Important Acknowledgment** - Code and Implementations below is an example, adjust object and fields with the result of Individual Assignment 2.  Don't blindy copy and pasting code directly without any adjustment if you have different object and fields created on 2nd Individual Assignment!
+:::
+
 ### Step 1: Implementing the Form
 
 In Tutorial 2, you were asked to create one page for your portfolio, such as projects, education, certifications, or another relevant section. This time, we will make the content dynamic. The example in this tutorial uses projects, but you can adapt it to the page you created in Tutorial 2.
@@ -1767,9 +1784,6 @@ Make sure you enter this thumbnail URL in the **Project image url** field.
 
 After Tutorial 2, you should have a new HTML page. In this example, we already have `project.html`:
 
-::: {.callout-important}
-**Example Code** - The code and implementation explained here are examples. Adapt them to your own assignment, and do not copy these code blocks if your page has a different structure.
-:::
 
 ```html
 <!DOCTYPE html>
@@ -2302,6 +2316,17 @@ The final `/projects/` page should look like this:
 ![Final Projects Page](../img/tutorial-3/projects-final.png)
 
 Try to add your projects, if succeded **congrats!** If not, try to kindly debug... :D
+
+
+::: {.callout-tip}
+**Other People Can Edit Your Portfolio!** — Since we haven't learned about Authentication, Sessions, & Cookies yet, technically, everyone can modify your portfolio. If you want to temporarily secure it, try implementing a request header containing a secret code that only you know.
+
+**HINTS:**
+
+- Create a secret code in `.env` and compare it with the header when handling the request.
+- For forms, since you cannot add a custom header without JavaScript, add a password field instead.
+
+:::
 
 ## Submission
 
