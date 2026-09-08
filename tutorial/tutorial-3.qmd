@@ -657,7 +657,7 @@ Pastikan kamu memasukkan URL thumbnail tersebut ke field **Project image url** p
 
 
 ### Langkah 2: Menyesuaikan dengan Tugas 2 
-Setelah tugas dua, kamu diharapkan memiliki page HTML baru, disini sebagai contoh, saya telah memiliki `project.html`, isi kodenya adalah sebagai berikut: 
+Setelah tugas 2, kamu diharapkan memiliki page HTML baru, disini sebagai contoh, saya telah memiliki `project.html`, isi kodenya adalah sebagai berikut: 
 
 
 ```html
@@ -1780,9 +1780,9 @@ https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000
 Make sure you enter this thumbnail URL in the **Project image url** field.
 :::
 
-### Step 2: Adapting the Page from Tutorial 2
+### Step 2: Adapting the Page from Individual Assignment 2
 
-After Tutorial 2, you should have a new HTML page. In this example, we already have `project.html`:
+After Individual Assignment 2, you should have a new HTML page. In this example, we already have `project.html`:
 
 
 ```html
