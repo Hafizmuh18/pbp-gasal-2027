@@ -766,7 +766,7 @@ Cek kembali apakah kode pada portfolio kamu memiliki struktur yang serupa agar m
 
 ### Langkah 3: Implementasi Data Delivery dengan JSON
 
-Jika kamu belum membuat project apapun, kamu bisa masuk ke `/projects/add` dan menambahkan project-project yang diinginkan. Atau mengikuti contoh project yang dibuat pada tutorial dengan masuk ke dengan field content sebagai berikut:
+Jika kamu belum membuat project apapun, kamu bisa masuk ke `/projects/add` dan menambahkan project-project yang diinginkan. Atau mengikuti contoh project yang dibuat pada tutorial dengan input field content sebagai berikut:
 ```json
 [
   {
