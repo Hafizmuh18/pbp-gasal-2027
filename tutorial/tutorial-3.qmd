@@ -766,10 +766,34 @@ Cek kembali apakah kode pada portfolio kamu memiliki struktur yang serupa agar m
 
 ### Langkah 3: Implementasi Data Delivery dengan JSON
 
+Jika kamu belum membuat project apapun, kamu bisa masuk ke `/projects/add` dan menambahkan project-project yang diinginkan. Atau mengikuti contoh project yang dibuat pada tutorial dengan masuk ke dengan field content sebagai berikut:
+```json
+[
+  {
+      "title": "Fern AI Assistant",
+      "description": "Build personal AI Assistant with Hermes and characterizing Gemini API model into Fern's personality, helping daily tasks and reminder of schedules and
+      deadlines. Also can automate some programming tasks.",
+      "tech_stack": "AWS, Gemini API, Hermes, ElevenLabs, Discord Bot",
+      "project_url": "",
+      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000",
+  },
+  {
+      "id": uuid.UUID("74ae61ab-2a15-46e6-a546-991ce799ed01"),
+      "title": "Living Green Lantern's Bird",
+      "description": "In my training program with Hal Jordan, he told me to create some living thing with his green lantern's ring in order to evaluate my creativity skill.
+      I've created Green Living Bird who can live miles without the ring power and survived up to 12+ hours.",
+      "tech_stack": "Green Lantern's Ring, Creativity, Arts, Nature",
+      "project_url": "",
+      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10",
+  }
+]
+```
+
 Sebagai gambaran, tampilan awal dari halaman projects yang saya buat adalah sebagai berikut:
 
 
 ![Tampilan Halaman Projects](../img/tutorial-3/projects-ui.png)
+
 
 Sekarang kita akan merubah data delivery yang ada fungsi `show_projects` yang awalnya langsung mengambil dari database, menjadi menggunakan JSON. pada `main/views.py` buat fungsi `get_projects_json`:
 
@@ -1179,7 +1203,7 @@ Serta perubahan pada `style.css` adalah sebagai berikut:
 
 ```
 
-Tampilan akhir dari page `projects/` adalah sebagai berikut:
+Tampilan akhir dari page `/projects/` adalah sebagai berikut:
 
 ![Tampilan Halaman Projects Final](../img/tutorial-3/projects-final.png)
 
@@ -1892,6 +1916,29 @@ urlpatterns = [
 Check that your portfolio has a similar structure before continuing with the next implementation.
 
 ### Step 3: Implementing Data Delivery with JSON
+
+If you haven't created any projects yet, you can go to `/projects/add` and add the projects you want. Alternatively, you can follow the example project created in the tutorial by going to `/projects/add` and filling in the fields with the following content:
+```json
+[
+  {
+      "title": "Fern AI Assistant",
+      "description": "Build personal AI Assistant with Hermes and characterizing Gemini API model into Fern's personality, helping daily tasks and reminder of schedules and
+      deadlines. Also can automate some programming tasks.",
+      "tech_stack": "AWS, Gemini API, Hermes, ElevenLabs, Discord Bot",
+      "project_url": "",
+      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000",
+  },
+  {
+      "id": uuid.UUID("74ae61ab-2a15-46e6-a546-991ce799ed01"),
+      "title": "Living Green Lantern's Bird",
+      "description": "In my training program with Hal Jordan, he told me to create some living thing with his green lantern's ring in order to evaluate my creativity skill.
+      I've created Green Living Bird who can live miles without the ring power and survived up to 12+ hours.",
+      "tech_stack": "Green Lantern's Ring, Creativity, Arts, Nature",
+      "project_url": "",
+      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10",
+  }
+]
+```
 
 The initial projects page looks like this:
 
