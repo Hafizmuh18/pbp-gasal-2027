@@ -94,26 +94,42 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 
 ***
 
+
+::: {.callout-important}
+### Tutorial 03 adalah Prasyarat Wajib
+Individual Assignment 3 **hanya dinilai apabila Tutorial 03 sudah diselesaikan** paling lambat **Rabu, 16 September 2026**. Kalau Tutorial 03 belum dikerjakan, Individual Assignment 3 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+:::
+
 ## Tentang Proyek
 
-<Deskripsi singkat proyek individu secara keseluruhan - mis. "website
-portofolio pribadi" - cukup diisi sekali lalu disalin apa adanya ke setiap
-tugas berikutnya supaya konteksnya selalu ada.>
+Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi** yang dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan setiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial pada minggu yang sama.
 
 ## Target Tugas Ini
 
-<Jelaskan bagian proyek yang harus ditambahkan/diselesaikan pada tugas
-ini, dan rujuk eksplisit ke tutorial minggu terkait yang mengajarkan pola
-yang sama.>
+Pada [Tutorial 03](../../tutorial/tutorial-3.qmd), kamu sudah mengimplementasikan penggunaan skeleton template html, adanya fitur menambahkan projects menggunakan form, menghapus projects, dan menyajikan data projects ke halaman web yang dibungkus terlebih dahulu dalam format JSON. 
 
-1. <Poin target 1 - mis. "Lanjutkan daftar & detail proyek kamu,
-   mengikuti pola Model-View-Template dari [Tutorial 02](../../tutorial/tutorial-2.qmd)">
-2. <Poin target 2>
+Pada tugas ini, kamu diminta melakukan refactoring untuk setiap berkas html yang punya struktur identik diberlakukan *extend* terhadap template utama dan menerapkan kembali alur pembuatan form & data delivery untuk satu bagian lain dari portofoliomu, misalnya dalam bagian pendidikan, sertifikasi, atau bagian lain yang relevan, datanya sudah dapat diisi menggunakan form, dihapus, dan datanya tersedia dalam bentuk JSON.
 
-::: {.callout-important}
-### Tutorial N adalah Prasyarat Wajib
-Individual Assignment N **hanya dinilai apabila Tutorial N sudah diselesaikan** paling lambat <hari/tanggal Rabu minggu ini>. Kalau Tutorial N belum dikerjakan, Individual Assignment N **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
+::: {.callout-note}
+Tugas ini hanya mewajibkan **refactoring seluruh berkas html identik dengan *extend* template utama** serta **penambahan fitur Create Form, Data Deletion, dan JSON Data Delivery** untuk bagian yang kamu pilih. Namun, akan lebih baik jika kamu dapat melakukan eksplorasi untuk pembuatan fitur **Update Form** dan setiap data, seperti experience / sejenisnya **tersedia dalam JSON format**.
 :::
+
+
+
+Checklist minimal untuk tugas ini:
+
+- [ ] Setiap berkas html yang identik di-refactor dengan melakukan *extend* dari root html template
+- [ ] Buat ModelForm baru pada aplikasi `main` di `forms.py` yang merepresentasikan form data pilihanmu.
+- [ ] Model form tersebut memiliki setiap field data yang dapat kamu isi, kecuali field, seperti `id` atau yang berhubungan dengan `timestamp`
+- [ ] Buat fungsi views untuk create form pada bagian yang kamu pilih
+- [ ] Buat fungsi views untuk delete data pada bagian yang kamu pilih 
+- [ ] Buat fungsi views untuk *get data by json* pada bagian yang kamu pilih
+- [ ] Ubah fungsi views yang berfungsi untuk menampilkan data pada bagian yang kamu pilih dengan menerapkan *get data by json* terlebih dahulu, lalu melakukan *deserialize*
+- [ ] Pastikan data pada bagian yang kamu pilih dapat tampil di halaman web dengan baik
+- [ ] Buat berkas html untuk menampilkan form pada bagian yang kamu pilih dan implementasikan fungsi views create form tersebut
+- [ ] Buat button delete dan implementasikan fungsi delete data pada button tersebut
+- [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* 
+
 
 ## Pertanyaan Reflektif
 
@@ -176,34 +192,46 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ::: {.content-visible when-profile="en"}
 
-# Individual Assignment N: <Assignment Title> {.pbp-page-title}
+# Individual Assignment 3: Form & Data Delivery {.pbp-page-title}
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** <Author Name>
+**Contributor:** FERN - Vazha Khayri, EHW - Evan Haryo Widodo, DUH - Bermulya Anugrah Putra
 
 ***
 
+::: {.callout-important}
+### Tutorial 03 is a Mandatory Prerequisite
+Individual Assignment 3 **is only graded if Tutorial 03 has been completed** by **Wednesday, September 16, 2026** at the latest. If Tutorial 03 has not been completed, Individual Assignment 3 **will not be graded**, even if it has been submitted through SCELE.
+:::
+
 ## About the Project
 
-<Short description of the overall individual project - e.g. "personal
-portfolio website" - fill this in once and copy it verbatim into every
-following assignment so the context is always there.>
+This course's Individual Project is a **personal portfolio website** completed individually. Individual Assignments are released weekly according to that week's Tutorial topic, and each assignment continues directly from the code you wrote in the Tutorial for the same week.
 
 ## This Assignment's Target
 
-<Explain which part of the project needs to be added/completed for this
-assignment, and explicitly reference the related tutorial week that taught
-the same pattern.>
+In [Tutorial 03](../../tutorial/tutorial-3.qmd), you have implemented an html skeleton template, added features to create projects using a form, deleted projects, and served projects data to the web page by deserializing first from JSON format.
 
-1. <Target point 1 - e.g. "Continue your project list & detail pages,
-   following the Model-View-Template pattern from [Tutorial 02](../../tutorial/tutorial-2.qmd)">
-2. <Target point 2>
+In this assignment, you are required to refactor every html file with an identical structure to extend the base template. You must also re-implement the form creation and data delivery workflow for one other section of your portfolio (e.g., education, certifications, or another relevant sections), ensuring the data can be submitted via a form, deleted, and served in JSON format.
 
-::: {.callout-important}
-### Tutorial N Is a Mandatory Prerequisite
-Individual Assignment N **is only graded if Tutorial N has been completed** by <this week's Wednesday date> at the latest. If Tutorial N hasn't been done, Individual Assignment N **will not be graded**, even if submitted through SCELE.
+::: {.callout-note}
+This assignment only requires **refactoring all identical html files structure to extend the base template** and **implementing Create Form, Data Deletion, and JSON Data Delivery features** for your chosen section. However, you are encouraged to explore implementing an **Update Form feature** and ensuring other existing data (e.g., experience or similar sections) is also available in JSON format.
 :::
+
+Minimum checklist for this assignment:
+
+- [ ] Every identical html file is refactored to extend the root html template.
+- [ ] Create a new ModelForm in the main app within forms.py that represents your chosen data form.
+- [ ] The ModelForm contains all fillable data fields, excluding auto-generated fields such as id or timestamp-related fields.
+- [ ] Create a view function for form creation for your chosen section.
+- [ ] Create a view function for data deletion for your chosen section.
+- [ ] Create a view function to retrieve data as JSON for your chosen section.
+- [ ] Update the view function which is responsible for rendering your chosen section's data by retrieving the data as JSON first and then deserializing afterwards.
+- [ ] Ensure that data in your chosen section renders properly on the web page.
+- [ ] Create an html file to display the form for your chosen section and implement the view function for form creation.
+- [ ] Create a delete button and implement the data deletion view function to it.
+- [ ] Ensure the project runs without errors with `python manage.py runserver`
 
 ## Reflective Question
 
