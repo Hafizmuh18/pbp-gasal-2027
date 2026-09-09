@@ -51,7 +51,10 @@ Checklist minimal untuk tugas ini:
 - [ ] Data pada bagian portofolio baru tidak ditulis langsung (*hard-coded*) di HTML. Teks antarmuka statis, seperti judul halaman, label navigasi, dan isi *footer*, tetap boleh ditulis di *template*.
 - [ ] Daftarkan *named route* pada `main/urls.py` dengan URL yang berbeda dari halaman utama.
 - [ ] Tambahkan tautan menuju halaman baru pada *navbar* menggunakan tag `{% url %}`. Pastikan *navbar* dan *footer* konsisten dengan halaman lain.
-- [ ] Tambahkan *unit test* yang memastikan URL dapat diakses, *template* yang tepat digunakan, dan data dari model tampil pada respons HTML.
+- [ ] Tambahkan *unit test* yang mencakup minimal tiga kasus pengujian:
+  1. URL dapat diakses dan menggunakan *template* yang tepat.
+  2. Data model muncul di halaman HTML ketika ada data.
+  3. Halaman HTML menampilkan pesan kondisi kosong ketika belum ada data.
 - [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* dan seluruh test lulus ketika menjalankan `python manage.py test`.
 
 ## Pertanyaan Reflektif
@@ -120,7 +123,7 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** Alvin Christian Halim
+**Contributors:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem
 
 ***
 
@@ -154,6 +157,10 @@ Minimum checklist for this assignment:
 - [ ] Register a named route in `main/urls.py` with a URL distinct from the main page.
 - [ ] Add a navbar link to the new page using the `{% url %}` tag. Keep the navbar and footer consistent with the other pages.
 - [ ] Add unit tests that verify the URL is accessible, the correct template is used, and model data appears in the HTML response.
+- [ ] Add unit tests that cover at least three test scenarios as follow:
+  1. The URL is accessible and uses the correct template.
+  2. Model data appears in the returned HTML response when the data is not empty.
+  3. An empty message appears in the returned HTML response when the data is empty.
 - [ ] Make sure the project runs without errors with `python manage.py runserver` and that all tests pass with `python manage.py test`.
 
 ## Reflective Questions

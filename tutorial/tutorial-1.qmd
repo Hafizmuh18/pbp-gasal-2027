@@ -735,7 +735,7 @@ Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bent
 
 - [MDN - HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 - [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
-- [Django - Templates](https://docs.djangoproject.com/en/4.2/topics/templates/)
+- [Django - Templates](https://docs.djangoproject.com/en/6.1/topics/templates/)
 
 :::
 
@@ -1454,6 +1454,6 @@ This Tutorial is submitted through the SCELE submission slot, as a **link to the
 
 - [MDN - HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 - [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
-- [Django - Templates](https://docs.djangoproject.com/en/4.2/topics/templates/)
+- [Django - Templates](https://docs.djangoproject.com/en/6.1/topics/templates/)
 
 :::
