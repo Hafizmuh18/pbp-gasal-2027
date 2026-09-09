@@ -222,7 +222,7 @@ Sebelum melanjutkan tutorial 2 ini, kami mengharapkan kamu memastikan hal-hal be
   ├── requirements.txt
   ├── db.sqlite3
   ├── manage.py
-  ├── portofolio  
+  ├── main  
   │   ├── migrations
   │   ├── __init__.py
   │   ├── admin.py
@@ -1376,7 +1376,7 @@ Before proceeding with Tutorial 2, we expect you to ensure the following:
   ├── requirements.txt
   ├── db.sqlite3
   ├── manage.py
-  ├── portofolio  
+  ├── main  
   │   ├── migrations
   │   ├── __init__.py
   │   ├── admin.py
