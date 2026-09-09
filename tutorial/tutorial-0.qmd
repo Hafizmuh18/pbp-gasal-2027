@@ -376,7 +376,7 @@ Kamu akan lihat `(env)` muncul di depan prompt terminal kalau berhasil.
 Buat berkas `requirements.txt` berisi daftar *dependencies* berikut:
 
 ```text
-django~=6.0
+django~=5.2
 gunicorn
 psycopg2-binary
 python-dotenv
@@ -385,8 +385,8 @@ whitenoise
 
 ::: {.callout-note}
 Perhatikan bahwa *dependency* Django mencantumkan rentang versi menggunakan simbol `~=`.
-Rentang versi tersebut membatasi `pip` (*package manager* Python) agar memasang Django versi 6 ke atas dan di bawah versi 7 (`6.0 <= x < 7.0`).
-Hal ini bertujuan untuk memastikan versi Django yang dipakai selama perkuliahan PBP tetap konsisten di versi 6,
+Rentang versi tersebut membatasi `pip` (*package manager* Python) agar memasang Django versi 5.2 ke atas dan di bawah versi 6 (`5.2 <= x < 6.0`).
+Hal ini bertujuan untuk memastikan versi Django yang dipakai selama perkuliahan PBP tetap konsisten di versi 5.2 LTS,
 terutama ketika mulai mengembangkan proyek Django secara berkelompok.
 :::
 
@@ -560,7 +560,7 @@ Selamat! Kamu sudah menyiapkan akun GitHub, IDE, Git, dan proyek Django pertamam
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 - [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-- [Django - Installation](https://docs.djangoproject.com/en/stable/topics/install/)
+- [Django - Installation](https://docs.djangoproject.com/en/5.2/intro/install/)
 
 :::
 
@@ -932,7 +932,7 @@ You'll see `(env)` appear in front of your terminal prompt once it's active.
 Create a `requirements.txt` file with the following dependencies:
 
 ```text
-django~=6.0
+django~=5.2
 gunicorn
 psycopg2-binary
 python-dotenv
@@ -941,8 +941,8 @@ whitenoise
 
 ::: {.callout-note}
 Notice that the Django version is pinned to a specific version range using the `~=` symbol.
-This version range tells `pip` (Python's package manager) to install the latest Django release from version 6.0 up to, but excluding, version 7.0 (`6.0 <= x < 7.0`).
-Version pinning ensures the Django version used throughout PBP coursework stays consistent at version 6,
+This version range tells `pip` (Python's package manager) to install the latest Django release from version 5.2 up to, but excluding, version 6.0 (`5.2 <= x < 6.0`).
+Version pinning ensures the Django version used throughout PBP coursework stays consistent at version 5.2 LTS,
 especially when developing a Django project in the group assignments.
 :::
 
@@ -1116,6 +1116,6 @@ Congratulations! You've set up a GitHub account, an IDE, Git, and your first Dja
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
 - [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-- [Django - Installation](https://docs.djangoproject.com/en/stable/topics/install/)
+- [Django - Installation](https://docs.djangoproject.com/en/5.2/intro/install/)
 
 :::
