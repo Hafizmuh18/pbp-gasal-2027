@@ -150,7 +150,7 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ## Tenggat Waktu Pengerjaan
 
-<Tenggat waktu tugas ini - jangan lupa sebutkan bahwa deadline ini lebih lama dari deadline Tutorial N (lihat [halaman Jadwal](../../index.qmd#jadwal-semester) untuk tanggal lengkap).>
+Individual Assignment 3 dirilis pada **14 September 2026** dan dikumpulkan paling lambat **21 September 2026, pukul 23.59 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 03, yaitu Rabu, 23 September 2026.
 
 ## Rubrik Penilaian
 
@@ -164,12 +164,11 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ### Kualitas & Struktur Kode (10%)
 
-<Level 3 dan 3.5 di bawah perlu disesuaikan dengan tumpukan teknologi minggu ini (mis. "mengikuti alur dasar Django MTV" atau "Flutter Widget Tree") - lihat assignments/individual/tugas-1.qmd untuk contoh versi HTML5/CSS3. Level 1, 2, dan 4 sudah cukup generik untuk dipakai apa adanya.>
 
 - **1** - Kode sangat berantakan; logika tidak jelas; terlihat seperti *copy-paste* tanpa memahami struktur yang mendasarinya.
 - **2** - Kode terbaca tapi mengabaikan konvensi *framework* (mis. penamaan variabel acak, kode *spaghetti*).
-- **3** - <Kode cukup rapi dan terstruktur, mengikuti alur dasar teknologi minggu ini.>
-- **3.5** - <Struktur kode sangat rapi, modular, efisien, dan patuh ketat pada praktik terbaik teknologi minggu ini.>
+- **3** - Kode cukup rapi dan terstruktur, alur dasar implementasi dari materi Form dan Data Delivery.
+- **3.5** - Struktur kode sangat rapi, modular, efisien, dan melakukan implementasi Form dengan ModelForm serta membuat fungsi yang mengembalikan Data menggunakan JSON.
 - **4** - Menerapkan optimasi kode tingkat lanjut, memisahkan logika dengan bersih, atau menambahkan komentar/docstring kode yang sangat informatif.
 
 ### Git & Disiplin (10%)
