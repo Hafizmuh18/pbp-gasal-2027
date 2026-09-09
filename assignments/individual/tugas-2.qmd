@@ -27,6 +27,17 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Individual Assignment 2 **hanya dinilai apabila Tutorial 02 sudah diselesaikan** paling lambat **Rabu, 9 September 2026**. Kalau Tutorial 02 belum dikerjakan, Individual Assignment 2 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
 :::
 
+::: {.callout-warning}
+### Turunkan Versi Django Kalau Deployment Gagal
+Kalau *deployment* ke PWS gagal karena masalah versi Django, turunkan versinya dengan mengubah baris `django` di `requirements.txt` menjadi:
+
+```
+django~=5.0
+```
+
+Lalu *push* ulang ke PWS.
+:::
+
 ## Tentang Proyek
 
 Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi** yang dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan setiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial pada minggu yang sama.
@@ -51,7 +62,10 @@ Checklist minimal untuk tugas ini:
 - [ ] Data pada bagian portofolio baru tidak ditulis langsung (*hard-coded*) di HTML. Teks antarmuka statis, seperti judul halaman, label navigasi, dan isi *footer*, tetap boleh ditulis di *template*.
 - [ ] Daftarkan *named route* pada `main/urls.py` dengan URL yang berbeda dari halaman utama.
 - [ ] Tambahkan tautan menuju halaman baru pada *navbar* menggunakan tag `{% url %}`. Pastikan *navbar* dan *footer* konsisten dengan halaman lain.
-- [ ] Tambahkan *unit test* yang memastikan URL dapat diakses, *template* yang tepat digunakan, dan data dari model tampil pada respons HTML.
+- [ ] Tambahkan *unit test* yang mencakup minimal tiga kasus pengujian:
+  1. URL dapat diakses dan menggunakan *template* yang tepat.
+  2. Data model muncul di halaman HTML ketika ada data.
+  3. Halaman HTML menampilkan pesan kondisi kosong ketika belum ada data.
 - [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* dan seluruh test lulus ketika menjalankan `python manage.py test`.
 
 ## Pertanyaan Reflektif
@@ -120,13 +134,24 @@ Individual Assignment 2 dirilis pada **7 September 2026** dan dikumpulkan paling
 
 Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
 
-**Contributor:** Alvin Christian Halim
+**Contributors:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem
 
 ***
 
 ::: {.callout-important}
 ### Tutorial 02 Is a Mandatory Prerequisite
 Individual Assignment 2 **is only graded if Tutorial 02 has been completed** by **Wednesday, September 9, 2026** at the latest. If Tutorial 02 has not been completed, Individual Assignment 2 **will not be graded**, even if it has been submitted through SCELE.
+:::
+
+::: {.callout-warning}
+### Downgrade Django If Deployment Fails
+If deployment to PWS fails because of a Django version issue, downgrade it by changing the `django` line in `requirements.txt` to:
+
+```
+django~=5.0
+```
+
+Then push to PWS again.
 :::
 
 ## About the Project
@@ -154,6 +179,10 @@ Minimum checklist for this assignment:
 - [ ] Register a named route in `main/urls.py` with a URL distinct from the main page.
 - [ ] Add a navbar link to the new page using the `{% url %}` tag. Keep the navbar and footer consistent with the other pages.
 - [ ] Add unit tests that verify the URL is accessible, the correct template is used, and model data appears in the HTML response.
+- [ ] Add unit tests that cover at least three test scenarios as follow:
+  1. The URL is accessible and uses the correct template.
+  2. Model data appears in the returned HTML response when the data is not empty.
+  3. An empty message appears in the returned HTML response when the data is empty.
 - [ ] Make sure the project runs without errors with `python manage.py runserver` and that all tests pass with `python manage.py test`.
 
 ## Reflective Questions

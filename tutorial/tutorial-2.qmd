@@ -18,67 +18,6 @@ format-links:
     icon: easel
 ---
 
-<!--
-  Cara pakai template ini kalau mau bikin Tutorial minggu baru:
-
-  Copy berkas ini ke tutorial/tutorial-N.qmd, ganti N dengan nomor minggunya
-  (urutannya "Tutorial 01" sampai "Tutorial 10", cek jadwal di homepage kalau
-  lupa), lalu sesuaikan judul di frontmatter dan output-file revealjs.
-
-  Satu hal yang beda dari pola tutorial dulu: sekarang semua Tutorial
-  membangun satu aplikasi tema yang sama secara berkelanjutan sepanjang
-  semester, bukan latihan berdiri sendiri tiap minggu. Jadi section "Yang
-  Sudah Kita Bangun" isinya ringkasan progres dari tutorial minggu
-  sebelumnya - kecuali di Tutorial 01, kosongkan/hapus saja karena belum ada
-  apa-apa untuk diringkas.
-
-  Section "Menghubungkan ke Proyek Kamu" itu yang paling sering kelewat
-  tapi justru paling penting - di situ jelaskan eksplisit bagian mana dari
-  proyek pribadi mahasiswa (misalnya website portofolio) yang bisa memakai
-  pola yang sama dengan yang baru dikerjakan di tutorial ini. Tanpa ini,
-  mahasiswa gampang bingung kenapa tugasnya terasa "beda" dari tutorial,
-  padahal seharusnya melanjutkan pola yang sama.
-
-  Isi kedua blok bahasa ({.content-visible when-profile="id"} dan ="en") -
-  jangan sampai ada yang kosong, karena keduanya yang membuat switch bahasa
-  di navbar berfungsi. Ini juga sumber bug yang paling sering muncul:
-  apapun yang tampil ke pembaca (link slide, baris "Pemrograman Berbasis
-  Platform...", dst.) harus ada di dalam salah satu dari kedua blok itu,
-  bukan di luar - kalau ditaruh di luar, teksnya tampil sama persis di
-  kedua bahasa dan jadi terlihat seperti belum di-translate padahal isinya
-  sudah bilingual.
-
-  Soal judul: frontmatter title tidak bisa beda per bahasa (Quarto selalu
-  pakai satu judul yang sama untuk tab browser dan sidebar), jadi supaya
-  judul di halaman tetap bilingual, tulis heading `#` manual dengan
-  atribut `{.pbp-page-title}` di baris pertama tiap blok bahasa (contohnya
-  ada di bawah) - CSS di `styles.css` otomatis menyembunyikan judul
-  frontmatter kalau atribut ini ada di halaman.
-
-  Jangan lupa daftarkan file barunya di sidebar `contents:` di kedua
-  `_quarto-id.yml` dan `_quarto-en.yml`, dengan `text:` eksplisit per
-  bahasa (jangan biarkan Quarto menurunkan label sidebar dari frontmatter
-  title, itu juga tidak ikut ter-translate). Contoh:
-  ```yaml
-  - text: "Tutorial 01: Setup Git Repository, ..."   # di _quarto-id.yml
-    href: tutorial/tutorial-1.qmd
-  - text: "Tutorial 01: Set Up Git Repository, ..."  # di _quarto-en.yml
-    href: tutorial/tutorial-1.qmd
-  ```
-
-  Buat juga slides/tutorial-N.qmd dari _templates/slide-template.qmd.
-
-  Section "Pengumpulan"/"Submission" di bagian bawah teksnya sudah baku
-  dan sama di semua tutorial - biarkan apa adanya, tidak perlu disunting
-  per minggu.
-
-  Langkah terakhir sebelum selesai: render dua profile (`quarto render`,
-  lalu `quarto render --profile en --no-clean`), buka halaman ID dan EN-nya
-  berdampingan, dan cek tidak ada teks yang identik/belum ter-translate di
-  keduanya (judul, sidebar, isi). Ini langkah regresi yang wajib dilakukan
-  tiap kali selesai bikin tutorial/tugas baru.
--->
-
 ::: {.content-visible when-profile="id"}
 
 # Tutorial 02: Implementasi Model-View-Template (MVT) pada Django {.pbp-page-title}
@@ -88,6 +27,17 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 **Kontributor:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem, TIM - Justin Timothy W
 
 ***
+
+::: {.callout-warning}
+### Turunkan Versi Django Kalau Deployment Gagal
+Kalau *deployment* ke PWS gagal karena masalah versi Django, turunkan versinya dengan mengubah baris `django` di `requirements.txt` menjadi:
+
+```
+django~=5.0
+```
+
+Lalu *push* ulang ke PWS.
+:::
 
 ### Tujuan Pembelajaran
 
@@ -130,7 +80,6 @@ myportofolio
 │   ├── urls.py             # daftar routing URL
 │   ├── views.py
 │   └── wsgi.py        
-├── requirements.txt
 ├── static
 │   ├── css
 │   │   └── style.css
@@ -162,8 +111,8 @@ Contoh model:
 class Experience(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    date_started = models.DateField(auto_now_add=True)
-    date_ended = models.DateField(null=True, blank=True)
+    started_at = models.DateField(auto_now_add=True)
+    ended_at = models.DateField(null=True, blank=True)
 ```
 
 ### Apa Itu View?
@@ -190,7 +139,7 @@ Contoh template:
       <strong>{{ experience.title }}</strong>
       <br>
       <small>
-        {{ experience.date_started }} — {{ experience.date_ended }}
+        {{ experience.started_at }} — {{ experience.ended_at }}
       </small>
     </li>
   {% endfor %}
@@ -221,12 +170,43 @@ Manfaat MVT ada banyak, di antaranya:
 
 ## Pre-Tutorial Notes
 
+::: {.callout-warning}
+Sebelum memulai tutorial ini, mohon periksa kembali berkas `requirements.txt` di proyek portofoliomu. 
+Baris *dependency* Django kemungkinan masih tertulis:
+
+```text
+django~=6.0
+```
+(atau `django` tanpa batasan versi).
+
+Harap ubah baris tersebut menjadi **Django versi 5.2**:
+
+```text
+django~=5.2
+```
+
+Lalu, pastikan *virtual environment* sudah aktif dan jalankan instalasi ulang:
+
+```shell
+pip install -r requirements.txt
+```
+
+Hal ini perlu dilakukan karena database PostgreSQL yang digunakan PWS belum mendukung Django versi terbaru (versi 6.x). Oleh karena itu, versi Django yang digunakan perlu diturunkan ke versi 5.2 yang merupakan versi LTS terbaru saat ini.
+:::
+
 Jika tidak sengaja push file sensitif seperti `.env`, `.env.prod`, `db.sqlite3`, atau folder `env/`, hapus dari Git menggunakan:
 
 ```bash
-git rm --cached .env .env.prod db.sqlite3
+git rm --cached .env
+git rm --cached .env.prod
+git rm --cached db.sqlite3
 git rm -r --cached env/
 ```
+
+::: {.callout-note}
+Jika muncul pesan `fatal: pathspec did not match any files`, kamu bisa mengabaikannya.
+Pesan tersebut menandakan berkas atau folder yang ingin kamu hapus memang belum pernah dicatat oleh Git di repositori lokal milikmu.
+:::
 
 **Catatan**: Perintah di atas menghapus file sensitif dari tracking Git ke depannya.
 
@@ -340,7 +320,6 @@ Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama*
 
 Dengan melakukan langkah-langkah tersebut, kamu telah mendaftarkan aplikasi `main` ke dalam proyek *myportofolio* kamu.
 
-
 ## Tutorial: Implementasi Model Dasar
 
 ### Langkah 1: Mengubah Berkas `models.py` dalam Aplikasi `main`
@@ -397,6 +376,17 @@ class Experience(models.Model):
 Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata kuliah Basis Data nanti. Untuk sementara, apabila kamu ingin mengetahui lebih banyak tentang kegunaan *decorator* `@property`, kamu dapat membaca [dokumentasi Python mengenai *class property*](https://docs.python.org/3/library/functions.html#property).
 :::
 
+::: {.callout-note}
+Menurut [dokumentasi resmi Django](https://docs.djangoproject.com/en/5.2/ref/models/fields/#null), 
+penggunaan `null=True` sebaiknya dihindari pada *field* berbasis string seperti `CharField`, `TextField`, dan `URLField`.
+Hal ini karena nilai kosong pada *field* string direpresentasikan sebagai string kosong `""` menurut konvensi *framework* Django.
+Penggunaan `null=True` akan menyebabkan ada dua kemungkinan status data kosong di basis data (`NULL` dan `""`).
+
+Pada tutorial ini, `thumbnail` menggunakan `null=True` sebagai contoh.
+Namun untuk tugas dan proyek mandiri selanjutnya, kamu sebaiknya menggunakan `blank=True` (atau `blank=True, default=""`).
+Jika kamu sudah terlanjur menjalankan migrasi sesuai kode di atas,
+kamu tidak perlu mengubahnya atau melakukan migrasi ulang karena keduanya tetap berfungsi dengan baik pada tutorial ini.
+:::
 
 ### Langkah 2: Membuat dan Mengaplikasikan Migrasi Model
 
@@ -885,10 +875,10 @@ Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bent
 
 ## Referensi Tambahan
 
-- [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
-- [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
-- [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
-- [Django - Writing and running tests](https://docs.djangoproject.com/en/4.2/topics/testing/overview/)
+- [Django - Writing views](https://docs.djangoproject.com/en/5.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/5.2/topics/http/urls/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/5.2/topics/templates/#the-django-template-language)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/5.2/topics/testing/overview/)
 
 :::
 
@@ -902,6 +892,17 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 **Contributors:** FEIN - Alvin Christian Halim, REM - Malik Alifan Kareem, TIM - Justin Timothy W
 
 ***
+
+::: {.callout-warning}
+### Downgrade Django If Deployment Fails
+If deployment to PWS fails because of a Django version issue, downgrade it by changing the `django` line in `requirements.txt` to:
+
+```
+django~=5.0
+```
+
+Then push to PWS again.
+:::
 
 ### Learning Objectives
 
@@ -975,8 +976,8 @@ Here is a small model example:
 class Experience(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
-    date_started = models.DateField(auto_now_add=True)
-    date_ended = models.DateField(null=True, blank=True)
+    started_at = models.DateField(auto_now_add=True)
+    ended_at = models.DateField(null=True, blank=True)
 ```
 
 ### What Is a View?
@@ -1001,7 +1002,7 @@ A template is an HTML file that can also use values and simple presentation logi
       <strong>{{ experience.title }}</strong>
       <br>
       <small>
-        {{ experience.date_started }} — {{ experience.date_ended }}
+        {{ experience.started_at }} — {{ experience.ended_at }}
       </small>
     </li>
   {% endfor %}
@@ -1030,12 +1031,43 @@ MVT keeps separate responsibilities from getting tangled together:
 
 ## Before You Begin
 
+::: {.callout-warning}
+Before starting this tutorial, please check the `requirements.txt` file in your portfolio project.
+If you completed Tutorial 0, your Django dependency line likely looks like:
+
+```text
+django~=6.0
+```
+(or `django` without a version constraint).
+
+Please update that line to target **Django 5.2**:
+
+```text
+django~=5.2
+```
+
+Then, ensure your virtual environment is active and reinstall the dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+This version change is necessary because the PostgreSQL database server used by PWS does not support the latest Django version (i.e., Django 6.1). Therefore, you need to use the latest LTS (Long-Term Support) version of Django framework that happens to be Django 5.2.
+:::
+
 If `.env`, `.env.prod`, `db.sqlite3`, or the `env/` directory was accidentally committed, stop tracking those files with Git:
 
 ```bash
-git rm --cached .env .env.prod db.sqlite3
+git rm --cached .env
+git rm --cached .env.prod
+git rm --cached db.sqlite3
 git rm -r --cached env/
 ```
+
+::: {.callout-note}
+If you encountered `fatal: pathspec did not match any files` error message, you can ignore it.
+The error message indicated that the file or folder you want to remove has never been tracked by your local Git repository.
+:::
 
 These commands remove the files from future Git commits without deleting the local copies you still need.
 
@@ -1179,6 +1211,19 @@ Here is what each part does:
 
 ::: {.callout-note}
 The `@property` decorator lets you access a calculated method like an attribute. You can read more in the [Python documentation on `property`](https://docs.python.org/3/library/functions.html#property).
+:::
+
+::: {.callout-note}
+According to the [official Django documentation](https://docs.djangoproject.com/en/5.2/ref/models/fields/#null),
+using `null=True` should generally be avoided on string-based fields such as `CharField`, `TextField`, and `URLField`.
+In Django, empty text values are conventionally represented by an empty string `""`.
+Using `null=True` leads to two distinct representations of "no data" in the database (`NULL` and `""`).
+
+In this tutorial, `thumbnail` includes `null=True` as an illustrative example.
+However, we strongly recommend using `blank=True` (or `blank=True, default=""`) in future assignments and projects.
+If you have already applied migrations following the code above,
+you do not need to change your code or run migrations again,
+as both approaches work properly for this tutorial.
 :::
 
 ### Step 2: Create and Apply the Model Migration
@@ -1663,9 +1708,9 @@ This Tutorial is submitted through the SCELE submission slot, as a **link to the
 
 ## Additional References
 
-- [Django - Writing views](https://docs.djangoproject.com/en/4.2/topics/http/views/)
-- [Django - URL dispatcher](https://docs.djangoproject.com/en/4.2/topics/http/urls/)
-- [Django - The Django template language](https://docs.djangoproject.com/en/4.2/ref/templates/language/)
-- [Django - Writing and running tests](https://docs.djangoproject.com/en/4.2/topics/testing/overview/)
+- [Django - Writing views](https://docs.djangoproject.com/en/5.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/5.2/topics/http/urls/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/5.2/topics/templates/#the-django-template-language)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/5.2/topics/testing/overview/)
 
 :::
