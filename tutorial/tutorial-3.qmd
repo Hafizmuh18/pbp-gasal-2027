@@ -139,9 +139,11 @@ Contoh Format XML:
 ```
 
 XML di atas sangatlah *self-descriptive*:
+
 - Ada informasi nama (`name`)
 - Ada informasi umur (`age`)
 - Ada informasi alamat (`address`) yang bersarang (*nested*), mencakup:
+
   - jalan (`street`)
   - kota (`city`)
   - provinsi (`province`)
@@ -177,7 +179,7 @@ Data pada JSON direpresentasikan dalam bentuk pasangan ***key*** dan ***value***
 Saat ini, JSON lebih disukai dibandingkan XML pada aplikasi modern (terutama pada arsitektur *RESTful API*) karena ukurannya yang lebih ringkas, *parser* yang sangat cepat, dan integrasi yang sangat natural dengan JavaScript di sisi *frontend*.
 
 ::: {.callout-important}
-**Menghubungkan ke Proyek Kamu** - Pemahaman mengenai XML dan JSON adalah langkah awal yang esensial agar aplikasi portofolio yang kamu bangun dapat berkomunikasi dengan sistem lain. Seiring dengan berkembangnya kompleksitas proyekmu, aplikasi tidak lagi sekadar mengembalikan dokumen HTML utuh. Kamu akan dihadapkan pada kebutuhan untuk menyediakan data mentah (seperti JSON) yang dapat diproses secara asinkronus, misalnya melalui AJAX, untuk meningkatkan interaktivitas pada sisi *frontend*.
+Pemahaman mengenai XML dan JSON adalah langkah awal yang esensial agar aplikasi portofolio yang kamu bangun dapat berkomunikasi dengan sistem lain. Seiring dengan berkembangnya kompleksitas proyekmu, aplikasi tidak lagi sekadar mengembalikan dokumen HTML utuh. Kamu akan dihadapkan pada kebutuhan untuk menyediakan data mentah (seperti JSON) yang dapat diproses secara asinkronus, misalnya melalui AJAX, untuk meningkatkan interaktivitas pada sisi *frontend*.
 :::
 
 ## Pengumpulan
@@ -251,9 +253,11 @@ Example of XML Format:
 ```
 
 The XML above is very *self-descriptive*:
+
 - There is name information (`name`)
 - There is age information (`age`)
 - There is nested address information (`address`), encompassing:
+
   - street (`street`)
   - city (`city`)
   - province (`province`)
@@ -289,7 +293,7 @@ Data in JSON is represented as ***key-value*** pairs. In the example above, the 
 Currently, JSON is preferred over XML in modern applications (especially in *RESTful API* architectures) due to its more compact size, extremely fast parsers, and natural integration with JavaScript on the frontend.
 
 ::: {.callout-important}
-**Connecting to Your Project** - Understanding XML and JSON is an essential first step in enabling your portfolio application to communicate with other systems. As your project grows in complexity, it will no longer suffice to merely return full HTML documents. You will eventually need to provide raw data (such as JSON) that can be processed asynchronously, for instance via AJAX, to enhance interactivity on the *frontend*.
+Understanding XML and JSON is an essential first step in enabling your portfolio application to communicate with other systems. As your project grows in complexity, it will no longer suffice to merely return full HTML documents. You will eventually need to provide raw data (such as JSON) that can be processed asynchronously, for instance via AJAX, to enhance interactivity on the *frontend*.
 :::
 
 ## Submission
