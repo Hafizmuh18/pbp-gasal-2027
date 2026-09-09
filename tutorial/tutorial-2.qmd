@@ -159,6 +159,30 @@ Manfaat MVT ada banyak, di antaranya:
 
 ## Pre-Tutorial Notes
 
+::: {.callout-warning}
+Sebelum memulai tutorial ini, mohon periksa kembali berkas `requirements.txt` di proyek portofoliomu. 
+Baris *dependency* Django kemungkinan masih tertulis:
+
+```text
+django~=6.0
+```
+(atau `django` tanpa batasan versi).
+
+Harap ubah baris tersebut menjadi **Django versi 5.2**:
+
+```text
+django~=5.2
+```
+
+Lalu, pastikan *virtual environment* sudah aktif dan jalankan instalasi ulang:
+
+```shell
+pip install -r requirements.txt
+```
+
+Hal ini perlu dilakukan karena database PostgreSQL yang digunakan PWS belum mendukung Django versi terbaru (versi 6.x). Oleh karena itu, versi Django yang digunakan perlu diturunkan ke versi 5.2 yang merupakan versi LTS terbaru saat ini.
+:::
+
 Jika tidak sengaja push file sensitif seperti `.env`, `.env.prod`, `db.sqlite3`, atau folder `env/`, hapus dari Git menggunakan:
 
 ```bash
@@ -285,7 +309,6 @@ Jika kamu masih bingung mengenai istilah-istilah baru seperti **direktori utama*
 
 Dengan melakukan langkah-langkah tersebut, kamu telah mendaftarkan aplikasi `main` ke dalam proyek *myportofolio* kamu.
 
-
 ## Tutorial: Implementasi Model Dasar
 
 ### Langkah 1: Mengubah Berkas `models.py` dalam Aplikasi `main`
@@ -343,7 +366,7 @@ Kamu akan mempelajari lebih banyak tentang "atribut hasil derivasi" pada mata ku
 :::
 
 ::: {.callout-note}
-Menurut [dokumentasi resmi Django](https://docs.djangoproject.com/en/6.1/ref/models/fields/#null), 
+Menurut [dokumentasi resmi Django](https://docs.djangoproject.com/en/5.2/ref/models/fields/#null), 
 penggunaan `null=True` sebaiknya dihindari pada *field* berbasis string seperti `CharField`, `TextField`, dan `URLField`.
 Hal ini karena nilai kosong pada *field* string direpresentasikan sebagai string kosong `""` menurut konvensi *framework* Django.
 Penggunaan `null=True` akan menyebabkan ada dua kemungkinan status data kosong di basis data (`NULL` dan `""`).
@@ -841,10 +864,10 @@ Tutorial ini dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bent
 
 ## Referensi Tambahan
 
-- [Django - Writing views](https://docs.djangoproject.com/en/6.1/topics/http/views/)
-- [Django - URL dispatcher](https://docs.djangoproject.com/en/6.1/topics/http/urls/)
-- [Django - The Django template language](https://docs.djangoproject.com/en/6.1/topics/templates/#the-django-template-language)
-- [Django - Writing and running tests](https://docs.djangoproject.com/en/6.1/topics/testing/overview/)
+- [Django - Writing views](https://docs.djangoproject.com/en/5.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/5.2/topics/http/urls/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/5.2/topics/templates/#the-django-template-language)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/5.2/topics/testing/overview/)
 
 :::
 
@@ -985,6 +1008,30 @@ MVT keeps separate responsibilities from getting tangled together:
 3. **Reuse:** views and templates can support more than one page without duplicating everything.
 
 ## Before You Begin
+
+::: {.callout-warning}
+Before starting this tutorial, please check the `requirements.txt` file in your portfolio project.
+If you completed Tutorial 0, your Django dependency line likely looks like:
+
+```text
+django~=6.0
+```
+(or `django` without a version constraint).
+
+Please update that line to target **Django 5.2**:
+
+```text
+django~=5.2
+```
+
+Then, ensure your virtual environment is active and reinstall the dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+This version change is necessary because the PostgreSQL database server used by PWS does not support the latest Django version (i.e., Django 6.1). Therefore, you need to use the latest LTS (Long-Term Support) version of Django framework that happens to be Django 5.2.
+:::
 
 If `.env`, `.env.prod`, `db.sqlite3`, or the `env/` directory was accidentally committed, stop tracking those files with Git:
 
@@ -1145,7 +1192,7 @@ The `@property` decorator lets you access a calculated method like an attribute.
 :::
 
 ::: {.callout-note}
-According to the [official Django documentation](https://docs.djangoproject.com/en/6.1/ref/models/fields/#null),
+According to the [official Django documentation](https://docs.djangoproject.com/en/5.2/ref/models/fields/#null),
 using `null=True` should generally be avoided on string-based fields such as `CharField`, `TextField`, and `URLField`.
 In Django, empty text values are conventionally represented by an empty string `""`.
 Using `null=True` leads to two distinct representations of "no data" in the database (`NULL` and `""`).
@@ -1639,9 +1686,9 @@ This Tutorial is submitted through the SCELE submission slot, as a **link to the
 
 ## Additional References
 
-- [Django - Writing views](https://docs.djangoproject.com/en/6.1/topics/http/views/)
-- [Django - URL dispatcher](https://docs.djangoproject.com/en/6.1/topics/http/urls/)
-- [Django - The Django template language](https://docs.djangoproject.com/en/6.1/topics/templates/#the-django-template-language)
-- [Django - Writing and running tests](https://docs.djangoproject.com/en/6.1/topics/testing/overview/)
+- [Django - Writing views](https://docs.djangoproject.com/en/5.2/topics/http/views/)
+- [Django - URL dispatcher](https://docs.djangoproject.com/en/5.2/topics/http/urls/)
+- [Django - The Django template language](https://docs.djangoproject.com/en/5.2/topics/templates/#the-django-template-language)
+- [Django - Writing and running tests](https://docs.djangoproject.com/en/5.2/topics/testing/overview/)
 
 :::
