@@ -27,6 +27,17 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Individual Assignment 2 **hanya dinilai apabila Tutorial 02 sudah diselesaikan** paling lambat **Rabu, 9 September 2026**. Kalau Tutorial 02 belum dikerjakan, Individual Assignment 2 **tidak akan dinilai**, meskipun sudah dikumpulkan lewat SCELE.
 :::
 
+::: {.callout-warning}
+### Turunkan Versi Django Kalau Deployment Gagal
+Kalau *deployment* ke PWS gagal karena masalah versi Django, turunkan versinya dengan mengubah baris `django` di `requirements.txt` menjadi:
+
+```
+django~=5.0
+```
+
+Lalu *push* ulang ke PWS.
+:::
+
 ## Tentang Proyek
 
 Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi** yang dikerjakan sendiri. Individual Assignment dirilis tiap minggu mengikuti topik Tutorial minggu itu, dan setiap assignment melanjutkan langsung dari kode yang kamu buat di Tutorial pada minggu yang sama.
@@ -127,6 +138,17 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 ::: {.callout-important}
 ### Tutorial 02 Is a Mandatory Prerequisite
 Individual Assignment 2 **is only graded if Tutorial 02 has been completed** by **Wednesday, September 9, 2026** at the latest. If Tutorial 02 has not been completed, Individual Assignment 2 **will not be graded**, even if it has been submitted through SCELE.
+:::
+
+::: {.callout-warning}
+### Downgrade Django If Deployment Fails
+If deployment to PWS fails because of a Django version issue, downgrade it by changing the `django` line in `requirements.txt` to:
+
+```
+django~=5.0
+```
+
+Then push to PWS again.
 :::
 
 ## About the Project
