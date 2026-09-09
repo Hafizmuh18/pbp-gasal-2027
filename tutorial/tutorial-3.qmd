@@ -395,7 +395,20 @@ Data delivery melibatkan kebutuhan untuk berkomunikasi antar client yang biasany
 :::
 
 
-### Langkah 1: Implementasi Form 
+### Langkah 1: Implementasi Form
+
+Sebelum kita mulai implementasi, form akan berkaitan erat dengan CSRF token, oleh karena itu kita harus mendaftarkan URL website PWS. Pergi ke `settings.py` lalu tambahkan baris ini:
+```py 
+CSRF_TRUSTED_ORIGINS = ["<url_website_kamu>"]
+```
+
+**Penjelasan Kode**
+
+- `CSRF Token` merupakan token rahasia yang sifatnya unik dan dibuat oleh server untuk melindungi aplikasi dari request yang tidak terautorisasi.
+- `CSRF_TRUSTED_ORIGINS` mendaftarkan URL yang sudah dipercaya untuk dapat melakukan proses request ke server.
+
+Tujuan dari penggunaan CSRF selain diwajibkan oleh Django dalam pembuatan Form adalah untuk mencegah penyerang aplikasi mengubah request yang awalnya ke server Django kalian menjadi ke suatu API yang berbahaya dan mengirimkan data request kalian ke mereka. 
+
 Pada tugas 2, kamu diminta untuk membuat satu page untuk portfoliomu antara lain proyek, pendidikan, sertifikasi, atau bagian lain yang relevan. Kali ini, kita akan membuat konten tersebut dinamis. Pada tutorial ini saya akan menggunakan proyek sebagai contoh, tapi kalian bisa menyesuaikan dari apa yang telah dibaut di tutorial 2.
 
 Pastikan kamu telah memiliki models untuk bagian baru dan sudah melakukan migration, disini  konteksnya adalah project, seperti berikut:
@@ -1550,6 +1563,18 @@ Data delivery involves communication between the client, which is usually the in
 :::
 
 ### Step 1: Implementing the Form
+
+Before we start the implementation, form tightly coupled with CSRF token, with that we must register our PWS website URL. Open `settings.py`, then add this line:
+```py 
+CSRF_TRUSTED_ORIGINS = ["<url_website_kamu>"]
+```
+
+**Code Explanation**
+
+- `CSRF Token` is a secret unique token created by server in purpose to secure application from malicious and unauthorized request.
+- `CSRF_TRUSTED_ORIGINS` register trusted URL to enable request process into server.
+
+The Main Purpose for CSRF implementation beside obligation from Django Form creation, is to prevent attacker to change request source from our Django Server into some malicious API.
 
 In Tutorial 2, you were asked to create one page for your portfolio, such as projects, education, certifications, or another relevant section. This time, we will make the content dynamic. The example in this tutorial uses projects, but you can adapt it to the page you created in Tutorial 2.
 
