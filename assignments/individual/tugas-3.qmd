@@ -108,10 +108,10 @@ Proyek Individu mata kuliah ini adalah sebuah **website portofolio pribadi** yan
 
 Pada [Tutorial 03](../../tutorial/tutorial-3.qmd), kamu sudah mengimplementasikan penggunaan skeleton template html, adanya fitur menambahkan projects menggunakan form, menghapus projects, dan menyajikan data projects ke halaman web yang dibungkus terlebih dahulu dalam format JSON. 
 
-Pada tugas ini, kamu diminta melakukan refactoring untuk setiap berkas html yang punya struktur identik diberlakukan *extend* terhadap template utama dan menerapkan kembali alur pembuatan form & data delivery untuk satu bagian lain dari portofoliomu, misalnya dalam bagian pendidikan, sertifikasi, atau bagian lain yang relevan, datanya sudah dapat diisi menggunakan form, dihapus, dan datanya tersedia dalam bentuk JSON.
+Pada tugas ini, kamu diminta melakukan refactoring untuk setiap berkas html yang punya struktur identik diberlakukan *extend* terhadap template utama dan menerapkan mekanisme form & data delivery untuk satu bagian lain dari portofoliomu, misalnya dalam bagian pendidikan, sertifikasi, atau bagian lain yang relevan, datanya sudah dapat dibuat & diubah menggunakan form, dihapus, dan datanya tersedia dalam bentuk JSON.
 
 ::: {.callout-note}
-Tugas ini hanya mewajibkan **refactoring seluruh berkas html identik dengan *extend* template utama** serta **penambahan fitur Create Form, Data Deletion, dan JSON Data Delivery** untuk bagian yang kamu pilih. Namun, akan lebih baik jika kamu dapat melakukan eksplorasi untuk pembuatan fitur **Update Form** dan setiap data, seperti experience / sejenisnya **tersedia dalam JSON format**.
+Tugas ini hanya mewajibkan **refactoring seluruh berkas html identik dengan *extend* template utama** serta **penambahan fitur Create Form, Update Form, Data Deletion, dan JSON Data Delivery** untuk bagian yang kamu pilih. Namun, akan lebih baik jika kamu juga dapat menyajikan setiap data, seperti experience / sejenisnya **tersedia dalam JSON format**.
 :::
 
 
@@ -121,15 +121,20 @@ Checklist minimal untuk tugas ini:
 - [ ] Setiap berkas html yang identik di-refactor dengan melakukan *extend* dari root html template
 - [ ] Buat ModelForm baru pada aplikasi `main` di `forms.py` yang merepresentasikan form data pilihanmu.
 - [ ] Model form tersebut memiliki setiap field data yang dapat kamu isi, kecuali field, seperti `id` atau yang berhubungan dengan `timestamp`
-- [ ] Buat fungsi views untuk create form pada bagian yang kamu pilih
+- [ ] Buat fungsi views untuk create data dengan form pada bagian yang kamu pilih
+- [ ] Buat fungsi views untuk update data dengan form pada bagian yang kamu pilih
 - [ ] Buat fungsi views untuk delete data pada bagian yang kamu pilih 
 - [ ] Buat fungsi views untuk *get data by json* pada bagian yang kamu pilih
 - [ ] Ubah fungsi views yang berfungsi untuk menampilkan data pada bagian yang kamu pilih dengan menerapkan *get data by json* terlebih dahulu, lalu melakukan *deserialize*
 - [ ] Pastikan data pada bagian yang kamu pilih dapat tampil di halaman web dengan baik
-- [ ] Buat berkas html untuk menampilkan form pada bagian yang kamu pilih dan implementasikan fungsi views create form tersebut
-- [ ] Buat button delete dan implementasikan fungsi delete data pada button tersebut
+- [ ] Buat berkas html untuk mengimplementasikan fungsi views create data dengan form tersebut
+- [ ] Buat berkas html untuk mengimplementasikan fungsi views update data dengan form pada bagian yang kamu pilih
+- [ ] Buat button delete dan implementasikan fungsi views delete data pada button tersebut di bagian yang kamu pilih
 - [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* 
 
+::: {.callout-tip}
+**Hint:** Pembuatan update form menggabungkan konsep pengambilan data berdasarkan id/unique fields dan penyimpanan data.
+:::
 
 ## Pertanyaan Reflektif
 
@@ -212,25 +217,31 @@ This course's Individual Project is a **personal portfolio website** completed i
 
 In [Tutorial 03](../../tutorial/tutorial-3.qmd), you have implemented an html skeleton template, added features to create projects using a form, deleted projects, and served projects data to the web page by deserializing first from JSON format.
 
-In this assignment, you are required to refactor every html file with an identical structure to extend the base template. You must also re-implement the form creation and data delivery workflow for one other section of your portfolio (e.g., education, certifications, or another relevant sections), ensuring the data can be submitted via a form, deleted, and served in JSON format.
+In this assignment, you are required to refactor every html file with an identical structure to extend the base template. You must also implement the form mechanism and data delivery workflow for one other section of your portfolio (e.g., education, certifications, or another relevant sections), ensuring the data can be created & updated using a form, deleted, and served in JSON format.
 
 ::: {.callout-note}
-This assignment only requires **refactoring all identical html files structure to extend the base template** and **implementing Create Form, Data Deletion, and JSON Data Delivery features** for your chosen section. However, you are encouraged to explore implementing an **Update Form feature** and ensuring other existing data (e.g., experience or similar sections) is also available in JSON format.
+This assignment only requires **refactoring all identical html files structure to extend the base template** and **implementing Create Form, Update Form, Data Deletion, and JSON Data Delivery features** for your chosen section. However, you are encouraged to make other existing data (e.g., experience or similar sections) is also **available in JSON format**.
 :::
 
 Minimum checklist for this assignment:
 
 - [ ] Every identical html file is refactored to extend the root html template.
-- [ ] Create a new ModelForm in the main app within forms.py that represents your chosen data form.
-- [ ] The ModelForm contains all fillable data fields, excluding auto-generated fields such as id or timestamp-related fields.
-- [ ] Create a view function for form creation for your chosen section.
+- [ ] Create a new ModelForm in the `main` app within `forms.py` that represents your chosen data form.
+- [ ] The ModelForm contains all fillable data fields, excluding auto-generated fields such as `id` or `timestamp`-related fields.
+- [ ] Create a view function to create data using a form for your chosen section.
+- [ ] Create a view function to update data using a form for your chosen section.
 - [ ] Create a view function for data deletion for your chosen section.
-- [ ] Create a view function to retrieve data as JSON for your chosen section.
+- [ ] Create a view function to retrieve data as JSON format for your chosen section.
 - [ ] Update the view function which is responsible for rendering your chosen section's data by retrieving the data as JSON first and then deserializing afterwards.
 - [ ] Ensure that data in your chosen section renders properly on the web page.
-- [ ] Create an html file to display the form for your chosen section and implement the view function for form creation.
+- [ ] Create an HTML file to implement the create data view function using the form.
+- [ ] Create an HTML file to implement the update data view function using the form.
 - [ ] Create a delete button and implement the data deletion view function to it.
 - [ ] Ensure the project runs without errors with `python manage.py runserver`
+
+::: {.callout-tip}
+**Hint:** Creating an update form combines the concepts of retrieving data by id/unique identifiers and saving the data.
+:::
 
 ## Reflective Question
 
