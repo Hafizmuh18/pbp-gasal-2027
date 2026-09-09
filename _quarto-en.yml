@@ -45,7 +45,7 @@ website:
           href: tutorial/tutorial-1.qmd
         - text: "Tutorial 02: Model-View-Template (MVT) Django Implementation"
           href: tutorial/tutorial-2.qmd
-        - text: "Tutorial 03: Form dan Data Delivery"
+        - text: "Tutorial 03: Forms and Data Delivery"
           href: tutorial/tutorial-3.qmd
 
     - id: assignments

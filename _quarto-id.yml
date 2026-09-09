@@ -56,6 +56,8 @@ website:
               href: assignments/individual/tugas-1.qmd
             - text: "Individual Assignment 2: Implementasi MVT pada Django"
               href: assignments/individual/tugas-2.qmd
+            - text: "Individual Assignment 3: Form & Data Delivery"
+              href: assignments/individual/tugas-3.qmd
         - section: "Tugas Kelompok"
           contents:
             - text: "Proyek Tengah Semester"
