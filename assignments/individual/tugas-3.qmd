@@ -265,12 +265,10 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 
 ### Code Quality & Structure (10%)
 
-<Levels 3 and 3.5 below need adapting to this week's technology stack (e.g. "following the basic Django MTV flow" or "Flutter Widget Tree") - see assignments/individual/tugas-1.qmd for the HTML5/CSS3 version. Levels 1, 2, and 4 are already generic enough to use as-is.>
-
 - **1** - Code is highly chaotic; logic is unclear; appears to be *copy-pasted* without understanding the underlying structure.
 - **2** - Code is readable but ignores *framework* conventions (e.g., random variable naming, *spaghetti* code).
-- **3** - <Code is fairly neat and structured, following the basic flow of this week's technology.>
-- **3.5** - <Code structure is highly neat, modular, efficient, and strictly adheres to this week's technology best practices.>
+- **3** - Code is fairly neat and structured, following the basic flow of Form and Data Delivery.
+- **3.5** - Code structure is highly neat, modular, efficient, and following Form using ModelForm and implement function which has response data in JSON.
 - **4** - Implements advanced code optimization, cleanly separates logic, or adds highly informative code comments/docstrings.
 
 ### Git & Discipline (10%)
