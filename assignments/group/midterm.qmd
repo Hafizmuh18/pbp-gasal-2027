@@ -58,11 +58,11 @@ Kelompokmu harus bisa menjelaskan dengan jelas **siapa penggunanya** dan **masal
    ::: {.callout-note}
    Disarankan memakai **GitHub Organization** supaya kolaborasi antaranggota lebih mudah dikelola - repositori Proyek Akhir Semester nanti juga bisa dikelompokkan di organisasi yang sama.
    :::
-
-3. Data aplikasi **wajib** berasal dari *Public API* eksternal. Kalau terpaksa tidak ada *Public API* yang sesuai (harus memakai *dummy data*/*fetch data* sendiri), kelompok **wajib** membuat *mock API*/*dummy API* eksternal sendiri - bukan sekadar data statis yang ditulis langsung di kode.
-4. Rancangan *desain* aplikasi (wireframe/UI) **wajib** dibuat di **Figma**.
+3. Aplikasi anda **wajib** terintegrasi dengan suatu *Public API* eksternal. contoh API publik yang bisa anda pakai adalah https://api.inaturalist.org/v1/docs/, https://open-meteo.com/en/docs, https://www.openstreetmap.org/, atau anda dapat eksplor berbagai layanan penyedia public API di https://publicapi.dev/ atau https://github.com/public-apis/public-apis 
+    - Kalau terpaksa tidak ada *Public API* yang sesuai (harus memakai *dummy data*/*fetch data* sendiri), kelompok **wajib** membuat *mock API*/*dummy API* eksternal sendiri - bukan sekadar data statis yang ditulis langsung di kode. Anda dapat mencari tutorial membuat mock API seperti postman yang dapat terdeploy atau anda bisa membuat API sederhana sendiri diluar proyek kelompok. 
+4. Rancangan *desain* aplikasi (wireframe/UI) bersifar **wajib** anda dapat menggunakan **Figma** atau aplikasi lainnya 
 5. Setiap anggota kelompok mengerjakan **satu modul berbeda**, ditentukan sendiri oleh kelompok sesuai ide aplikasi yang sudah didiskusikan bersama.
-6. Situs web kelompok di-*deploy* sebagai satu kesatuan aplikasi ke **PWS** (kelompok bebas memakai PaaS lain kalau mau, tapi PWS tetap yang direkomendasikan).
+6. Situs web kelompok di-*deploy* sebagai satu kesatuan aplikasi ke **PWS** (kelompok bebas memakai PaaS lain kalau mau, tapi PWS tetap yang direkomendasikan). Pastikan website anda sudah memiliki initial data dengan jumlah minimal 50 data utama. misalnya anda membuat website marketplace, pastikan ketika di deploy sudah ada 50 data barang yang tersedia. Data ini dapat diambil dari External API (point 3) atau mencari dataset/membuat data sistetis dengan LLM kemudian di-seeding manual di database anda. 
 7. `README.md` proyek **wajib** memuat:
    - Deskripsi aplikasi (cerita aplikasi dan manfaatnya bagi masyarakat).
    - Nama dan NPM seluruh anggota kelompok.
@@ -171,10 +171,11 @@ Your group must be able to clearly explain **who the users are** and **what prob
    Using a **GitHub Organization** is recommended to make collaboration between members easier to manage - the Final Group Project's repository can later be grouped under the same organization too.
    :::
 
-3. Application data **must** come from an external *Public API*. If no suitable *Public API* is available (forcing you to use your own *dummy data*/*fetch data*), your group **must** build your own external *mock API*/*dummy API* - not just static data written directly in the code.
-4. The application's *design* (wireframe/UI) **must** be made in **Figma**.
+3. Your Application **must** be integrated with an external *Public API*. Examples of public APIs that you can use are https://api.inaturalist.org/v1/docs/, https://open-meteo.com/en/docs, https://www.openstreetmap.org/, or you can explore various public API provider services at https://publicapi.dev/ or https://github.com/public-apis/public-apis
+    - If no suitable *Public API* is available (forcing you to use your own *dummy data*/*fetch data*), your group **must** build your own external *mock API*/*dummy API* - not just static data written directly in the code. You can look for tutorials on making mock APIs like Postman that can be deployed or you can make your own simple API outside of a group project. 
+4. The application's *design* (wireframe/UI) is **mandatory**, you can use **Figma** or other applications
 5. Each group member works on **one different module**, determined by the group according to the application idea they've discussed together.
-6. The group's website is *deployed* as one unified application to **PWS** (groups are free to use another PaaS if they want, but PWS remains the recommended one).
+6. The group's website is *deployed* as one unified application to **PWS** (groups are free to use another PaaS if they want, but PWS remains the recommended one). Make sure your website has initial data with a minimum of 50 main data. For example, if you create a marketplace website, make sure that when you deploy it, there are 50 item data available. This data can be taken from the External API (point 3) or searching for datasets/creating synthetic data with LLM then seeding manually in your database.
 7. The project's `README.md` **must** include:
    - Application description (the app's story and its benefit to society).
    - Names and student IDs of all group members.
