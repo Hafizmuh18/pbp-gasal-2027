@@ -400,7 +400,8 @@ Data delivery melibatkan kebutuhan untuk berkomunikasi antar client yang biasany
 ### Langkah 1: Implementasi Form
 
 Sebelum kita mulai implementasi, form akan berkaitan erat dengan CSRF token, oleh karena itu kita harus mendaftarkan URL website PWS. Pergi ke `settings.py` lalu tambahkan baris ini:
-```py 
+```py
+# gunakan https:// untuk trailing urlnya
 CSRF_TRUSTED_ORIGINS = ["<url_website_kamu>"]
 ```
 
@@ -455,33 +456,28 @@ class ProjectForm(ModelForm):
         widgets = {
             "title": TextInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Portfolio Website",
                     "maxlength": 255,
                 }
             ),
             "description": Textarea(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Ceritakan Proyekmu",
                     "rows": 3,
                 }
             ),
             "tech_stack": TextInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Django, Python, HTML, CSS",
                 }
             ),
             "project_url": URLInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "https://github.com/kakBurhan/burhanquestv4",
                 }
             ),
             "project_image_url": URLInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "https://drive.google.com/thumbnail?id=...&sz=w1000",
                 }
             ),
@@ -499,10 +495,17 @@ class ProjectForm(ModelForm):
 
 - `model` digunakan untuk menentukan model Django yang menjadi sumber data dan struktur dari `ModelForm`. Field pada form akan dibuat berdasarkan field yang terdapat pada model tersebut.
 - `fields` digunakan untuk menentukan field model yang ingin ditampilkan pada form. Field dapat ditulis secara eksplisit, seperti `["title", "description"]`, atau menggunakan `"__all__"` untuk menampilkan seluruh field yang tersedia.
-- `widgets` digunakan untuk mengatur tampilan dan jenis elemen HTML yang digunakan oleh setiap field pada form. Pada kode di atas, `TextInput` digunakan untuk field teks satu baris, `Textarea` digunakan untuk field deskripsi yang membutuhkan area teks lebih besar, dan `URLInput` digunakan untuk field yang berisi URL. Atribut di dalam `attrs`, seperti `class`, `placeholder`, `maxlength`, dan `rows`, digunakan untuk mengatur styling, teks petunjuk, batas jumlah karakter, serta tinggi area input.
+- `widgets` digunakan untuk mengatur tampilan dan jenis elemen HTML yang digunakan oleh setiap field pada form. Pada kode di atas, `TextInput` digunakan untuk field teks satu baris, `Textarea` digunakan untuk field deskripsi yang membutuhkan area teks lebih besar, dan `URLInput` digunakan untuk field yang berisi URL. Atribut di dalam `attrs`, seperti `placeholder`, `maxlength`, dan `rows`, digunakan untuk  teks petunjuk, batas jumlah karakter, serta tinggi area input.
 
 Setelah membuat Form, kita perlu membuat views untuk nantiya dapat menggunakan form tersebut. pergi ke `main/views.py` lalu buat fungsi berikut:
 ```py
+from django.contrib import messages
+from django.core import serializers
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
+
+...
+
 def create_project(request):
     form = ProjectForm(request.POST or None)
 
@@ -744,7 +747,7 @@ Karena kita sudah membuat kerangka pada `base.html`, sekarang kita tinggal exten
     <title>Projects - {{ name }}</title>
 {% endblock meta %}
 {% block content %}
-<! -- Isi HTML kamu -- >
+<!-- Isi HTML kamu -->
 {% endblock content %}
 ```
 
@@ -766,12 +769,13 @@ dan pada `main/urls.py` seperti ini:
 ```py
 from django.urls import path
 
-from main.views import show_main, show_experience, show_projects
+from main.views import show_main, show_experience, show_projects, create_project
 
 app_name = "main"
 
 urlpatterns = [
     path("", show_main, name="show_main"),
+    path("projects/add/", create_project, name="create_project"),
     path("experience/", show_experience, name="show_experience"),
     path("projects/", show_projects, name="show_projects"),
 ]
@@ -790,16 +794,15 @@ Jika kamu belum membuat project apapun, kamu bisa masuk ke `/projects/add` dan m
       deadlines. Also can automate some programming tasks.",
       "tech_stack": "AWS, Gemini API, Hermes, ElevenLabs, Discord Bot",
       "project_url": "",
-      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000",
+      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000"
   },
   {
-      "id": uuid.UUID("74ae61ab-2a15-46e6-a546-991ce799ed01"),
       "title": "Living Green Lantern's Bird",
       "description": "In my training program with Hal Jordan, he told me to create some living thing with his green lantern's ring in order to evaluate my creativity skill.
       I've created Green Living Bird who can live miles without the ring power and survived up to 12+ hours.",
       "tech_stack": "Green Lantern's Ring, Creativity, Arts, Nature",
       "project_url": "",
-      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10",
+      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10"
   }
 ]
 ```
@@ -1174,6 +1177,10 @@ Serta perubahan pada `style.css` adalah sebagai berikut:
     justify-content: flex-end;
     gap: 0.75rem;
     margin-top: 1.5rem;
+}
+
+.button-danger {
+    background: #b42318;
 }
 
 @media (max-width: 600px) {
@@ -1570,6 +1577,7 @@ Data delivery involves communication between the client, which is usually the in
 
 Before we start the implementation, form tightly coupled with CSRF token, with that we must register our PWS website URL. Open `settings.py`, then add this line:
 ```py 
+# gunakan https:// untuk trailing urlnya
 CSRF_TRUSTED_ORIGINS = ["<url_website_kamu>"]
 ```
 
@@ -1622,33 +1630,28 @@ class ProjectForm(ModelForm):
         widgets = {
             "title": TextInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Portfolio Website",
                     "maxlength": 255,
                 }
             ),
             "description": Textarea(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Tell us about your project",
                     "rows": 3,
                 }
             ),
             "tech_stack": TextInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "Django, Python, HTML, CSS",
                 }
             ),
             "project_url": URLInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "https://github.com/kakBurhan/burhanquestv4",
                 }
             ),
             "project_image_url": URLInput(
                 attrs={
-                    "class": "form-input",
                     "placeholder": "https://drive.google.com/thumbnail?id=...&sz=w1000",
                 }
             ),
@@ -1665,11 +1668,18 @@ class ProjectForm(ModelForm):
 
 - `model` determines which Django model provides the source data and structure for the `ModelForm`. The form fields are generated based on the fields in that model.
 - `fields` determines which model fields are displayed in the form. Fields can be written explicitly, such as `["title", "description"]`, or set to `"__all__"` to display all available fields.
-- `widgets` controls the appearance and the HTML element used by each field. In the code above, `TextInput` is used for single-line text fields, `Textarea` is used for a description that needs a larger text area, and `URLInput` is used for URL fields. Attributes inside `attrs`, such as `class`, `placeholder`, `maxlength`, and `rows`, control styling, hint text, character limits, and the height of the text area.
+- `widgets` controls the appearance and the HTML element used by each field. In the code above, `TextInput` is used for single-line text fields, `Textarea` is used for a description that needs a larger text area, and `URLInput` is used for URL fields. Attributes inside `attrs`, such as  `placeholder`, `maxlength`, and `rows`, used for  hint text, character limits, and the height of the text area.
 
 After creating the form, we need to create a view that uses it. Open `main/views.py` and add the following function:
 
 ```py
+from django.contrib import messages
+from django.core import serializers
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
+
+...
+
 def create_project(request):
     form = ProjectForm(request.POST or None)
 
@@ -1931,12 +1941,13 @@ In `main/urls.py`:
 ```py
 from django.urls import path
 
-from main.views import show_main, show_experience, show_projects
+from main.views import show_main, show_experience, show_projects, create_project
 
 app_name = "main"
 
 urlpatterns = [
     path("", show_main, name="show_main"),
+    path("projects/add/", create_project, name="create_project"),
     path("experience/", show_experience, name="show_experience"),
     path("projects/", show_projects, name="show_projects"),
 ]
@@ -1955,16 +1966,15 @@ If you haven't created any projects yet, you can go to `/projects/add` and add t
       deadlines. Also can automate some programming tasks.",
       "tech_stack": "AWS, Gemini API, Hermes, ElevenLabs, Discord Bot",
       "project_url": "",
-      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000",
+      "project_image_url": "https://drive.google.com/thumbnail?id=1qbdofeOckPIbbj77svGTLNa2Ps8ogMET&sz=w1000"
   },
   {
-      "id": uuid.UUID("74ae61ab-2a15-46e6-a546-991ce799ed01"),
       "title": "Living Green Lantern's Bird",
       "description": "In my training program with Hal Jordan, he told me to create some living thing with his green lantern's ring in order to evaluate my creativity skill.
       I've created Green Living Bird who can live miles without the ring power and survived up to 12+ hours.",
       "tech_stack": "Green Lantern's Ring, Creativity, Arts, Nature",
       "project_url": "",
-      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10",
+      "project_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMQQ0x2GeB4AH8xPAmf77qV_btUQyVb24Y56R4z2g3YA&s=10"
   }
 ]
 ```
