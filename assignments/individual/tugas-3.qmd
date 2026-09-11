@@ -138,15 +138,18 @@ Checklist minimal untuk tugas ini:
 
 ## Pertanyaan Reflektif
 
-<Pertanyaan reflektif minggu ini, biasanya diisi oleh dosen.>
+1. Jelaskan mengapa kita menggunakan `ModelForm` pada Django alih-alih membuat form HTML secara manual. Selain itu, jelaskan pula mengapa kita diwajibkan menambahkan `{% csrf_token %}` pada form tersebut!
+2. Pada Tutorial 03, kita membahas format data JSON dan XML. Mengapa JSON lebih disukai dalam pengembangan aplikasi web modern dibandingkan XML?
+3. Jelaskan alur yang terjadi saat kamu menggunakan fungsi *view* untuk mengembalikan data portofoliomu dalam bentuk JSON. Mengapa kita perlu melakukan proses *serialization* pada model Django sebelum datanya dikembalikan?
 
 Jawab pertanyaan-pertanyaan di atas di `README.md` proyekmu (bukan di halaman tugas ini), dengan format berikut supaya tetap rapi seiring bertambahnya pertanyaan reflektif tiap minggu sepanjang semester:
 
 ```markdown
-### Tugas N
+### Tugas 3
 
 1. ...
 2. ...
+3. ...
 ```
 
 ## Pengumpulan
@@ -243,17 +246,20 @@ Minimum checklist for this assignment:
 **Hint:** Creating an update form combines the concepts of retrieving data by id/unique identifiers and saving the data.
 :::
 
-## Reflective Question
+## Reflective Questions
 
-<This week's reflective question, usually filled in by the lecturer.>
+1. Explain why we use Django's `ModelForm` instead of creating HTML forms manually. Additionally, explain why we are required to add `{% csrf_token %}` to these forms!
+2. In Tutorial 03, we discussed JSON and XML data formats. Why is JSON preferred in modern web application development compared to XML?
+3. Explain the flow that occurs when you use a view function to return your portfolio data in JSON format. Why do we need to perform the serialization process on Django models before returning the data?
 
 Answer the questions above in your project's `README.md` (not this assignment page), using the following format so it stays organized as more reflective questions get added each week throughout the semester:
 
 ```markdown
-### Assignment N
+### Assignment 3
 
 1. ...
 2. ...
+3. ...
 ```
 
 ## Submission
