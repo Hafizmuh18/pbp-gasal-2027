@@ -182,7 +182,7 @@ Pemahaman mengenai XML dan JSON adalah langkah awal yang esensial agar aplikasi 
 :::
 
 ## Pre-Tutorial Notes
-Sebelum melanjutkan tutorial 2 ini, kami mengharapkan kamu memastikan hal-hal berikut di bawah ini:
+Sebelum melanjutkan Tutorial 03 ini, kami mengharapkan kamu memastikan hal-hal berikut di bawah ini:
 
 - **Jika tidak sengaja push file sensitif seperti `.env`, `.env.prod`, `db.sqlite3`, atau folder `env/`, hapus dari Git menggunakan:**
 
