@@ -846,7 +846,13 @@ def get_projects_json(request):
 **FUNFACT: Kenapa Harus HttpResponse?** - Server memiliki cara untuk berkomunikasi dengan website, dan cara yang terstandarisasi dengan protokol HTTP, protokol HTTP merupakan protokol standar untuk berinteraksi (request and response) antara server dengan client (web browser), methode interaksinya biasanya menggunakan GET, POST, PUT, PATCH, & DELETE. Terdapat metode interaksi lain seperti Websocket, SMTP, dan lainnya yang akan kalian pelajari di jarkom :D.
 :::
 
-Pada `urls.py`, daftarkan fungsi `get_projects_json` yang telah dibuat pada urlpatterns. Saya menulis seperti ini `path("api/projects/", get_projects_json, name="get_projects_json")`, penggunaan `/api` sebagai notasi untuk membedakan mana endpoint yang digunakan oleh client, mana yang digunakan oleh server.
+Pada `urls.py`, daftarkan fungsi `get_projects_json` yang telah dibuat pada urlpatterns. Saya menulis seperti ini 
+
+```py 
+path("api/projects/", get_projects_json, name="get_projects_json")
+``` 
+
+penggunaan `/api` sebagai notasi untuk membedakan mana endpoint yang digunakan oleh client, mana yang digunakan oleh server.
 
 Setelah kamu mendaftarakn ke `urls.py`, kita dapat memanggilnya dalam bentuk API menggunakan Postman.
 
@@ -897,8 +903,11 @@ def delete_project(request, project_id):
     return redirect("main:show_projects")
 ```
 
-Tambahkan path ini pada `urlpatterns` di `main/urls.py` yaitu: 
-```path("projects/<uuid:project_id>/delete/",delete_project,name="delete_project")```
+Tambahkan path ini pada `urlpatterns` di `main/urls.py` yaitu:
+
+```py
+path("projects/<uuid:project_id>/delete/",delete_project,name="delete_project")
+```
 
 Sekarang, pada folder templates, buat folder `components/` dan tambahkan file bernama `project_delete_modal.html`:
 ```html
