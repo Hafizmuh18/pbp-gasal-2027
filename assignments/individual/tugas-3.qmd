@@ -121,15 +121,17 @@ Checklist minimal untuk tugas ini:
 - [ ] Setiap berkas html yang identik di-refactor dengan melakukan *extend* dari root html template
 - [ ] Buat ModelForm baru pada aplikasi `main` di `forms.py` yang merepresentasikan form data pilihanmu.
 - [ ] Model form tersebut memiliki setiap field data yang dapat kamu isi, kecuali field, seperti `id` atau yang berhubungan dengan `timestamp`
-- [ ] Buat fungsi views untuk create data dengan form pada bagian yang kamu pilih
-- [ ] Buat fungsi views untuk update data dengan form pada bagian yang kamu pilih
-- [ ] Buat fungsi views untuk delete data pada bagian yang kamu pilih 
-- [ ] Buat fungsi views untuk *get data by json* pada bagian yang kamu pilih
-- [ ] Ubah fungsi views yang berfungsi untuk menampilkan data pada bagian yang kamu pilih dengan menerapkan *get data by json* terlebih dahulu, lalu melakukan *deserialize*
+- [ ] Buat fungsi view untuk bagian yang dipilih:
+  - [ ] Create data menggunakan form
+  - [ ] Update data menggunakan form
+  - [ ] Delete data
+  - [ ] Mengambil data dalam format JSON
+  - [ ] Menampilkan data setelah mengambil JSON dan melakukan deserialisasi
 - [ ] Pastikan data pada bagian yang kamu pilih dapat tampil di halaman web dengan baik
-- [ ] Buat berkas html untuk mengimplementasikan fungsi views create data dengan form tersebut
-- [ ] Buat berkas html untuk mengimplementasikan fungsi views update data dengan form pada bagian yang kamu pilih
-- [ ] Buat button delete dan implementasikan fungsi views delete data pada button tersebut di bagian yang kamu pilih
+- [ ] Buat antarmuka untuk bagian yang dipilih:
+  - [ ] Halaman/form create data
+  - [ ] Halaman/form update data
+  - [ ] Tombol delete yang terhubung ke fungsi view delete data
 - [ ] Pastikan proyek dapat dijalankan dengan `python manage.py runserver` tanpa *error* 
 
 ::: {.callout-tip}
@@ -158,7 +160,7 @@ Tugas dikumpulkan lewat slot submisi yang disediakan di SCELE, dalam bentuk **ta
 
 ## Tenggat Waktu Pengerjaan
 
-Individual Assignment 3 dirilis pada **14 September 2026** dan dikumpulkan paling lambat **21 September 2026, pukul 23.59 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 03, yaitu **Rabu, 16 September 2026**.
+Individual Assignment 3 dirilis pada **14 September 2026** dan dikumpulkan paling lambat **21 September 2026, pukul 23.59 WIB**. Tenggat waktu ini lebih lama daripada tenggat Tutorial 03, yaitu **Rabu, 16 September 2026, 23:59 WIB**.
 
 ## Rubrik Penilaian
 
@@ -231,15 +233,17 @@ Minimum checklist for this assignment:
 - [ ] Every identical html file is refactored to extend the root html template.
 - [ ] Create a new ModelForm in the `main` app within `forms.py` that represents your chosen data form.
 - [ ] The ModelForm contains all fillable data fields, excluding auto-generated fields such as `id` or `timestamp`-related fields.
-- [ ] Create a view function to create data using a form for your chosen section.
-- [ ] Create a view function to update data using a form for your chosen section.
-- [ ] Create a view function for data deletion for your chosen section.
-- [ ] Create a view function to retrieve data as JSON format for your chosen section.
-- [ ] Update the view function which is responsible for rendering your chosen section's data by retrieving the data as JSON first and then deserializing afterwards.
-- [ ] Ensure that data in your chosen section renders properly on the web page.
-- [ ] Create an HTML file to implement the create data view function using the form.
-- [ ] Create an HTML file to implement the update data view function using the form.
-- [ ] Create a delete button and implement the data deletion view function to it.
+- [ ] Create view functions for the chosen section:
+    - [ ] Create data using a form
+    - [ ] Update data using a form
+    - [ ] Delete data
+    - [ ] Retrieve data in JSON format
+    - [ ] Display data after fetching the JSON and performing deserialization
+- [ ] Ensure the data for your chosen section renders properly on the web page
+- [ ] Build the user interface for the chosen section:
+    - [ ] Page/form to create data
+    - [ ] Page/form to update data
+    - [ ] Delete button connected to the delete view function
 - [ ] Ensure the project runs without errors with `python manage.py runserver`
 
 ::: {.callout-tip}
@@ -268,7 +272,7 @@ This assignment is submitted through the SCELE submission slot, as a **link to t
 
 ## Deadline
 
-<This assignment's deadline - note that it's later than Tutorial N's own deadline (see the [Schedule page](../../index.qmd#semester-schedule) for exact dates).>
+Individual Assignment 3 is released on **September 14, 2026** and is due no later than **September 21, 2026, 23:59 WIB**. This deadline is later than Tutorial 03's deadline on **Wednesday, September 16, 2026, 23:59 WIB**.
 
 ## Grading Rubric
 
