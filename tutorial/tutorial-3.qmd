@@ -260,7 +260,15 @@ Sebelum melanjutkan Tutorial 03 ini, kami mengharapkan kamu memastikan hal-hal b
 Sebelum kita masuk ke materi utama, yakni pembuatan form, kita perlu membuat suatu skeleton yang berfungsi sebagai kerangka utama tampilan halaman situs web kita. Pembuatan skeleton ini bertujuan untuk memastikan bahwa desain situs web kita selalu konsisten dan memperkecil kemungkinan terjadinya redundansi kode.
 Cara pembuatan skeleton ini, adalah
 
-  1. Buat berkas **base.html** pada direktori templates yang berada pada **direktori utama (root folder)**. Berkas **base.html** ini berfungsi sebagai template dasar yang digunakan sebagai kerangka umum untuk halaman web lainnya yang berada pada setiap aplikasi. 
+  1. Buat berkas **base.html** pada **direktori templates** yang berada pada **direktori utama (root folder)**. Berkas **base.html** ini berfungsi sebagai template dasar yang digunakan sebagai kerangka umum untuk halaman web lainnya yang berada pada setiap aplikasi. 
+   
+   
+        ```
+        myportofolio
+        ├── manage.py
+        └── templates
+            └── base.html
+        ```
   2. Di dalam **base.html**, letakkan `{% load static %}` di bagian paling atas untuk memuat setiap static files yang didefinisikan pada berkas html
     
       ```html
@@ -327,7 +335,7 @@ Cara pembuatan skeleton ini, adalah
 ::: {.callout-note}
 Dalam beberapa kasus, `APP_DIRS` pada konfigurasi `TEMPLATES` kamu dapat bernilai False. Apabila nilainya False, kamu wajib mengubahnya menjadi True. Hal ini dilakukan agar templates milik aplikasi (contohnya main) lebih diprioritaskan daripada **admin/base_site.html** milik django.contrib.admin. Untuk informasi lebih lanjut, kamu dapat mengakses halaman [ini](https://docs.djangoproject.com/en/6.1/ref/templates/api/#loading-templates).
 :::
-  6. Pada berkas **index.html** yang berada di direktori **templates**, ubahlah kode index.html dengan memasukkan setiap tag html pada body ke dalam block content. Contohnya sebagai berikut,
+  6. Pada berkas **index.html** yang berada di direktori **templates**, pindahkan `<main>` beserta seluruh isinya ke dalam block content. `<header>` dan `<footer>` tidak perlu ditulis ulang karena sudah ada di `base.html`. Contohnya sebagai berikut,
     
       ```html
         {% extends 'base.html' %}
@@ -1445,7 +1453,14 @@ Before proceeding with Tutorial 2, we expect you to ensure the following:
 Before we dive into the main topic, which is creating forms, we need to create a skeleton that functions as the main framework for our website's layout. This skeleton aims to ensure that our website design remains consistent and minimizes the possibility of code redundancy.
 The steps to create this skeleton are:
 
-  1. Create a **base.html** file in the templates directory located in the **root directory**. This **base.html** file serves as a base template used as a general framework for other web pages in every application.
+  1. Create a **base.html** file in the **templates directory** located in the **root directory**. This **base.html** file serves as a base template used as a general framework for other web pages in every application.
+        
+        ```
+            myportofolio
+            ├── manage.py
+            └── templates
+                └── base.html
+        ```
   2. Inside **base.html**, place `{% load static %}` at the very top to load any static files defined in the html files.
 
       ```html
@@ -1514,7 +1529,7 @@ The steps to create this skeleton are:
 In some cases, `APP_DIRS` in your `TEMPLATES` configuration might be set to False. If it is False, you must change it to True. This ensures that application templates (e.g., main) are prioritized over **admin/base_site.html** belonging to django.contrib.admin. For further information, you can access this page [here](https://docs.djangoproject.com/en/6.1/ref/templates/api/#loading-templates).
 :::
 
-  6. In the **index.html** file located in the **templates** directory, change the **index.html** code by wrapping every HTML tag inside the body within the content block. For example:
+  6. In the **index.html** file located in the **templates** directory, move only the `<main>` element and its entire contents into the content block. You do not need to rewrite `<header>` and `<footer>`, as they are already included in `base.html`. For example:
    
       ```html
           {% extends 'base.html' %}
