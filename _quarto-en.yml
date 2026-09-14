@@ -45,6 +45,9 @@ website:
           href: tutorial/tutorial-1.qmd
         - text: "Tutorial 02: Model-View-Template (MVT) Django Implementation"
           href: tutorial/tutorial-2.qmd
+        - text: "Tutorial 03: Forms and Data Delivery"
+          href: tutorial/tutorial-3.qmd
+
     - id: assignments
       title: "Assignments"
       style: docked
@@ -57,6 +60,8 @@ website:
               href: assignments/individual/tugas-1.qmd
             - text: "Individual Assignment 2: Implementing MVT in Django"
               href: assignments/individual/tugas-2.qmd
+            - text: "Individual Assignment 3: Form & Data Delivery"
+              href: assignments/individual/tugas-3.qmd
         - section: "Group Assignments"
           contents:
             - text: "Midterm Group Project"

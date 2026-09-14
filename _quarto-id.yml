@@ -42,6 +42,8 @@ website:
           href: tutorial/tutorial-1.qmd
         - text: "Tutorial 02: Implementasi Model-View-Template (MVT) pada Django"
           href: tutorial/tutorial-2.qmd
+        - text: "Tutorial 03: Form dan Data Delivery"
+          href: tutorial/tutorial-3.qmd
     - id: assignments
       title: "Tugas"
       style: docked
@@ -54,6 +56,8 @@ website:
               href: assignments/individual/tugas-1.qmd
             - text: "Individual Assignment 2: Implementasi MVT pada Django"
               href: assignments/individual/tugas-2.qmd
+            - text: "Individual Assignment 3: Form & Data Delivery"
+              href: assignments/individual/tugas-3.qmd
         - section: "Tugas Kelompok"
           contents:
             - text: "Proyek Tengah Semester"
