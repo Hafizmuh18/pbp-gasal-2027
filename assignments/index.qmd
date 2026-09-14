@@ -104,7 +104,7 @@ title: "Informasi"
   <a href="individual/tugas-3.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
     <strong>3</strong> - Form & Data Delivery<br>
     <span class="pbp-card-status">✅ Available</span>
-  </div>
+  </a>
   <div class="pbp-card" style="opacity:0.55;">
     <strong>4</strong> - Authentication, Session and Cookies Implementation<br>
     <span class="pbp-card-status">⏳ Not yet uploaded</span>
