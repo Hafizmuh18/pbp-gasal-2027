@@ -559,7 +559,7 @@ Selamat! Kamu sudah menyiapkan akun GitHub, IDE, Git, dan proyek Django pertamam
 
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
-- [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+- [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [Django - Installation](https://docs.djangoproject.com/en/5.2/intro/install/)
 
 :::
@@ -1115,7 +1115,7 @@ Congratulations! You've set up a GitHub account, an IDE, Git, and your first Dja
 
 - [About pull request merges](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 - [Resolving a merge conflict on GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github)
-- [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+- [Git - Getting Started](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [Django - Installation](https://docs.djangoproject.com/en/5.2/intro/install/)
 
 :::

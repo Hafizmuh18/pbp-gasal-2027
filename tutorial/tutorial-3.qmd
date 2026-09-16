@@ -333,7 +333,7 @@ Cara pembuatan skeleton ini, adalah
       ```
 
 ::: {.callout-note}
-Dalam beberapa kasus, `APP_DIRS` pada konfigurasi `TEMPLATES` kamu dapat bernilai False. Apabila nilainya False, kamu wajib mengubahnya menjadi True. Hal ini dilakukan agar templates milik aplikasi (contohnya main) lebih diprioritaskan daripada **admin/base_site.html** milik django.contrib.admin. Untuk informasi lebih lanjut, kamu dapat mengakses halaman [ini](https://docs.djangoproject.com/en/6.1/ref/templates/api/#loading-templates).
+Dalam beberapa kasus, `APP_DIRS` pada konfigurasi `TEMPLATES` kamu dapat bernilai False. Apabila nilainya False, kamu wajib mengubahnya menjadi True. Hal ini dilakukan agar templates milik aplikasi (contohnya main) lebih diprioritaskan daripada **admin/base_site.html** milik django.contrib.admin. Untuk informasi lebih lanjut, kamu dapat mengakses halaman [ini](https://docs.djangoproject.com/en/5.2/ref/templates/api/#loading-templates).
 :::
   6. Pada berkas **index.html** yang berada di direktori **templates**, pindahkan `<main>` beserta seluruh isinya ke dalam block content. `<header>` dan `<footer>` tidak perlu ditulis ulang karena sudah ada di `base.html`. Contohnya sebagai berikut,
     
@@ -1526,7 +1526,7 @@ The steps to create this skeleton are:
       ```
 
 ::: {.callout-note}
-In some cases, `APP_DIRS` in your `TEMPLATES` configuration might be set to False. If it is False, you must change it to True. This ensures that application templates (e.g., main) are prioritized over **admin/base_site.html** belonging to django.contrib.admin. For further information, you can access this page [here](https://docs.djangoproject.com/en/6.1/ref/templates/api/#loading-templates).
+In some cases, `APP_DIRS` in your `TEMPLATES` configuration might be set to False. If it is False, you must change it to True. This ensures that application templates (e.g., main) are prioritized over **admin/base_site.html** belonging to django.contrib.admin. For further information, you can access this page [here](https://docs.djangoproject.com/en/5.2/ref/templates/api/#loading-templates).
 :::
 
   6. In the **index.html** file located in the **templates** directory, move only the `<main>` element and its entire contents into the content block. You do not need to rewrite `<header>` and `<footer>`, as they are already included in `base.html`. For example:

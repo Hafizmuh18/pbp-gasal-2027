@@ -514,15 +514,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v7
       with:
         fetch-depth: 0
-        
+
     - name: Set up Git
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        
+
     - name: Push to PWS
       env:
         PWS_URL: ${{ secrets.PWS_URL }}
@@ -530,9 +530,9 @@ jobs:
           # Get current branch name
           current_branch=$(git branch --show-current)
           echo "Current branch: $current_branch"
-          
-          # Push current branch to PWS master branch
-          push_output=$(git push $PWS_URL $current_branch:master 2>&1)
+
+          # Push current branch to PWS main branch
+          push_output=$(git push $PWS_URL $current_branch:main 2>&1)
           if [[ $? -ne 0 ]]; then
             echo "Push failed with output: $push_output"
             echo "Error: Unable to push changes. Please check the error message above and resolve any conflicts manually."
@@ -540,6 +540,10 @@ jobs:
           fi
           echo "Push successful with output: $push_output"
 ```
+
+::: {.callout-note}
+Versi *action* (`actions/checkout@v7`) di atas adalah versi terkini saat panduan ini ditulis. Cek [GitHub Marketplace](https://github.com/marketplace/actions/checkout) sebelum memakainya untuk memastikan kamu masih memakai versi terbaru - *action* versi lama (misalnya `@v2` ke bawah) memakai *runtime* Node.js yang sudah *deprecated* dan bisa gagal berjalan di *runner* GitHub Actions saat ini.
+:::
 
 **Note**: Sesuaikan nama branch di `branches: [ main ]` dengan nama branch utama repository kalian (bisa `main` atau `master`).
 
@@ -1208,15 +1212,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v7
       with:
         fetch-depth: 0
-        
+
     - name: Set up Git
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        
+
     - name: Push to PWS
       env:
         PWS_URL: ${{ secrets.PWS_URL }}
@@ -1224,9 +1228,9 @@ jobs:
           # Get current branch name
           current_branch=$(git branch --show-current)
           echo "Current branch: $current_branch"
-          
-          # Push current branch to PWS master branch
-          push_output=$(git push $PWS_URL $current_branch:master 2>&1)
+
+          # Push current branch to PWS main branch
+          push_output=$(git push $PWS_URL $current_branch:main 2>&1)
           if [[ $? -ne 0 ]]; then
             echo "Push failed with output: $push_output"
             echo "Error: Unable to push changes. Please check the error message above and resolve any conflicts manually."
@@ -1234,6 +1238,10 @@ jobs:
           fi
           echo "Push successful with output: $push_output"
 ```
+
+::: {.callout-note}
+The *action* version above (`actions/checkout@v7`) is the current version as of when this guide was written. Check the [GitHub Marketplace](https://github.com/marketplace/actions/checkout) before using it to make sure you're still on the latest version - older *action* versions (e.g. `@v2` and below) use a Node.js *runtime* that's been *deprecated* and can fail to run on current GitHub Actions *runners*.
+:::
 
 **Note**: Adjust branch name in `branches: [ main ]` with your repository's main branch name (can be `main` or `master`).
 

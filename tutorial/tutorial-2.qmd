@@ -33,7 +33,7 @@ Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu 
 Kalau *deployment* ke PWS gagal karena masalah versi Django, turunkan versinya dengan mengubah baris `django` di `requirements.txt` menjadi:
 
 ```
-django~=5.0
+django~=5.2
 ```
 
 Lalu *push* ulang ke PWS.
@@ -898,7 +898,7 @@ Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer S
 If deployment to PWS fails because of a Django version issue, downgrade it by changing the `django` line in `requirements.txt` to:
 
 ```
-django~=5.0
+django~=5.2
 ```
 
 Then push to PWS again.
