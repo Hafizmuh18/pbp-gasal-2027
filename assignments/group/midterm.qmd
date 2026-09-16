@@ -88,7 +88,7 @@ Setiap anggota mengimplementasikan modulnya masing-masing, dengan mencakup:
 4. **Form** yang menerima input pengguna dan diproses lewat *Views* (*insert*/*update*/*delete*/*query* data ke Models).
 5. **Interaktivitas sisi klien** (AJAX/HTMX, sesuai yang diajarkan di Tutorial 05 dan 06).
 6. **Filter berbasis autentikasi** - sebagian informasi hanya bisa dilihat pengguna yang sudah *login* (misalnya data kontak pribadi).
-7. **Filter pada data** yang diambil dari ~~Public API/mock API~~ *database* dan ditampilkan (misalnya berdasarkan kategori atau harga).
+7. **Filter pada data** yang diambil dari ~~Public API/mock API~~ **database** dan ditampilkan (misalnya berdasarkan kategori atau harga).
 
 ## Tahapan & Tenggat Waktu
 
@@ -201,7 +201,7 @@ Each member implements their own module, covering:
 4. A **form** that accepts user input and is processed through *Views* (*insert*/*update*/*delete*/*query* data to Models).
 5. **Client-side interactivity** (AJAX/HTMX, as taught in Tutorials 05 and 06).
 6. **Authentication-based filtering** - some information is only visible to logged-in users (e.g. personal contact data).
-7. **Filtering** on data fetched from the *database* ~~Public API/mock API~~ (e.g. by category or price).
+7. **Filtering** on data fetched from the **database** ~~Public API/mock API~~ (e.g. by category or price).
 
 ## Stages & Deadlines
 
