@@ -14,7 +14,7 @@ website:
       - text: "Tugas"
         href: assignments/index.qmd
       - text: "Kuis"
-        href: assignments/quiz/peraturan-kuis.qmd
+        href: quiz/index.qmd
       - text: "Cari Kelompok"
         href: kelompok-search.html
     right:
@@ -46,18 +46,22 @@ website:
           href: tutorial/tutorial-2.qmd
         - text: "Tutorial 03: Form dan Data Delivery"
           href: tutorial/tutorial-3.qmd
+    - id: quiz
+      title: "Kuis"
+      style: docked
+      contents:
+        - text: "Informasi"
+          href: quiz/index.qmd
+        - text: "Peraturan dan Ketentuan Kuis"
+          href: quiz/peraturan-kuis.qmd
+        - text: "Pembagian dan Pencarian Ruangan Kuis"
+          href: quiz/ruangan-kuis.qmd
     - id: assignments
       title: "Tugas"
       style: docked
       contents:
         - text: "Informasi"
           href: assignments/index.qmd
-        - section: "Kuis"
-          contents:
-            - text: "Peraturan dan Ketentuan Kuis"
-              href: assignments/quiz/peraturan-kuis.qmd
-            - text: "Pembagian dan Pencarian Ruangan Kuis"
-              href: assignments/quiz/ruangan-kuis.qmd
         - section: "Proyek Individu"
           contents:
             - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"

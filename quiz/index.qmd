@@ -1,0 +1,58 @@
+---
+title: "Kuis Pemrograman"
+---
+
+```{=html}
+<div class="pbp-banner">
+  <img src="../img/burhan/burhan_class.png" alt="Maskot Kuis">
+  <div class="pbp-banner-text">
+```
+
+::: {.content-visible when-profile="id"}
+<div class="pbp-banner-title">Kuis Pemrograman</div>
+<p class="pbp-banner-sub">Tiga Programming Quiz sepanjang semester, dikerjakan langsung di laboratorium komputer.</p>
+:::
+
+::: {.content-visible when-profile="en"}
+<div class="pbp-banner-title">Programming Quiz</div>
+<p class="pbp-banner-sub">Three Programming Quizzes throughout the semester, done directly in the computer lab.</p>
+:::
+
+```{=html}
+  </div>
+</div>
+```
+
+::: {.content-visible when-profile="id"}
+Penilaian Programming Quiz terpisah dari Tugas - dilaksanakan tiga kali (Kuis 1, 2, 3) di laboratorium komputer menggunakan Safe Exam Browser, bukan dikumpulkan dari rumah seperti Individual Assignment. Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk tanggal lengkap tiap kuis.
+
+```{=html}
+<div class="pbp-grid">
+  <a href="peraturan-kuis.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+    <strong>Peraturan dan Ketentuan Kuis</strong><br>
+    Jadwal, waktu pelaksanaan, ketentuan perangkat, dan aturan kejujuran akademik.
+  </a>
+  <a href="ruangan-kuis.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+    <strong>Pembagian dan Pencarian Ruangan Kuis</strong><br>
+    Cari NPM atau nama kamu untuk lihat kelas, sesi, ruangan, dan nomor bangku Kuis 1.
+  </a>
+</div>
+```
+:::
+
+::: {.content-visible when-profile="en"}
+Programming Quiz assessment is separate from Assignments - held three times (Quiz 1, 2, 3) in the computer lab using Safe Exam Browser, rather than submitted from home like Individual Assignments. See the [Schedule page](../index.qmd#semester-schedule) for the exact date of each quiz.
+
+```{=html}
+<div class="pbp-grid">
+  <a href="peraturan-kuis.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+    <strong>Quiz Rules and Regulations</strong><br>
+    Schedule, timing, device requirements, and academic integrity rules.
+  </a>
+  <a href="ruangan-kuis.qmd" class="pbp-card" style="text-decoration:none; color:inherit;">
+    <strong>Quiz Room Assignment &amp; Search</strong><br>
+    Search your NPM or name to find your class, session, room, and seat number for Quiz 1.
+  </a>
+</div>
+```
+:::

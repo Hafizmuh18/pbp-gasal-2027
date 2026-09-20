@@ -30,7 +30,7 @@ Kuis dilaksanakan tiga kali selama semester berlangsung pada hari Rabu, dengan r
 - **Kuis 2 (Rabu, 7 Oktober 2026):** Session-Based Authentication dan interaktivitas web dengan JavaScript.
 - **Kuis 3 (Rabu, 2 Desember 2026):** Dasar-dasar Flutter hingga Flutter Forms, Layouts, dan Navigation.
 
-Lihat [halaman Jadwal](../../index.qmd#jadwal-semester) untuk konteks lengkap tiap minggunya.
+Lihat [halaman Jadwal](../index.qmd#jadwal-semester) untuk konteks lengkap tiap minggunya.
 
 ## 2. Waktu Pelaksanaan
 
@@ -92,7 +92,7 @@ The quiz is held three times over the semester, on Wednesdays, covering the foll
 - **Quiz 2 (Wednesday, October 7, 2026):** Session-Based Authentication and web interactivity with JavaScript.
 - **Quiz 3 (Wednesday, December 2, 2026):** Flutter fundamentals through Flutter Forms, Layouts, and Navigation.
 
-See the [Schedule page](../../index.qmd#semester-schedule) for full context on each week.
+See the [Schedule page](../index.qmd#semester-schedule) for full context on each week.
 
 ## 2. Timing
 

@@ -4,7 +4,7 @@ title: "Pembagian dan Pencarian Ruangan Kuis"
 
 ```{=html}
 <div class="pbp-banner">
-  <img src="../../img/burhan/burhan_class.png" alt="Maskot Ruangan Kuis">
+  <img src="../img/burhan/burhan_class.png" alt="Maskot Ruangan Kuis">
   <div class="pbp-banner-text">
 ```
 
