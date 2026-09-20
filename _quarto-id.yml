@@ -13,6 +13,8 @@ website:
         href: tutorial/index.qmd
       - text: "Tugas"
         href: assignments/index.qmd
+      - text: "Kuis"
+        href: assignments/quiz/peraturan-kuis.qmd
       - text: "Cari Kelompok"
         href: kelompok-search.html
     right:
@@ -50,6 +52,12 @@ website:
       contents:
         - text: "Informasi"
           href: assignments/index.qmd
+        - section: "Kuis"
+          contents:
+            - text: "Peraturan dan Ketentuan Kuis"
+              href: assignments/quiz/peraturan-kuis.qmd
+            - text: "Pembagian dan Pencarian Ruangan Kuis"
+              href: assignments/quiz/ruangan-kuis.qmd
         - section: "Proyek Individu"
           contents:
             - text: "Individual Assignment 1: Static Web with HTML5 and CSS3"

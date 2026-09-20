@@ -52,8 +52,8 @@ Quiz** di beberapa minggu.
 | 11 | 2-6 Nov | **Topik 09:** Introduction to Dart Programming & Flutter | **Tutorial 08:** Basic Flutter | **Individual Assignment 7:** Basic Flutter<br>Rilis 2 Nov, deadline 9 Nov 23.59 WIB |
 | 12 | 9-13 Nov | **Topik 10:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | **Individual Assignment 8:** Flutter Navigation, Layouts, Forms, and Input Elements<br>Rilis 9 Nov, deadline 16 Nov 23.59 WIB<br>Final Project Checkpoint 1 (Mobile App Scoping, Project API) |
 | 13 | 16-20 Nov | **Topik 11:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | **Individual Assignment 9:** Flutter Networking, Authentication, and Integration<br>Rilis 16 Nov, deadline 23 Nov 23.59 WIB |
-| 14 | 23-27 Nov | Final Project | Programming Quiz 3 | Final Project |
-| 15 | 30 Nov - 4 Des | Final Project | Final Project | Deadline akhir Final Project: 2 Des |
+| 14 | 23-27 Nov | Final Project | Final Project | Final Project |
+| 15 | 30 Nov - 4 Des | Final Project | Programming Quiz 3 | Final Project<br>Deadline akhir Final Project: 2 Des |
 | 16 | 7-9 Des | **UAS** | - | - |
 
 : {tbl-colwidths="[7,10,25,25,33]"}
@@ -116,8 +116,8 @@ a **Programming Quiz** on some weeks.
 | 11 | Nov 2-6 | **Topic 09:** Introduction to Dart Programming & Flutter | **Tutorial 08:** Basic Flutter | **Individual Assignment 7:** Basic Flutter<br>Released Nov 2, due Nov 9, 23:59 WIB |
 | 12 | Nov 9-13 | **Topic 10:** Layouts & Forms | **Tutorial 09:** Flutter Navigation, Layouts, Forms, and Input Elements | **Individual Assignment 8:** Flutter Navigation, Layouts, Forms, and Input Elements<br>Released Nov 9, due Nov 16, 23:59 WIB<br>Final Project Checkpoint 1 (Mobile App Scoping, Project API) |
 | 13 | Nov 16-20 | **Topic 11:** Navigation, Networking and Integration | **Tutorial 10:** Flutter Networking, Authentication, and Integration | **Individual Assignment 9:** Flutter Networking, Authentication, and Integration<br>Released Nov 16, due Nov 23, 23:59 WIB |
-| 14 | Nov 23-27 | Final Project | Programming Quiz 3 | Final Project |
-| 15 | Nov 30 - Dec 4 | Final Project | Final Project | Final Project final deadline: Dec 2 |
+| 14 | Nov 23-27 | Final Project | Final Project | Final Project |
+| 15 | Nov 30 - Dec 4 | Final Project | Programming Quiz 3 | Final Project<br>Final Project final deadline: Dec 2 |
 | 16 | Dec 7-9 | **Final Exam** | - | - |
 
 : {tbl-colwidths="[7,10,25,25,33]"}

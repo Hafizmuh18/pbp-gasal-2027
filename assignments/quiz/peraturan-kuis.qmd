@@ -1,0 +1,137 @@
+---
+title: "Peraturan dan Ketentuan Kuis Pemrograman"
+format:
+  html: default
+  typst: default
+  docx: default
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - docx
+---
+
+::: {.content-visible when-profile="id"}
+
+# Peraturan dan Ketentuan Kuis Pemrograman {.pbp-page-title}
+
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Gasal 2026/2027
+
+**Kontributor:** MUH - Hafiz
+
+***
+
+## 1. Jadwal dan Materi Kuis
+
+Kuis dilaksanakan tiga kali selama semester berlangsung pada hari Rabu, dengan rincian materi berikut:
+
+- **Kuis 1 (Rabu, 23 September 2026):** HTML, CSS, implementasi Django MTV, dan Forms (setara Tugas 1-3).
+- **Kuis 2 (Rabu, 7 Oktober 2026):** Session-Based Authentication dan interaktivitas web dengan JavaScript.
+- **Kuis 3 (Rabu, 2 Desember 2026):** Dasar-dasar Flutter hingga Flutter Forms, Layouts, dan Navigation.
+
+Lihat [halaman Jadwal](../../index.qmd#jadwal-semester) untuk konteks lengkap tiap minggunya.
+
+## 2. Waktu Pelaksanaan
+
+Ujian berdurasi **90 menit** dan dilaksanakan sesuai jadwal kelas hari Rabu:
+
+- **Sesi 1:** 14.00-15.40 WIB (khusus kelas KKI wajib mengikuti sesi ini).
+- **Sesi 2:** 16.00-17.40 WIB.
+
+## 3. Ketentuan Pengerjaan dan Perangkat
+
+- Pengerjaan pemrograman dilakukan langsung menggunakan VS Code dan dikumpulkan melalui Scele.
+- Kuis wajib dikerjakan di laboratorium komputer menggunakan fasilitas komputer lab dan aplikasi Safe Exam Browser (tidak diperkenankan menggunakan laptop pribadi).
+
+## 4. Prosedur Sebelum Ujian
+
+- Peserta wajib hadir di ruangan dan duduk di kursi masing-masing paling lambat **10 menit** sebelum ujian dimulai (denah duduk akan dibagikan menjelang ujian).
+- Semua alat elektronik (ponsel, smartwatch, atau smart-tools lain) wajib dimatikan atau diatur ke mode hening (silent), dimasukkan ke dalam tas, dan diletakkan di depan ruangan ujian.
+
+## 5. Akses yang Diizinkan Selama Kuis
+
+Selama kuis berlangsung, peserta hanya diperbolehkan mengakses:
+
+- VS Code
+- Slide perkuliahan di Scele
+- Dokumentasi resmi [Django Documentation](https://docs.djangoproject.com/)
+- Browser untuk mengakses `localhost:8000`
+- [W3Schools](https://www.w3schools.com/)
+
+## 6. Kejujuran Akademik dan Sanksi
+
+Mahasiswa dilarang keras melakukan segala bentuk kecurangan demi menjaga keadilan, kejujuran, dan rasa tanggung jawab. Tindakan yang termasuk kecurangan antara lain:
+
+- Menyontek atau bekerja sama dengan peserta lain maupun asisten dosen.
+- Membuka atau membawa catatan/buku dalam bentuk apa pun.
+- Mengubah konfigurasi environment ujian.
+- Mengakses aplikasi/tools/bahan belajar lain selain yang disebutkan di poin 5.
+
+::: {.callout-important}
+Mahasiswa yang terbukti melakukan kecurangan akan dikenakan sanksi tegas sesuai peraturan yang berlaku di fakultas.
+:::
+
+:::
+
+::: {.content-visible when-profile="en"}
+
+# Programming Quiz Rules and Regulations {.pbp-page-title}
+
+Platform-Based Programming (CSGE602022) - organized by the Faculty of Computer Science, Universitas Indonesia, Odd Semester 2026/2027
+
+**Contributor:** MUH - Hafiz
+
+***
+
+## 1. Quiz Schedule and Material
+
+The quiz is held three times over the semester, on Wednesdays, covering the following material:
+
+- **Quiz 1 (Wednesday, September 23, 2026):** HTML, CSS, Django MTV implementation, and Forms (equivalent to Assignments 1-3).
+- **Quiz 2 (Wednesday, October 7, 2026):** Session-Based Authentication and web interactivity with JavaScript.
+- **Quiz 3 (Wednesday, December 2, 2026):** Flutter fundamentals through Flutter Forms, Layouts, and Navigation.
+
+See the [Schedule page](../../index.qmd#semester-schedule) for full context on each week.
+
+## 2. Timing
+
+The exam lasts **90 minutes** and is held according to the Wednesday class schedule:
+
+- **Session 1:** 14:00-15:40 WIB (KKI classes are required to take this session).
+- **Session 2:** 16:00-17:40 WIB.
+
+## 3. Working Conditions and Devices
+
+- Programming is done directly in VS Code and submitted through Scele.
+- The quiz must be done in the computer lab, using the lab's computers and the Safe Exam Browser application (personal laptops are not allowed).
+
+## 4. Pre-Exam Procedure
+
+- Participants must be in the room and seated at their assigned seat at least **10 minutes** before the exam starts (a seating chart will be shared closer to the exam).
+- All electronic devices (phones, smartwatches, or other smart tools) must be turned off or set to silent mode, placed in a bag, and left at the front of the exam room.
+
+## 5. Permitted Access During the Quiz
+
+During the quiz, participants may only access:
+
+- VS Code
+- Course slides on Scele
+- The official [Django Documentation](https://docs.djangoproject.com/)
+- A browser to access `localhost:8000`
+- [W3Schools](https://www.w3schools.com/)
+
+## 6. Academic Integrity and Sanctions
+
+Students are strictly prohibited from any form of cheating, in order to uphold fairness, honesty, and responsibility. Actions considered cheating include:
+
+- Cheating or collaborating with other participants or teaching assistants.
+- Opening or bringing any form of notes/books.
+- Modifying the exam environment's configuration.
+- Accessing any application/tool/learning material other than those listed in section 5.
+
+::: {.callout-important}
+Students found to have cheated will be subject to strict sanctions in accordance with the faculty's applicable regulations.
+:::
+
+:::
